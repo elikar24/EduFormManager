@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="86abfff4346f4592a625c619020ec5d3" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.action" Width="1.5" PointX="10.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.edu_log" Width="1.5" PointX="13" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.activity_ype" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.credential" Width="1.5" PointX="4.5" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.document_format" Width="1.5" PointX="6" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.edu" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.edu_form_data" Width="1.5" PointX="8.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.edu_kind" Width="1.5" PointX="0.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.edu_status" Width="1.5" PointX="0.75" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.edu_type" Width="1.5" PointX="0.75" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.file" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.form" Width="1.5" PointX="1.5" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.form_type" Width="1.5" PointX="1.5" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.management_agency" Width="1.5" PointX="5.25" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.management_agency_activity" Width="1.5" PointX="0.75" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.message" Width="1.5" PointX="5.25" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.mm_regular__summary_form" Width="1.5" PointX="3.75" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.municipality" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.municipality_form_data" Width="1.875" PointX="5.625" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ownership_type" Width="1.5" PointX="0.75" PointY="31.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.query" Width="1.5" PointX="6.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.query_autocomplete_part" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.query_head_part" Width="1.5" PointX="2.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.t_detailed_form_statistics" Width="1.5" PointX="10.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.t_form_statistics" Width="1.5" PointX="7.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.t_summary_form_statistics" Width="1.5" PointX="9.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.templated_form_data" Width="1.5" PointX="3.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.answer" Width="1.5" PointX="13.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.question" Width="1.5" PointX="11" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.questionary" Width="1.5" PointX="8.75" PointY="1.875" IsExpanded="true" />
+        <AssociationConnector Association="Model.edu_log_action_id_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.query_credentials_id_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.form_data_document_format_id_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.municipality_form_data_document_format_id_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.edu_org_edu_org_type_id_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.edu_org_munitsipyalitet_idmunitsipyalitet_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.edu_org_ownership_type_id_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.edu_org_status_id_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.form_data_eduorg_id_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.kind_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.message_from_edu_org_id_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.form_data_allform_id_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.form_data_file_id_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.municipality_form_data_file_id_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.form_form_type_id_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.mm_regular_summary_form_regular_form_id_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.mm_regular_summary_form_summary_form_id_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.municipality_form_data_allform_id_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.query_form_id_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.municipality_form_data_municipality_id_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.answer_question_id_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.question_questionary_id_fkey" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.mm_edu__activity_type" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.mm_edu__management_agency" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.mm_edu__management_agency_activity" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.mm_edu_kind__form" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
