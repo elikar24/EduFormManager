@@ -16,8 +16,8 @@ namespace EduFormManager
     public enum FormType
     {
         None = 0,
-        Federal = 1,
-        Other = 2,
+        Edu = 1,
+        OtherEdu = 2,
         Municipality = 3,
         OtherMunicipality = 4
     }

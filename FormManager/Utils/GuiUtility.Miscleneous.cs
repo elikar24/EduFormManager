@@ -92,7 +92,11 @@ namespace EduFormManager.Utilities
                 } 
                 else if (user.IsMunicipality)
                 {
-                    formList = await db.forms.Where(t => t.form_type_id == (int) FormType.Municipality).ToListAsync();
+                    formList = await db.forms
+                        .Where(
+                            t => t.form_type_id == (int) FormType.Municipality || 
+                            t.form_type_id == (int) FormType.OtherMunicipality)
+                            .ToListAsync();
                 }
                 foreach (var form in formList)
                 {

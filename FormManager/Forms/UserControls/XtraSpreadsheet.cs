@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.Spreadsheet;
@@ -78,7 +79,14 @@ namespace EduFormManager.Forms.UserControls
 
             this.buttonMenuFlyout.Click += (sender, eventArgs) =>
             {
-                this.flyoutPanelActions.ShowPopup();
+                if (this.flyoutPanelActions.IsPopupOpen)
+                {
+                    this.flyoutPanelActions.HidePopup();
+                }
+                else
+                {
+                    this.flyoutPanelActions.ShowPopup();                    
+                }
             };
 
             this.flyoutPanelActions.ButtonClick += (sender, args) =>
@@ -193,7 +201,7 @@ namespace EduFormManager.Forms.UserControls
 
         public void SaveLocal(Document doc)
         {
-            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            using (var saveFileDialog = new SaveFileDialog())
             {
                 saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                 saveFileDialog.FileName = string.Format("{0}-{1}-{2}.xlsx", Authentication.Credentials.Name, ActiveForm, DateTime.Now.ToString("yy-MM-dd"));
@@ -231,6 +239,7 @@ namespace EduFormManager.Forms.UserControls
                     this.UploadEduFormDataChanges(form, year, status);
                     break;
                 case "FormData3":
+                case "FormData4":
                     this.UploadMunitFormDataChanges(form, year, status);
                     break;
                 default:
@@ -489,7 +498,6 @@ namespace EduFormManager.Forms.UserControls
         async private void UploadEduFormDataChanges(form form, int year, Status status)
         {
             var formData = (edu_form_data) this.GetChangedFormData(form, status);
-            formData.edu = await Repo.GetEdu(Authentication.Credentials.EduId);
             try
             {
                 if (_originalForm != formData.form)
@@ -690,39 +698,48 @@ namespace EduFormManager.Forms.UserControls
             btnOpen.Click += (s, e) => OpenFile(args.Document);
 
             this.windowsUIButtonPanelActions.Buttons.Clear();
-            if (Authentication.Credentials.IsEdu || 
-                Authentication.Credentials.IsMunicipality || 
-                Authentication.Credentials.IsAdmin)
+            
+            if (!args.Document.ControlName.Contains("Archive"))
             {
-                if (!args.Document.ControlName.Contains("Archive"))
+                var formTypeIdMatch = new Regex(@"\w+(?<num>\d+)").Match(args.Document.ControlName);
+                var formTypeId = formTypeIdMatch.Success
+                    ? new int?(int.Parse(formTypeIdMatch.Groups["num"].Value))
+                    : null;
+                var formType = formTypeId.HasValue ? (FormType)formTypeId : FormType.None;
+                var isCreateUploadButtons =
+                    (Authentication.Credentials.IsMunicipality && formType.IsMunicipalityForm()) ||
+                    (Authentication.Credentials.IsEdu && formType.IsEduForm()) || Authentication.Credentials.IsAdmin || 
+                    args.Document.ControlName == "UploadSheetFromTemplate" ||
+                    args.Document.ControlName == "UploadSheetFromFile";
+                if (isCreateUploadButtons)
                 {
                     if (this.Source == FormSource.File)
                         this.windowsUIButtonPanelActions.Buttons.Add(btnOpen);
                     this.windowsUIButtonPanelActions.Buttons.Add(btnSave);
                     this.windowsUIButtonPanelActions.Buttons.Add(btnCheck);
+                    if (Authentication.Credentials.IsMunicipality || Authentication.Credentials.IsAdmin)
+                    {
+                        var btnPeekFormTest = new WindowsUIButton()
+                        {
+                            Caption = "Автозаполнение",
+                            Image = Resources.three_dots_24x24,
+                            ToolTip = "Выбрать организации, из форм которых будет заполнена таблица"
+                        };
+                        btnPeekFormTest.Click += (s, e) => this.windowsUIButtonPanelActions.ShowPeekForm(btnPeekFormTest);
+                        this.windowsUIButtonPanelActions.Buttons.Add(btnPeekFormTest);
+
+                        this.windowsUIButtonPanelActions.QueryPeekFormContent += (s, e) =>
+                        {
+                            var formulaPeekControl = new MunicipalityFormulaPeekControl(Repo, _selectedForm, _selectedDate.Year);
+                            formulaPeekControl.Completed += formulaPeekControl_Completed;
+                            e.Control = formulaPeekControl;
+                        };
+                    }
                 }
             }
-            
             this.windowsUIButtonPanelActions.Buttons.Add(btnSaveToFile);
             this.comboBoxDate.Visible = (this.Mode == ControlMode.New);
-            if (Authentication.Credentials.IsMunicipality || Authentication.Credentials.IsAdmin)
-            {
-                var btnPeekFormTest = new WindowsUIButton()
-                {
-                    Caption = "Автозаполнение",
-                    Image = Resources.three_dots_24x24,
-                    ToolTip = "Выбрать организации, из форм которых будет заполнена таблица"
-                };
-                btnPeekFormTest.Click += (s, e) => this.windowsUIButtonPanelActions.ShowPeekForm(btnPeekFormTest);
-                this.windowsUIButtonPanelActions.Buttons.Add(btnPeekFormTest);
-
-                this.windowsUIButtonPanelActions.QueryPeekFormContent += (s, e) =>
-                {
-                    var formulaPeekControl = new MunicipalityFormulaPeekControl(Repo, _selectedForm, _selectedDate.Year);
-                    formulaPeekControl.Completed += formulaPeekControl_Completed;
-                    e.Control = formulaPeekControl;
-                };
-            }
+            
         }
 
         async void formulaPeekControl_Completed(object sender, MunicipalityFormulaPeekArgs e)

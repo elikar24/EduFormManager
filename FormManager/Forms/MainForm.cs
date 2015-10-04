@@ -168,19 +168,19 @@ namespace EduFormManager
                     tileForms.Click +=
                         (sender, args) =>
                             LevelAdminHelper.LoadMunicipalityLayerAction.Invoke(sender, args, view, false,
-                                FormType.Federal, syncCtx);
+                                FormType.Edu, syncCtx);
                     tileArchiveForms.Click +=
                         (sender, args) =>
                             LevelAdminHelper.LoadMunicipalityLayerAction.Invoke(sender, args, view, true,
-                                FormType.Federal, syncCtx);
+                                FormType.Edu, syncCtx);
 
                     tileAdditionalForms.Click +=
                         (sender, args) =>
                             LevelAdminHelper.LoadMunicipalityLayerAction.Invoke(sender, args, view, false,
-                                FormType.Other, syncCtx);
+                                FormType.OtherEdu, syncCtx);
                     tileArchiveAdditionalForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadMunicipalityLayerAction.Invoke(sender, args, view, true, FormType.Other,
+                            LevelAdminHelper.LoadMunicipalityLayerAction.Invoke(sender, args, view, true, FormType.OtherEdu,
                                 syncCtx);
 
                     tileMunicipalityForms.Click +=
@@ -229,24 +229,24 @@ namespace EduFormManager
                     tileForms.Tag = TagHelper.GetTag(TagHelper.TagType.Tile, munit);
                     tileForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadEduKindLayerAction.Invoke(sender, args, view, false, FormType.Federal,
+                            LevelAdminHelper.LoadEduKindLayerAction.Invoke(sender, args, view, false, FormType.Edu,
                                 syncCtx);
                     tileArchiveForms.Tag = TagHelper.GetTag(TagHelper.TagType.Tile, munit, "archive");
                     tileArchiveForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadEduKindLayerAction.Invoke(sender, args, view, true, FormType.Federal,
+                            LevelAdminHelper.LoadEduKindLayerAction.Invoke(sender, args, view, true, FormType.Edu,
                                 syncCtx);
 
                     tileAdditionalForms.Tag = TagHelper.GetTag(TagHelper.TagType.Tile, munit);
                     tileAdditionalForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadEduKindLayerAction.Invoke(sender, args, view, false, FormType.Other,
+                            LevelAdminHelper.LoadEduKindLayerAction.Invoke(sender, args, view, false, FormType.OtherEdu,
                                 syncCtx);
                     tileArchiveAdditionalForms.Tag = TagHelper.GetTag(TagHelper.TagType.Tile, munit,
                         "archive");
                     tileArchiveAdditionalForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadEduKindLayerAction.Invoke(sender, args, view, true, FormType.Other,
+                            LevelAdminHelper.LoadEduKindLayerAction.Invoke(sender, args, view, true, FormType.OtherEdu,
                                 syncCtx);
                 }
                 else if (user.IsEdu)
@@ -255,23 +255,23 @@ namespace EduFormManager
                     tileForms.Tag = TagHelper.GetTag(TagHelper.TagType.Tile, edu);
                     tileForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadEduFormsLayerAction.Invoke(sender, args, view, false, FormType.Federal,
+                            LevelAdminHelper.LoadEduFormsLayerAction.Invoke(sender, args, view, false, FormType.Edu,
                                 syncCtx);
                     tileArchiveForms.Tag = TagHelper.GetTag(TagHelper.TagType.Tile, edu, "archive");
                     tileArchiveForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadEduFormsLayerAction.Invoke(sender, args, view, true, FormType.Federal,
+                            LevelAdminHelper.LoadEduFormsLayerAction.Invoke(sender, args, view, true, FormType.Edu,
                                 syncCtx);
 
                     tileAdditionalForms.Tag = TagHelper.GetTag(TagHelper.TagType.Tile, edu);
                     tileAdditionalForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadEduFormsLayerAction.Invoke(sender, args, view, false, FormType.Other,
+                            LevelAdminHelper.LoadEduFormsLayerAction.Invoke(sender, args, view, false, FormType.OtherEdu,
                                 syncCtx);
                     tileArchiveAdditionalForms.Tag = TagHelper.GetTag(TagHelper.TagType.Tile, edu, "archive");
                     tileArchiveAdditionalForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadEduFormsLayerAction.Invoke(sender, args, view, true, FormType.Other,
+                            LevelAdminHelper.LoadEduFormsLayerAction.Invoke(sender, args, view, true, FormType.OtherEdu,
                                 syncCtx);
                 }
 
@@ -306,8 +306,8 @@ namespace EduFormManager
                 if (user.IsEdu)
                 {
                     tileContainerMain.Items.Add(tileEduPasport);
-                    tileForms.Tag = string.Format("Forms{0}", (int) FormType.Federal);
-                    tileAdditionalForms.Tag = string.Format("Forms{0}", (int) FormType.Other);
+                    tileForms.Tag = string.Format("Forms{0}", (int) FormType.Edu);
+                    tileAdditionalForms.Tag = string.Format("Forms{0}", (int) FormType.OtherEdu);
                 }
 
                 this.loggedUserControl.Text = user.Name;

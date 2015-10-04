@@ -30,7 +30,7 @@ namespace EduFormManager.Utils
                         using (var db = new Entities())
                         {
                             db.Configuration.LazyLoadingEnabled = false;
-                            var municipalities = db.municipalities.Include("edus").ToList();
+                            var municipalities = db.municipalities.Include("edus").OrderBy(t => t.name).ToList();
                             foreach (var m in municipalities)
                             {
                                 var mTile = TileHelper.CreateMunitTile(m, isArchive);
@@ -155,7 +155,9 @@ namespace EduFormManager.Utils
                         {
                             db.Configuration.LazyLoadingEnabled = false;
 
-                            var edus = db.edus.Where(t => t.municipality_id == mId && t.edu_kind_id == eokId).ToList();
+                            var edus = db.edus.Where(t => t.municipality_id == mId && t.edu_kind_id == eokId)
+                                .OrderBy(t => t.name)
+                                .ToList();
                             //var c = edus.Count();
                             //var i = 0;
                             foreach (var eo in edus)
@@ -200,7 +202,7 @@ namespace EduFormManager.Utils
                                         LoadEduFormsLayerAction.Invoke(sender, args, view, isArchive, formType, guiCtx);
                                 var formCaption = eo.name;
                                 var formSubCaption = isArchive ? "Архивные " : "";
-                                formSubCaption += (formType == FormType.Federal) ? "Формы федерального статистического наблюдения" : "Доп. формы";
+                                formSubCaption += (formType == FormType.Edu) ? "Формы федерального статистического наблюдения" : "Доп. формы";
                                 var formContainer = TileContainerHelper.CreateTileContainer(view, eoTile, formCaption, formSubCaption, container);
                                 
                                 tiles.Add(eoTile);
@@ -286,10 +288,10 @@ namespace EduFormManager.Utils
                         {
                             db.Configuration.LazyLoadingEnabled = false;
 
-                            var municipalities = db.municipalities.ToList();
+                            var municipalities = db.municipalities.OrderBy(t => t.name).ToList();
                             foreach (var m in municipalities)
                             {
-                                var statusCountArray = Repository.GetStatusCountForMunicipality(db, m.municipality_id, isArchive);
+                                var statusCountArray = Repository.GetStatusCountForMunicipality(db, m.municipality_id, formType, isArchive);
 
                                 var mTile = TileHelper.CreateMunitTileForMunicipality(m, isArchive);
                                 var formsCaption = isArchive ? "Архивные формы муниципалитетов" : "Формы муниципалитетов"; ;

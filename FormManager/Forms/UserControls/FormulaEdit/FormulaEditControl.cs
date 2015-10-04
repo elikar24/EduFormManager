@@ -59,7 +59,10 @@ namespace EduFormManager.Forms.UserControls.FormulaEdit
         {
             ExpressionBuilder expressionBuilder = ExpressionBuilderFactory.CreateExpressionBuilder(cellRangeList, this.CurrentLineText);
             if (expressionBuilder != null)
+            {
                 this.richEditControl.Document.Replace(this.CurrentLineDocumentRange, expressionBuilder.AddToLeft());
+                this.TextModified = true;
+            }
         }
 
         public void ReplaceLeftPart(IList<Range> cellRangeList)
@@ -69,6 +72,7 @@ namespace EduFormManager.Forms.UserControls.FormulaEdit
             {
                 expressionBuilder.LeftPart = string.Empty;
                 this.richEditControl.Document.Replace(this.CurrentLineDocumentRange, expressionBuilder.AddToLeft());
+                this.TextModified = true;
             }
         }
 
@@ -76,7 +80,10 @@ namespace EduFormManager.Forms.UserControls.FormulaEdit
         {
             ExpressionBuilder expressionBuilder = ExpressionBuilderFactory.CreateExpressionBuilder(cellRangeList, this.CurrentLineText);
             if (expressionBuilder != null)
+            {
                 this.richEditControl.Document.Replace(this.CurrentLineDocumentRange, expressionBuilder.AddToRight());
+                this.TextModified = true;
+            }
         }
 
         public void ReplaceRightPart(IList<Range> cellRangeList)
@@ -86,6 +93,7 @@ namespace EduFormManager.Forms.UserControls.FormulaEdit
             {
                 expressionBuilder.RightPart = string.Empty;
                 this.richEditControl.Document.Replace(this.CurrentLineDocumentRange, expressionBuilder.AddToRight());
+                this.TextModified = true;
             }
         }
 

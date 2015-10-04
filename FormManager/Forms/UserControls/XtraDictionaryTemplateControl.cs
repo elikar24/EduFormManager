@@ -124,16 +124,17 @@ namespace EduFormManager.Forms.UserControls
             {
                 templatedFormDataBindingSource.EndEdit();
                 ProgressDialog.ShowTop(this.ParentForm, description: "Сохраняю");
-                foreach (var template in _editedTemplates)
+                var template = this.listBoxTemplatedForm.SelectedItem as templated_form_data;
+                await Task.Run(() =>
                 {
-                    if (template == null) continue;
-                    //var formId = template.form.form_id;
-                    //if ((await Repo.Db.templated_form_data.CountAsync(t => t.form_id == formId)) == 0)
-                    //    Repo.Db.templated_form_data.Add(template);
-
-                    if (template.templated_form_data_id == 0)
-                        Repo.Db.templated_form_data.Add(template);
-                }
+                    UpdateTemplate(template);
+                    UpdateFormula(template);
+                    foreach (var editedTemplate in _editedTemplates)
+                    {
+                        if (editedTemplate == null) continue;
+                        if (editedTemplate.templated_form_data_id == 0)
+                            Repo.Db.templated_form_data.Add(editedTemplate);
+                    }});
                 await Repo.Db.SaveChangesAsync();
                 _editedTemplates.Clear();
                 ProgressDialog.HideTop();
@@ -181,6 +182,35 @@ namespace EduFormManager.Forms.UserControls
         {
             templatedFormDataBindingSource.DataSource = await Repo.GetTemplates();
             formBindingSource.DataSource = await Repo.GetFormsWithoutTemplates();
+        }
+
+        private void UpdateFormula(templated_form_data template)
+        {
+            if (!this.formulaEditControl1.TextModified) return;
+            if (template == null) return;
+            var form = template.form;
+            var encoding = Encoding.UTF8;
+            form.check_file_data = encoding.GetBytes(this.formulaEditControl1.Text);
+            form.check_file_md5 = FileUtility.GetCRC32AsHexString(form.check_file_data);
+
+            if (!_editedTemplates.Contains(template))
+            {
+                _editedTemplates.Add(template);
+                this.RefreshTemplateList();
+            }
+        }
+
+        private void UpdateTemplate(templated_form_data template)
+        {
+            if (!this.spreadsheetTemplate.Modified) return;
+            if (template == null) return;
+            template.file_data = this.GetDocumentBytes();
+
+            if (!_editedTemplates.Contains(template))
+            {
+                _editedTemplates.Add(template);
+                this.RefreshTemplateList();
+            }
         }
 
         async private void listBoxTemplatedForm_SelectedIndexChanged(object sender, EventArgs e)
@@ -298,20 +328,8 @@ namespace EduFormManager.Forms.UserControls
 
         private void formulaEditControl1_Leave(object sender, EventArgs e)
         {
-            if (!this.formulaEditControl1.TextModified) return;
             var template = this.listBoxTemplatedForm.SelectedItem as templated_form_data;
-            if (template == null) return;
-            var form = template.form;
-            var encoding = Encoding.UTF8;
-            form.check_file_data = encoding.GetBytes(this.formulaEditControl1.Text);
-            form.check_file_md5 = FileUtility.GetCRC32AsHexString(form.check_file_data);
-
-            if (!_editedTemplates.Contains(template))
-            {
-                _editedTemplates.Add(template);
-                this.RefreshTemplateList();
-            }
-
+            UpdateFormula(template);
         }
 
         public void RefreshTemplateList()
@@ -322,26 +340,14 @@ namespace EduFormManager.Forms.UserControls
 
         private void spreadsheetTemplate_Leave(object sender, EventArgs e)
         {
-            UpdateTemplate();
+            var template = this.listBoxTemplatedForm.SelectedItem as templated_form_data;
+            UpdateTemplate(template);
         }
 
         private void spreadsheetTemplate_ActiveSheetChanged(object sender, ActiveSheetChangedEventArgs e)
         {
-            UpdateTemplate();
-        }
-
-        private void UpdateTemplate()
-        {
-            if (!this.spreadsheetTemplate.Modified) return;
             var template = this.listBoxTemplatedForm.SelectedItem as templated_form_data;
-            if (template == null) return;
-            template.file_data = this.GetDocumentBytes();
-
-            if (!_editedTemplates.Contains(template))
-            {
-                _editedTemplates.Add(template);
-                this.RefreshTemplateList();
-            }
+            UpdateTemplate(template);
         }
     }
 }

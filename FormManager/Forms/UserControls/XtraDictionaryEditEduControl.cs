@@ -128,7 +128,10 @@ namespace EduFormManager.Forms.UserControls
             _edu.@operator = this.textBoxDictEduOperator.Text.Trim();
 
             if (_edu.edu_id == 0)
+            {
                 Repo.Db.edus.Add(_edu);
+                Repo.Db.SaveChanges();
+            }
 
             var cred = Repo.GetCredential(_edu.edu_id, Credentials.Type.Edu).Result;
             if (cred == null)
@@ -151,11 +154,14 @@ namespace EduFormManager.Forms.UserControls
 
         public bool CanSave()
         {
+            if (_edu == null) return false;
             string eduName = this.textBoxDictEduName.Text.Trim();
             string eduShortName = this.textBoxDictEduShortname.Text.Trim();
             var val1 = (Repo.GetEduByFullname(eduName).Result);
             var val2 = (Repo.GetEduByName(eduShortName).Result);
-            bool isEduExist = val1 != null || val2 != null;
+            bool isEduExist = 
+                (val1 != null && val1.edu_id != _edu.edu_id) || 
+                (val2 != null && val2.edu_id != _edu.edu_id);
                 
             if (isEduExist)
             {

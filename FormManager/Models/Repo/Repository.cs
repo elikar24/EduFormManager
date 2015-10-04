@@ -147,7 +147,7 @@ namespace EduFormManager.Models.Repo
             return GetStatusCount(db, query);
         }
 
-        public static long[] GetStatusCountForMunicipality(DbContext db, int munitId, bool isArchive)
+        public static long[] GetStatusCountForMunicipality(DbContext db, int munitId, FormType type, bool isArchive)
         {
             var year = DateTime.Now.Year;
             var query = string.Format(@"select
@@ -158,10 +158,12 @@ namespace EduFormManager.Models.Repo
                                         count(case when fd.status = 3 then 1 end) as expired_errors
                                         from municipality_form_data fd
                                         join municipality m on m.municipality_id = fd.municipality_id
+                                        join form f on f.form_id = fd.form_id
                                         where
-                                        m.municipality_id = {0} and
-                                        date_part('year'::text, fd.send_date) {1}
-                                        group by m.municipality_id", munitId, isArchive ? "<" + year : "=" + year);
+                                        m.municipality_id = {0} and 
+                                        f.form_type_id = {1} and 
+                                        date_part('year'::text, fd.send_date) {2} 
+                                        group by m.municipality_id", munitId, (int)type, isArchive ? "<" + year : "=" + year);
             return GetStatusCount(db, query);
         }
 

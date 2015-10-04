@@ -40,7 +40,10 @@ namespace EduFormManager.Forms.UserControls
             {
                 RebuildEduTree();
             };
-
+            this.eduBindingSource.PositionChanged += (sender, args) =>
+            {
+                this.editEduControl.Enabled = this.eduBindingSource.Position >= 0;
+            };
             this.treeViewEdu.AfterSelect += (s, e) =>
             {
                 var edu = e.Node.Tag as edu;
@@ -59,11 +62,18 @@ namespace EduFormManager.Forms.UserControls
                     this.editEduControl.Enabled = false;
                 }
             };
-
+            var timer = new Timer { Interval = 1200 };
+            timer.Tick += (sender, args) =>
+            {
+                timer.Stop();
+                var queryText = this.textBoxSearch.Text.ToLower();
+                this.eduBindingSource.DataSource = _eduList
+                    .Where(t => t.name.ToLower().Contains(queryText) || t.fullname.ToLower().Contains(queryText)).ToList();
+            };
             this.textBoxSearch.TextChanged += (sender, args) =>
             {
-                string queryText = this.textBoxSearch.Text;
-                this.eduBindingSource.DataSource = _eduList.Where(t => t.ContainsText(queryText));
+                timer.Stop();
+                timer.Start();
             };
 
             this.checkBoxShowToolTips.CheckedChanged += (sender, args) =>
@@ -101,25 +111,22 @@ namespace EduFormManager.Forms.UserControls
         {
             var nodeCollection = new List<TreeNode>();
             var bindList = (List<edu>) this.eduBindingSource.List;
-            if (bindList != null)
+            var grp = bindList.GroupBy(x => x.municipality).OrderBy(t => t.Key.name);
+            foreach (var grpItem in grp)
             {
-                var grp = bindList.GroupBy(x => x.municipality).OrderBy(t => t.Key.name);
-                foreach (var grpItem in grp)
+                var munitNode = new TreeNode() {Text = grpItem.Key.name, Tag = grpItem.Key};
+                foreach (var subItem in grpItem.OrderBy(t => t.name))
                 {
-                    var munitNode = new TreeNode() {Text = grpItem.Key.name, Tag = grpItem.Key};
-                    foreach (var subItem in grpItem.OrderBy(t => t.name))
+                    var eduNode = new TreeNode
                     {
-                        var eduNode = new TreeNode
-                        {
-                            Text = subItem.name,
-                            Tag = subItem,
-                            Name = subItem.name,
-                            ToolTipText = subItem.ToStringFull()
-                        };
-                        munitNode.Nodes.Add(eduNode);
-                    }
-                    nodeCollection.Add(munitNode);
+                        Text = subItem.name,
+                        Tag = subItem,
+                        Name = subItem.name,
+                        ToolTipText = subItem.ToStringFull()
+                    };
+                    munitNode.Nodes.Add(eduNode);
                 }
+                nodeCollection.Add(munitNode);
             }
             return nodeCollection.ToArray();
         }
@@ -160,13 +167,20 @@ namespace EduFormManager.Forms.UserControls
         }
         protected override void Save(Document doc)
         {
-            if (this.editEduControl.CanSave())
+            try
             {
-                var edu = this.editEduControl.Save();
-                RebuildEduTree();
-                this.SelectEdu(edu);
+                if (this.editEduControl.CanSave())
+                {
+                    var edu = this.editEduControl.Save();
+                    RebuildEduTree();
+                    this.SelectEdu(edu);
+                }
             }
-            
+            catch
+            {
+                this.ShowFlyoutMessageBox("Ошибка", "Не удалось сохранить");
+            }
+
             //base.UpdateData();
         }
 

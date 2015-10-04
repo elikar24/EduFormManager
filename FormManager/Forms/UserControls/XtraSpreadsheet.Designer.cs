@@ -56,13 +56,13 @@ namespace EduFormManager.Forms.UserControls
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.eduTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.queryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eduBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.municipalityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.templatedFormDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eduKindBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.messageBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formBindingSource)).BeginInit();
             this.toolStripForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -205,7 +205,7 @@ namespace EduFormManager.Forms.UserControls
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(251, 25);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem2.Text = "За год";
+            this.layoutControlItem2.Text = "Год";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(47, 21);
             // 
             // layoutControlItem5
@@ -334,13 +334,13 @@ namespace EduFormManager.Forms.UserControls
             this.Size = new System.Drawing.Size(854, 505);
             ((System.ComponentModel.ISupportInitialize)(this.eduTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.queryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eduBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.municipalityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.templatedFormDataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eduKindBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.messageBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.formTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formBindingSource)).EndInit();
             this.toolStripForm.ResumeLayout(false);
             this.toolStripForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
