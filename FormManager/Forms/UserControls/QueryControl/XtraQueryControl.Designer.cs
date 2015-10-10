@@ -39,8 +39,8 @@ namespace EduFormManager.Forms.UserControls.QueryControl
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.gridViewSummaryEdu = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colShortName1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlQuerySummary = new DevExpress.XtraGrid.GridControl();
@@ -75,10 +75,10 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tabbedControlGroup1 = new DevExpress.XtraLayout.TabbedControlGroup();
-            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.eduTypeBindingSource)).BeginInit();
@@ -116,17 +116,13 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             this.SuspendLayout();
-            // 
-            // queryBindingSource
-            // 
-            this.queryBindingSource.DataSource = typeof(EduFormManager.Models.query);
             // 
             // gridViewSummaryEdu
             // 
@@ -151,13 +147,13 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             // gridControlQuerySummary
             // 
             this.gridControlQuerySummary.DataSource = this.querySummaryModelBindingSource;
-            gridLevelNode3.LevelTemplate = this.gridViewSummaryEdu;
-            gridLevelNode3.RelationName = "EduList";
-            gridLevelNode4.LevelTemplate = this.gridViewSummaryQuery;
-            gridLevelNode4.RelationName = "QueryList";
+            gridLevelNode1.LevelTemplate = this.gridViewSummaryEdu;
+            gridLevelNode1.RelationName = "EduList";
+            gridLevelNode2.LevelTemplate = this.gridViewSummaryQuery;
+            gridLevelNode2.RelationName = "QueryList";
             this.gridControlQuerySummary.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode3,
-            gridLevelNode4});
+            gridLevelNode1,
+            gridLevelNode2});
             this.gridControlQuerySummary.Location = new System.Drawing.Point(612, 80);
             this.gridControlQuerySummary.MainView = this.gridViewSummary;
             this.gridControlQuerySummary.Name = "gridControlQuerySummary";
@@ -313,8 +309,8 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.queryControl.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.queryControl.Appearance.Options.UseForeColor = true;
             this.queryControl.ControlType = EduFormManager.Forms.UserControls.XtraBaseControl.Type.Form;
-            this.queryControl.FormTypeDataSource = null;
             this.queryControl.FormDataSource = null;
+            this.queryControl.FormTypeDataSource = null;
             this.queryControl.Location = new System.Drawing.Point(612, 80);
             this.queryControl.LookAndFeel.SkinName = "Office 2013";
             this.queryControl.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -532,6 +528,24 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.layoutControlGroup2,
             this.layoutControlGroup3});
             // 
+            // layoutControlGroup2
+            // 
+            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem2});
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup2.Name = "layoutControlGroup2";
+            this.layoutControlGroup2.Size = new System.Drawing.Size(520, 687);
+            this.layoutControlGroup2.Text = "Запросы";
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.queryControl;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(520, 687);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
+            // 
             // layoutControlGroup3
             // 
             this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
@@ -550,24 +564,6 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Top;
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
-            // 
-            // layoutControlGroup2
-            // 
-            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem2});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(520, 687);
-            this.layoutControlGroup2.Text = "Запросы";
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.queryControl;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(520, 687);
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem7
             // 
@@ -636,10 +632,10 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             this.ResumeLayout(false);

@@ -44,6 +44,8 @@ namespace EduFormManager
 
             public static void Run(Form f, StartupNextInstanceEventHandler startupHandler)
             {
+                DevExpress.UserSkins.BonusSkins.Register();
+
                 Form = f;
                 SingleInstanceApplication app = new SingleInstanceApplication();
                 app.MainForm = f;
