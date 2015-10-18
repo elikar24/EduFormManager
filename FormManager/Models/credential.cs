@@ -12,9 +12,7 @@ namespace EduFormManager.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class credential
-    {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public partial class credential{
         public credential()
         {
             this.queries = new HashSet<query>();
@@ -26,7 +24,6 @@ namespace EduFormManager.Models
         public Nullable<int> login_type { get; set; }
         public int credentials_id { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<query> queries { get; set; }
     }
 }

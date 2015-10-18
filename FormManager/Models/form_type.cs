@@ -12,9 +12,7 @@ namespace EduFormManager.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class form_type
-    {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public partial class form_type{
         public form_type()
         {
             this.forms = new HashSet<form>();
@@ -23,7 +21,8 @@ namespace EduFormManager.Models
         public int form_type_id { get; set; }
         public string name { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    	public override string ToString() { return this.name; }
+    
         public virtual ICollection<form> forms { get; set; }
     }
 }

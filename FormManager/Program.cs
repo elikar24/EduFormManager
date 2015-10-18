@@ -44,13 +44,10 @@ namespace EduFormManager
 
             public static void Run(Form f, StartupNextInstanceEventHandler startupHandler)
             {
-                DevExpress.UserSkins.BonusSkins.Register();
-
                 Form = f;
-                SingleInstanceApplication app = new SingleInstanceApplication();
-                app.MainForm = f;
+                var app = new SingleInstanceApplication { MainForm = f };
                 app.StartupNextInstance += startupHandler;
-                string[] args = Environment.GetCommandLineArgs();
+                var args = Environment.GetCommandLineArgs();
                 app.Run(args);
             }
         }   

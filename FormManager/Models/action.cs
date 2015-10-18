@@ -12,9 +12,7 @@ namespace EduFormManager.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class action
-    {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public partial class action{
         public action()
         {
             this.edu_log = new HashSet<edu_log>();
@@ -23,7 +21,6 @@ namespace EduFormManager.Models
         public int id { get; set; }
         public string title { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<edu_log> edu_log { get; set; }
     }
 }

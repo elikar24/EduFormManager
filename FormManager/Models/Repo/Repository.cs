@@ -418,7 +418,7 @@ namespace EduFormManager.Models.Repo
             });
         }
 
-        public Task<List<t_detailed_form_statistics>> GetDetailedFormStatistics(int munitId, int year)
+        public Task<List<t_detailed_form_statistics>> GetDetailedFormStatistics(int munitId, int year = 0)
         {
             return Task.Run(() =>
             {
@@ -428,6 +428,56 @@ namespace EduFormManager.Models.Repo
                     .Where(t => t.municipality_id == munitId)
                     .OrderBy(t => t.municipality)
                     .ThenBy(t => t.edu_name)
+                    .ThenBy(t => t.form)
+                    .ToList();
+            });
+        }
+
+        public Task<List<t_municipality_form_statistics>> GetMunicipalityFormStatistics()
+        {
+            return Task.Run(() =>
+            {
+                Db.Database.ExecuteSqlCommand("SELECT * FROM update_municipality_stats_view();");
+                return Db.t_municipality_form_statistics.AsNoTracking()
+                    .OrderBy(t => t.munit_name)
+                    .ToList();
+            });
+        }
+
+        public Task<List<t_municipality_form_statistics>> GetMunicipalityFormStatistics(int munitId)
+        {
+            return Task.Run(() =>
+            {
+                Db.Database.ExecuteSqlCommand("SELECT * FROM update_stats_view();");
+                return Db.t_municipality_form_statistics.AsNoTracking()
+                    .Where(t => t.munit_id == munitId)
+                    .OrderBy(t => t.munit_name)
+                    .ToList();
+            });
+        }
+
+        public Task<List<t_detailed_municipality_form_statistics>> GetDetailedMunicipalityFormStatistics(int year = 0)
+        {
+            return Task.Run(() =>
+            {
+                var currYear = year == 0 ? DateTime.Now.Year : year;
+                Db.Database.ExecuteSqlCommand("SELECT * FROM update_detailed_municipality_stats_view(@p0);", currYear);
+                return Db.t_detailed_municipality_form_statistics.AsNoTracking()
+                    .OrderBy(t => t.municipality)
+                    .ThenBy(t => t.form)
+                    .ToList();
+            });
+        }
+
+        public Task<List<t_detailed_municipality_form_statistics>> GetDetailedMunicipalityFormStatistics(int munitId, int year = 0)
+        {
+            return Task.Run(() =>
+            {
+                var currYear = year == 0 ? DateTime.Now.Year : year;
+                Db.Database.ExecuteSqlCommand("SELECT * FROM update_detailed_municipality_stats_view(@p0);", currYear);
+                return Db.t_detailed_municipality_form_statistics.AsNoTracking()
+                    .Where(t => t.municipality_id == munitId)
+                    .OrderBy(t => t.municipality)
                     .ThenBy(t => t.form)
                     .ToList();
             });

@@ -127,6 +127,8 @@ namespace EduFormManager
             this.documentFormStatisticsSummary = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.documentFormDetailedStatistics = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.documentSignInOutLog = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentMunicipalityFormStatistics = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentMunicipalityFormDetailedStatistics = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.tileMessageList = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.pageMessageList = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
             this.documentMessageList = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
@@ -157,6 +159,8 @@ namespace EduFormManager
             this.pageDetailedStatisticsReport = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
             this.documentFormDetailedStatisticsReport = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.tabbedGroupQueryReports = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TabbedGroup(this.components);
+            this.pageDetailedMunicipalityStatisticsReport = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
+            this.documentMunicipalityFormDetailedStatisticsReport = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.tileDictCheck = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.tileGroup1 = new DevExpress.XtraEditors.TileGroup();
             this.tileItem1 = new DevExpress.XtraEditors.TileItem();
@@ -172,14 +176,14 @@ namespace EduFormManager
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.loggedUserControl = new EduFormManager.Forms.UserControls.XtraLoggedUserControl();
-            this.button1 = new System.Windows.Forms.Button();
             this.buttonShowLogs = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.navigationBar1 = new EduFormManager.Forms.NavigationBar();
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.flyoutPanel1 = new DevExpress.Utils.FlyoutPanel();
             this.flyoutPanelControl1 = new DevExpress.Utils.FlyoutPanelControl();
             this.collapsableSideListBoxControl1 = new EduFormManager.Forms.CollapsableSideListBoxControl();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.expireWarnBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.documentManagerMain)).BeginInit();
@@ -226,6 +230,8 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.documentFormStatisticsSummary)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentFormDetailedStatistics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentSignInOutLog)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentMunicipalityFormStatistics)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentMunicipalityFormDetailedStatistics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileMessageList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageMessageList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentMessageList)).BeginInit();
@@ -256,16 +262,18 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.pageDetailedStatisticsReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentFormDetailedStatisticsReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedGroupQueryReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageDetailedMunicipalityStatisticsReport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentMunicipalityFormDetailedStatisticsReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileDictCheck)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
             this.splitContainerControl2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.flyoutPanel1)).BeginInit();
             this.flyoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControl1)).BeginInit();
             this.flyoutPanelControl1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.expireWarnBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -315,7 +323,8 @@ namespace EduFormManager
             this.flyoutExportReport,
             this.pageDetailedStatisticsReport,
             this.tabbedGroupQueryReports,
-            this.tabbedGroupStatistics});
+            this.tabbedGroupStatistics,
+            this.pageDetailedMunicipalityStatisticsReport});
             this.windowsUIViewMain.Documents.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseDocument[] {
             this.documentQueries,
             this.documentDictCheck,
@@ -339,7 +348,10 @@ namespace EduFormManager
             this.documentDictQuestionary,
             this.documentExportReport,
             this.documentFormDetailedStatistics,
-            this.documentFormDetailedStatisticsReport});
+            this.documentFormDetailedStatisticsReport,
+            this.documentMunicipalityFormStatistics,
+            this.documentMunicipalityFormDetailedStatistics,
+            this.documentMunicipalityFormDetailedStatisticsReport});
             this.windowsUIViewMain.FlyoutProperties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(83)))), ((int)(((byte)(142)))));
             this.windowsUIViewMain.FlyoutProperties.Appearance.ForeColor = System.Drawing.Color.White;
             this.windowsUIViewMain.FlyoutProperties.Appearance.Options.UseBackColor = true;
@@ -919,18 +931,20 @@ namespace EduFormManager
             this.documentFormStatistics,
             this.documentFormStatisticsSummary,
             this.documentFormDetailedStatistics,
-            this.documentSignInOutLog});
+            this.documentSignInOutLog,
+            this.documentMunicipalityFormStatistics,
+            this.documentMunicipalityFormDetailedStatistics});
             this.tabbedGroupStatistics.Name = "tabbedGroupStatistics";
             this.tabbedGroupStatistics.Parent = this.tileContainerMain;
             // 
             // documentFormStatistics
             // 
-            this.documentFormStatistics.Caption = "Статистика загрузки форм";
+            this.documentFormStatistics.Caption = "Статистика форм";
             this.documentFormStatistics.ControlName = "FormStatistics";
             // 
             // documentFormStatisticsSummary
             // 
-            this.documentFormStatisticsSummary.Caption = "Статистика загрузки форм (сводная)";
+            this.documentFormStatisticsSummary.Caption = "Статистика форм (сводная)";
             this.documentFormStatisticsSummary.ControlName = "FormStatisticsSummary";
             // 
             // documentFormDetailedStatistics
@@ -942,6 +956,16 @@ namespace EduFormManager
             // 
             this.documentSignInOutLog.Caption = "Лог посещений";
             this.documentSignInOutLog.ControlName = "SignInOutLog";
+            // 
+            // documentMunicipalityFormStatistics
+            // 
+            this.documentMunicipalityFormStatistics.Caption = "Статистистика форм муниципалитетов";
+            this.documentMunicipalityFormStatistics.ControlName = "MunicipalityFormStatistics";
+            // 
+            // documentMunicipalityFormDetailedStatistics
+            // 
+            this.documentMunicipalityFormDetailedStatistics.Caption = "Статистика форм (детально) муниципалитетов";
+            this.documentMunicipalityFormDetailedStatistics.ControlName = "MunicipalityFormDetailedStatistics";
             // 
             // tileMessageList
             // 
@@ -1228,6 +1252,18 @@ namespace EduFormManager
             this.tabbedGroupQueryReports.Properties.HeaderStyle = DevExpress.XtraBars.Docking2010.Views.WindowsUI.HeaderStyle.Tile;
             this.tabbedGroupQueryReports.Properties.TileSize = 150;
             // 
+            // pageDetailedMunicipalityStatisticsReport
+            // 
+            this.pageDetailedMunicipalityStatisticsReport.Caption = "Статистика форм муниципалитетов (детально)";
+            this.pageDetailedMunicipalityStatisticsReport.Document = this.documentMunicipalityFormDetailedStatisticsReport;
+            this.pageDetailedMunicipalityStatisticsReport.Name = "pageDetailedMunicipalityStatisticsReport";
+            this.pageDetailedMunicipalityStatisticsReport.Parent = this.tabbedGroupStatistics;
+            // 
+            // documentMunicipalityFormDetailedStatisticsReport
+            // 
+            this.documentMunicipalityFormDetailedStatisticsReport.Caption = "Статистика форм муниципалитетов (детально) отчет";
+            this.documentMunicipalityFormDetailedStatisticsReport.ControlName = "MunicipalityFormDetailedStatisticsReport";
+            // 
             // tileDictCheck
             // 
             this.tileDictCheck.ActivationTarget = this.pageCheck;
@@ -1359,19 +1395,6 @@ namespace EduFormManager
             this.loggedUserControl.Size = new System.Drawing.Size(360, 68);
             this.loggedUserControl.TabIndex = 4;
             // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::EduFormManager.Properties.Resources.Exclamation_24_white;
-            this.button1.Location = new System.Drawing.Point(1156, 29);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(25, 25);
-            this.button1.TabIndex = 6;
-            this.toolTip.SetToolTip(this.button1, "Показать уведомления");
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // buttonShowLogs
             // 
             this.buttonShowLogs.FlatAppearance.BorderSize = 0;
@@ -1384,6 +1407,19 @@ namespace EduFormManager
             this.toolTip.SetToolTip(this.buttonShowLogs, "Открыть каталог с логами");
             this.buttonShowLogs.UseVisualStyleBackColor = true;
             this.buttonShowLogs.Click += new System.EventHandler(this.buttonShowLogs_Click);
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::EduFormManager.Properties.Resources.Exclamation_24_white;
+            this.button1.Location = new System.Drawing.Point(1156, 29);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(25, 25);
+            this.button1.TabIndex = 6;
+            this.toolTip.SetToolTip(this.button1, "Показать уведомления");
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // navigationBar1
             // 
@@ -1415,17 +1451,6 @@ namespace EduFormManager
             this.splitContainerControl2.SplitterPosition = 88;
             this.splitContainerControl2.TabIndex = 6;
             this.splitContainerControl2.Text = "splitContainerControl2";
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.docContainer);
-            this.panel1.Location = new System.Drawing.Point(0, 32);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1186, 571);
-            this.panel1.TabIndex = 8;
             // 
             // flyoutPanel1
             // 
@@ -1479,6 +1504,17 @@ namespace EduFormManager
             this.collapsableSideListBoxControl1.Size = new System.Drawing.Size(361, 89);
             this.collapsableSideListBoxControl1.TabIndex = 0;
             this.collapsableSideListBoxControl1.View = null;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.docContainer);
+            this.panel1.Location = new System.Drawing.Point(0, 32);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1186, 571);
+            this.panel1.TabIndex = 8;
             // 
             // expireWarnBindingSource
             // 
@@ -1547,6 +1583,8 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.documentFormStatisticsSummary)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentFormDetailedStatistics)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentSignInOutLog)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentMunicipalityFormStatistics)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentMunicipalityFormDetailedStatistics)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileMessageList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageMessageList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentMessageList)).EndInit();
@@ -1577,17 +1615,19 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.pageDetailedStatisticsReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentFormDetailedStatisticsReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedGroupQueryReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageDetailedMunicipalityStatisticsReport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentMunicipalityFormDetailedStatisticsReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileDictCheck)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
             this.splitContainerControl2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.flyoutPanel1)).EndInit();
             this.flyoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControl1)).EndInit();
             this.flyoutPanelControl1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.expireWarnBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -1699,6 +1739,10 @@ namespace EduFormManager
         private TabbedGroup tabbedGroupStatistics;
         private Tile tileMunicipalityAdditonalForms;
         private Tile tileArchiveMunicipalityAdditonalForms;
+        private Document documentMunicipalityFormStatistics;
+        private Document documentMunicipalityFormDetailedStatistics;
+        private Page pageDetailedMunicipalityStatisticsReport;
+        private Document documentMunicipalityFormDetailedStatisticsReport;
     }
 }
 

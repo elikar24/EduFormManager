@@ -17,18 +17,16 @@ namespace EduFormManager.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class edu
-    {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public partial class edu{
         public edu()
         {
             this.edu_form_data = new HashSet<edu_form_data>();
             this.messages = new HashSet<message>();
-            this.activity_ype = new HashSet<activity_ype>();
             this.management_agency = new HashSet<management_agency>();
             this.management_agency_activity = new HashSet<management_agency_activity>();
+            this.activity_type = new HashSet<activity_type>();
         }
-
+    
         public int edu_id { get; set; }
         [Description("Наименование")]
         public string fullname { get; set; }
@@ -76,9 +74,9 @@ namespace EduFormManager.Models
         [Description("Аккредитация действительна до")]
         public System.DateTime accreditation_end_date { get; set; }
         public System.DateTime license_end_date { get; set; }
-
-        public virtual ICollection<edu_log> edu_log { get; set; }
-        public virtual ICollection<edu_form_data> edu_form_data { get; set; }
+    
+    	public override string ToString() { return this.name; }
+    
         [Description("Тип")]
         public virtual edu_type edu_type { get; set; }
         [Description("Муниципалитет")]
@@ -87,15 +85,16 @@ namespace EduFormManager.Models
         public virtual ownership_type ownership_type { get; set; }
         [Description("Статус")]
         public virtual edu_status edu_status { get; set; }
+        public virtual ICollection<edu_form_data> edu_form_data { get; set; }
         [Description("Вид")]
         public virtual edu_kind edu_kind { get; set; }
         public virtual ICollection<message> messages { get; set; }
-        [Description("Виды деятельности")]
-        public virtual ICollection<activity_ype> activity_ype { get; set; }
         [Description("Органы государственно-общественного управления")]
         public virtual ICollection<management_agency> management_agency { get; set; }
         [Description("Виды деятельности органов государственно-общественного управления")]
         public virtual ICollection<management_agency_activity> management_agency_activity { get; set; }
+        [Description("Виды деятельности")]
+        public virtual ICollection<activity_type> activity_type { get; set; }
 
         public virtual bool ContainsText(string text)
         {
@@ -143,11 +142,6 @@ namespace EduFormManager.Models
             stringBuilder.AppendLine(string.Format("• {0}: {1}", "Число филиалов", this.branch_num));
 
             return stringBuilder.ToString();
-        }
-
-        public override string ToString()
-        {
-            return name;
         }
     }
 }

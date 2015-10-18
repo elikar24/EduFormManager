@@ -12,9 +12,7 @@ namespace EduFormManager.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class file
-    {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public partial class file{
         public file()
         {
             this.edu_form_data = new HashSet<edu_form_data>();
@@ -23,11 +21,9 @@ namespace EduFormManager.Models
     
         public int file_id { get; set; }
         public byte[] contents { get; set; }
-        public Nullable<int> code_page { get; set; }
+        public int code_page { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<edu_form_data> edu_form_data { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<municipality_form_data> municipality_form_data { get; set; }
     }
 }

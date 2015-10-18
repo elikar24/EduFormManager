@@ -12,8 +12,7 @@ namespace EduFormManager.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class mm_regular__summary_form
-    {
+    public partial class mm_regular__summary_form{
         public int regular_form_id { get; set; }
         public int summary_form_id { get; set; }
         public byte[] file_data { get; set; }

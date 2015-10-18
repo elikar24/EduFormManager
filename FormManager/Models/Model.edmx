@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Provider="Npgsql" ProviderManifestToken="9.3.3" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Model.Store" Provider="Npgsql" ProviderManifestToken="9.3.3" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="action">
           <Key>
             <PropertyRef Name="id" />
@@ -18,10 +18,10 @@
           </Key>
           <Property Name="id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="created" Type="timestamp" Nullable="false" />
-          <Property Name="action_id" Type="int4" Nullable="false" />
           <Property Name="message" Type="varchar" MaxLength="8000" />
+          <Property Name="action_id" Type="int4" Nullable="false" />
         </EntityType>
-        <EntityType Name="activity_ype">
+        <EntityType Name="activity_type">
           <Key>
             <PropertyRef Name="activity_type_id" />
           </Key>
@@ -85,9 +85,9 @@
           <Property Name="document_format_id" Type="int4" Nullable="false" />
           <Property Name="form_id" Type="int4" Nullable="false" />
           <Property Name="edu_id" Type="int4" Nullable="false" />
-          <Property Name="send_date" Type="date" />
-          <Property Name="status" Type="int4" />
-          <Property Name="file_id" Type="int4" />
+          <Property Name="send_date" Type="date" Nullable="false" />
+          <Property Name="status" Type="int4" Nullable="false" />
+          <Property Name="file_id" Type="int4" Nullable="false" />
         </EntityType>
         <EntityType Name="edu_kind">
           <Key>
@@ -101,22 +101,22 @@
             <PropertyRef Name="edu_status_id" />
           </Key>
           <Property Name="edu_status_id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="edu_type">
           <Key>
             <PropertyRef Name="edu_type_id" />
           </Key>
           <Property Name="edu_type_id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="file">
           <Key>
             <PropertyRef Name="file_id" />
           </Key>
           <Property Name="file_id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="contents" Type="bytea" />
-          <Property Name="code_page" Type="int4" />
+          <Property Name="contents" Type="bytea" Nullable="false" />
+          <Property Name="code_page" Type="int4" Nullable="false" />
         </EntityType>
         <EntityType Name="form">
           <Key>
@@ -124,17 +124,17 @@
           </Key>
           <Property Name="form_id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="254" Nullable="false" />
-          <Property Name="submission_date" Type="date" />
+          <Property Name="submission_date" Type="date" Nullable="false" />
           <Property Name="check_file_md5" Type="varchar" MaxLength="4096" />
-          <Property Name="form_type_id" Type="int4" />
-          <Property Name="check_file_data" Type="bytea" />
+          <Property Name="form_type_id" Type="int4" Nullable="false" />
+          <Property Name="check_file_data" Type="bytea" Nullable="false" />
         </EntityType>
         <EntityType Name="form_type">
           <Key>
             <PropertyRef Name="form_type_id" />
           </Key>
           <Property Name="form_type_id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="8000" />
+          <Property Name="name" Type="varchar" MaxLength="8000" Nullable="false" />
         </EntityType>
         <EntityType Name="management_agency">
           <Key>
@@ -157,9 +157,9 @@
           <Property Name="message_id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="subject" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="body" Type="text" Nullable="false" />
-          <Property Name="from_edu_id" Type="int4" />
+          <Property Name="from_edu_id" Type="int4" Nullable="false" />
           <Property Name="send_date" Type="timestamp" Nullable="false" />
-          <Property Name="is_viewed" Type="bool" />
+          <Property Name="is_viewed" Type="bool" Nullable="false" />
         </EntityType>
         <EntityType Name="mm_edu__activity_type">
           <Key>
@@ -219,9 +219,9 @@
           <Property Name="document_format_id" Type="int4" Nullable="false" />
           <Property Name="form_id" Type="int4" Nullable="false" />
           <Property Name="municipality_id" Type="int4" Nullable="false" />
-          <Property Name="send_date" Type="date" />
-          <Property Name="status" Type="int4" />
-          <Property Name="file_id" Type="int4" />
+          <Property Name="send_date" Type="date" Nullable="false" />
+          <Property Name="status" Type="int4" Nullable="false" />
+          <Property Name="file_id" Type="int4" Nullable="false" />
         </EntityType>
         <EntityType Name="ownership_type">
           <Key>
@@ -238,7 +238,7 @@
           <Property Name="title" Type="varchar" MaxLength="225" Nullable="false" />
           <Property Name="form_id" Type="int4" Nullable="false" />
           <Property Name="content" Type="varchar" MaxLength="225" Nullable="false" />
-          <Property Name="credentials_id" Type="int4" />
+          <Property Name="credentials_id" Type="int4" Nullable="false" />
         </EntityType>
         <EntityType Name="query_autocomplete_part">
           <Key>
@@ -257,46 +257,74 @@
             <PropertyRef Name="row_id" />
           </Key>
           <Property Name="row_id" Type="int8" Nullable="false" />
-          <Property Name="form_type_id" Type="int4" />
+          <Property Name="form_type_id" Type="int4" Nullable="false" />
           <Property Name="form_type" Type="varchar" MaxLength="8000" />
           <Property Name="edu_kind" Type="varchar" MaxLength="225" />
-          <Property Name="municipality_id" Type="int4" />
+          <Property Name="municipality_id" Type="int4" Nullable="false" />
           <Property Name="municipality" Type="varchar" MaxLength="200" />
           <Property Name="form" Type="varchar" MaxLength="254" />
-          <Property Name="form_id" Type="int4" />
+          <Property Name="form_id" Type="int4" Nullable="false" />
           <Property Name="edu_name" Type="varchar" MaxLength="8000" />
-          <Property Name="is_uploaded" Type="int4" />
-          <Property Name="year" Type="int4" />
+          <Property Name="is_uploaded" Type="int4" Nullable="false" />
+          <Property Name="year" Type="int4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="t_detailed_municipality_form_statistics">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int8" Nullable="false" />
+          <Property Name="form_type_id" Type="int4" Nullable="false" />
+          <Property Name="form_type" Type="varchar" MaxLength="8000" />
+          <Property Name="form" Type="varchar" MaxLength="254" />
+          <Property Name="form_id" Type="int4" Nullable="false" />
+          <Property Name="municipality_id" Type="int4" Nullable="false" />
+          <Property Name="municipality" Type="varchar" MaxLength="200" />
+          <Property Name="is_uploaded" Type="int4" Nullable="false" />
+          <Property Name="year" Type="int4" Nullable="false" />
         </EntityType>
         <EntityType Name="t_form_statistics">
           <Key>
             <PropertyRef Name="row_id" />
           </Key>
           <Property Name="row_id" Type="int8" Nullable="false" />
-          <Property Name="munit_id" Type="int4" />
+          <Property Name="munit_id" Type="int4" Nullable="false" />
           <Property Name="munit_name" Type="varchar" MaxLength="200" />
-          <Property Name="edu_id" Type="int4" />
+          <Property Name="edu_id" Type="int4" Nullable="false" />
           <Property Name="org_shortname" Type="varchar" MaxLength="8000" />
-          <Property Name="overall_count" Type="int8" />
-          <Property Name="ok_count" Type="int8" />
-          <Property Name="expired_count" Type="int8" />
-          <Property Name="error_count" Type="int8" />
-          <Property Name="bad_count" Type="int8" />
-          <Property Name="loaded_count" Type="int8" />
+          <Property Name="overall_count" Type="int8" Nullable="false" />
+          <Property Name="ok_count" Type="int8" Nullable="false" />
+          <Property Name="expired_count" Type="int8" Nullable="false" />
+          <Property Name="error_count" Type="int8" Nullable="false" />
+          <Property Name="bad_count" Type="int8" Nullable="false" />
+          <Property Name="loaded_count" Type="int8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="t_municipality_form_statistics">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int8" Nullable="false" />
+          <Property Name="munit_id" Type="int4" Nullable="false" />
+          <Property Name="munit_name" Type="varchar" MaxLength="200" />
+          <Property Name="overall_count" Type="int8" Nullable="false" />
+          <Property Name="ok_count" Type="int8" Nullable="false" />
+          <Property Name="expired_count" Type="int8" Nullable="false" />
+          <Property Name="error_count" Type="int8" Nullable="false" />
+          <Property Name="bad_count" Type="int8" Nullable="false" />
+          <Property Name="loaded_count" Type="int8" Nullable="false" />
         </EntityType>
         <EntityType Name="t_summary_form_statistics">
           <Key>
             <PropertyRef Name="row_id" />
           </Key>
           <Property Name="row_id" Type="int8" Nullable="false" />
-          <Property Name="municipality_id" Type="int4" />
+          <Property Name="municipality_id" Type="int4" Nullable="false" />
           <Property Name="municipality_title" Type="varchar" MaxLength="200" />
-          <Property Name="overall_count" Type="int8" />
-          <Property Name="loaded_count" Type="int8" />
-          <Property Name="ok_count" Type="int8" />
-          <Property Name="expired_count" Type="int8" />
-          <Property Name="error_count" Type="int8" />
-          <Property Name="bad_count" Type="int8" />
+          <Property Name="overall_count" Type="int8" Nullable="false" />
+          <Property Name="loaded_count" Type="int8" Nullable="false" />
+          <Property Name="ok_count" Type="int8" Nullable="false" />
+          <Property Name="expired_count" Type="int8" Nullable="false" />
+          <Property Name="error_count" Type="int8" Nullable="false" />
+          <Property Name="bad_count" Type="int8" Nullable="false" />
         </EntityType>
         <EntityType Name="templated_form_data">
           <Key>
@@ -342,7 +370,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="edu_log_action_id_fkey">
+        <Association Name="edu_log2_action_id_fkey">
           <End Role="action" Type="Self.action" Multiplicity="1" />
           <End Role="edu_log" Type="Self.edu_log" Multiplicity="*" />
           <ReferentialConstraint>
@@ -451,7 +479,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="form_data_file_id_fkey">
-          <End Role="file" Type="Self.file" Multiplicity="0..1" />
+          <End Role="file" Type="Self.file" Multiplicity="1" />
           <End Role="edu_form_data" Type="Self.edu_form_data" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="file">
@@ -463,7 +491,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="form_form_type_id_fkey">
-          <End Role="form_type" Type="Self.form_type" Multiplicity="0..1" />
+          <End Role="form_type" Type="Self.form_type" Multiplicity="1" />
           <End Role="form" Type="Self.form" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="form_type">
@@ -474,20 +502,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="kind_fkey">
-          <End Role="edu_kind" Type="Self.edu_kind" Multiplicity="0..1" />
-          <End Role="edu" Type="Self.edu" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="edu_kind">
-              <PropertyRef Name="edu_kind_id" />
-            </Principal>
-            <Dependent Role="edu">
-              <PropertyRef Name="edu_kind_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="message_from_edu_org_id_fkey">
-          <End Role="edu" Type="Self.edu" Multiplicity="0..1" />
+          <End Role="edu" Type="Self.edu" Multiplicity="1" />
           <End Role="message" Type="Self.message" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="edu">
@@ -499,10 +515,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="mm_edu_org_activity_type_activity_type_id_fkey">
-          <End Role="activity_ype" Type="Self.activity_ype" Multiplicity="1" />
+          <End Role="activity_type" Type="Self.activity_type" Multiplicity="1" />
           <End Role="mm_edu__activity_type" Type="Self.mm_edu__activity_type" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="activity_ype">
+            <Principal Role="activity_type">
               <PropertyRef Name="activity_type_id" />
             </Principal>
             <Dependent Role="mm_edu__activity_type">
@@ -643,7 +659,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="municipality_form_data_file_id_fkey">
-          <End Role="file" Type="Self.file" Multiplicity="0..1" />
+          <End Role="file" Type="Self.file" Multiplicity="1" />
           <End Role="municipality_form_data" Type="Self.municipality_form_data" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="file">
@@ -667,7 +683,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="query_credentials_id_fkey">
-          <End Role="credentials" Type="Self.credentials" Multiplicity="0..1" />
+          <End Role="credentials" Type="Self.credentials" Multiplicity="1" />
           <End Role="query" Type="Self.query" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="credentials">
@@ -705,7 +721,7 @@
         <EntityContainer Name="ModelStoreContainer">
           <EntitySet Name="action" EntityType="Self.action" Schema="logs" store:Type="Tables" />
           <EntitySet Name="edu_log" EntityType="Self.edu_log" Schema="logs" store:Type="Tables" />
-          <EntitySet Name="activity_ype" EntityType="Self.activity_ype" Schema="public" store:Type="Tables" />
+          <EntitySet Name="activity_type" EntityType="Self.activity_type" Schema="public" store:Type="Tables" />
           <EntitySet Name="credentials" EntityType="Self.credentials" Schema="public" store:Type="Tables" />
           <EntitySet Name="document_format" EntityType="Self.document_format" Schema="public" store:Type="Tables" />
           <EntitySet Name="edu" EntityType="Self.edu" Schema="public" store:Type="Tables" />
@@ -731,7 +747,9 @@
           <EntitySet Name="query_autocomplete_part" EntityType="Self.query_autocomplete_part" Schema="public" store:Type="Tables" />
           <EntitySet Name="query_head_part" EntityType="Self.query_head_part" Schema="public" store:Type="Tables" />
           <EntitySet Name="t_detailed_form_statistics" EntityType="Self.t_detailed_form_statistics" Schema="public" store:Type="Tables" />
+          <EntitySet Name="t_detailed_municipality_form_statistics" EntityType="Self.t_detailed_municipality_form_statistics" Schema="public" store:Type="Tables" />
           <EntitySet Name="t_form_statistics" EntityType="Self.t_form_statistics" Schema="public" store:Type="Tables" />
+          <EntitySet Name="t_municipality_form_statistics" EntityType="Self.t_municipality_form_statistics" Schema="public" store:Type="Tables" />
           <EntitySet Name="t_summary_form_statistics" EntityType="Self.t_summary_form_statistics" Schema="public" store:Type="Tables" />
           <EntitySet Name="templated_form_data" EntityType="Self.templated_form_data" Schema="public" store:Type="Tables" />
           <EntitySet Name="answer" EntityType="Self.answer" Schema="questionary" store:Type="Tables" />
@@ -741,7 +759,7 @@
             <End Role="question" EntitySet="question" />
             <End Role="answer" EntitySet="answer" />
           </AssociationSet>
-          <AssociationSet Name="edu_log_action_id_fkey" Association="Self.edu_log_action_id_fkey">
+          <AssociationSet Name="edu_log2_action_id_fkey" Association="Self.edu_log2_action_id_fkey">
             <End Role="action" EntitySet="action" />
             <End Role="edu_log" EntitySet="edu_log" />
           </AssociationSet>
@@ -785,16 +803,12 @@
             <End Role="form_type" EntitySet="form_type" />
             <End Role="form" EntitySet="form" />
           </AssociationSet>
-          <AssociationSet Name="kind_fkey" Association="Self.kind_fkey">
-            <End Role="edu_kind" EntitySet="edu_kind" />
-            <End Role="edu" EntitySet="edu" />
-          </AssociationSet>
           <AssociationSet Name="message_from_edu_org_id_fkey" Association="Self.message_from_edu_org_id_fkey">
             <End Role="edu" EntitySet="edu" />
             <End Role="message" EntitySet="message" />
           </AssociationSet>
           <AssociationSet Name="mm_edu_org_activity_type_activity_type_id_fkey" Association="Self.mm_edu_org_activity_type_activity_type_id_fkey">
-            <End Role="activity_ype" EntitySet="activity_ype" />
+            <End Role="activity_type" EntitySet="activity_type" />
             <End Role="mm_edu__activity_type" EntitySet="mm_edu__activity_type" />
           </AssociationSet>
           <AssociationSet Name="mm_edu_org_activity_type_edu_org_id_fkey" Association="Self.mm_edu_org_activity_type_edu_org_id_fkey">
@@ -862,8 +876,7 @@
             <End Role="question" EntitySet="question" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -884,14 +897,6 @@
           <Property Name="action_id" Type="Int32" Nullable="false" />
           <Property Name="message" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="action" Relationship="Self.edu_log_action_id_fkey" FromRole="edu_log" ToRole="action" />
-        </EntityType>
-        <EntityType Name="activity_ype">
-          <Key>
-            <PropertyRef Name="activity_type_id" />
-          </Key>
-          <Property Name="activity_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="edus" Relationship="Self.mm_edu__activity_type" FromRole="activity_ype" ToRole="edu" />
         </EntityType>
         <EntityType Name="credential">
           <Key>
@@ -951,9 +956,9 @@
           <NavigationProperty Name="edu_form_data" Relationship="Self.form_data_eduorg_id_fkey" FromRole="edu" ToRole="edu_form_data" />
           <NavigationProperty Name="edu_kind" Relationship="Self.kind_fkey" FromRole="edu" ToRole="edu_kind" />
           <NavigationProperty Name="messages" Relationship="Self.message_from_edu_org_id_fkey" FromRole="edu" ToRole="message" />
-          <NavigationProperty Name="activity_ype" Relationship="Self.mm_edu__activity_type" FromRole="edu" ToRole="activity_ype" />
           <NavigationProperty Name="management_agency" Relationship="Self.mm_edu__management_agency" FromRole="edu" ToRole="management_agency" />
           <NavigationProperty Name="management_agency_activity" Relationship="Self.mm_edu__management_agency_activity" FromRole="edu" ToRole="management_agency_activity" />
+          <NavigationProperty Name="activity_type" Relationship="Model.mm_edu__activity_type1" FromRole="edu" ToRole="activity_type" />
         </EntityType>
         <EntityType Name="edu_form_data">
           <Key>
@@ -964,7 +969,7 @@
           <Property Name="form_id" Type="Int32" Nullable="false" />
           <Property Name="edu_id" Type="Int32" Nullable="false" />
           <Property Name="send_date" Type="DateTime" Precision="0" Nullable="false" />
-          <Property Name="status" Type="Int32" />
+          <Property Name="status" Type="Int32" Nullable="false" />
           <Property Name="file_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="document_format" Relationship="Self.form_data_document_format_id_fkey" FromRole="edu_form_data" ToRole="document_format" />
           <NavigationProperty Name="edu" Relationship="Self.form_data_eduorg_id_fkey" FromRole="edu_form_data" ToRole="edu" />
@@ -985,7 +990,7 @@
             <PropertyRef Name="edu_status_id" />
           </Key>
           <Property Name="edu_status_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="edus" Relationship="Self.edu_org_status_id_fkey" FromRole="edu_status" ToRole="edu" />
         </EntityType>
         <EntityType Name="edu_type">
@@ -993,7 +998,7 @@
             <PropertyRef Name="edu_type_id" />
           </Key>
           <Property Name="edu_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="edus" Relationship="Self.edu_org_edu_org_type_id_fkey" FromRole="edu_type" ToRole="edu" />
         </EntityType>
         <EntityType Name="file">
@@ -1001,8 +1006,8 @@
             <PropertyRef Name="file_id" />
           </Key>
           <Property Name="file_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="contents" Type="Binary" MaxLength="2147483647" FixedLength="false" />
-          <Property Name="code_page" Type="Int32" />
+          <Property Name="contents" Type="Binary" MaxLength="2147483647" FixedLength="false" Nullable="false" />
+          <Property Name="code_page" Type="Int32" Nullable="false" />
           <NavigationProperty Name="edu_form_data" Relationship="Self.form_data_file_id_fkey" FromRole="file" ToRole="edu_form_data" />
           <NavigationProperty Name="municipality_form_data" Relationship="Self.municipality_form_data_file_id_fkey" FromRole="file" ToRole="municipality_form_data" />
         </EntityType>
@@ -1015,7 +1020,7 @@
           <Property Name="submission_date" Type="DateTime" Precision="0" Nullable="false" />
           <Property Name="check_file_md5" Type="String" MaxLength="4096" FixedLength="false" Unicode="true" />
           <Property Name="form_type_id" Type="Int32" Nullable="false" />
-          <Property Name="check_file_data" Type="Binary" MaxLength="2147483647" FixedLength="false" />
+          <Property Name="check_file_data" Type="Binary" MaxLength="2147483647" FixedLength="false" Nullable="false" />
           <NavigationProperty Name="edu_form_data" Relationship="Self.form_data_allform_id_fkey" FromRole="form" ToRole="edu_form_data" />
           <NavigationProperty Name="templated_form_data" Relationship="Self.fkey" FromRole="form" ToRole="templated_form_data" />
           <NavigationProperty Name="form_type" Relationship="Self.form_form_type_id_fkey" FromRole="form" ToRole="form_type" />
@@ -1030,7 +1035,7 @@
             <PropertyRef Name="form_type_id" />
           </Key>
           <Property Name="form_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="forms" Relationship="Self.form_form_type_id_fkey" FromRole="form_type" ToRole="form" />
         </EntityType>
         <EntityType Name="management_agency">
@@ -1092,7 +1097,7 @@
           <Property Name="form_id" Type="Int32" Nullable="false" />
           <Property Name="municipality_id" Type="Int32" Nullable="false" />
           <Property Name="send_date" Type="DateTime" Precision="0" Nullable="false" />
-          <Property Name="status" Type="Int32" />
+          <Property Name="status" Type="Int32" Nullable="false" />
           <Property Name="file_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="document_format" Relationship="Self.municipality_form_data_document_format_id_fkey" FromRole="municipality_form_data" ToRole="document_format" />
           <NavigationProperty Name="file" Relationship="Self.municipality_form_data_file_id_fkey" FromRole="municipality_form_data" ToRole="file" />
@@ -1115,7 +1120,7 @@
           <Property Name="title" Type="String" MaxLength="225" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="form_id" Type="Int32" Nullable="false" />
           <Property Name="content" Type="String" MaxLength="225" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="credentials_id" Type="Int32" />
+          <Property Name="credentials_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="credential" Relationship="Self.query_credentials_id_fkey" FromRole="query" ToRole="credentials" />
           <NavigationProperty Name="form" Relationship="Self.query_form_id_fkey" FromRole="query" ToRole="form" />
         </EntityType>
@@ -1136,46 +1141,46 @@
             <PropertyRef Name="row_id" />
           </Key>
           <Property Name="row_id" Type="Int64" Nullable="false" />
-          <Property Name="form_type_id" Type="Int32" />
+          <Property Name="form_type_id" Type="Int32" Nullable="false" />
           <Property Name="form_type" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
           <Property Name="edu_kind" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
-          <Property Name="municipality_id" Type="Int32" />
+          <Property Name="municipality_id" Type="Int32" Nullable="false" />
           <Property Name="municipality" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="form" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
-          <Property Name="form_id" Type="Int32" />
+          <Property Name="form_id" Type="Int32" Nullable="false" />
           <Property Name="edu_name" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
-          <Property Name="is_uploaded" Type="Int32" />
-          <Property Name="year" Type="Int32" />
+          <Property Name="is_uploaded" Type="Int32" Nullable="false" />
+          <Property Name="year" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="t_form_statistics">
           <Key>
             <PropertyRef Name="row_id" />
           </Key>
           <Property Name="row_id" Type="Int64" Nullable="false" />
-          <Property Name="munit_id" Type="Int32" />
+          <Property Name="munit_id" Type="Int32" Nullable="false" />
           <Property Name="munit_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="edu_id" Type="Int32" />
+          <Property Name="edu_id" Type="Int32" Nullable="false" />
           <Property Name="org_shortname" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
-          <Property Name="overall_count" Type="Int64" />
-          <Property Name="ok_count" Type="Int64" />
-          <Property Name="expired_count" Type="Int64" />
-          <Property Name="error_count" Type="Int64" />
-          <Property Name="bad_count" Type="Int64" />
-          <Property Name="loaded_count" Type="Int64" />
+          <Property Name="overall_count" Type="Int64" Nullable="false" />
+          <Property Name="ok_count" Type="Int64" Nullable="false" />
+          <Property Name="expired_count" Type="Int64" Nullable="false" />
+          <Property Name="error_count" Type="Int64" Nullable="false" />
+          <Property Name="bad_count" Type="Int64" Nullable="false" />
+          <Property Name="loaded_count" Type="Int64" Nullable="false" />
         </EntityType>
         <EntityType Name="t_summary_form_statistics">
           <Key>
             <PropertyRef Name="row_id" />
           </Key>
           <Property Name="row_id" Type="Int64" Nullable="false" />
-          <Property Name="municipality_id" Type="Int32" />
+          <Property Name="municipality_id" Type="Int32" Nullable="false" />
           <Property Name="municipality_title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="overall_count" Type="Int64" />
-          <Property Name="loaded_count" Type="Int64" />
-          <Property Name="ok_count" Type="Int64" />
-          <Property Name="expired_count" Type="Int64" />
-          <Property Name="error_count" Type="Int64" />
-          <Property Name="bad_count" Type="Int64" />
+          <Property Name="overall_count" Type="Int64" Nullable="false" />
+          <Property Name="loaded_count" Type="Int64" Nullable="false" />
+          <Property Name="ok_count" Type="Int64" Nullable="false" />
+          <Property Name="expired_count" Type="Int64" Nullable="false" />
+          <Property Name="error_count" Type="Int64" Nullable="false" />
+          <Property Name="bad_count" Type="Int64" Nullable="false" />
         </EntityType>
         <EntityType Name="templated_form_data">
           <Key>
@@ -1227,7 +1232,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="query_credentials_id_fkey">
-          <End Role="credentials" Type="Self.credential" Multiplicity="0..1" />
+          <End Role="credentials" Type="Self.credential" Multiplicity="1" />
           <End Role="query" Type="Self.query" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="credentials">
@@ -1490,10 +1495,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="mm_edu__activity_type">
-          <End Role="activity_ype" Type="Self.activity_ype" Multiplicity="*" />
-          <End Role="edu" Type="Self.edu" Multiplicity="*" />
-        </Association>
         <Association Name="mm_edu__management_agency">
           <End Role="edu" Type="Self.edu" Multiplicity="*" />
           <End Role="management_agency" Type="Self.management_agency" Multiplicity="*" />
@@ -1509,7 +1510,6 @@
         <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="actions" EntityType="Self.action" />
           <EntitySet Name="edu_log" EntityType="Self.edu_log" />
-          <EntitySet Name="activity_ype" EntityType="Self.activity_ype" />
           <EntitySet Name="credentials" EntityType="Self.credential" />
           <EntitySet Name="document_format" EntityType="Self.document_format" />
           <EntitySet Name="edus" EntityType="Self.edu" />
@@ -1629,10 +1629,6 @@
             <End Role="questionary" EntitySet="questionaries" />
             <End Role="question" EntitySet="questions" />
           </AssociationSet>
-          <AssociationSet Name="mm_edu__activity_type" Association="Self.mm_edu__activity_type">
-            <End Role="activity_ype" EntitySet="activity_ype" />
-            <End Role="edu" EntitySet="edus" />
-          </AssociationSet>
           <AssociationSet Name="mm_edu__management_agency" Association="Self.mm_edu__management_agency">
             <End Role="edu" EntitySet="edus" />
             <End Role="management_agency" EntitySet="management_agency" />
@@ -1645,7 +1641,54 @@
             <End Role="form" EntitySet="forms" />
             <End Role="edu_kind" EntitySet="edu_kind" />
           </AssociationSet>
+          <EntitySet Name="activity_type" EntityType="Model.activity_type" />
+          <EntitySet Name="t_detailed_municipality_form_statistics" EntityType="Model.t_detailed_municipality_form_statistics" />
+          <EntitySet Name="t_municipality_form_statistics" EntityType="Model.t_municipality_form_statistics" />
+          <AssociationSet Name="mm_edu__activity_type1" Association="Model.mm_edu__activity_type1">
+            <End Role="activity_type" EntitySet="activity_type" />
+            <End Role="edu" EntitySet="edus" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="activity_type">
+          <Key>
+            <PropertyRef Name="activity_type_id" />
+          </Key>
+          <Property Name="activity_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="edus" Relationship="Model.mm_edu__activity_type1" FromRole="activity_type" ToRole="edu" />
+        </EntityType>
+        <EntityType Name="t_detailed_municipality_form_statistics">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int64" Nullable="false" />
+          <Property Name="form_type_id" Type="Int32" Nullable="false" />
+          <Property Name="form_type" Type="String" MaxLength="8000" FixedLength="false" Unicode="true" />
+          <Property Name="form" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="form_id" Type="Int32" Nullable="false" />
+          <Property Name="municipality_id" Type="Int32" Nullable="false" />
+          <Property Name="municipality" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="is_uploaded" Type="Int32" Nullable="false" />
+          <Property Name="year" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="t_municipality_form_statistics">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int64" Nullable="false" />
+          <Property Name="munit_id" Type="Int32" Nullable="false" />
+          <Property Name="munit_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="overall_count" Type="Int64" Nullable="false" />
+          <Property Name="ok_count" Type="Int64" Nullable="false" />
+          <Property Name="expired_count" Type="Int64" Nullable="false" />
+          <Property Name="error_count" Type="Int64" Nullable="false" />
+          <Property Name="bad_count" Type="Int64" Nullable="false" />
+          <Property Name="loaded_count" Type="Int64" Nullable="false" />
+        </EntityType>
+        <Association Name="mm_edu__activity_type1">
+          <End Type="Model.activity_type" Role="activity_type" Multiplicity="*" />
+          <End Type="Model.edu" Role="edu" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1667,14 +1710,6 @@
                 <ScalarProperty Name="created" ColumnName="created" />
                 <ScalarProperty Name="action_id" ColumnName="action_id" />
                 <ScalarProperty Name="message" ColumnName="message" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="activity_ype">
-            <EntityTypeMapping TypeName="Model.activity_ype">
-              <MappingFragment StoreEntitySet="activity_ype">
-                <ScalarProperty Name="activity_type_id" ColumnName="activity_type_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1975,14 +2010,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="mm_edu__activity_type" TypeName="Model.mm_edu__activity_type" StoreEntitySet="mm_edu__activity_type">
-            <EndProperty Name="activity_ype">
-              <ScalarProperty Name="activity_type_id" ColumnName="activity_type_id" />
-            </EndProperty>
-            <EndProperty Name="edu">
-              <ScalarProperty Name="edu_id" ColumnName="edu_id" />
-            </EndProperty>
-          </AssociationSetMapping>
           <AssociationSetMapping Name="mm_edu__management_agency" TypeName="Model.mm_edu__management_agency" StoreEntitySet="mm_edu__management_agency">
             <EndProperty Name="edu">
               <ScalarProperty Name="edu_id" ColumnName="edu_id" />
@@ -2005,6 +2032,52 @@
             </EndProperty>
             <EndProperty Name="edu_kind">
               <ScalarProperty Name="edu_kind_id" ColumnName="edu_kind_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="activity_type">
+            <EntityTypeMapping TypeName="Model.activity_type">
+              <MappingFragment StoreEntitySet="activity_type">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="activity_type_id" ColumnName="activity_type_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_detailed_municipality_form_statistics">
+            <EntityTypeMapping TypeName="Model.t_detailed_municipality_form_statistics">
+              <MappingFragment StoreEntitySet="t_detailed_municipality_form_statistics">
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="is_uploaded" ColumnName="is_uploaded" />
+                <ScalarProperty Name="municipality" ColumnName="municipality" />
+                <ScalarProperty Name="municipality_id" ColumnName="municipality_id" />
+                <ScalarProperty Name="form_id" ColumnName="form_id" />
+                <ScalarProperty Name="form" ColumnName="form" />
+                <ScalarProperty Name="form_type" ColumnName="form_type" />
+                <ScalarProperty Name="form_type_id" ColumnName="form_type_id" />
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_municipality_form_statistics">
+            <EntityTypeMapping TypeName="Model.t_municipality_form_statistics">
+              <MappingFragment StoreEntitySet="t_municipality_form_statistics">
+                <ScalarProperty Name="loaded_count" ColumnName="loaded_count" />
+                <ScalarProperty Name="bad_count" ColumnName="bad_count" />
+                <ScalarProperty Name="error_count" ColumnName="error_count" />
+                <ScalarProperty Name="expired_count" ColumnName="expired_count" />
+                <ScalarProperty Name="ok_count" ColumnName="ok_count" />
+                <ScalarProperty Name="overall_count" ColumnName="overall_count" />
+                <ScalarProperty Name="munit_name" ColumnName="munit_name" />
+                <ScalarProperty Name="munit_id" ColumnName="munit_id" />
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="mm_edu__activity_type1" TypeName="Model.mm_edu__activity_type1" StoreEntitySet="mm_edu__activity_type">
+            <EndProperty Name="edu">
+              <ScalarProperty Name="edu_id" ColumnName="edu_id" />
+            </EndProperty>
+            <EndProperty Name="activity_type">
+              <ScalarProperty Name="activity_type_id" ColumnName="activity_type_id" />
             </EndProperty>
           </AssociationSetMapping>
         </EntityContainerMapping>

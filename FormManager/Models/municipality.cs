@@ -12,9 +12,7 @@ namespace EduFormManager.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class municipality
-    {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public partial class municipality{
         public municipality()
         {
             this.edus = new HashSet<edu>();
@@ -26,14 +24,9 @@ namespace EduFormManager.Models
         public string @operator { get; set; }
         public string remark { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    	public override string ToString() { return this.name; }
+    
         public virtual ICollection<edu> edus { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<municipality_form_data> municipality_form_data { get; set; }
-
-        public override string ToString()
-        {
-            return name;
-        }
     }
 }

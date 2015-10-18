@@ -32,7 +32,7 @@
     <WebPage>install.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <DisallowUrlActivation>true</DisallowUrlActivation>
-    <ApplicationRevision>98</ApplicationRevision>
+    <ApplicationRevision>100</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -258,11 +258,23 @@
   <ItemGroup>
     <Compile Include="Authentication.cs" />
     <Compile Include="Forms\Reports\ReportFactory.cs" />
+    <Compile Include="Forms\Reports\XtraDetailedMunicipalityFormStatisticReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\XtraDetailedMunicipalityFormStatisticReport.Designer.cs">
+      <DependentUpon>XtraDetailedMunicipalityFormStatisticReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Reports\XtraDetailedFormStatisticReport.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\Reports\XtraDetailedFormStatisticReport.Designer.cs">
       <DependentUpon>XtraDetailedFormStatisticReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\XtraMunicipalityFormStatisticReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\XtraMunicipalityFormStatisticReport.Designer.cs">
+      <DependentUpon>XtraMunicipalityFormStatisticReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UserControls\FormulaEdit\CheckExpression.cs" />
     <Compile Include="Forms\UserControls\FormulaEdit\CheckExpressionParser.cs" />
@@ -277,6 +289,12 @@
     <Compile Include="Forms\UserControls\XtraExportReportControl.Designer.cs">
       <DependentUpon>XtraExportReportControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UserControls\XtraMunicipalityFormDetailedStatisticControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UserControls\XtraMunicipalityFormDetailedStatisticControl.Designer.cs">
+      <DependentUpon>XtraMunicipalityFormDetailedStatisticControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UserControls\XtraFormDetailedStatisticControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -286,7 +304,7 @@
     <Compile Include="Models\action.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\activity_ype.cs">
+    <Compile Include="Models\activity_type.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\answer.cs">
@@ -385,7 +403,13 @@
     <Compile Include="Models\t_detailed_form_statistics.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\t_detailed_municipality_form_statistics.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\t_form_statistics.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\t_municipality_form_statistics.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\t_summary_form_statistics.cs">
@@ -649,6 +673,8 @@
     <Compile Include="Utils\TileContainerHelper.cs" />
     <Compile Include="Utils\TileHelper.cs" />
     <Compile Include="Utils\TagHelper.cs" />
+    <None Include="Properties\DataSources\EduFormManager.Models.t_detailed_municipality_form_statistics.datasource" />
+    <None Include="Properties\DataSources\EduFormManager.Models.t_municipality_form_statistics.datasource" />
     <None Include="Resources\glyphicons_432_plus.png" />
     <None Include="Resources\glyphicons_150_edit.png" />
     <None Include="app.config">
@@ -672,8 +698,14 @@
     <EmbeddedResource Include="Forms\ClientAreaForm.resx">
       <DependentUpon>ClientAreaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\XtraDetailedMunicipalityFormStatisticReport.resx">
+      <DependentUpon>XtraDetailedMunicipalityFormStatisticReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reports\XtraDetailedFormStatisticReport.resx">
       <DependentUpon>XtraDetailedFormStatisticReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\XtraMunicipalityFormStatisticReport.resx">
+      <DependentUpon>XtraMunicipalityFormStatisticReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserControls\AuthenticationForm.resx">
       <DependentUpon>AuthenticationForm.cs</DependentUpon>
@@ -747,6 +779,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserControls\XtraExportReportControl.resx">
       <DependentUpon>XtraExportReportControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserControls\XtraMunicipalityFormDetailedStatisticControl.resx">
+      <DependentUpon>XtraMunicipalityFormDetailedStatisticControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserControls\XtraFormDetailedStatisticControl.resx">
       <DependentUpon>XtraFormDetailedStatisticControl.cs</DependentUpon>

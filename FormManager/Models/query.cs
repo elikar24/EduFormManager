@@ -12,20 +12,14 @@ namespace EduFormManager.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class query
-    {
+    public partial class query{
         public int query_id { get; set; }
         public string title { get; set; }
         public int form_id { get; set; }
         public string content { get; set; }
-        public Nullable<int> credentials_id { get; set; }
+        public int credentials_id { get; set; }
     
         public virtual credential credential { get; set; }
         public virtual form form { get; set; }
-
-        public override string ToString()
-        {
-            return title;
-        }
     }
 }

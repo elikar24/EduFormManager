@@ -12,8 +12,7 @@ namespace EduFormManager.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class query_autocomplete_part
-    {
+    public partial class query_autocomplete_part{
         public string title { get; set; }
     }
 }

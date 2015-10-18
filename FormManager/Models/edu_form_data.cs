@@ -12,14 +12,13 @@ namespace EduFormManager.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class edu_form_data : IForm
-    {
+    public partial class edu_form_data : IForm {
         public int id { get; set; }
         public int document_format_id { get; set; }
         public int form_id { get; set; }
         public int edu_id { get; set; }
         public System.DateTime send_date { get; set; }
-        public Nullable<int> status { get; set; }
+        public int status { get; set; }
         public int file_id { get; set; }
     
         public virtual document_format document_format { get; set; }

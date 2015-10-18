@@ -12,17 +12,15 @@ namespace EduFormManager.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class management_agency{
-        public management_agency()
-        {
-            this.edus = new HashSet<edu>();
-        }
-    
-        public int management_agency_id { get; set; }
-        public string name { get; set; }
-    
-    	public override string ToString() { return this.name; }
-    
-        public virtual ICollection<edu> edus { get; set; }
+    public partial class t_detailed_municipality_form_statistics{
+        public long row_id { get; set; }
+        public int form_type_id { get; set; }
+        public string form_type { get; set; }
+        public string form { get; set; }
+        public int form_id { get; set; }
+        public int municipality_id { get; set; }
+        public string municipality { get; set; }
+        public int is_uploaded { get; set; }
+        public int year { get; set; }
     }
 }

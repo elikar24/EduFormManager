@@ -7,7 +7,6 @@
       <Diagram DiagramId="86abfff4346f4592a625c619020ec5d3" Name="Diagram1">
         <EntityTypeShape EntityType="Model.action" Width="1.5" PointX="10.75" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.edu_log" Width="1.5" PointX="13" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.activity_ype" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.credential" Width="1.5" PointX="4.5" PointY="25.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.document_format" Width="1.5" PointX="6" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.edu" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
@@ -58,10 +57,13 @@
         <AssociationConnector Association="Model.municipality_form_data_municipality_id_fkey" ManuallyRouted="false" />
         <AssociationConnector Association="Model.answer_question_id_fkey" ManuallyRouted="false" />
         <AssociationConnector Association="Model.question_questionary_id_fkey" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.mm_edu__activity_type" ManuallyRouted="false" />
         <AssociationConnector Association="Model.mm_edu__management_agency" ManuallyRouted="false" />
         <AssociationConnector Association="Model.mm_edu__management_agency_activity" ManuallyRouted="false" />
         <AssociationConnector Association="Model.mm_edu_kind__form" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.activity_type" Width="1.5" PointX="12.375" PointY="11.875" />
+        <EntityTypeShape EntityType="Model.t_detailed_municipality_form_statistics" Width="1.5" PointX="13.375" PointY="7.75" />
+        <EntityTypeShape EntityType="Model.t_municipality_form_statistics" Width="2.375" PointX="14.375" PointY="11.75" />
+        <AssociationConnector Association="Model.mm_edu__activity_type1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

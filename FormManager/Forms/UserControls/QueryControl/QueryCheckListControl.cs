@@ -44,7 +44,8 @@ namespace EduFormManager.Forms.UserControls.QueryControl
                 .Where(prop => prop.GetCustomAttribute<DescriptionAttribute>() != null)
                 .Select(prop => new query
                 {
-                    title = "@" + prop.GetCustomAttribute<DescriptionAttribute>().Description, content = "@" + prop.Name
+                    title = prop.GetCustomAttribute<DescriptionAttribute>().Description, 
+                    content = "@" + prop.Name
                 }));
             _queryListSplitted = new List<query>();
             _selectedQueryList = new List<query>();
@@ -72,7 +73,7 @@ namespace EduFormManager.Forms.UserControls.QueryControl
         {
             _queryListOthers.Clear();
             _queryListSplitted.Clear();
-            var queryListToWorkWith = _queryList.Where(t => !t.title.StartsWith("@")).ToList();
+            var queryListToWorkWith = _queryList.Where(t => !t.content.StartsWith("@")).ToList();
             IList<QueryGroupItem> groupItemList = new List<QueryGroupItem>();
             foreach (var head in QueryPartHeadDataSource)
             {
@@ -101,6 +102,17 @@ namespace EduFormManager.Forms.UserControls.QueryControl
                 if (groupItem.QueryDictionary.Count > 0)
                     groupItemList.Add(groupItem);
             }
+
+            var passportGroupItem = new QueryGroupItem()
+            {
+                Head = "Паспорт",
+                QueryDictionary = new Dictionary<string, query>()
+            };
+            foreach (var query in _queryListPassport)
+            {
+                passportGroupItem.QueryDictionary.Add(query.title, query);   
+            }
+            groupItemList.Add(passportGroupItem);
             _queryListOthers.AddRange(queryListToWorkWith.Where(t => !_queryListSplitted.Contains(t)));
             CreateControls(groupItemList);
         }
@@ -171,27 +183,6 @@ namespace EduFormManager.Forms.UserControls.QueryControl
                         SizeConstraintsType = SizeConstraintsType.Custom,
                         ControlMaxSize = new Size(0, 120),
                         Control = _listBoxOtherQueries
-                    };
-                    layoutItem.AppearanceItemCaption.Font = new Font("Segoe UI", 9);
-                    this.layoutControlGroupMain.Add(layoutItem);
-                }
-                if (_queryListPassport.Any())
-                {
-                    _listBoxPassportQueries = new CheckedListBoxControl()
-                    {
-                        DisplayMember = "title",
-                        ValueMember = null,
-                        DataSource = _queryListPassport,
-                        Name = "listBoxPassportQueries"
-                    };
-                    _listBoxPassportQueries.ItemCheck += ListBoxQueriesOnItemCheck;
-                    var layoutItem = new LayoutControlItem()
-                    {
-                        Text = "Паспорт",
-                        TextLocation = Locations.Top,
-                        Control = _listBoxPassportQueries,
-                        SizeConstraintsType = SizeConstraintsType.Custom,
-                        ControlMinSize = new Size(0, 160)
                     };
                     layoutItem.AppearanceItemCaption.Font = new Font("Segoe UI", 9);
                     this.layoutControlGroupMain.Add(layoutItem);

@@ -12,8 +12,7 @@ namespace EduFormManager.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class answer
-    {
+    public partial class answer{
         public int answer_id { get; set; }
         public string answer_title { get; set; }
         public Nullable<int> question_id { get; set; }

@@ -12,9 +12,7 @@ namespace EduFormManager.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class edu_kind
-    {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public partial class edu_kind{
         public edu_kind()
         {
             this.edus = new HashSet<edu>();
@@ -24,14 +22,9 @@ namespace EduFormManager.Models
         public int edu_kind_id { get; set; }
         public string name { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    	public override string ToString() { return this.name; }
+    
         public virtual ICollection<edu> edus { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<form> forms { get; set; }
-
-        public override string ToString()
-        {
-            return name;
-        }
     }
 }

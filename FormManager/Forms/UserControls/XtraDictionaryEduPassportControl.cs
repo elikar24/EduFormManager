@@ -79,12 +79,11 @@ namespace EduFormManager.Forms.UserControls
         public List<ownership_type> OwnershipTypeDataSource
         {
             set
-            {
-                ownershipTypeBindingSource.DataSource = value;
+            {ownershipTypeBindingSource.DataSource = value;
             }
         }
 
-        public List<activity_ype> ActivityTypeDataSource
+        public List<activity_type> ActivityTypeDataSource
         {
             set
             {
@@ -128,7 +127,7 @@ namespace EduFormManager.Forms.UserControls
 
             _isManualSelect = false;
             this.checkedComboBoxActivityType.SetEditValue(null);
-            foreach (var at in edu.activity_ype) 
+            foreach (var at in edu.activity_type) 
             {
                 this.checkedComboBoxActivityType.Properties.Items[(object)at.activity_type_id].CheckState = CheckState.Checked;
             }
@@ -319,17 +318,17 @@ namespace EduFormManager.Forms.UserControls
             if (_isManualSelect)
             {
                 int atId = (int)this.checkedComboBoxActivityType.Properties.Items[e.Index].Value;
-                var at = ((List<activity_ype>) this.activityTypeBindingSource.List)
+                var at = ((List<activity_type>) this.activityTypeBindingSource.List)
                     .Find(x => x.activity_type_id == atId);
                 if (e.State == CheckState.Checked)
                 {
-                    if (!_edu.activity_ype.Contains(at))
-                        _edu.activity_ype.Add(at);
+                    if (!_edu.activity_type.Contains(at))
+                        _edu.activity_type.Add(at);
                 }
                 else
                 {
-                    if (_edu.activity_ype.Contains(at))
-                        _edu.activity_ype.Remove(at);
+                    if (_edu.activity_type.Contains(at))
+                        _edu.activity_type.Remove(at);
                 }
             }
         }

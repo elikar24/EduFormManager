@@ -12,9 +12,7 @@ namespace EduFormManager.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class form
-    {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public partial class form{
         public form()
         {
             this.edu_form_data = new HashSet<edu_form_data>();
@@ -32,24 +30,15 @@ namespace EduFormManager.Models
         public int form_type_id { get; set; }
         public byte[] check_file_data { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    	public override string ToString() { return this.name; }
+    
         public virtual ICollection<edu_form_data> edu_form_data { get; set; }
         public virtual templated_form_data templated_form_data { get; set; }
         public virtual form_type form_type { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<mm_regular__summary_form> mm_regular__summary_form { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<mm_regular__summary_form> mm_regular__summary_form1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<municipality_form_data> municipality_form_data { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<query> queries { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<edu_kind> edu_kind { get; set; }
-
-        public override string ToString()
-        {
-            return name;
-        }
     }
 }

@@ -51,7 +51,6 @@ namespace EduFormManager
                 _auth = new Authentication();
             }
             UserLookAndFeel.Default.SetSkinStyle("Office 2013");
-
             tileContainerMain.Items.Remove(tileDictionaries);
             tileContainerMain.Items.Remove(tileDocumentQueries);
             tileContainerMain.Items.Remove(tileMessageList);
@@ -458,7 +457,7 @@ namespace EduFormManager
                                         t.form_type_id == (int) FormType.Municipality || t.form_type_id == (int) FormType.OtherMunicipality)
                                         .ToListAsync(),
                                     FormData = fd,
-                                    FormStatus = fd.status.HasValue ? (Status)fd.status.Value : Status.Unknown,
+                                    FormStatus = (Status)fd.status,
                                     Source = XtraSpreadsheet.FormSource.File,
                                     Mode = XtraSpreadsheet.ControlMode.Edit,
                                     ActiveForm = fd.form
@@ -486,7 +485,7 @@ namespace EduFormManager
                                 var sheetControl = new XtraSpreadsheet(this.windowsUIViewMain, repo)
                                 {
                                     FormData = fd,
-                                    FormStatus = fd.status.HasValue ? (Status)fd.status.Value : Status.Unknown,
+                                    FormStatus = (Status)fd.status,
                                     Source = XtraSpreadsheet.FormSource.File,
                                     Mode = XtraSpreadsheet.ControlMode.Edit
                                 };
@@ -522,7 +521,7 @@ namespace EduFormManager
                             passportControl = new XtraDictionaryEduPassportControl(this.windowsUIViewMain, repo)
                             {
                                 MunicipalityDataSource = await repo.GetMunicipalities(),
-                                ActivityTypeDataSource = await repo.Db.activity_ype.OrderBy(t => t.name).ToListAsync(),
+                                ActivityTypeDataSource = await repo.Db.activity_type.OrderBy(t => t.name).ToListAsync(),
                                 EduStatusDataSource = await repo.Db.edu_status.OrderBy(m => m.name).ToListAsync(),
                                 EduTypeDataSource = await repo.Db.edu_type.OrderBy(m => m.name).ToListAsync(),
                                 DataSourceEduKind = await repo.Db.edu_kind.OrderBy(m => m.name).ToListAsync(),
@@ -629,11 +628,10 @@ namespace EduFormManager
                     case "FormDetailedStatisticsReport":
                     {
                         var doc = this.windowsUIViewMain.Documents.FindFirst(t => t.ControlName == "FormDetailedStatistics");
-                        IList<t_detailed_form_statistics> formStatData = new List<t_detailed_form_statistics>();
+                        var formStatData = new List<t_detailed_form_statistics>();
                         if (doc != null)
                         {
-                            var control = (XtraFormDetailedStatisticControl) doc.Control;
-                            formStatData = control.FormStatisticDataSource;
+                            formStatData = (List<t_detailed_form_statistics>)doc.Tag;
                         }
                         var formStatisticReport = new XtraDetailedFormStatisticReport();
                         var formStatisticReportControl = new XtraReportViewControl(this.windowsUIViewMain);
@@ -668,6 +666,49 @@ namespace EduFormManager
                                 await repo.GetFormStatistics();
                             formStatisticReportControl.Report = formStatisticReport;
                             formStatisticReport.CreateDocument(false);
+                            break;
+                        }
+                    case "MunicipalityFormStatistics":
+                        using (var repo = new Repository())
+                        {
+                            var formStatisticReport = new XtraMunicipalityFormStatisticReport();
+                            var formStatisticReportControl = new XtraReportViewControl(this.windowsUIViewMain);
+
+                            e.Control = formStatisticReportControl;
+
+                            formStatisticReport.FormStatisticDataSource = Authentication.Credentials.IsMunicipality ?
+                                await repo.GetMunicipalityFormStatistics(Authentication.Credentials.MunitId) :
+                                await repo.GetMunicipalityFormStatistics();
+                            formStatisticReportControl.Report = formStatisticReport;
+                            formStatisticReport.CreateDocument(false);
+                            break;
+                        }
+                    case "MunicipalityFormDetailedStatisticsReport":
+                        {
+                            var doc = this.windowsUIViewMain.Documents.FindFirst(t => t.ControlName == "MunicipalityFormDetailedStatistics");
+                            var formStatData = new List<t_detailed_municipality_form_statistics>();
+                            if (doc != null)
+                            {
+                                formStatData = (List<t_detailed_municipality_form_statistics>)doc.Tag;
+                            }
+                            var formStatisticReport = new XtraDetailedMunicipalityFormStatisticReport();
+                            var formStatisticReportControl = new XtraReportViewControl(this.windowsUIViewMain);
+                            e.Control = formStatisticReportControl;
+
+                            formStatisticReport.FormStatisticDataSource = formStatData;
+                            formStatisticReportControl.Report = formStatisticReport;
+                            formStatisticReport.CreateDocument(true);
+                            break;
+                        }
+                    case "MunicipalityFormDetailedStatistics":
+                        {
+                            var repo = new Repository();
+                            var control = new XtraMunicipalityFormDetailedStatisticControl(this.windowsUIViewMain, repo);
+                            e.Control = control;
+                            control.FormStatisticDataSource = Authentication.Credentials.IsMunicipality ?
+                                await repo.GetDetailedMunicipalityFormStatistics(Authentication.Credentials.MunitId, DateTime.Now.Year) :
+                                await repo.GetDetailedMunicipalityFormStatistics(DateTime.Now.Year);
+                            control.YearsDataSource = await repo.GetAvailableYears();
                             break;
                         }
                     case "FormStatisticsSummary":

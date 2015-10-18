@@ -8,11 +8,11 @@ using EduFormManager.Models.Repo;
 
 namespace EduFormManager.Forms.UserControls
 {
-    public partial class XtraFormDetailedStatisticControl : XtraBaseControl
+    public partial class XtraMunicipalityFormDetailedStatisticControl : XtraBaseControl
     {
         private int _selectedYear;
 
-        public XtraFormDetailedStatisticControl(WindowsUIView view, Repository repo)
+        public XtraMunicipalityFormDetailedStatisticControl(WindowsUIView view, Repository repo)
             : base (view, repo)
         {
             InitializeComponent();
@@ -23,9 +23,9 @@ namespace EduFormManager.Forms.UserControls
         {
             this.formStatisticBindingSource.ListChanged += (sender, args) =>
             {
-                var doc = (Document)this.View.Documents.SingleOrDefault(t => t.ControlName == "FormDetailedStatisticsReport");
+                var doc = (Document)this.View.Documents.SingleOrDefault(t => t.ControlName == "MunicipalityFormDetailedStatisticsReport");
                 if (doc != null)
-                    doc.Tag = this.formStatisticBindingSource.List.Cast<t_detailed_form_statistics>().ToList();
+                    doc.Tag = this.formStatisticBindingSource.List.Cast<t_detailed_municipality_form_statistics>().ToList();
             };
 
             this.repositoryItemComboBoxYear.EditValueChanged += async (sender, args) =>
@@ -34,14 +34,14 @@ namespace EduFormManager.Forms.UserControls
                 _selectedYear = (int)s.EditValue;
                 this.barEditItemYear.Enabled = false;
                 this.formStatisticBindingSource.DataSource = Authentication.Credentials.IsMunicipality
-                    ? await Repo.GetDetailedFormStatistics(Authentication.Credentials.MunitId, _selectedYear)
-                    : await Repo.GetDetailedFormStatistics(_selectedYear);
+                    ? await Repo.GetDetailedMunicipalityFormStatistics(Authentication.Credentials.MunitId, _selectedYear)
+                    : await Repo.GetDetailedMunicipalityFormStatistics(_selectedYear);
                 this.barEditItemYear.Enabled = true;
             };
 
             this.barButtonItemReport.ItemClick += (sender, args) =>
             {
-                var doc = (Document)this.View.Documents.SingleOrDefault(t => t.ControlName == "FormDetailedStatisticsReport");
+                var doc = (Document)this.View.Documents.SingleOrDefault(t => t.ControlName == "MunicipalityFormDetailedStatisticsReport");
                 var container = this.View.ContentContainers.FindFirst(t => t.Parent == this.View.ActiveContentContainer && t.Contains(doc));
                 if (container != null)
                     this.View.ActivateContainer(container);
@@ -61,11 +61,11 @@ namespace EduFormManager.Forms.UserControls
             }
         } 
 
-        public IList<t_detailed_form_statistics> FormStatisticDataSource
+        public IList<t_detailed_municipality_form_statistics> FormStatisticDataSource
         {
             get
             {
-                return this.formStatisticBindingSource.List.Cast<t_detailed_form_statistics>().ToList();
+                return this.formStatisticBindingSource.List.Cast<t_detailed_municipality_form_statistics>().ToList();
             }
             set
             {

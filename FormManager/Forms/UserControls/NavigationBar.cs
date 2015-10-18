@@ -5,6 +5,7 @@ using DevExpress.Utils;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using DevExpress.XtraBars.Navigation;
 using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
 
 namespace EduFormManager.Forms
 {
@@ -78,7 +79,11 @@ namespace EduFormManager.Forms
             if (tileContainer != null && tileContainer.Items.Count > 0)
             {
                 TileBarDropDownContainer ddContainer = new TileBarDropDownContainer();
+                ddContainer.Appearance.BorderColor = Color.FromArgb(0x02, 0x53, 0x8E);
+                ddContainer.BorderStyle = BorderStyles.Flat;
                 TileBar ddTileBar = new TileBar() { ItemSize = 25, Dock = DockStyle.Fill };
+                ddTileBar.Orientation = Orientation.Vertical;
+                
                 ddTileBar.BackColor = this.tileBarNavigation.BackColor;
                 ddTileBar.AppearanceItem.Normal.BackColor = Color.FromArgb(0x02, 0x53, 0x8E);
                 ddTileBar.AppearanceItem.Normal.TextOptions.HAlignment = HorzAlignment.Near;

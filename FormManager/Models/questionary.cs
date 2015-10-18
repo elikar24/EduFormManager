@@ -12,9 +12,7 @@ namespace EduFormManager.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class questionary
-    {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public partial class questionary{
         public questionary()
         {
             this.questions = new HashSet<question>();
@@ -23,7 +21,6 @@ namespace EduFormManager.Models
         public int questionary_id { get; set; }
         public string questionary_title { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<question> questions { get; set; }
     }
 }

@@ -7,13 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Configuration;
 using System.Data.Common;
 using System.Data.Entity.Core.EntityClient;
 
 namespace EduFormManager.Models
 {
     using System;
-    using System.Configuration;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
@@ -31,7 +31,9 @@ namespace EduFormManager.Models
 
             providerBuilder.Add("Password", "qwer1234");
 
-            this.Database.Connection.ConnectionString = providerBuilder.ToString();
+            entityBuilder.ProviderConnectionString = providerBuilder.ToString();
+
+            this.Database.Connection.ConnectionString = entityBuilder.ProviderConnectionString;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -41,7 +43,6 @@ namespace EduFormManager.Models
     
         public virtual DbSet<action> actions { get; set; }
         public virtual DbSet<edu_log> edu_log { get; set; }
-        public virtual DbSet<activity_ype> activity_ype { get; set; }
         public virtual DbSet<credential> credentials { get; set; }
         public virtual DbSet<document_format> document_format { get; set; }
         public virtual DbSet<edu> edus { get; set; }
@@ -69,5 +70,8 @@ namespace EduFormManager.Models
         public virtual DbSet<answer> answers { get; set; }
         public virtual DbSet<question> questions { get; set; }
         public virtual DbSet<questionary> questionaries { get; set; }
+        public virtual DbSet<activity_type> activity_type { get; set; }
+        public virtual DbSet<t_detailed_municipality_form_statistics> t_detailed_municipality_form_statistics { get; set; }
+        public virtual DbSet<t_municipality_form_statistics> t_municipality_form_statistics { get; set; }
     }
 }

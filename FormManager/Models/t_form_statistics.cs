@@ -12,18 +12,17 @@ namespace EduFormManager.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class t_form_statistics
-    {
+    public partial class t_form_statistics{
         public long row_id { get; set; }
-        public Nullable<int> munit_id { get; set; }
+        public int munit_id { get; set; }
         public string munit_name { get; set; }
-        public Nullable<int> edu_id { get; set; }
+        public int edu_id { get; set; }
         public string org_shortname { get; set; }
-        public Nullable<long> overall_count { get; set; }
-        public Nullable<long> ok_count { get; set; }
-        public Nullable<long> expired_count { get; set; }
-        public Nullable<long> error_count { get; set; }
-        public Nullable<long> bad_count { get; set; }
-        public Nullable<long> loaded_count { get; set; }
+        public long overall_count { get; set; }
+        public long ok_count { get; set; }
+        public long expired_count { get; set; }
+        public long error_count { get; set; }
+        public long bad_count { get; set; }
+        public long loaded_count { get; set; }
     }
 }

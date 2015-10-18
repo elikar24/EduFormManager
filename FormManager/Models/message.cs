@@ -12,8 +12,7 @@ namespace EduFormManager.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class message
-    {
+    public partial class message{
         public int message_id { get; set; }
         public string subject { get; set; }
         public string body { get; set; }

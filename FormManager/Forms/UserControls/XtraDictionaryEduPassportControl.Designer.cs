@@ -373,7 +373,7 @@ namespace EduFormManager.Forms.UserControls
             // 
             // activityTypeBindingSource
             // 
-            this.activityTypeBindingSource.DataSource = typeof(EduFormManager.Models.activity_ype);
+            this.activityTypeBindingSource.DataSource = typeof(EduFormManager.Models.activity_type);
             // 
             // comboBoxOwnershipType
             // 

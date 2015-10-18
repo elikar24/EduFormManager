@@ -12,8 +12,7 @@ namespace EduFormManager.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class edu_log
-    {
+    public partial class edu_log{
         public int id { get; set; }
         public System.DateTime created { get; set; }
         public int action_id { get; set; }
