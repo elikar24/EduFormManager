@@ -36,8 +36,8 @@ namespace EduFormManager
             this.label2 = new System.Windows.Forms.Label();
             this.textUserName = new DevExpress.XtraEditors.TextEdit();
             this.labelError = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textPassword = new DevExpress.XtraEditors.TextEdit();
+            this.checkBox1 = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.eduTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.queryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eduBindingSource)).BeginInit();
@@ -49,6 +49,7 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.formBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textUserName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textPassword.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBox1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -99,21 +100,6 @@ namespace EduFormManager
             this.labelError.Text = "Ошибка входа";
             this.labelError.Visible = false;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(255, 71);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.TabStop = false;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckStateChanged += new System.EventHandler(this.checkBox1_CheckStateChanged);
-            this.checkBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.checkBox1_MouseDown);
-            this.checkBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.checkBox1_MouseUp);
-            // 
             // textPassword
             // 
             this.textPassword.Location = new System.Drawing.Point(102, 63);
@@ -129,6 +115,17 @@ namespace EduFormManager
             this.textPassword.Size = new System.Drawing.Size(147, 26);
             this.textPassword.TabIndex = 1;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.EditValue = true;
+            this.checkBox1.Location = new System.Drawing.Point(256, 66);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Properties.Caption = "";
+            this.checkBox1.Size = new System.Drawing.Size(25, 19);
+            this.checkBox1.TabIndex = 7;
+            this.checkBox1.ToolTip = "Показать пароль";
+            this.checkBox1.CheckStateChanged += new System.EventHandler(this.checkBox1_CheckStateChanged);
+            // 
             // AuthenticationForm
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(83)))), ((int)(((byte)(142)))));
@@ -137,8 +134,8 @@ namespace EduFormManager
             this.Appearance.Options.UseForeColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textPassword);
             this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.textPassword);
             this.Controls.Add(this.labelError);
             this.Controls.Add(this.textUserName);
             this.Controls.Add(this.label2);
@@ -158,6 +155,7 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.formBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textUserName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textPassword.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBox1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,7 +167,7 @@ namespace EduFormManager
         private Label label2;
         private TextEdit textUserName;
         public Label labelError;
-        private CheckBox checkBox1;
         private TextEdit textPassword;
+        private CheckEdit checkBox1;
     }
 }

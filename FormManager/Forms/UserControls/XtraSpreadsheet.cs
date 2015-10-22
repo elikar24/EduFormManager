@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using DevExpress.Spreadsheet;
 using DevExpress.XtraBars.Docking2010;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
+using DevExpress.XtraEditors;
 using DevExpress.XtraSpreadsheet;
 using EduFormManager.Forms.UserControls.MunicipalityFormulaPeek;
 using EduFormManager.Models;
@@ -82,10 +83,12 @@ namespace EduFormManager.Forms.UserControls
                 if (this.flyoutPanelActions.IsPopupOpen)
                 {
                     this.flyoutPanelActions.HidePopup();
+                    (sender as SimpleButton).Text = "Меню";
                 }
                 else
                 {
-                    this.flyoutPanelActions.ShowPopup();                    
+                    this.flyoutPanelActions.ShowPopup();
+                    (sender as SimpleButton).Text = "Закрыть";
                 }
             };
 

@@ -41,30 +41,28 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.buttonSave = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.buttonCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.eduTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.queryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eduBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.municipalityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.templatedFormDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eduKindBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.messageBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQueryParts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -73,14 +71,12 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewQueryParts
@@ -106,7 +102,7 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.dataGridViewQueryParts.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridViewQueryParts.RowHeadersWidth = 24;
             this.dataGridViewQueryParts.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridViewQueryParts.Size = new System.Drawing.Size(307, 171);
+            this.dataGridViewQueryParts.Size = new System.Drawing.Size(307, 175);
             this.dataGridViewQueryParts.TabIndex = 0;
             this.dataGridViewQueryParts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewQueryParts_CellClick);
             this.dataGridViewQueryParts.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewQueryParts_CellEndEdit);
@@ -137,10 +133,10 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.label2);
-            this.layoutControl1.Controls.Add(this.label1);
             this.layoutControl1.Controls.Add(this.buttonCancel);
             this.layoutControl1.Controls.Add(this.buttonSave);
+            this.layoutControl1.Controls.Add(this.label2);
+            this.layoutControl1.Controls.Add(this.label1);
             this.layoutControl1.Controls.Add(this.textBoxQueryTitle);
             this.layoutControl1.Controls.Add(this.dataGridViewQueryParts);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -169,38 +165,6 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.label1.Size = new System.Drawing.Size(161, 20);
             this.label1.TabIndex = 6;
             this.label1.Text = "Текст";
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.buttonCancel.FlatAppearance.BorderSize = 2;
-            this.buttonCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.buttonCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCancel.Font = new System.Drawing.Font("Segoe UI", 10.75F);
-            this.buttonCancel.Location = new System.Drawing.Point(210, 312);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(97, 34);
-            this.buttonCancel.TabIndex = 5;
-            this.buttonCancel.Text = "Отмена";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.buttonSave.FlatAppearance.BorderSize = 2;
-            this.buttonSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.buttonSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSave.Font = new System.Drawing.Font("Segoe UI", 10.75F);
-            this.buttonSave.Location = new System.Drawing.Point(95, 312);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(95, 34);
-            this.buttonSave.TabIndex = 4;
-            this.buttonSave.Text = "Сохранить";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // layoutControlGroup1
             // 
@@ -237,7 +201,7 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.layoutControlItem2.Control = this.dataGridViewQueryParts;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 113);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(311, 175);
+            this.layoutControlItem2.Size = new System.Drawing.Size(311, 179);
             this.layoutControlItem2.Text = "Подзаголовки";
             this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Top;
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -257,53 +221,11 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             // 
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem3,
-            this.layoutControlItem4,
-            this.emptySpaceItem2,
-            this.emptySpaceItem3});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 288);
+            this.layoutControlItem4});
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 292);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(311, 62);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(311, 58);
             this.layoutControlGroup2.TextVisible = false;
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.buttonSave;
-            this.layoutControlItem3.Location = new System.Drawing.Point(71, 0);
-            this.layoutControlItem3.MaxSize = new System.Drawing.Size(99, 38);
-            this.layoutControlItem3.MinSize = new System.Drawing.Size(99, 38);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(99, 38);
-            this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.buttonCancel;
-            this.layoutControlItem4.Location = new System.Drawing.Point(186, 0);
-            this.layoutControlItem4.MaxSize = new System.Drawing.Size(101, 38);
-            this.layoutControlItem4.MinSize = new System.Drawing.Size(101, 38);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(101, 38);
-            this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
-            // 
-            // emptySpaceItem2
-            // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 0);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(71, 38);
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem3
-            // 
-            this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(170, 0);
-            this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(16, 38);
-            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem5
             // 
@@ -341,6 +263,50 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             // 
             this.gridView2.Name = "gridView2";
             // 
+            // buttonSave
+            // 
+            this.buttonSave.Appearance.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSave.Appearance.Options.UseFont = true;
+            this.buttonSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.buttonSave.Location = new System.Drawing.Point(24, 316);
+            this.buttonSave.MinimumSize = new System.Drawing.Size(0, 30);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(140, 30);
+            this.buttonSave.TabIndex = 8;
+            this.buttonSave.Text = "Сохранить";
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.buttonSave;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(144, 34);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Appearance.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCancel.Appearance.Options.UseFont = true;
+            this.buttonCancel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.buttonCancel.Location = new System.Drawing.Point(168, 316);
+            this.buttonCancel.MinimumSize = new System.Drawing.Size(0, 30);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(139, 30);
+            this.buttonCancel.TabIndex = 9;
+            this.buttonCancel.Text = "Отмена";
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.buttonCancel;
+            this.layoutControlItem4.Location = new System.Drawing.Point(144, 0);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(143, 34);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
+            // 
             // XtraDictionaryEditQueryControl
             // 
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
@@ -354,13 +320,13 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.Size = new System.Drawing.Size(331, 370);
             ((System.ComponentModel.ISupportInitialize)(this.eduTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.queryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eduBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.municipalityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.templatedFormDataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eduKindBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.messageBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.formTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQueryParts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
@@ -369,14 +335,12 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -389,21 +353,19 @@ namespace EduFormManager.Forms.UserControls.QueryControl
         private DataGridViewTextBoxColumn ColumnCellAddress;
         private LayoutControl layoutControl1;
         private LayoutControlGroup layoutControlGroup1;
-        private Button buttonCancel;
-        private Button buttonSave;
         private LayoutControlItem layoutControlItem1;
         private LayoutControlItem layoutControlItem2;
         private EmptySpaceItem emptySpaceItem1;
         private LayoutControlGroup layoutControlGroup2;
-        private LayoutControlItem layoutControlItem3;
-        private LayoutControlItem layoutControlItem4;
         private GridView gridView2;
         private Label label2;
         private Label label1;
         private LayoutControlItem layoutControlItem5;
         private LayoutControlItem layoutControlItem6;
         private EmptySpaceItem emptySpaceItem4;
-        private EmptySpaceItem emptySpaceItem2;
-        private EmptySpaceItem emptySpaceItem3;
+        private DevExpress.XtraEditors.SimpleButton buttonCancel;
+        private DevExpress.XtraEditors.SimpleButton buttonSave;
+        private LayoutControlItem layoutControlItem3;
+        private LayoutControlItem layoutControlItem4;
     }
 }

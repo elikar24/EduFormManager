@@ -101,7 +101,7 @@ namespace EduFormManager.Forms.UserControls.MunicipalityFormulaPeek
 
         private void CompleteHandler(object sender, EventArgs e)
         {
-            var btn = (Button) sender;
+            var btn = (SimpleButton) sender;
             if (btn.Name == "buttonCancel")
             {
                 OnCompleted(new MunicipalityFormulaPeekArgs() { Write = false });

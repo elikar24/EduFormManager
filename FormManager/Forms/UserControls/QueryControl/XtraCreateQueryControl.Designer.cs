@@ -102,7 +102,7 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.comboBoxForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxForm.DataSource = this.templatedFormDataBindingSource;
             this.comboBoxForm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxForm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.comboBoxForm.FormattingEnabled = true;
             this.comboBoxForm.Location = new System.Drawing.Point(12, 36);
@@ -135,6 +135,7 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.listBox1.DataSource = this.queryBindingSource;
             this.listBox1.DisplayMember = "title";
             this.listBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 15;
             this.listBox1.Location = new System.Drawing.Point(12, 118);
@@ -159,9 +160,9 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.xtraDictionaryEditQueryControl1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.xtraDictionaryEditQueryControl1.Appearance.Options.UseForeColor = true;
             this.xtraDictionaryEditQueryControl1.ControlType = EduFormManager.Forms.UserControls.XtraBaseControl.Type.Form;
-            this.xtraDictionaryEditQueryControl1.FormTypeDataSource = null;
             this.xtraDictionaryEditQueryControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraDictionaryEditQueryControl1.FormDataSource = null;
+            this.xtraDictionaryEditQueryControl1.FormTypeDataSource = null;
             this.xtraDictionaryEditQueryControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraDictionaryEditQueryControl1.LookAndFeel.SkinName = "Office 2013";
             this.xtraDictionaryEditQueryControl1.LookAndFeel.UseDefaultLookAndFeel = false;
