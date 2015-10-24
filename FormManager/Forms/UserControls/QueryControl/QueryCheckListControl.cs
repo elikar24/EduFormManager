@@ -12,7 +12,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Popup;
 using DevExpress.XtraLayout;
 using DevExpress.XtraPrinting.Native;
-using EduFormManager.Models;
+using Models;
 using ItemCheckEventArgs = DevExpress.XtraEditors.Controls.ItemCheckEventArgs;
 
 namespace EduFormManager.Forms.UserControls.QueryControl

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using EduFormManager.Models;
+using Models;
 
 namespace EduFormManager.Forms.UserControls.QueryControl
 {

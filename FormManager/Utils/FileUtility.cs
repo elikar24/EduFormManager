@@ -3,7 +3,7 @@ using System.IO;
 using System.Security.Cryptography;
 using Crc32C;
 
-namespace EduFormManager.Utilities
+namespace EduFormManager.Utils
 {
     public class FileUtility
     {

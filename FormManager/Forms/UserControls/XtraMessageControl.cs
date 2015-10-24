@@ -1,8 +1,8 @@
 ﻿using System;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
-using EduFormManager.Models;
-using EduFormManager.Models.Repo;
 using EduFormManager.Properties;
+using Models;
+using Models.Repo;
 
 namespace EduFormManager.Forms.UserControls
 {
@@ -114,8 +114,8 @@ namespace EduFormManager.Forms.UserControls
                     default:
                         return;
                 }
-                Repo.Db.messages.Add(message);
-                await Repo.Db.SaveChangesAsync();
+                Repo.Add(message);
+                await Repo.SaveChangesAsync();
                 this.ShowFlyoutMessageBox("Информация", "Сообщение отправлено", FlyoutCommand.OK);
             }
             catch (Exception ex)

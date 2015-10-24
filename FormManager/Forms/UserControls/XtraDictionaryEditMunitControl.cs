@@ -1,5 +1,6 @@
 ﻿using System;
-using EduFormManager.Models;
+using Models;
+using Models.Repo;
 
 namespace EduFormManager.Forms.UserControls
 {
@@ -88,8 +89,8 @@ namespace EduFormManager.Forms.UserControls
             _munit.remark = this.textBoxDictRemark.Text.Trim();
 
             if (_munit.municipality_id == 0)
-                Repo.Db.municipalities.Add(_munit);
-            Repo.Db.SaveChanges();
+                Repo.Add(_munit);
+            Repo.SaveChanges();
 
             var cred = Repo.GetCredentialSync(_munit.municipality_id, Credentials.Type.Municipality);
             if (cred == null)
@@ -99,12 +100,12 @@ namespace EduFormManager.Forms.UserControls
                     ref_id = _munit.municipality_id,
                     login_type = (int) Credentials.Type.Municipality
                 };
-                Repo.Db.credentials.Add(cred);
+                Repo.Add(cred);
             }
             cred.login = this.textBoxDictLogin.Text.Trim();
             cred.passwd = this.textBoxDictPassword.Text.Trim();
 
-            Repo.Db.SaveChanges();
+            Repo.SaveChanges();
 
             this.labelError.Text = string.Empty;
             return _munit;

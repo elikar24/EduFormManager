@@ -4,9 +4,9 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using DevExpress.XtraEditors;
-using EduFormManager.Models;
-using EduFormManager.Models.Repo;
-using EduFormManager.Utilities;
+using EduFormManager.Utils;
+using Models;
+using Models.Repo;
 
 namespace EduFormManager.Forms.UserControls
 {

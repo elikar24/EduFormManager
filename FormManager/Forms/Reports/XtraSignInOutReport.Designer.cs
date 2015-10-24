@@ -192,7 +192,7 @@ namespace EduFormManager.Forms.Reports
             // 
             // logBindingSource
             // 
-            this.logBindingSource.DataSource = typeof(EduFormManager.Models.edu_log);
+            this.logBindingSource.DataSource = typeof(Models.edu_log);
             // 
             // calculatedDate
             // 

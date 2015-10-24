@@ -32,7 +32,7 @@
     <WebPage>install.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <DisallowUrlActivation>true</DisallowUrlActivation>
-    <ApplicationRevision>100</ApplicationRevision>
+    <ApplicationRevision>101</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -206,31 +206,14 @@
     <Reference Include="DevExpress.XtraTreeList.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualBasic">
       <EmbedInteropTypes>False</EmbedInteropTypes>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Mono.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Npgsql.2.2.5\lib\net45\Mono.Security.dll</HintPath>
-    </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\NLog.4.0.1\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
-    </Reference>
-    <Reference Include="Npgsql, Version=2.2.5.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Npgsql.2.2.5\lib\net45\Npgsql.dll</HintPath>
-    </Reference>
-    <Reference Include="Npgsql.EntityFramework">
-      <HintPath>..\packages\Npgsql.EntityFramework.2.2.5\lib\net45\Npgsql.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <EmbedInteropTypes>False</EmbedInteropTypes>
@@ -256,7 +239,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Authentication.cs" />
     <Compile Include="Forms\Reports\ReportFactory.cs" />
     <Compile Include="Forms\Reports\XtraDetailedMunicipalityFormStatisticReport.cs">
       <SubType>Component</SubType>
@@ -301,123 +283,7 @@
     <Compile Include="Forms\UserControls\XtraFormDetailedStatisticControl.Designer.cs">
       <DependentUpon>XtraFormDetailedStatisticControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\action.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\activity_type.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\answer.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\credential.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\document_format.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\edu.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\edu_form_data.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\edu_kind.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\edu_log.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\edu_status.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\edu_type.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\file.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\form.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\form_type.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\management_agency.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\management_agency_activity.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\message.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\mm_regular__summary_form.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\municipality.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\municipality_form_data.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ownership_type.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\query.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\query_autocomplete_part.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\query_head_part.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\question.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\questionary.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Repo\Credentials.cs" />
-    <Compile Include="Models\Repo\IForm.cs" />
-    <Compile Include="Models\Repo\Repository.cs" />
-    <Compile Include="Models\templated_form_data.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\t_detailed_form_statistics.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\t_detailed_municipality_form_statistics.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\t_form_statistics.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\t_municipality_form_statistics.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\t_summary_form_statistics.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="Utils\AttachedProperty.cs" />
-    <Compile Include="Utils\EnumExtensions.cs" />
-    <Compile Include="Utils\Enums.cs" />
     <Compile Include="Utils\FormulaUtility.cs" />
     <Compile Include="Forms\ClientAreaForm.cs">
       <SubType>Form</SubType>
@@ -510,8 +376,8 @@
     <Compile Include="Forms\UserControls\XtraReportViewControl.Designer.cs">
       <DependentUpon>XtraReportViewControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utils\LevelAdminHelper.cs" />
-    <Compile Include="Utils\ColorUtility.cs" />
+    <Compile Include="Utils\Actions.cs" />
+    <Compile Include="Utils\Colors.cs" />
     <Compile Include="Forms\UserControls\XtraDictionaryEditEduControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -536,8 +402,7 @@
     <Compile Include="Forms\Reports\XtraFormStatisticReport.Designer.cs">
       <DependentUpon>XtraFormStatisticReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utils\DBLogHelper.cs" />
-    <Compile Include="Utils\FileFormInfo.cs" />
+    <Compile Include="Utils\DbLogger.cs" />
     <Compile Include="Utils\FileUtility.cs" />
     <Compile Include="Forms\UserControls\AuthenticationForm.cs">
       <SubType>UserControl</SubType>
@@ -647,8 +512,7 @@
     <Compile Include="Forms\UserControls\XtraSpreadsheet.Designer.cs">
       <DependentUpon>XtraSpreadsheet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utils\GuiHelper.cs" />
-    <Compile Include="Utils\GuiUtility.Miscleneous.cs" />
+    <Compile Include="Utils\GuiUtility.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -668,7 +532,7 @@
     <Compile Include="Forms\Reports\QueryReportData.cs" />
     <Compile Include="Forms\Reports\QueryReportDataCollection.cs" />
     <Compile Include="Forms\Reports\QueryReportDataGroup.cs" />
-    <Compile Include="Utils\MathUtility.cs" />
+    <Compile Include="Utils\StringExtensions.cs" />
     <Compile Include="Utils\ModelExtensions.cs" />
     <Compile Include="Utils\TileContainerHelper.cs" />
     <Compile Include="Utils\TileHelper.cs" />
@@ -679,13 +543,6 @@
     <None Include="Resources\glyphicons_150_edit.png" />
     <None Include="app.config">
       <SubType>Designer</SubType>
-    </None>
-    <EntityDeploy Include="Models\Model.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Models\Model.edmx.diagram">
-      <DependentUpon>Model.edmx</DependentUpon>
     </None>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\EduFormManager.Models.edu.datasource" />
@@ -898,16 +755,6 @@
     <Content Include="ico\home%281%29.png" />
     <Content Include="ico\icon-user-default.png" />
     <Content Include="ico\warning-icon-24x24.png" />
-    <Content Include="Models\Model.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.cs</LastGenOutput>
-    </Content>
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -1749,6 +1596,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{ce28d759-83f4-4169-8d04-23aa18d0ec2a}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.1.29.3\build\dotnet\Fody.targets" Condition="Exists('..\packages\Fody.1.29.3\build\dotnet\Fody.targets')" />

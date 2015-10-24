@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -8,13 +7,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.Spreadsheet;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
-using DevExpress.XtraReports.Templates;
 using DevExpress.XtraSpreadsheet;
 using DevExpress.XtraSpreadsheet.Menu;
-using EduFormManager.Models;
-using EduFormManager.Models.Repo;
 using EduFormManager.Properties;
-using EduFormManager.Utilities;
+using EduFormManager.Utils;
+using Models;
+using Models.Repo;
 
 namespace EduFormManager.Forms.UserControls
 {
@@ -78,7 +76,7 @@ namespace EduFormManager.Forms.UserControls
                     templated_form_data template = null;
                     if (!_isEditingMode)
                     {
-                        template = Repo.Db.templated_form_data.Create();
+                        template = Repo.Create<templated_form_data>();
                         template.file_data = data;
                         template.form = (form)formBindingSource.Current;
 
@@ -133,9 +131,9 @@ namespace EduFormManager.Forms.UserControls
                     {
                         if (editedTemplate == null) continue;
                         if (editedTemplate.templated_form_data_id == 0)
-                            Repo.Db.templated_form_data.Add(editedTemplate);
+                            Repo.Add(editedTemplate);
                     }});
-                await Repo.Db.SaveChangesAsync();
+                await Repo.SaveChangesAsync();
                 _editedTemplates.Clear();
                 ProgressDialog.HideTop();
                 this.ShowFlyoutMessageBox("", "Сохранено");
@@ -163,10 +161,10 @@ namespace EduFormManager.Forms.UserControls
         protected override async void Remove(Document doc)
         {
             var template = (templated_form_data) templatedFormDataBindingSource.Current;
-            Repo.Db.templated_form_data.Remove(template);
+            Repo.Remove(template);
             templatedFormDataBindingSource.Remove(template);
             templatedFormDataBindingSource.EndEdit();
-            await Repo.Db.SaveChangesAsync();
+            await Repo.SaveChangesAsync();
             UpdateData();
         }
         public bool CanRemove()

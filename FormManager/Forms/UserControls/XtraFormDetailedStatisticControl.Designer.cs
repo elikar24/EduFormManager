@@ -108,7 +108,7 @@ namespace EduFormManager.Forms.UserControls
             // 
             // formStatisticBindingSource
             // 
-            this.formStatisticBindingSource.DataSource = typeof(EduFormManager.Models.t_detailed_form_statistics);
+            this.formStatisticBindingSource.DataSource = typeof(Models.t_detailed_form_statistics);
             // 
             // gridView1
             // 

@@ -6,8 +6,9 @@ using DevExpress.Spreadsheet;
 using DevExpress.XtraReports.UI;
 using DevExpress.XtraSpreadsheet;
 using EduFormManager.Forms.UserControls.QueryControl;
-using EduFormManager.Models;
+
 using EduFormManager.Utils;
+using Models;
 
 namespace EduFormManager.Forms.Reports
 {

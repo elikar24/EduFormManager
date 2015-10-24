@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using EduFormManager.Models;
+using Models;
 
 namespace EduFormManager.Forms.UserControls.QueryControl
 {
@@ -114,8 +114,8 @@ namespace EduFormManager.Forms.UserControls.QueryControl
                     };
                     try
                     {
-                        Repo.Db.query_head_part.Add(headPart);
-                        Repo.Db.SaveChangesAsync()
+                        Repo.Add(headPart);
+                        Repo.SaveChangesAsync()
                             .ContinueWith((t) => _queryHeadAutocompleteSource.Add(headPart.title),
                                 TaskScheduler.FromCurrentSynchronizationContext());
                     }
@@ -242,8 +242,8 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             };
             try
             {
-                Repo.Db.query_autocomplete_part.Add(autocompletePart);
-                Repo.Db.SaveChangesAsync()
+                Repo.Add(autocompletePart);
+                Repo.SaveChangesAsync()
                     .ContinueWith((t) => _queryPartAutocompleteSource.Add(autocompletePart.title), 
                     TaskScheduler.FromCurrentSynchronizationContext());
             }

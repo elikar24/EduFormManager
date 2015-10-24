@@ -224,7 +224,7 @@ namespace EduFormManager.Forms.Reports
             // 
             // bindingSource1
             // 
-            this.bindingSource1.DataSource = typeof(EduFormManager.Models.t_detailed_municipality_form_statistics);
+            this.bindingSource1.DataSource = typeof(Models.t_detailed_municipality_form_statistics);
             // 
             // IsUploadedStr
             // 

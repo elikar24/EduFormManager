@@ -439,7 +439,7 @@ namespace EduFormManager.Forms.Reports
             // 
             // formStatisticBindingSource
             // 
-            this.formStatisticBindingSource.DataSource = typeof(EduFormManager.Models.t_municipality_form_statistics);
+            this.formStatisticBindingSource.DataSource = typeof(Models.t_municipality_form_statistics);
             // 
             // XtraMunicipalityFormStatisticReport
             // 

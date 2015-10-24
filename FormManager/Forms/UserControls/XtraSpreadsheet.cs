@@ -12,11 +12,11 @@ using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using DevExpress.XtraEditors;
 using DevExpress.XtraSpreadsheet;
 using EduFormManager.Forms.UserControls.MunicipalityFormulaPeek;
-using EduFormManager.Models;
-using EduFormManager.Models.Repo;
 using EduFormManager.Properties;
 using EduFormManager.Utilities;
 using EduFormManager.Utils;
+using Models;
+using Models.Repo;
 
 namespace EduFormManager.Forms.UserControls
 {
@@ -447,11 +447,11 @@ namespace EduFormManager.Forms.UserControls
                 {
                     if (cred.IsEdu)
                     {
-                        formData = Repo.Db.edu_form_data.Create();
+                        formData = Repo.Create<edu_form_data>();
                     }
                     else if (cred.IsMunicipality)
                     {
-                        formData = Repo.Db.municipality_form_data.Create();
+                        formData = Repo.Create<municipality_form_data>();
                     }
                     formData.document_format = documentFormat;
                     formData.file = new file()
@@ -472,7 +472,7 @@ namespace EduFormManager.Forms.UserControls
                         data.edu = await Repo.GetEdu(cred.EduId);
                         if (data.id == 0)
                         {
-                            formData = Repo.Db.edu_form_data.Add(data);
+                            formData = Repo.Add<edu_form_data>(data);
                         }
                     }
                     else if (Authentication.Credentials.IsMunicipality)
@@ -481,10 +481,10 @@ namespace EduFormManager.Forms.UserControls
                         data.municipality = await Repo.GetMunicipality(cred.MunitId);
                         if (data.id == 0)
                         {
-                            formData = Repo.Db.municipality_form_data.Add(data);
+                            formData = Repo.Add<municipality_form_data>(data);
                         }
                     }
-                    await Repo.Db.SaveChangesAsync();
+                    await Repo.SaveChangesAsync();
                 }
                 
                 this.ShowFlyoutMessageBox("Информация",
@@ -520,7 +520,7 @@ namespace EduFormManager.Forms.UserControls
                 }
                 using (new MarqueeProgressDialog(this.ParentForm, description: "Сохранение изменений"))
                 {
-                    await Repo.Db.SaveChangesAsync();
+                    await Repo.SaveChangesAsync();
                 }
                 this.ShowFlyoutMessageBox("Информация", "Изменения сохранены", FlyoutCommand.OK);
             }
@@ -553,7 +553,7 @@ namespace EduFormManager.Forms.UserControls
                 }
                 using (new MarqueeProgressDialog(this.ParentForm, description: "Сохранение изменений"))
                 {
-                    await Repo.Db.SaveChangesAsync();
+                    await Repo.SaveChangesAsync();
                 }
             }
             catch (Exception ex)

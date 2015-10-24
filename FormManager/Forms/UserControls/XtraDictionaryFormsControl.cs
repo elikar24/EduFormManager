@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
-using EduFormManager.Models;
-using EduFormManager.Models.Repo;
 using EduFormManager.Properties;
+using Models;
+using Models.Repo;
 using ItemCheckEventArgs = DevExpress.XtraEditors.Controls.ItemCheckEventArgs;
 
 namespace EduFormManager.Forms.UserControls
@@ -234,14 +234,14 @@ namespace EduFormManager.Forms.UserControls
                     {
                         await Task.Run(() =>
                         {
-                            Repo.Db.templated_form_data.Remove(form.templated_form_data);
-                            Repo.Db.queries.RemoveRange(form.queries);
-                            Repo.Db.edu_form_data.RemoveRange(form.edu_form_data);
-                            Repo.Db.municipality_form_data.RemoveRange(form.municipality_form_data);
-                            Repo.Db.forms.Remove(form);
+                            Repo.Remove(form.templated_form_data);
+                            Repo.RemoveRange(form.queries);
+                            Repo.RemoveRange(form.edu_form_data);
+                            Repo.RemoveRange(form.municipality_form_data);
+                            Repo.Remove(form);
                         });
 
-                        await Repo.Db.SaveChangesAsync();
+                        await Repo.SaveChangesAsync();
                         this.formBindingSource.Remove(form);
                         this.formBindingSource.EndEdit();
                     }
@@ -280,14 +280,14 @@ namespace EduFormManager.Forms.UserControls
                     if (!string.IsNullOrEmpty(form.name) && form.submission_date != null && form.form_type != null)
                     {
                         if (form.form_id == 0)
-                            Repo.Db.forms.Add(form);
+                            Repo.Add(form);
                     }
                     else
                     {
                         allformLeftList.Add(form);
                     }
                 }
-                Repo.Db.SaveChanges();
+                Repo.SaveChanges();
 
                 _editedList.Clear();
                 _editedList.AddRange(allformLeftList);

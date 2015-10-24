@@ -79,15 +79,15 @@ namespace EduFormManager.Forms.UserControls
             // 
             // questionaryBindingSource
             // 
-            this.questionaryBindingSource.DataSource = typeof(EduFormManager.Models.questionary);
+            this.questionaryBindingSource.DataSource = typeof(Models.questionary);
             // 
             // questionBindingSource
             // 
-            this.questionBindingSource.DataSource = typeof(EduFormManager.Models.question);
+            this.questionBindingSource.DataSource = typeof(Models.question);
             // 
             // answerBindingSource
             // 
-            this.answerBindingSource.DataSource = typeof(EduFormManager.Models.answer);
+            this.answerBindingSource.DataSource = typeof(Models.answer);
             // 
             // gridControlAnswers
             // 

@@ -4,9 +4,9 @@ using System.Windows.Forms;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
-using EduFormManager.Models;
-using EduFormManager.Models.Repo;
 using EduFormManager.Properties;
+using Models;
+using Models.Repo;
 
 namespace EduFormManager.Forms.UserControls
 {
@@ -86,8 +86,8 @@ namespace EduFormManager.Forms.UserControls
         protected override async void Save(Document doc)
         {
             if (_currentQuestionary.questionary_id == 0)
-                Repo.Db.questionaries.Add(_currentQuestionary);
-            await Repo.Db.SaveChangesAsync();
+                Repo.Add(_currentQuestionary);
+            await Repo.SaveChangesAsync();
         }
 
         public void OnQueryDocumentActions(IDocumentActionsArgs args)

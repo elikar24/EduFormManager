@@ -11,10 +11,11 @@ using DevExpress.Spreadsheet;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using DevExpress.XtraSpreadsheet;
 using DevExpress.XtraSpreadsheet.Menu;
-using EduFormManager.Models;
-using EduFormManager.Models.Repo;
 using EduFormManager.Properties;
 using EduFormManager.Utilities;
+using EduFormManager.Utils;
+using Models;
+using Models.Repo;
 
 namespace EduFormManager.Forms.UserControls.QueryControl
 {
@@ -132,8 +133,8 @@ namespace EduFormManager.Forms.UserControls.QueryControl
                         if (addToBindingSource) this.queryBindingSource.Add(query);
                     }
                 }
-                Repo.Db.queries.AddRange(queryListToSave);
-                Repo.Db.SaveChanges();
+                Repo.AddRange(queryListToSave);
+                Repo.SaveChanges();
                 if (clearSourceList) queryList.Clear();
             });
         }
@@ -207,8 +208,8 @@ namespace EduFormManager.Forms.UserControls.QueryControl
                 return;
             }
             var query = (query)queryBindingSource.Current;
-            Repo.Db.queries.Remove(query);
-            await Repo.Db.SaveChangesAsync();
+            Repo.Remove(query);
+            await Repo.SaveChangesAsync();
             queryBindingSource.Remove(query);
             queryBindingSource.EndEdit();
         }

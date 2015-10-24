@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.Utils;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using DevExpress.XtraEditors;
-using DevExpress.XtraRichEdit.Mouse;
-using EduFormManager.Models;
-using EduFormManager.Models.Repo;
-using EduFormManager.Utilities;
+using Models;
+using Models.Repo;
 
 namespace EduFormManager.Utils
 {
@@ -79,18 +76,18 @@ namespace EduFormManager.Utils
                         {
                             try
                             {
-                                using (var db = new Repository())
+                                using (var repo = new Repository())
                                 {
-                                    var data = await db.GetEduFormDataById(formId.Value);
-                                    var file = await db.Db.files.SingleOrDefaultAsync(t => t.file_id == data.file_id);
+                                    var data = await repo.GetEduFormDataById(formId.Value);
+                                    var file = await repo.GetFile(data.file_id);
                                     var forms = file.edu_form_data;
                                     
                                     var tag = TagHelper.GetFormDataTag(TagHelper.TagType.Tile, data);
                                     var tiles = con.Items.Find(t => t.Tag.ToString() == tag).ToArray();
                                     
-                                    db.Db.edu_form_data.RemoveRange(forms);
-                                    db.Db.files.Remove(file);
-                                    await db.Db.SaveChangesAsync();
+                                    repo.RemoveRange(forms);
+                                    repo.Remove(file);
+                                    await repo.SaveChangesAsync();
 
                                     if (con.Items.Count == 1)
                                         con.Items.Clear();
@@ -113,18 +110,18 @@ namespace EduFormManager.Utils
                         {
                             try
                             {
-                                using (var db = new Repository())
+                                using (var repo = new Repository())
                                 {
-                                    var data = await db.GetMunitFormDataById(formId.Value);
+                                    var data = await repo.GetMunitFormDataById(formId.Value);
                                     var file = data.file;
                                     var forms = file.municipality_form_data;
 
                                     var tag = TagHelper.GetFormDataTag(TagHelper.TagType.Tile, data);
                                     var tiles = con.Items.Find(t => t.Tag.ToString() == tag).ToArray();
 
-                                    db.Db.municipality_form_data.RemoveRange(forms);
-                                    db.Db.files.Remove(file);
-                                    await db.Db.SaveChangesAsync();
+                                    repo.RemoveRange(forms);
+                                    repo.Remove(file);
+                                    await repo.SaveChangesAsync();
 
                                     if (con.Items.Count == 1) 
                                         con.Items.Clear();
@@ -172,7 +169,7 @@ namespace EduFormManager.Utils
                 }
                 catch (Exception)
                 {
-                    //добавить логирование и не только тут
+                    
                 }
             })
             {

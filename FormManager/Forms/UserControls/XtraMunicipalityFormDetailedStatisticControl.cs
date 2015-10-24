@@ -3,8 +3,8 @@ using System.Linq;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Base;
-using EduFormManager.Models;
-using EduFormManager.Models.Repo;
+using Models;
+using Models.Repo;
 
 namespace EduFormManager.Forms.UserControls
 {

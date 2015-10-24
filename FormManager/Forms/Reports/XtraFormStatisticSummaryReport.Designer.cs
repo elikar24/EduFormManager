@@ -461,7 +461,7 @@ namespace EduFormManager.Forms.Reports
             // 
             // formStatisticSummaryBindingSource
             // 
-            this.formStatisticSummaryBindingSource.DataSource = typeof(EduFormManager.Models.t_summary_form_statistics);
+            this.formStatisticSummaryBindingSource.DataSource = typeof(Models.t_summary_form_statistics);
             // 
             // XtraFormStatisticSummaryReport
             // 

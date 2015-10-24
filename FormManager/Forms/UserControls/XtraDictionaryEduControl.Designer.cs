@@ -65,7 +65,7 @@ namespace EduFormManager.Forms.UserControls
             // 
             // bindingSource1
             // 
-            this.bindingSource1.DataSource = typeof(EduFormManager.Models.edu);
+            this.bindingSource1.DataSource = typeof(Models.edu);
             // 
             // treeViewEdu
             // 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-using EduFormManager.Models;
+using Models;
+using Models.Repo;
 
 namespace EduFormManager.Utils
 {
@@ -62,7 +63,7 @@ namespace EduFormManager.Utils
 
         public static String GetTag(TagType type, object obj, string addon = "")
         {
-            string tag = String.Format("{0}-{1}", (
+            var tag = String.Format("{0}-{1}", (
                 obj is edu ? EDU + "-"+((edu)obj).edu_id 
                 : obj is municipality ? MUNICIPALITY + "-"+((municipality)obj).municipality_id 
                 : obj is edu_kind ? EDU_TYPE + "-"+((edu_kind)obj).edu_kind_id : "ent"), addon);
@@ -81,12 +82,12 @@ namespace EduFormManager.Utils
 
         public static int? GetId(string tag)
         {
-            Regex dataIdPattern = new Regex(@"\w+-(?<num>\d+)");
-            Match dataIdMatch = dataIdPattern.Match(tag);
+            var dataIdPattern = new Regex(@"\w+-(?<num>\d+)");
+            var dataIdMatch = dataIdPattern.Match(tag);
             if (dataIdMatch.Success)
             {
-                int dataId = -1;
-                bool isParsed = Int32.TryParse(dataIdMatch.Groups["num"].Value, out dataId);
+                var dataId = -1;
+                var isParsed = Int32.TryParse(dataIdMatch.Groups["num"].Value, out dataId);
                 return !isParsed ? null : new int?(dataId);
             }
             return null;
@@ -94,12 +95,12 @@ namespace EduFormManager.Utils
 
         public static int? GetFormDataId(string tag)
         {
-            Regex dataIdPattern = new Regex(@"data-(?<num>\d+)");
-            Match dataIdMatch = dataIdPattern.Match(tag);
+            var dataIdPattern = new Regex(@"data-(?<num>\d+)");
+            var dataIdMatch = dataIdPattern.Match(tag);
             if (dataIdMatch.Success)
             {
-                int dataId = -1;
-                bool isParsed = Int32.TryParse(dataIdMatch.Groups["num"].Value, out dataId);
+                var dataId = -1;
+                var isParsed = Int32.TryParse(dataIdMatch.Groups["num"].Value, out dataId);
                 return !isParsed ? null : new int?(dataId);
             }
             return null;
@@ -107,12 +108,12 @@ namespace EduFormManager.Utils
 
         public static int? GetMunicipalityId(string tag)
         {
-            Regex dataIdPattern = new Regex(MUNICIPALITY + @"-(?<num>\d+)");
-            Match dataIdMatch = dataIdPattern.Match(tag);
+            var dataIdPattern = new Regex(MUNICIPALITY + @"-(?<num>\d+)");
+            var dataIdMatch = dataIdPattern.Match(tag);
             if (dataIdMatch.Success)
             {
-                int dataId = -1;
-                bool isParsed = Int32.TryParse(dataIdMatch.Groups["num"].Value, out dataId);
+                var dataId = -1;
+                var isParsed = Int32.TryParse(dataIdMatch.Groups["num"].Value, out dataId);
                 return !isParsed ? null : new int?(dataId);
             }
             return null;
@@ -136,12 +137,12 @@ namespace EduFormManager.Utils
 
         public static int? GetQuestionaryId(string tag)
         {
-            Regex idPattern = new Regex(@"questionary-(?<num>\d+)");
-            Match idMatch = idPattern.Match(tag);
+            var idPattern = new Regex(@"questionary-(?<num>\d+)");
+            var idMatch = idPattern.Match(tag);
             if (idMatch.Success)
             {
-                int id = -1;
-                bool isParsed = Int32.TryParse(idMatch.Groups["num"].Value, out id);
+                var id = -1;
+                var isParsed = Int32.TryParse(idMatch.Groups["num"].Value, out id);
                 return !isParsed ? null : new int?(id);
             }
             return null;

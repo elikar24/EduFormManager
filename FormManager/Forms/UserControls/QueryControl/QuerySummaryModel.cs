@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using EduFormManager.Models;
+using Models;
 
 namespace EduFormManager.Forms.UserControls.QueryControl
 {

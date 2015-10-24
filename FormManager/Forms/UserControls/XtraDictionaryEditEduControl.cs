@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using EduFormManager.Models;
+using Models;
+using Models.Repo;
 
 namespace EduFormManager.Forms.UserControls
 {
@@ -129,8 +130,8 @@ namespace EduFormManager.Forms.UserControls
 
             if (_edu.edu_id == 0)
             {
-                Repo.Db.edus.Add(_edu);
-                Repo.Db.SaveChanges();
+                Repo.Add(_edu);
+                Repo.SaveChanges();
             }
 
             var cred = Repo.GetCredential(_edu.edu_id, Credentials.Type.Edu).Result;
@@ -141,12 +142,12 @@ namespace EduFormManager.Forms.UserControls
                     ref_id = _edu.edu_id,
                     login_type = (int)Credentials.Type.Edu
                 };
-                Repo.Db.credentials.Add(cred);
+                Repo.Add(cred);
             }
             cred.login = this.textBoxDictLogin.Text.Trim();
             cred.passwd = this.textBoxDictPassword.Text.Trim();
 
-            Repo.Db.SaveChanges();
+            Repo.SaveChanges();
 
             this.labelError.Text = string.Empty;
             return _edu;

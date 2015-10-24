@@ -6,5 +6,5 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="edu" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>EduFormManager.Models.edu, EduFormManager, Version=1.0.5718.1767, Culture=neutral, PublicKeyToken=null</TypeInfo>
+   <TypeInfo>Models.edu, EduFormManager, Version=1.0.5718.1767, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>

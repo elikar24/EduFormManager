@@ -1,16 +1,13 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Data.Entity;
-using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
-using EduFormManager.Models;
-using EduFormManager.Models.Repo;
 using EduFormManager.Utils;
+using Models;
+using Models.Repo;
 
 namespace EduFormManager.Forms.UserControls.MunicipalityFormulaPeek
 {
@@ -45,7 +42,7 @@ namespace EduFormManager.Forms.UserControls.MunicipalityFormulaPeek
         async private Task InitializeMunicipality(Repository repo, form summaryForm, int year)
         {
             var munit = repo.GetMunicipality(Authentication.Credentials.MunitId).Result;
-            _formula = await repo.Db.mm_regular__summary_form.SingleOrDefaultAsync(t => t.summary_form_id == summaryForm.form_id);
+            _formula = await repo.GetMunicipalityFormulaByMunicipalityForm(summaryForm.form_id);
             this.IsAvailable = (_formula != null);
             if (this.IsAvailable)
             {
@@ -53,21 +50,10 @@ namespace EduFormManager.Forms.UserControls.MunicipalityFormulaPeek
                 _summaryForm = summaryForm;
                 _regularForm = _formula.regular_form;
                 _year = year;
-                //var eduList = await db.edu_form_data.Where(
-                //    t =>
-                //        t.form.form_id == _regularForm.form_id &&
-                //        t.send_date.Year == year &&
-                //        t.edu.municipality.municipality_id == munit.municipality_id)
-                //        .Select(t => t.edu)
-                //        .ToListAsync();
-                var eduList = await repo.Db.edus.Where(t => t.municipality_id == munit.municipality_id)
-                    .ToListAsync();
-                var eduIdList = eduList.Select(t => t.edu_id).ToList();
-                var eduHasFormIdList = await repo.Db.edu_form_data.Where(
-                    t => t.form_id == _regularForm.form_id && 
-                        eduIdList.Contains(t.edu_id))
-                        .Select(t => t.edu_id)
-                        .ToListAsync();
+
+                var eduList = await repo.GetEdus(munit.municipality_id);
+                var eduHasFormIdList = (await repo.GetEdusHaveFormData(_regularForm.form_id, _year))
+                    .Select(t => t.edu_id);
                 foreach (var edu in eduList)
                 {
                     var hasForm = eduHasFormIdList.Contains(edu.edu_id);
@@ -79,19 +65,14 @@ namespace EduFormManager.Forms.UserControls.MunicipalityFormulaPeek
 
         async private Task InitializeAdmin(Repository repo, form summaryForm, int year)
         {
-            _formula = await repo.Db.mm_regular__summary_form.SingleOrDefaultAsync(t => t.summary_form_id == summaryForm.form_id);
+            _formula = await repo.GetMunicipalityFormulaByMunicipalityForm(summaryForm.form_id);
             this.IsAvailable = (_formula != null);
             if (this.IsAvailable)
             {
                 _summaryForm = summaryForm;
                 _regularForm = _formula.regular_form;
                 _year = year;
-                var eduList = await repo.Db.edu_form_data.Include(t => t.edu.municipality).Where(
-                    t =>
-                        t.form.form_id == _regularForm.form_id &&
-                        t.send_date.Year == year)
-                        .Select(t => t.edu)
-                        .ToListAsync();
+                var eduList = await repo.GetEdusHaveFormData(_regularForm.form_id, _year);
 
                 this.eduBindingSource.DataSource = eduList;
             }

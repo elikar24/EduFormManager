@@ -4,8 +4,8 @@ using System.Windows.Forms;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using DevExpress.XtraCharts.Native;
 using DevExpress.XtraEditors;
-using EduFormManager.Models;
-using EduFormManager.Models.Repo;
+using Models;
+using Models.Repo;
 
 namespace EduFormManager.Forms.UserControls
 {
@@ -37,7 +37,7 @@ namespace EduFormManager.Forms.UserControls
             if (!msg.is_viewed)
             {
                 msg.is_viewed = true;
-                await Repo.Db.SaveChangesAsync();
+                await Repo.SaveChangesAsync();
             }
         }
 

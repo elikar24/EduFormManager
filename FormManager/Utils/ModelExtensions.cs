@@ -1,5 +1,5 @@
 ﻿using System;
-using EduFormManager.Models;
+using Models;
 
 namespace EduFormManager.Utils
 {

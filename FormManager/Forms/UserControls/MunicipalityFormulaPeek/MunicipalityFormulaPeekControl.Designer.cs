@@ -109,7 +109,7 @@ namespace EduFormManager.Forms.UserControls.MunicipalityFormulaPeek
             // 
             // eduBindingSource
             // 
-            this.eduBindingSource.DataSource = typeof(EduFormManager.Models.edu);
+            this.eduBindingSource.DataSource = typeof(Models.edu);
             // 
             // gridViewEdu
             // 

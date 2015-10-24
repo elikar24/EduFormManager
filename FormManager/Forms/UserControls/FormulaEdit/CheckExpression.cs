@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using DevExpress.Spreadsheet;
-using EduFormManager.Utilities;
+using EduFormManager.Utils;
 using NLog;
 
 namespace EduFormManager
@@ -163,7 +163,7 @@ namespace EduFormManager
                             ? string.Format("{0:0.###} не {1} {2:0.###}", this.LeftPart.PreviouslyComputedResult,
                                 this.OperatorToString(), this.RightPart.PreviouslyComputedResult)
                             : string.Empty,
-                    Color = ok ? Color.White : ColorUtility.RandomizedColor,
+                    Color = ok ? Color.White : Colors.RandomizedColor,
                     Expression = this.InitialExpressionString
                 };
 

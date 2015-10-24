@@ -3,9 +3,9 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using DevExpress.XtraEditors;
-using EduFormManager.Models;
-using EduFormManager.Models.Repo;
 using EduFormManager.Properties;
+using Models;
+using Models.Repo;
 
 namespace EduFormManager.Forms.UserControls
 {
@@ -42,7 +42,7 @@ namespace EduFormManager.Forms.UserControls
         }
         protected override void New(Document doc)
         {
-            var munit = this.Repo.Db.municipalities.Create();
+            var munit = this.Repo.Create<municipality>();
             this.municipalityBindingSource.Add(munit);
             var editForm = new XtraDictionaryEditMunitForm(this, munit);
             editForm.Show(this.ParentForm);
@@ -117,8 +117,8 @@ namespace EduFormManager.Forms.UserControls
                 municipalityBindingSource.EndEdit();
                 if (munit.municipality_id > 0)
                 {
-                    Repo.Db.municipalities.Remove(munit);
-                    await Repo.Db.SaveChangesAsync();
+                    Repo.Remove(munit);
+                    await Repo.SaveChangesAsync();
                 }
             } 
         }

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using DevExpress.XtraEditors;
-using EduFormManager.Models;
+using Models;
 
 namespace EduFormManager.Forms.UserControls
 {

@@ -1,4 +1,4 @@
-﻿using EduFormManager.Models;
+﻿using Models;
 
 namespace EduFormManager.Forms.Reports
 {

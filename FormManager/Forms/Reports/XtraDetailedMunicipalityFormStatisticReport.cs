@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using DevExpress.XtraReports.UI;
-using EduFormManager.Models;
+using Models;
 
 namespace EduFormManager.Forms.Reports
 {

@@ -1,5 +1,5 @@
 ﻿using EduFormManager.Forms.UserControls;
-using EduFormManager.Models;
+using Models;
 
 namespace EduFormManager.Forms
 {

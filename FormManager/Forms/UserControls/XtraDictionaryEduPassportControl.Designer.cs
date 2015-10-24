@@ -373,7 +373,7 @@ namespace EduFormManager.Forms.UserControls
             // 
             // activityTypeBindingSource
             // 
-            this.activityTypeBindingSource.DataSource = typeof(EduFormManager.Models.activity_type);
+            this.activityTypeBindingSource.DataSource = typeof(Models.activity_type);
             // 
             // comboBoxOwnershipType
             // 
@@ -430,7 +430,7 @@ namespace EduFormManager.Forms.UserControls
             // 
             // managementAgencyActivityBindingSource
             // 
-            this.managementAgencyActivityBindingSource.DataSource = typeof(EduFormManager.Models.management_agency_activity);
+            this.managementAgencyActivityBindingSource.DataSource = typeof(Models.management_agency_activity);
             // 
             // textBoxEmail
             // 
@@ -462,7 +462,7 @@ namespace EduFormManager.Forms.UserControls
             // 
             // managementAgencyBindingSource
             // 
-            this.managementAgencyBindingSource.DataSource = typeof(EduFormManager.Models.management_agency);
+            this.managementAgencyBindingSource.DataSource = typeof(Models.management_agency);
             // 
             // textBoxOKPOCode
             // 
@@ -937,11 +937,11 @@ namespace EduFormManager.Forms.UserControls
             // 
             // eduOrgStatusBindingSource
             // 
-            this.eduOrgStatusBindingSource.DataSource = typeof(EduFormManager.Models.edu_status);
+            this.eduOrgStatusBindingSource.DataSource = typeof(Models.edu_status);
             // 
             // ownershipTypeBindingSource
             // 
-            this.ownershipTypeBindingSource.DataSource = typeof(EduFormManager.Models.ownership_type);
+            this.ownershipTypeBindingSource.DataSource = typeof(Models.ownership_type);
             // 
             // tabbedControlGroup1
             // 

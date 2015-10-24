@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data.Entity;
 using System.Linq;
 using DevExpress.Utils.Menu;
 using DevExpress.XtraBars.Docking2010.Views;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraReports.UI;
-using DevExpress.XtraSpreadsheet;
 using EduFormManager.Forms.Reports;
-using EduFormManager.Models;
-using EduFormManager.Models.Repo;
 using EduFormManager.Properties;
+using Models;
+using Models.Repo;
 using PopupMenuShowingEventArgs = DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventArgs;
 
 namespace EduFormManager.Forms.UserControls.QueryControl
@@ -130,14 +128,14 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             int credId = Authentication.Credentials.CredId;
             if (Authentication.Credentials.IsMinistry)
             {
-                credId = Repo.Db.credentials.Single(t => t.login == "admin").credentials_id;
+                credId = (await Repo.GetCredential("admin")).credentials_id;
             }
             this.queryControl.QueryDataSource = await Repo.GetQueries(credId, _selectedForm.form_id);
             IList<edu> eduList = null;
             if (Authentication.Credentials.IsAdmin || Authentication.Credentials.IsMinistry)
             {
                 eduList = _isOnlyPassport ?
-                    await Repo.Db.edus.ToListAsync() :
+                    await Repo.GetEdus() :
                     await Repo.GetEdusHaveFormData(_selectedForm.form_id, _selectedYear);
             }
             else if (Authentication.Credentials.IsMunicipality)

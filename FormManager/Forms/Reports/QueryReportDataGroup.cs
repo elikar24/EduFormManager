@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using EduFormManager.Models;
+using Models;
 
 namespace EduFormManager.Forms.Reports
 {
@@ -22,7 +22,7 @@ namespace EduFormManager.Forms.Reports
             }
             else
             {
-                QueryReportDataGroupEdu casted = (QueryReportDataGroupEdu)obj;
+                var casted = (QueryReportDataGroupEdu)obj;
                 return this.Head.Equals(casted.Head);
             }
         }
@@ -47,7 +47,7 @@ namespace EduFormManager.Forms.Reports
             }
             else
             {
-                QueryReportDataGroupQuery casted = (QueryReportDataGroupQuery)obj;
+                var casted = (QueryReportDataGroupQuery)obj;
                 return this.Head.Equals(casted.Head);
             }
         }

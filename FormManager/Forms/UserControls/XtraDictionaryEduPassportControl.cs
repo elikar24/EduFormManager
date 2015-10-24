@@ -5,9 +5,9 @@ using DevExpress.Utils.Win;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Popup;
-using EduFormManager.Models;
-using EduFormManager.Models.Repo;
 using EduFormManager.Properties;
+using Models;
+using Models.Repo;
 using ItemCheckEventArgs = DevExpress.XtraEditors.Controls.ItemCheckEventArgs;
 
 namespace EduFormManager.Forms.UserControls
@@ -225,7 +225,7 @@ namespace EduFormManager.Forms.UserControls
                 try
                 {
                     this.SaveData(_edu);
-                    await Repo.Db.SaveChangesAsync();
+                    await Repo.SaveChangesAsync();
                     this.ShowFlyoutMessageBox("Информация", "Сохранено.", FlyoutCommand.OK);
                 }
                 catch (Exception ex)

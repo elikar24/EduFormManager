@@ -284,7 +284,7 @@ namespace EduFormManager.Forms.UserControls
             // 
             // allformBindingSource1
             // 
-            this.allformBindingSource1.DataSource = typeof(EduFormManager.Models.form);
+            this.allformBindingSource1.DataSource = typeof(Models.form);
             // 
             // comboBoxFormMunit
             // 
@@ -302,7 +302,7 @@ namespace EduFormManager.Forms.UserControls
             // 
             // allformBindingSource2
             // 
-            this.allformBindingSource2.DataSource = typeof(EduFormManager.Models.form);
+            this.allformBindingSource2.DataSource = typeof(Models.form);
             // 
             // layoutControl1
             // 
@@ -572,7 +572,7 @@ namespace EduFormManager.Forms.UserControls
             // 
             // formBindingSource1
             // 
-            this.formBindingSource1.DataSource = typeof(EduFormManager.Models.form);
+            this.formBindingSource1.DataSource = typeof(Models.form);
             // 
             // label3
             // 

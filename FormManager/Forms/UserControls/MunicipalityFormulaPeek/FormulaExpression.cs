@@ -31,22 +31,22 @@ namespace EduFormManager.Forms.UserControls.MunicipalityFormulaPeek
 
         public void WriteToTarget()
         {
-            object value = this.SourcePart.Value;
-            string targetRef = this.TargetPart.A1References.First();
-            Cell targetCell = this.TargetPart.GetCell(targetRef, this.Target);
+            var value = this.SourcePart.Value;
+            var targetRef = this.TargetPart.A1References.First();
+            var targetCell = this.TargetPart.GetCell(targetRef, this.Target);
             
             targetCell.SetValue(value);
         }
 
         public void AppendToTarget()
         {
-            string sValue = this.SourcePart.Value.ToString();
-            string targetRef = this.TargetPart.A1References.First();
-            Cell targetCell = this.TargetPart.GetCell(targetRef, this.Target);
-            string sCurrValue = targetCell.Value.ToString();
-            double currValue = MathUtility.ParseStringDouble(sCurrValue);
-            double value = MathUtility.ParseStringDouble(sValue);
-            if (MathUtility.IsErrorDouble(value) || MathUtility.IsErrorDouble(currValue)) return;
+            var sValue = this.SourcePart.Value.ToString();
+            var targetRef = this.TargetPart.A1References.First();
+            var targetCell = this.TargetPart.GetCell(targetRef, this.Target);
+            var sCurrValue = targetCell.Value.ToString();
+            var currValue = sCurrValue.ParseDouble();
+            var value = sValue.ParseDouble();
+            if (value.IsErrorDouble() || currValue.IsErrorDouble()) return;
             targetCell.SetValue(value + currValue);
         }
 
@@ -72,32 +72,33 @@ namespace EduFormManager.Forms.UserControls.MunicipalityFormulaPeek
             {
                 get
                 {
-                    double result = 0.0;
-                    if (A1References.Any())
+                    var result = 0.0;
+                    if (!A1References.Any()) 
+                        return result;
+                    result = GetCellValue(A1References[0], Expression.Source);
+                    if (result.IsErrorDouble()) 
+                        result = 0.0;
+                    for (var i = 1; i < A1References.Count; i++)
                     {
-                        result = GetCellValue(A1References[0], Expression.Source);
-                        if (MathUtility.IsErrorDouble(result)) result = 0.0;
-                        for (int i = 1; i < A1References.Count; i++)
+                        try
                         {
-                            try
+                            var value = GetCellValue(A1References[i], Expression.Source);
+                            if (value.IsErrorDouble()) 
+                                continue;
+                            var sign = Signs[i - 1];
+                            switch (sign)
                             {
-                                double value = GetCellValue(A1References[i], Expression.Source);
-                                if (MathUtility.IsErrorDouble(value)) continue;
-                                string sign = Signs[i - 1];
-                                switch (sign)
-                                {
-                                    case "+":
-                                        result += value;
-                                        break;
-                                    case "-":
-                                        result -= value;
-                                        break;
-                                }
+                                case "+":
+                                    result += value;
+                                    break;
+                                case "-":
+                                    result -= value;
+                                    break;
                             }
-                            catch (Exception)
-                            {
-                                throw;
-                            }
+                        }
+                        catch (Exception)
+                        {
+                            throw;
                         }
                     }
                     return result;
@@ -112,35 +113,35 @@ namespace EduFormManager.Forms.UserControls.MunicipalityFormulaPeek
             {
                 if (!WorksheetRegex.IsMatch(a1Reference))
                 {
-                    string errorMessage = "Неверная ссылка на книгу. " + a1Reference + book.DocumentProperties.Title;
+                    var errorMessage = "Неверная ссылка на книгу. " + a1Reference + book.DocumentProperties.Title;
                     Expression.ErrorMessages.Add(errorMessage);
                     Logger.Error(errorMessage);
                     return null;
                 }
-                Match worksheetMatch = WorksheetRegex.Match(a1Reference);
-                string worksheetAddr = worksheetMatch.Groups["Workbook"].Value;
+                var worksheetMatch = WorksheetRegex.Match(a1Reference);
+                var worksheetAddr = worksheetMatch.Groups["Workbook"].Value;
 
                 if (!CellRegex.IsMatch(a1Reference))
                 {
-                    string errorMessage = "Неверная ссылка на ячейку. " + a1Reference + book.DocumentProperties.Title;
+                    var errorMessage = "Неверная ссылка на ячейку. " + a1Reference + book.DocumentProperties.Title;
                     Expression.ErrorMessages.Add(errorMessage);
                     Logger.Error(errorMessage);
                     return null;
                 }
-                Match cellMatch = CellRegex.Match(a1Reference);
-                string cellAddr = cellMatch.Groups["Cell"].Value;
+                var cellMatch = CellRegex.Match(a1Reference);
+                var cellAddr = cellMatch.Groups["Cell"].Value;
                 if (book.Worksheets.Contains(worksheetAddr))
                 {
-                    Cell cell = book.Worksheets[worksheetAddr].Cells[cellAddr];
+                    var cell = book.Worksheets[worksheetAddr].Cells[cellAddr];
                     if (cell != null)
                         return cell;
-                    string errorMessage = "Не найдена ячейка. " + a1Reference + book.DocumentProperties.Title;
+                    var errorMessage = "Не найдена ячейка. " + a1Reference + book.DocumentProperties.Title;
                     Expression.ErrorMessages.Add(errorMessage);
                     Logger.Error(errorMessage);
                 }
                 else
                 {
-                    string errorMessage = "Не найден лист. " + a1Reference + book.DocumentProperties.Title;
+                    var errorMessage = "Не найден лист. " + a1Reference + book.DocumentProperties.Title;
                     Expression.ErrorMessages.Add(errorMessage);
                     Logger.Error(errorMessage);
                 }
@@ -150,18 +151,18 @@ namespace EduFormManager.Forms.UserControls.MunicipalityFormulaPeek
 
             internal double GetCellValue(string a1Reference, IWorkbook book)
             {
-                Cell cell = GetCell(a1Reference, book);
+                var cell = GetCell(a1Reference, book);
                 if (cell == null) return 0.0;
-                string sValue = cell.Value.ToString();
-                double value = MathUtility.ParseStringDouble(sValue);
+                var sValue = cell.Value.ToString();
+                var value = sValue.ParseDouble();
                 return value;
             }
 
             internal string GetRawCellValue(string a1Reference, IWorkbook book)
             {
-                Cell cell = GetCell(a1Reference, book);
+                var cell = GetCell(a1Reference, book);
                 if (cell == null) return string.Empty;
-                string sValue = cell.Value.ToString();
+                var sValue = cell.Value.ToString();
                 return sValue;
             }
         }

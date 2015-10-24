@@ -54,39 +54,39 @@ namespace EduFormManager.Forms.UserControls
             // 
             // eduTypeBindingSource
             // 
-            this.eduTypeBindingSource.DataSource = typeof(EduFormManager.Models.edu_type);
+            this.eduTypeBindingSource.DataSource = typeof(Models.edu_type);
             // 
             // queryBindingSource
             // 
-            this.queryBindingSource.DataSource = typeof(EduFormManager.Models.query);
+            this.queryBindingSource.DataSource = typeof(Models.query);
             // 
             // eduBindingSource
             // 
-            this.eduBindingSource.DataSource = typeof(EduFormManager.Models.edu);
+            this.eduBindingSource.DataSource = typeof(Models.edu);
             // 
             // municipalityBindingSource
             // 
-            this.municipalityBindingSource.DataSource = typeof(EduFormManager.Models.municipality);
+            this.municipalityBindingSource.DataSource = typeof(Models.municipality);
             // 
             // templatedFormDataBindingSource
             // 
-            this.templatedFormDataBindingSource.DataSource = typeof(EduFormManager.Models.templated_form_data);
+            this.templatedFormDataBindingSource.DataSource = typeof(Models.templated_form_data);
             // 
             // eduKindBindingSource
             // 
-            this.eduKindBindingSource.DataSource = typeof(EduFormManager.Models.edu_kind);
+            this.eduKindBindingSource.DataSource = typeof(Models.edu_kind);
             // 
             // messageBindingSource
             // 
-            this.messageBindingSource.DataSource = typeof(EduFormManager.Models.message);
+            this.messageBindingSource.DataSource = typeof(Models.message);
             // 
             // formTypeBindingSource
             // 
-            this.formTypeBindingSource.DataSource = typeof(EduFormManager.Models.form_type);
+            this.formTypeBindingSource.DataSource = typeof(Models.form_type);
             // 
             // formBindingSource
             // 
-            this.formBindingSource.DataSource = typeof(EduFormManager.Models.form);
+            this.formBindingSource.DataSource = typeof(Models.form);
             // 
             // XtraBaseControl
             // 

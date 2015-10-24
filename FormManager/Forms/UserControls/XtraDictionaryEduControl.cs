@@ -2,9 +2,9 @@
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
-using EduFormManager.Models;
-using EduFormManager.Models.Repo;
 using EduFormManager.Properties;
+using Models;
+using Models.Repo;
 
 namespace EduFormManager.Forms.UserControls
 {
@@ -201,10 +201,10 @@ namespace EduFormManager.Forms.UserControls
             var eduSelected = (edu) this.treeViewEdu.SelectedNode.Tag;
             if (edu.Equals(eduSelected))
             {
-                Repo.Db.edus.Remove(edu);
+                Repo.Remove(edu);
                 eduBindingSource.Remove(edu);
                 eduBindingSource.EndEdit();
-                Repo.Db.SaveChanges();
+                Repo.SaveChanges();
                 RebuildEduTree();
             }
             else

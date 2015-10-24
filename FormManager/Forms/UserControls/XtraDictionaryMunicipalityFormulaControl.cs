@@ -8,9 +8,9 @@ using DevExpress.Spreadsheet;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using DevExpress.XtraSpreadsheet;
 using DevExpress.XtraSpreadsheet.Menu;
-using EduFormManager.Models;
-using EduFormManager.Models.Repo;
 using EduFormManager.Properties;
+using Models;
+using Models.Repo;
 
 namespace EduFormManager.Forms.UserControls
 {
@@ -90,8 +90,8 @@ namespace EduFormManager.Forms.UserControls
                     _currentFormula.summary_form = munitForm;
                     _currentFormula.file_data = formulaBytes;
                     if (_currentFormula.id == 0)
-                        Repo.Db.mm_regular__summary_form.Add(_currentFormula);
-                    await Repo.Db.SaveChangesAsync();
+                        Repo.Add(_currentFormula);
+                    await Repo.SaveChangesAsync();
                 }
                 this.ShowFlyoutMessageBox("Информация", "Сохранено", FlyoutCommand.OK);
             }
@@ -109,8 +109,8 @@ namespace EduFormManager.Forms.UserControls
                     "Это только что созданная и не сохраненная формула. Ее удалять не требуется.");
                 return;
             }
-            Repo.Db.mm_regular__summary_form.Remove(_currentFormula);
-            await Repo.Db.SaveChangesAsync();
+            Repo.Remove(_currentFormula);
+            await Repo.SaveChangesAsync();
         }
 
         public List<form> RegularFormDataSource

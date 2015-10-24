@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data.Entity;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -18,11 +17,10 @@ using EduFormManager.Forms;
 using EduFormManager.Forms.Reports;
 using EduFormManager.Forms.UserControls;
 using EduFormManager.Forms.UserControls.QueryControl;
-using EduFormManager.Models;
-using EduFormManager.Models.Repo;
 using EduFormManager.Properties;
-using EduFormManager.Utilities;
 using EduFormManager.Utils;
+using Models;
+using Models.Repo;
 using NLog;
 
 namespace EduFormManager
@@ -70,8 +68,7 @@ namespace EduFormManager
         {
             _progressDialog.ShowTop(this);
 
-            SynchronizationContext context = SynchronizationContext.Current;
-            GuiHelper.GuiThreadContext = context;
+            GuiUtility.GuiThreadContext = SynchronizationContext.Current;
             var cred = Authentication.Credentials;
 
             if (cred.IsEdu) this.tileForms.Tag = TagHelper.EDU + "-" + cred.EduId;
@@ -135,7 +132,7 @@ namespace EduFormManager
             }
             if (!Authentication.Credentials.IsAdmin)
             {
-                await DbLogHelper.LogLoginAsync(Authentication.Credentials);
+                await DbLogger.LogLoginAsync(Authentication.Credentials);
                 this.flyoutPanel1.ShowPopup();
             }
 
@@ -166,38 +163,38 @@ namespace EduFormManager
                 {
                     tileForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadMunicipalityLayerAction.Invoke(sender, args, view, false,
+                            Actions.LoadMunicipalityLayerAction.Invoke(sender, args, view, false,
                                 FormType.Edu, syncCtx);
                     tileArchiveForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadMunicipalityLayerAction.Invoke(sender, args, view, true,
+                            Actions.LoadMunicipalityLayerAction.Invoke(sender, args, view, true,
                                 FormType.Edu, syncCtx);
 
                     tileAdditionalForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadMunicipalityLayerAction.Invoke(sender, args, view, false,
+                            Actions.LoadMunicipalityLayerAction.Invoke(sender, args, view, false,
                                 FormType.OtherEdu, syncCtx);
                     tileArchiveAdditionalForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadMunicipalityLayerAction.Invoke(sender, args, view, true, FormType.OtherEdu,
+                            Actions.LoadMunicipalityLayerAction.Invoke(sender, args, view, true, FormType.OtherEdu,
                                 syncCtx);
 
                     tileMunicipalityForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadMunicipalityMunicipalityLayerAction.Invoke(sender, args, view, false,
+                            Actions.LoadMunicipalityMunicipalityLayerAction.Invoke(sender, args, view, false,
                                 FormType.Municipality, syncCtx);
                     tileArchiveMunicipalityForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadMunicipalityMunicipalityLayerAction.Invoke(sender, args, view, true,
+                            Actions.LoadMunicipalityMunicipalityLayerAction.Invoke(sender, args, view, true,
                                 FormType.Municipality, syncCtx);
 
                     tileMunicipalityAdditonalForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadMunicipalityMunicipalityLayerAction.Invoke(sender, args, view, false,
+                            Actions.LoadMunicipalityMunicipalityLayerAction.Invoke(sender, args, view, false,
                                 FormType.OtherMunicipality, syncCtx);
                     tileArchiveMunicipalityAdditonalForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadMunicipalityMunicipalityLayerAction.Invoke(sender, args, view, true,
+                            Actions.LoadMunicipalityMunicipalityLayerAction.Invoke(sender, args, view, true,
                                 FormType.OtherMunicipality, syncCtx);
                 }
                 else if (user.IsMunicipality)
@@ -206,46 +203,46 @@ namespace EduFormManager
                     tileMunicipalityForms.Tag = TagHelper.GetTag(TagHelper.TagType.Tile, munit);
                     tileMunicipalityForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadMunicipalityFormsLayerAction.Invoke(sender, args, view, false,
+                            Actions.LoadMunicipalityFormsLayerAction.Invoke(sender, args, view, false,
                                 FormType.Municipality, syncCtx);
                     tileArchiveMunicipalityForms.Tag = TagHelper.GetTag(TagHelper.TagType.Tile, munit, "archive");
                     tileArchiveMunicipalityForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadMunicipalityFormsLayerAction.Invoke(sender, args, view, true,
+                            Actions.LoadMunicipalityFormsLayerAction.Invoke(sender, args, view, true,
                                 FormType.Municipality, syncCtx);
 
                     tileMunicipalityAdditonalForms.Tag = TagHelper.GetTag(TagHelper.TagType.Tile, munit);
                     tileMunicipalityAdditonalForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadMunicipalityFormsLayerAction.Invoke(sender, args, view, false,
+                            Actions.LoadMunicipalityFormsLayerAction.Invoke(sender, args, view, false,
                                 FormType.OtherMunicipality, syncCtx);
                     tileArchiveMunicipalityAdditonalForms.Tag = TagHelper.GetTag(TagHelper.TagType.Tile, munit, "archive");
                     tileArchiveMunicipalityAdditonalForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadMunicipalityFormsLayerAction.Invoke(sender, args, view, true,
+                            Actions.LoadMunicipalityFormsLayerAction.Invoke(sender, args, view, true,
                                 FormType.OtherMunicipality, syncCtx);
 
                     tileForms.Tag = TagHelper.GetTag(TagHelper.TagType.Tile, munit);
                     tileForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadEduKindLayerAction.Invoke(sender, args, view, false, FormType.Edu,
+                            Actions.LoadEduKindLayerAction.Invoke(sender, args, view, false, FormType.Edu,
                                 syncCtx);
                     tileArchiveForms.Tag = TagHelper.GetTag(TagHelper.TagType.Tile, munit, "archive");
                     tileArchiveForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadEduKindLayerAction.Invoke(sender, args, view, true, FormType.Edu,
+                            Actions.LoadEduKindLayerAction.Invoke(sender, args, view, true, FormType.Edu,
                                 syncCtx);
 
                     tileAdditionalForms.Tag = TagHelper.GetTag(TagHelper.TagType.Tile, munit);
                     tileAdditionalForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadEduKindLayerAction.Invoke(sender, args, view, false, FormType.OtherEdu,
+                            Actions.LoadEduKindLayerAction.Invoke(sender, args, view, false, FormType.OtherEdu,
                                 syncCtx);
                     tileArchiveAdditionalForms.Tag = TagHelper.GetTag(TagHelper.TagType.Tile, munit,
                         "archive");
                     tileArchiveAdditionalForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadEduKindLayerAction.Invoke(sender, args, view, true, FormType.OtherEdu,
+                            Actions.LoadEduKindLayerAction.Invoke(sender, args, view, true, FormType.OtherEdu,
                                 syncCtx);
                 }
                 else if (user.IsEdu)
@@ -254,23 +251,23 @@ namespace EduFormManager
                     tileForms.Tag = TagHelper.GetTag(TagHelper.TagType.Tile, edu);
                     tileForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadEduFormsLayerAction.Invoke(sender, args, view, false, FormType.Edu,
+                            Actions.LoadEduFormsLayerAction.Invoke(sender, args, view, false, FormType.Edu,
                                 syncCtx);
                     tileArchiveForms.Tag = TagHelper.GetTag(TagHelper.TagType.Tile, edu, "archive");
                     tileArchiveForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadEduFormsLayerAction.Invoke(sender, args, view, true, FormType.Edu,
+                            Actions.LoadEduFormsLayerAction.Invoke(sender, args, view, true, FormType.Edu,
                                 syncCtx);
 
                     tileAdditionalForms.Tag = TagHelper.GetTag(TagHelper.TagType.Tile, edu);
                     tileAdditionalForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadEduFormsLayerAction.Invoke(sender, args, view, false, FormType.OtherEdu,
+                            Actions.LoadEduFormsLayerAction.Invoke(sender, args, view, false, FormType.OtherEdu,
                                 syncCtx);
                     tileArchiveAdditionalForms.Tag = TagHelper.GetTag(TagHelper.TagType.Tile, edu, "archive");
                     tileArchiveAdditionalForms.Click +=
                         (sender, args) =>
-                            LevelAdminHelper.LoadEduFormsLayerAction.Invoke(sender, args, view, true, FormType.OtherEdu,
+                            Actions.LoadEduFormsLayerAction.Invoke(sender, args, view, true, FormType.OtherEdu,
                                 syncCtx);
                 }
 
@@ -349,12 +346,9 @@ namespace EduFormManager
                             var repo = new Repository();
                             var queryControl = new XtraQueryControl(this.windowsUIViewMain, repo)
                             {
-                                FormDataSource = await repo.Db.queries.Select(t => t.form)
-                                    .Distinct()
-                                    .OrderBy(t => t.name)
-                                    .ToListAsync(),
+                                FormDataSource = await repo.GetFormsHaveQueries(),
                                 YearDataSource = await repo.GetAvailableYears(),
-                                QueryPartHeadDataSource = await repo.Db.query_head_part.ToListAsync()
+                                QueryPartHeadDataSource = await repo.GetQueriesHeadParts()
                             };
                             e.Control = queryControl;
                             break;
@@ -364,8 +358,8 @@ namespace EduFormManager
                             var repo = new Repository();
                             var createQueryControl = new XtraCreateQueryControl(this.windowsUIViewMain, repo)
                             {
-                                QueryAutocomletePartSource = await repo.Db.query_autocomplete_part.ToListAsync(),
-                                QueryHeadPartSource = await repo.Db.query_head_part.ToListAsync()
+                                QueryAutocomletePartSource = await repo.GetQueriesAutocompleteParts(),
+                                QueryHeadPartSource = await repo.GetQueriesHeadParts()
                             };
                             if (Authentication.Credentials.IsAdmin)
                             {
@@ -393,7 +387,7 @@ namespace EduFormManager
                                 {
                                     EduDataSource = await repo.GetEdus(),
                                     MunicipalityDataSource = await repo.GetMunicipalities(),
-                                    DataSourceEduKind = await repo.Db.edu_kind.OrderBy(t => t.name).ToListAsync()
+                                    DataSourceEduKind = await repo.GetEduKinds()
                                 };
 
                             e.Control = dictionaryEduControl;
@@ -450,12 +444,10 @@ namespace EduFormManager
                             if (dataId.HasValue)
                             {
                                 var repo = new Repository();
-                                var fd = await repo.Db.municipality_form_data.FirstAsync(t => t.id == dataId.Value);
+                                var fd = await repo.GetMunitFormDataById(dataId.Value);
                                 var sheetControl = new XtraSpreadsheet(this.windowsUIViewMain, repo)
                                 {
-                                    FormDataSource = await repo.Db.forms.Where(t => 
-                                        t.form_type_id == (int) FormType.Municipality || t.form_type_id == (int) FormType.OtherMunicipality)
-                                        .ToListAsync(),
+                                    FormDataSource = await repo.GetMunicipalityForms(),
                                     FormData = fd,
                                     FormStatus = (Status)fd.status,
                                     Source = XtraSpreadsheet.FormSource.File,
@@ -481,7 +473,7 @@ namespace EduFormManager
                             if (dataId.HasValue)
                             {
                                 var repo = new Repository();
-                                var fd = await repo.Db.edu_form_data.FirstAsync(t => t.id == dataId.Value);
+                                var fd = await repo.GetEduFormDataById(dataId.Value);
                                 var sheetControl = new XtraSpreadsheet(this.windowsUIViewMain, repo)
                                 {
                                     FormData = fd,
@@ -496,7 +488,7 @@ namespace EduFormManager
                                 }
                                 else
                                 {
-                                    sheetControl.FormDataSource = await repo.Db.forms.ToListAsync();
+                                    sheetControl.FormDataSource = await repo.GetForms();
                                 }
                                 sheetControl.ActiveForm = fd.form;
                                 sheetControl.LoadDocument();
@@ -521,13 +513,13 @@ namespace EduFormManager
                             passportControl = new XtraDictionaryEduPassportControl(this.windowsUIViewMain, repo)
                             {
                                 MunicipalityDataSource = await repo.GetMunicipalities(),
-                                ActivityTypeDataSource = await repo.Db.activity_type.OrderBy(t => t.name).ToListAsync(),
-                                EduStatusDataSource = await repo.Db.edu_status.OrderBy(m => m.name).ToListAsync(),
-                                EduTypeDataSource = await repo.Db.edu_type.OrderBy(m => m.name).ToListAsync(),
-                                DataSourceEduKind = await repo.Db.edu_kind.OrderBy(m => m.name).ToListAsync(),
-                                ManagementAgencyDataSource = await repo.Db.management_agency.OrderBy(m => m.name).ToListAsync(),
-                                ManagementAgencyActivityDataSource = await repo.Db.management_agency_activity.OrderBy(m => m.name).ToListAsync(),
-                                OwnershipTypeDataSource = await repo.Db.ownership_type.OrderBy(m => m.name).ToListAsync(),
+                                ActivityTypeDataSource = await repo.GetActivityTypes(),
+                                EduStatusDataSource = await repo.GetEduStatuses(),
+                                EduTypeDataSource = await repo.GetEduTypes(),
+                                DataSourceEduKind = await repo.GetEduKinds(),
+                                ManagementAgencyDataSource = await repo.GetManagementAgencies(),
+                                ManagementAgencyActivityDataSource = await repo.GetManagementAgencyActivities(),
+                                OwnershipTypeDataSource = await repo.GetOwnershipTypes(),
                                 Edu = await repo.GetEdu(Authentication.Credentials.EduId)
                             };
                             e.Control = passportControl;
@@ -549,10 +541,7 @@ namespace EduFormManager
                             }
                             else if (Authentication.Credentials.IsMunicipality)
                             {
-                                forms = await repo.Db.forms.Where(t =>
-                                    t.form_type_id == (int)FormType.Municipality || t.form_type_id == (int)FormType.OtherMunicipality)
-                                    .OrderBy(t => t.name)
-                                    .ToListAsync();
+                                forms = await repo.GetMunicipalityForms();
                             }
                             else if (Authentication.Credentials.IsAdmin)
                             {
@@ -579,10 +568,7 @@ namespace EduFormManager
                             }
                             else if (Authentication.Credentials.IsMunicipality)
                             {
-                                forms = await repo.Db.forms.Where(t => 
-                                    t.form_type_id == (int)FormType.Municipality || t.form_type_id == (int)FormType.OtherMunicipality)
-                                    .OrderBy(t => t.name)
-                                    .ToListAsync();
+                                forms = await repo.GetMunicipalityForms();
                             }
                             else if (Authentication.Credentials.IsAdmin)
                             {
@@ -599,7 +585,7 @@ namespace EduFormManager
                             var messageControl = new XtraMessageControl(this.windowsUIViewMain, repo)
                             {
                                 MessageType = XtraMessageControl.MessageTypeEnum.RequestForQuery,
-                                FormDataSource = await repo.Db.forms.OrderBy(t => t.name).ToListAsync()
+                                FormDataSource = await repo.GetForms()
                             };
 
                             e.Control = messageControl;
@@ -611,7 +597,7 @@ namespace EduFormManager
                             var messageControl = new XtraMessageControl(this.windowsUIViewMain, repo)
                             {
                                 MessageType = XtraMessageControl.MessageTypeEnum.BugReport,
-                                FormDataSource = await repo.Db.forms.OrderBy(t => t.name).ToListAsync()
+                                FormDataSource = await repo.GetForms()
                             }; e.Control = messageControl;
                             break;
                         }
@@ -729,9 +715,8 @@ namespace EduFormManager
                         }
                     case "SignInOutLog":
                         {
-                            using (var db = new Entities())
+                            using (var repo = new Repository())
                             {
-                                db.Configuration.LazyLoadingEnabled = false;
 
                                 var signInOutReport = new XtraSignInOutReport();
                                 var signInOutReportControl = new XtraReportViewControl(this.windowsUIViewMain);
@@ -741,18 +726,14 @@ namespace EduFormManager
                                 var startDate = DateTime.Now;
                                 var endDate = DateTime.Now.AddDays(-30);
 
-                                var logs = await db.edu_log.Include("action")
-                                    .Where(t => 
-                                        (t.action_id == (int)LogActionType.Login || t.action_id == (int)LogActionType.Logout)
-                                        && (t.created < startDate && t.created > endDate)
-                                    ).ToListAsync();
+                                var logs = await repo.GetSignInOutLogs(startDate, endDate);
                                 signInOutReport.SignInOutLogDataSource = logs;
                                 signInOutReportControl.Report = signInOutReport;
                                 signInOutReport.CreateDocument(false);
 
-                                db.Configuration.LazyLoadingEnabled = true;
                                 break;
                             }
+
                         }
                     case "ExportReport":
                         {
@@ -791,7 +772,7 @@ namespace EduFormManager
             else
             {
                 if (Authentication.Credentials != null && !Authentication.Credentials.IsAdmin)
-                    DbLogHelper.LogLogout(Authentication.Credentials);
+                    DbLogger.LogLogoutAsync(Authentication.Credentials);
             }
         }
 
