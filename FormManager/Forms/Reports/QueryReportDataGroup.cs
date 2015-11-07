@@ -3,53 +3,22 @@ using Models;
 
 namespace EduFormManager.Forms.Reports
 {
-    public class QueryReportDataGroupEdu //: Dictionary<THead, Dictionary<TFirst, TSecond>>
+    public class QueryReportDataGroup
     {
-        public QueryReportDataGroupEdu()
+        public QueryReportDataGroup()
         {
             this.Values = new Dictionary<query, object>();
         }
 
-        public edu Head { get; set; }
+        public string Head { get; set; }
 
         public Dictionary<query, object> Values { get; set; }
 
         public override bool Equals(object obj)
         {
-            if (!(obj is QueryReportDataGroupEdu))
-            {
-                return base.Equals(obj);
-            }
-            else
-            {
-                var casted = (QueryReportDataGroupEdu)obj;
-                return this.Head.Equals(casted.Head);
-            }
-        }
-    }
-
-    public class QueryReportDataGroupQuery
-    {
-        public QueryReportDataGroupQuery()
-        {
-            this.Values = new Dictionary<edu, object>();
-        }
-
-        public query Head { get; set; }
-
-        public Dictionary<edu, object> Values { get; set; }
-
-        public override bool Equals(object obj)
-        {
-            if (!(obj is QueryReportDataGroupQuery))
-            {
-                return base.Equals(obj);
-            }
-            else
-            {
-                var casted = (QueryReportDataGroupQuery)obj;
-                return this.Head.Equals(casted.Head);
-            }
+            if (obj == null)
+                return false;
+            return ((QueryReportDataGroup)obj).Head.Equals(this.Head);
         }
     }
 }

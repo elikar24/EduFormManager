@@ -7,14 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using Models.Repo;
-
 namespace Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class templated_form_data {
+    public partial class templated_form_data{
         public int templated_form_data_id { get; set; }
         public int form_id { get; set; }
         public byte[] file_data { get; set; }

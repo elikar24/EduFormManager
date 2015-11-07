@@ -116,7 +116,7 @@ namespace EduFormManager.Forms
             // 
             // queryReportDataBindingSource
             // 
-            this.queryReportDataBindingSource.DataSource = typeof(QueryReportData);
+            this.queryReportDataBindingSource.DataSource = typeof(QueryReportEduData);
             // 
             // CheckResultSummaryForm
             // 

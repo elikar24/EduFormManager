@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
+using DevExpress.Utils;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using Models;
 using Models.Repo;
@@ -54,6 +55,9 @@ namespace EduFormManager.Utils
                 Caption = caption,
                 Description = description
             };
+            flyoutMessage.Properties.AllowHtmlDraw = DefaultBoolean.True;
+            flyoutMessage.Properties.AppearanceDescription.TextOptions.WordWrap = WordWrap.Wrap;
+
             messageAction.Commands.Clear();
             if (commands.Length == 0)
             {

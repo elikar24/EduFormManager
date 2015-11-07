@@ -1232,8 +1232,11 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="query_credentials_id_fkey">
-          <End Role="credentials" Type="Self.credential" Multiplicity="1" />
-          <End Role="query" Type="Self.query" Multiplicity="*" />
+          <End Role="credentials" Type="Self.credential" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="query" Type="Self.query" Multiplicity="*" >
+          </End>
           <ReferentialConstraint>
             <Principal Role="credentials">
               <PropertyRef Name="credentials_id" />
@@ -1316,8 +1319,11 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="form_data_eduorg_id_fkey">
-          <End Role="edu" Type="Self.edu" Multiplicity="1" />
-          <End Role="edu_form_data" Type="Self.edu_form_data" Multiplicity="*" />
+          <End Role="edu" Type="Self.edu" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="edu_form_data" Type="Self.edu_form_data" Multiplicity="*" >
+          </End>
           <ReferentialConstraint>
             <Principal Role="edu">
               <PropertyRef Name="edu_id" />
@@ -1340,8 +1346,11 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="message_from_edu_org_id_fkey">
-          <End Role="edu" Type="Self.edu" Multiplicity="1" />
-          <End Role="message" Type="Self.message" Multiplicity="*" />
+          <End Role="edu" Type="Self.edu" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="message" Type="Self.message" Multiplicity="*" >
+          </End>
           <ReferentialConstraint>
             <Principal Role="edu">
               <PropertyRef Name="edu_id" />
@@ -1364,8 +1373,11 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="form_data_file_id_fkey">
-          <End Role="file" Type="Self.file" Multiplicity="1" />
-          <End Role="edu_form_data" Type="Self.edu_form_data" Multiplicity="*" />
+          <End Role="file" Type="Self.file" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="edu_form_data" Type="Self.edu_form_data" Multiplicity="*" >
+          </End>
           <ReferentialConstraint>
             <Principal Role="file">
               <PropertyRef Name="file_id" />
@@ -1376,7 +1388,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="municipality_form_data_file_id_fkey">
-          <End Role="file" Type="Self.file" Multiplicity="1" />
+          <End Role="file" Type="Self.file" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="municipality_form_data" Type="Self.municipality_form_data" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="file">
@@ -1687,7 +1701,8 @@
         </EntityType>
         <Association Name="mm_edu__activity_type1">
           <End Type="Model.activity_type" Role="activity_type" Multiplicity="*" />
-          <End Type="Model.edu" Role="edu" Multiplicity="*" />
+          <End Type="Model.edu" Role="edu" Multiplicity="*" >
+          </End>
         </Association>
       </Schema>
     </edmx:ConceptualModels>

@@ -12,7 +12,6 @@ using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using DevExpress.XtraSpreadsheet;
 using DevExpress.XtraSpreadsheet.Menu;
 using EduFormManager.Properties;
-using EduFormManager.Utilities;
 using EduFormManager.Utils;
 using Models;
 using Models.Repo;
@@ -113,7 +112,8 @@ namespace EduFormManager.Forms.UserControls.QueryControl
                         if (!string.IsNullOrEmpty(cellAddress))
                         {
                             worksheet.SelectedCell = worksheet.Cells[cellAddress];
-                        }}
+                        }
+                    }
                 }
             }
         }
@@ -152,7 +152,7 @@ namespace EduFormManager.Forms.UserControls.QueryControl
                 return;
             }
             ProgressDialog.ShowTop(this.ParentForm, description: "Сохраняю");
-            await SaveQueries(_editedList, true, false);
+            await SaveQueries(_editedList, true);
             ProgressDialog.HideTop();
         }
 
@@ -264,7 +264,7 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             _selectedForm = template.form;
 
             this.Enabled = false;
-            var queries = await Repo.GetQueries(Authentication.Credentials.CredId, template.form_id);
+            var queries = await Repo.GetQueries(template.form_id);
             queryBindingSource.DataSource = queries;
             this.Enabled = true;
         }

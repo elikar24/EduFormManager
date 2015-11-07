@@ -3,23 +3,21 @@ using Models;
 
 namespace EduFormManager.Forms.UserControls.QueryControl
 {
-    public class QuerySummaryModel
+    public abstract class QuerySummaryModel
     {
         public form Form { get; set; }
         public int Year { get; set; }
-        public List<edu> EduList { get; private set; }
         public List<query> QueryList { get; private set; }
 
-        public QuerySummaryModel()
+        protected QuerySummaryModel()
         {
-            EduList = new List<edu>();
             QueryList = new List<query>();
         }
-        public QuerySummaryModel(form form, int year)
+
+        protected QuerySummaryModel(form form, int year)
         {
             Form = form;
             Year = year;
-            EduList = new List<edu>();
             QueryList = new List<query>();
         }
 

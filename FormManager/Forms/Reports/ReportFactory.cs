@@ -16,16 +16,16 @@ namespace EduFormManager.Forms.Reports
     {
         public static XtraReport LastReport { get; set; }
 
-        public static Task<XtraReport> CreateQueryReportAsync(QuerySummaryModel model)
+        public static Task<XtraReport> CreateQueryReportAsync(QueryEduSummaryModel model)
         {
             return Task.Run(() => CreateQueryReport(model));
         }
 
-        public static XtraReport CreateQueryReport(QuerySummaryModel model)
+        public static XtraReport CreateQueryReport(QueryEduSummaryModel model)
         {
             var edus = model.EduList;
             var queries = model.QueryList;
-            int year = model.Year;
+            var year = model.Year;
             var form = model.Form;
             var reportDataList = new QueryReportDataCollection();
             using (var spreadsheetControl = new SpreadsheetControl() { AllowDrop = false })
@@ -43,13 +43,13 @@ namespace EduFormManager.Forms.Reports
                     }
                     foreach (var query in queries)
                     {
-                        string stringValue = "";
+                        var stringValue = "";
                         try
                         {
-                            string content = query.content;
+                            var content = query.content;
                             if (content.StartsWith("@"))
                             {
-                                string propName = content.Substring(1);
+                                var propName = content.Substring(1);
                                 var propInfo = typeof (edu).GetProperty(propName);
                                 stringValue = propInfo.GetValue(edu).ToString();
                             }
@@ -63,13 +63,60 @@ namespace EduFormManager.Forms.Reports
                         {
                             stringValue = "Не удалось";
                         }
-                        reportDataList.Add(new QueryReportData(edu, query, stringValue));
+                        reportDataList.Add(new QueryReportEduData(edu, query, stringValue));
                     }
                 }
             }
-            List<QueryReportDataGroupEdu> groupedList = (List<QueryReportDataGroupEdu>)reportDataList.GroupByEdu();
-            //List<QueryReportDataGroupQuery> groupedList = (List<QueryReportDataGroupQuery>)reportDataList.GroupByQuery();
-            QueryReport report = new QueryReport {ReportData = groupedList};
+            var groupedList = (List<QueryReportDataGroup>)reportDataList.Group();
+            var report = new QueryReport { ReportData = groupedList };
+            LastReport = report;
+            return report;
+        }
+
+        public static Task<XtraReport> CreateQueryReportAsync(QueryMunicipalitySummaryModel model)
+        {
+            return Task.Run(() => CreateQueryReport(model));
+        }
+
+        public static XtraReport CreateQueryReport(QueryMunicipalitySummaryModel model)
+        {
+            var municipalities = model.MunicipalityList;
+            var queries = model.QueryList;
+            var year = model.Year;
+            var form = model.Form;
+            var reportDataList = new QueryReportDataCollection();
+            using (var spreadsheetControl = new SpreadsheetControl() { AllowDrop = false })
+            {
+                foreach (var munit in municipalities)
+                {
+                    var formData = munit.municipality_form_data.FirstOrDefault(t => t.form == form && t.send_date.Year == year);
+                    if (formData != null)
+                    {
+                        var excelData = formData.file.contents;
+                        var format = formData.document_format.IsOpenXml()
+                            ? DocumentFormat.OpenXml
+                            : DocumentFormat.Xls;
+                        spreadsheetControl.LoadDocument(excelData, format);
+                    }
+                    foreach (var query in queries)
+                    {
+                        var stringValue = "";
+                        try
+                        {
+                            var content = query.content;
+                            var value = spreadsheetControl.Document.Range[content].Value;
+                            stringValue = GetStringValueFromCell(value);
+                        }
+                        catch (Exception ex)
+                        {
+                            stringValue = "Не удалось";
+                        }
+                        reportDataList.Add(new QueryReportMuniipalityData(munit, query, stringValue));
+                    }
+                }
+            }
+            var groupedList = (List<QueryReportDataGroup>)reportDataList.Group();
+            var report = new QueryReport { ReportData = groupedList };
             LastReport = report;
             return report;
         }

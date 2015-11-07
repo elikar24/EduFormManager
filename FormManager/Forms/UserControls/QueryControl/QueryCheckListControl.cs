@@ -39,7 +39,7 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             InitializeComponent();
 
             _queryListOthers = new List<query>();
-
+            
             _queryListPassport = new List<query>(typeof(edu).GetProperties()
                 .Where(prop => prop.GetCustomAttribute<DescriptionAttribute>() != null)
                 .Select(prop => new query
@@ -77,7 +77,7 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             IList<QueryGroupItem> groupItemList = new List<QueryGroupItem>();
             foreach (var head in QueryPartHeadDataSource)
             {
-                string headTitle = head.title;
+                var headTitle = head.title;
                 IList<query> possibleSplittedQueries = queryListToWorkWith.Where(t => t.title.StartsWith(headTitle)).ToList();
                 if (possibleSplittedQueries.Count == 0) continue;
 
@@ -89,7 +89,7 @@ namespace EduFormManager.Forms.UserControls.QueryControl
 
                 foreach (var query in possibleSplittedQueries)
                 {
-                    string[] parts = query.title.Split(new[] { headTitle }, StringSplitOptions.RemoveEmptyEntries);
+                    var parts = query.title.Split(new[] { headTitle }, StringSplitOptions.RemoveEmptyEntries);
                     if (parts.Length == 0)
                     {
                         _queryListOthers.Add(query);
@@ -102,17 +102,15 @@ namespace EduFormManager.Forms.UserControls.QueryControl
                 if (groupItem.QueryDictionary.Count > 0)
                     groupItemList.Add(groupItem);
             }
-
-            var passportGroupItem = new QueryGroupItem()
+            if (Authentication.Credentials.IsEdu)
             {
-                Head = "Паспорт",
-                QueryDictionary = new Dictionary<string, query>()
-            };
-            foreach (var query in _queryListPassport)
-            {
-                passportGroupItem.QueryDictionary.Add(query.title, query);   
+                var passportGroupItem = new QueryGroupItem()
+                {
+                    Head = "Паспорт",
+                    QueryDictionary = _queryListPassport.ToDictionary(t => t.title, t => t)
+                };
+                groupItemList.Add(passportGroupItem);
             }
-            groupItemList.Add(passportGroupItem);
             _queryListOthers.AddRange(queryListToWorkWith.Where(t => !_queryListSplitted.Contains(t)));
             CreateControls(groupItemList);
         }
@@ -233,7 +231,7 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             _isManualChecking = false;
             if (_listBoxQueries != null)
             {
-                int itemIdx = _listBoxQueries.FindItem(0, true, e => e.IsFound = e.ItemValue == queryObject);
+                var itemIdx = _listBoxQueries.FindItem(0, true, e => e.IsFound = e.ItemValue == queryObject);
                 if (itemIdx >= 0)
                 {
                     _listBoxQueries.SetItemChecked(itemIdx, state == CheckState.Checked);
@@ -243,7 +241,7 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             }
             if (_listBoxOtherQueries != null)
             {
-                int itemIdx = _listBoxOtherQueries.FindItem(queryObject);
+                var itemIdx = _listBoxOtherQueries.FindItem(queryObject);
                 if (itemIdx >= 0)
                     _listBoxOtherQueries.SetItemChecked(itemIdx, state == CheckState.Checked);
             }

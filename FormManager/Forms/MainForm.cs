@@ -49,8 +49,9 @@ namespace EduFormManager
                 _auth = new Authentication();
             }
             UserLookAndFeel.Default.SetSkinStyle("Office 2013");
+
             tileContainerMain.Items.Remove(tileDictionaries);
-            tileContainerMain.Items.Remove(tileDocumentQueries);
+            tileContainerMain.Items.Remove(tileQueries);
             tileContainerMain.Items.Remove(tileMessageList);
             tileContainerMain.Items.Remove(tileMessage);
             tileContainerMain.Items.Remove(tileFormStatistics);
@@ -287,7 +288,7 @@ namespace EduFormManager
                     tileContainerMain.Items.Add(tileArchiveMunicipalityForms);
                     tileContainerMain.Items.Add(tileMunicipalityAdditonalForms);
                     tileContainerMain.Items.Add(tileArchiveMunicipalityAdditonalForms);
-                    tileContainerMain.Items.Add(tileDocumentQueries);
+                    tileContainerMain.Items.Add(tileQueries);
                     if (!user.IsMinistry)
                         tileContainerMain.Items.Add(tileCreateQuery);
 
@@ -341,12 +342,24 @@ namespace EduFormManager
                         e.Control = reportControl;
                         break;
                     }
-                    case "Queries":
+                    case "QueriesEdu":
                         {
                             var repo = new Repository();
-                            var queryControl = new XtraQueryControl(this.windowsUIViewMain, repo)
+                            var queryControl = new XtraQueryEduControl(this.windowsUIViewMain, repo)
                             {
-                                FormDataSource = await repo.GetFormsHaveQueries(),
+                                FormDataSource = await repo.GetFormsHaveQueries(FormType.Edu, FormType.OtherEdu),
+                                YearDataSource = await repo.GetAvailableYears(),
+                                QueryPartHeadDataSource = await repo.GetQueriesHeadParts()
+                            };
+                            e.Control = queryControl;
+                            break;
+                        }
+                    case "QueriesMunicipality":
+                        {
+                            var repo = new Repository();
+                            var queryControl = new XtraQueryMunicipalityControl(this.windowsUIViewMain, repo)
+                            {
+                                FormDataSource = await repo.GetFormsHaveQueries(FormType.Municipality, FormType.OtherMunicipality),
                                 YearDataSource = await repo.GetAvailableYears(),
                                 QueryPartHeadDataSource = await repo.GetQueriesHeadParts()
                             };

@@ -21,5 +21,12 @@ namespace EduFormManager.Utils
         {
             return (int)Math.Round(val - double.MinValue, 0) == 0;
         }
+
+        public static string Truncate(this string value, int maxChars)
+        {
+            return value.Length <= maxChars 
+                ? value 
+                : value.Substring(0, maxChars) + "..";
+        }
     }
 }

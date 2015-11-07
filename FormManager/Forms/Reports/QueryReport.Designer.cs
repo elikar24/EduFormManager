@@ -33,18 +33,12 @@ namespace EduFormManager.Forms.Reports
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
-            this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -91,24 +85,10 @@ namespace EduFormManager.Forms.Reports
             this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrPageInfo1.SizeF = new System.Drawing.SizeF(100F, 23F);
             // 
-            // directorySearcher1
-            // 
-            this.directorySearcher1.ClientTimeout = System.TimeSpan.Parse("-00:00:01");
-            this.directorySearcher1.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01");
-            this.directorySearcher1.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01");
-            // 
             // PageHeader
             // 
             this.PageHeader.HeightF = 22.91667F;
             this.PageHeader.Name = "PageHeader";
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(QueryReportDataCollection);
-            // 
-            // bindingSource2
-            // 
-            this.bindingSource2.DataSource = typeof(QueryReportDataGroupQuery);
             // 
             // QueryReport
             // 
@@ -117,11 +97,8 @@ namespace EduFormManager.Forms.Reports
             this.TopMargin,
             this.BottomMargin,
             this.PageHeader});
-            this.DataSource = this.bindingSource1;
             this.Margins = new System.Drawing.Printing.Margins(100, 100, 75, 37);
-            this.Version = "13.2";
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
+            this.Version = "14.2";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -133,9 +110,6 @@ namespace EduFormManager.Forms.Reports
         private BottomMarginBand BottomMargin;
         private XRLabel xrLabel1;
         private XRPageInfo xrPageInfo1;
-        public BindingSource bindingSource1;
-        public BindingSource bindingSource2;
-        private DirectorySearcher directorySearcher1;
         private PageHeaderBand PageHeader;
     }
 }

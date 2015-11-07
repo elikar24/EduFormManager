@@ -48,7 +48,12 @@ namespace EduFormManager.Forms.UserControls.FormulaEdit
             this.richEditControl.LookAndFeel.SkinName = "Office 2013";
             this.richEditControl.LookAndFeel.UseDefaultLookAndFeel = false;
             this.richEditControl.Name = "richEditControl";
-            //this.richEditControl.Options.Comments.Author = "";
+            this.richEditControl.Options.CopyPaste.MaintainDocumentSectionSettings = false;
+            this.richEditControl.Options.Fields.UpdateDocVariablesBeforeCopy = true;
+            this.richEditControl.Options.Fields.UpdateDocVariablesBeforePrint = true;
+            this.richEditControl.Options.Fields.UseCurrentCultureDateTimeFormat = false;
+            this.richEditControl.Options.HorizontalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Visible;
+            this.richEditControl.Options.MailMerge.KeepLastParagraph = false;
             this.richEditControl.Size = new System.Drawing.Size(433, 267);
             this.richEditControl.TabIndex = 0;
             this.richEditControl.Views.DraftView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(42)))));

@@ -10,7 +10,7 @@ using ComboBox = System.Windows.Forms.ComboBox;
 
 namespace EduFormManager.Forms.UserControls.QueryControl
 {
-    partial class XtraQueryControl
+    partial class XtraQueryEduControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -59,28 +59,34 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.comboBoxYear = new System.Windows.Forms.ComboBox();
             this.queryControl = new EduFormManager.Forms.UserControls.QueryControl.QueryCheckListControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.buttonMenuFlyout = new DevExpress.XtraEditors.SimpleButton();
             this.popupQuerySummaryModel = new DevExpress.XtraEditors.PopupContainerEdit();
             this.popupContainerQueryModel = new DevExpress.XtraEditors.PopupContainerControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.buttonClosePopup = new DevExpress.XtraEditors.SimpleButton();
             this.checkBoxOnlyPassport = new System.Windows.Forms.CheckBox();
-            this.buttonClosePopup = new System.Windows.Forms.Button();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tabbedControlGroup1 = new DevExpress.XtraLayout.TabbedControlGroup();
-            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.flyoutPanelMenu = new DevExpress.Utils.FlyoutPanel();
+            this.flyoutPanelControlMenu = new DevExpress.Utils.FlyoutPanelControl();
+            this.windowsUIButtonPanelActions = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             ((System.ComponentModel.ISupportInitialize)(this.eduTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.queryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eduBindingSource)).BeginInit();
@@ -109,19 +115,25 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelMenu)).BeginInit();
+            this.flyoutPanelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControlMenu)).BeginInit();
+            this.flyoutPanelControlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridViewSummaryEdu
@@ -154,10 +166,10 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.gridControlQuerySummary.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1,
             gridLevelNode2});
-            this.gridControlQuerySummary.Location = new System.Drawing.Point(612, 80);
+            this.gridControlQuerySummary.Location = new System.Drawing.Point(613, 89);
             this.gridControlQuerySummary.MainView = this.gridViewSummary;
             this.gridControlQuerySummary.Name = "gridControlQuerySummary";
-            this.gridControlQuerySummary.Size = new System.Drawing.Size(516, 683);
+            this.gridControlQuerySummary.Size = new System.Drawing.Size(515, 674);
             this.gridControlQuerySummary.TabIndex = 5;
             this.gridControlQuerySummary.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewSummaryQuery,
@@ -166,7 +178,7 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             // 
             // querySummaryModelBindingSource
             // 
-            this.querySummaryModelBindingSource.DataSource = typeof(EduFormManager.Forms.UserControls.QueryControl.QuerySummaryModel);
+            this.querySummaryModelBindingSource.DataSource = typeof(EduFormManager.Forms.UserControls.QueryControl.QueryEduSummaryModel);
             // 
             // gridViewSummaryQuery
             // 
@@ -184,7 +196,7 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             // colTitle
             // 
             this.colTitle.Caption = "Запрос";
-            this.colTitle.FieldName = "Title";
+            this.colTitle.FieldName = "title";
             this.colTitle.Name = "colTitle";
             this.colTitle.Visible = true;
             this.colTitle.VisibleIndex = 0;
@@ -223,12 +235,12 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             // gridControlEdu
             // 
             this.gridControlEdu.DataSource = this.eduBindingSource;
-            this.gridControlEdu.Location = new System.Drawing.Point(12, 68);
+            this.gridControlEdu.Location = new System.Drawing.Point(12, 102);
             this.gridControlEdu.MainView = this.gridViewEdu;
             this.gridControlEdu.Name = "gridControlEdu";
             this.gridControlEdu.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gridControlEdu.Size = new System.Drawing.Size(584, 707);
+            this.gridControlEdu.Size = new System.Drawing.Size(573, 673);
             this.gridControlEdu.TabIndex = 0;
             this.gridControlEdu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewEdu});
@@ -311,17 +323,18 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.queryControl.ControlType = EduFormManager.Forms.UserControls.XtraBaseControl.Type.Form;
             this.queryControl.FormDataSource = null;
             this.queryControl.FormTypeDataSource = null;
-            this.queryControl.Location = new System.Drawing.Point(612, 80);
+            this.queryControl.Location = new System.Drawing.Point(613, 89);
             this.queryControl.LookAndFeel.SkinName = "Office 2013";
             this.queryControl.LookAndFeel.UseDefaultLookAndFeel = false;
             this.queryControl.Name = "queryControl";
             this.queryControl.Repo = null;
-            this.queryControl.Size = new System.Drawing.Size(516, 683);
+            this.queryControl.Size = new System.Drawing.Size(515, 674);
             this.queryControl.TabIndex = 4;
             this.queryControl.View = null;
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.buttonMenuFlyout);
             this.layoutControl1.Controls.Add(this.popupQuerySummaryModel);
             this.layoutControl1.Controls.Add(this.gridControlEdu);
             this.layoutControl1.Controls.Add(this.queryControl);
@@ -329,15 +342,28 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(47, 406, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
             this.layoutControl1.Size = new System.Drawing.Size(1152, 787);
             this.layoutControl1.TabIndex = 6;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // buttonMenuFlyout
+            // 
+            this.buttonMenuFlyout.Appearance.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonMenuFlyout.Appearance.Options.UseFont = true;
+            this.buttonMenuFlyout.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.buttonMenuFlyout.Location = new System.Drawing.Point(1024, 12);
+            this.buttonMenuFlyout.MinimumSize = new System.Drawing.Size(0, 30);
+            this.buttonMenuFlyout.Name = "buttonMenuFlyout";
+            this.buttonMenuFlyout.Size = new System.Drawing.Size(116, 30);
+            this.buttonMenuFlyout.TabIndex = 8;
+            this.buttonMenuFlyout.Text = "Меню";
+            // 
             // popupQuerySummaryModel
             // 
             this.popupQuerySummaryModel.EditValue = "Выбрать форму";
-            this.popupQuerySummaryModel.Location = new System.Drawing.Point(12, 12);
+            this.popupQuerySummaryModel.Location = new System.Drawing.Point(12, 46);
             this.popupQuerySummaryModel.Name = "popupQuerySummaryModel";
             this.popupQuerySummaryModel.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.popupQuerySummaryModel.Properties.Appearance.Options.UseFont = true;
@@ -349,7 +375,7 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.popupQuerySummaryModel.Properties.CloseOnOuterMouseClick = false;
             this.popupQuerySummaryModel.Properties.PopupControl = this.popupContainerQueryModel;
             this.popupQuerySummaryModel.Properties.ShowPopupCloseButton = false;
-            this.popupQuerySummaryModel.Size = new System.Drawing.Size(584, 28);
+            this.popupQuerySummaryModel.Size = new System.Drawing.Size(573, 28);
             this.popupQuerySummaryModel.StyleController = this.layoutControl1;
             this.popupQuerySummaryModel.TabIndex = 7;
             // 
@@ -364,8 +390,8 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             // 
             // layoutControl2
             // 
-            this.layoutControl2.Controls.Add(this.checkBoxOnlyPassport);
             this.layoutControl2.Controls.Add(this.buttonClosePopup);
+            this.layoutControl2.Controls.Add(this.checkBoxOnlyPassport);
             this.layoutControl2.Controls.Add(this.comboBoxForm);
             this.layoutControl2.Controls.Add(this.comboBoxYear);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -377,29 +403,29 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
+            // buttonClosePopup
+            // 
+            this.buttonClosePopup.Appearance.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonClosePopup.Appearance.Options.UseFont = true;
+            this.buttonClosePopup.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.buttonClosePopup.Location = new System.Drawing.Point(150, 119);
+            this.buttonClosePopup.MinimumSize = new System.Drawing.Size(0, 30);
+            this.buttonClosePopup.Name = "buttonClosePopup";
+            this.buttonClosePopup.Size = new System.Drawing.Size(135, 30);
+            this.buttonClosePopup.TabIndex = 6;
+            this.buttonClosePopup.Text = "Принять";
+            // 
             // checkBoxOnlyPassport
             // 
             this.checkBoxOnlyPassport.BackColor = System.Drawing.SystemColors.Window;
             this.checkBoxOnlyPassport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBoxOnlyPassport.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxOnlyPassport.Location = new System.Drawing.Point(12, 91);
+            this.checkBoxOnlyPassport.Location = new System.Drawing.Point(12, 95);
             this.checkBoxOnlyPassport.Name = "checkBoxOnlyPassport";
             this.checkBoxOnlyPassport.Size = new System.Drawing.Size(273, 20);
             this.checkBoxOnlyPassport.TabIndex = 5;
             this.checkBoxOnlyPassport.Text = "Только паспорт";
             this.checkBoxOnlyPassport.UseVisualStyleBackColor = false;
-            // 
-            // buttonClosePopup
-            // 
-            this.buttonClosePopup.FlatAppearance.BorderSize = 2;
-            this.buttonClosePopup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonClosePopup.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonClosePopup.Location = new System.Drawing.Point(181, 115);
-            this.buttonClosePopup.Name = "buttonClosePopup";
-            this.buttonClosePopup.Size = new System.Drawing.Size(104, 34);
-            this.buttonClosePopup.TabIndex = 4;
-            this.buttonClosePopup.Text = "OK";
-            this.buttonClosePopup.UseVisualStyleBackColor = true;
             // 
             // layoutControlGroup4
             // 
@@ -409,10 +435,10 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.layoutControlItem4,
             this.layoutControlItem5,
             this.emptySpaceItem1,
-            this.layoutControlItem6,
             this.emptySpaceItem2,
             this.emptySpaceItem3,
-            this.layoutControlItem8});
+            this.layoutControlItem8,
+            this.layoutControlItem6});
             this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup4.Name = "Root";
             this.layoutControlGroup4.Size = new System.Drawing.Size(297, 161);
@@ -448,42 +474,39 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.emptySpaceItem1.Size = new System.Drawing.Size(277, 16);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.buttonClosePopup;
-            this.layoutControlItem6.Location = new System.Drawing.Point(169, 103);
-            this.layoutControlItem6.MaxSize = new System.Drawing.Size(108, 38);
-            this.layoutControlItem6.MinSize = new System.Drawing.Size(108, 38);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(108, 38);
-            this.layoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem6.TextVisible = false;
-            // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 66);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(277, 13);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(277, 17);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 103);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 107);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(169, 38);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(138, 34);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.checkBoxOnlyPassport;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 79);
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 83);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(277, 24);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.buttonClosePopup;
+            this.layoutControlItem6.Location = new System.Drawing.Point(138, 107);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(139, 34);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlGroup1
             // 
@@ -493,9 +516,11 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.layoutControlItem1,
             this.tabbedControlGroup1,
             this.layoutControlItem7,
+            this.layoutControlItem9,
+            this.splitterItem1,
             this.emptySpaceItem4});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(1152, 787);
             this.layoutControlGroup1.TextVisible = false;
             // 
@@ -504,9 +529,9 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.layoutControlItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem1.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem1.Control = this.gridControlEdu;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 32);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 66);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(588, 735);
+            this.layoutControlItem1.Size = new System.Drawing.Size(577, 701);
             this.layoutControlItem1.Text = "Образовательные организации";
             this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Top;
             this.layoutControlItem1.TextSize = new System.Drawing.Size(222, 21);
@@ -519,32 +544,14 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.tabbedControlGroup1.AppearanceTabPage.HeaderActive.Options.UseFont = true;
             this.tabbedControlGroup1.AppearanceTabPage.HeaderHotTracked.Font = new System.Drawing.Font("Segoe UI Light", 12F);
             this.tabbedControlGroup1.AppearanceTabPage.HeaderHotTracked.Options.UseFont = true;
-            this.tabbedControlGroup1.Location = new System.Drawing.Point(588, 25);
+            this.tabbedControlGroup1.Location = new System.Drawing.Point(589, 34);
             this.tabbedControlGroup1.Name = "tabbedControlGroup1";
-            this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup2;
-            this.tabbedControlGroup1.SelectedTabPageIndex = 0;
-            this.tabbedControlGroup1.Size = new System.Drawing.Size(544, 742);
+            this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup3;
+            this.tabbedControlGroup1.SelectedTabPageIndex = 1;
+            this.tabbedControlGroup1.Size = new System.Drawing.Size(543, 733);
             this.tabbedControlGroup1.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup2,
             this.layoutControlGroup3});
-            // 
-            // layoutControlGroup2
-            // 
-            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem2});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(520, 687);
-            this.layoutControlGroup2.Text = "Запросы";
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.queryControl;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(520, 687);
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlGroup3
             // 
@@ -552,7 +559,7 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.layoutControlItem3});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(520, 687);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(519, 678);
             this.layoutControlGroup3.Text = "Сводка по выбранным позициям";
             // 
             // layoutControlItem3
@@ -560,42 +567,106 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.layoutControlItem3.Control = this.gridControlQuerySummary;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(520, 687);
+            this.layoutControlItem3.Size = new System.Drawing.Size(519, 678);
             this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Top;
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
+            // layoutControlGroup2
+            // 
+            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem2});
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup2.Name = "layoutControlGroup2";
+            this.layoutControlGroup2.Size = new System.Drawing.Size(519, 678);
+            this.layoutControlGroup2.Text = "Запросы";
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.queryControl;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(519, 678);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
+            // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.popupQuerySummaryModel;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 34);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(588, 32);
+            this.layoutControlItem7.Size = new System.Drawing.Size(577, 32);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.buttonMenuFlyout;
+            this.layoutControlItem9.Location = new System.Drawing.Point(1012, 0);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(120, 34);
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem9.TextVisible = false;
+            // 
+            // splitterItem1
+            // 
+            this.splitterItem1.AllowHotTrack = true;
+            this.splitterItem1.Location = new System.Drawing.Point(577, 34);
+            this.splitterItem1.Name = "splitterItem1";
+            this.splitterItem1.Size = new System.Drawing.Size(12, 733);
             // 
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(588, 0);
-            this.emptySpaceItem4.MaxSize = new System.Drawing.Size(0, 25);
-            this.emptySpaceItem4.MinSize = new System.Drawing.Size(10, 25);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(544, 25);
-            this.emptySpaceItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.emptySpaceItem4.Size = new System.Drawing.Size(1012, 34);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // XtraQueryControl
+            // flyoutPanelMenu
+            // 
+            this.flyoutPanelMenu.Controls.Add(this.flyoutPanelControlMenu);
+            this.flyoutPanelMenu.Location = new System.Drawing.Point(221, 51);
+            this.flyoutPanelMenu.Name = "flyoutPanelMenu";
+            this.flyoutPanelMenu.Options.CloseOnOuterClick = true;
+            this.flyoutPanelMenu.OwnerControl = this;
+            this.flyoutPanelMenu.Size = new System.Drawing.Size(388, 100);
+            this.flyoutPanelMenu.TabIndex = 10;
+            // 
+            // flyoutPanelControlMenu
+            // 
+            this.flyoutPanelControlMenu.Controls.Add(this.windowsUIButtonPanelActions);
+            this.flyoutPanelControlMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flyoutPanelControlMenu.FlyoutPanel = this.flyoutPanelMenu;
+            this.flyoutPanelControlMenu.Location = new System.Drawing.Point(0, 0);
+            this.flyoutPanelControlMenu.Name = "flyoutPanelControlMenu";
+            this.flyoutPanelControlMenu.Size = new System.Drawing.Size(388, 100);
+            this.flyoutPanelControlMenu.TabIndex = 0;
+            // 
+            // windowsUIButtonPanelActions
+            // 
+            this.windowsUIButtonPanelActions.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton(),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton()});
+            this.windowsUIButtonPanelActions.ContentAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.windowsUIButtonPanelActions.Dock = System.Windows.Forms.DockStyle.Top;
+            this.windowsUIButtonPanelActions.Location = new System.Drawing.Point(2, 2);
+            this.windowsUIButtonPanelActions.Name = "windowsUIButtonPanelActions";
+            this.windowsUIButtonPanelActions.Size = new System.Drawing.Size(384, 95);
+            this.windowsUIButtonPanelActions.TabIndex = 0;
+            // 
+            // XtraQueryEduControl
             // 
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.Appearance.Options.UseForeColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.flyoutPanelMenu);
             this.Controls.Add(this.popupContainerQueryModel);
             this.Controls.Add(this.layoutControl1);
             this.LookAndFeel.SkinName = "Office 2013";
             this.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.Name = "XtraQueryControl";
+            this.Name = "XtraQueryEduControl";
             this.Size = new System.Drawing.Size(1152, 787);
             ((System.ComponentModel.ISupportInitialize)(this.eduTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.queryBindingSource)).EndInit();
@@ -625,19 +696,25 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelMenu)).EndInit();
+            this.flyoutPanelMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControlMenu)).EndInit();
+            this.flyoutPanelControlMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -674,17 +751,23 @@ namespace EduFormManager.Forms.UserControls.QueryControl
         private PopupContainerControl popupContainerQueryModel;
         private LayoutControl layoutControl2;
         private LayoutControlGroup layoutControlGroup4;
-        private Button buttonClosePopup;
         private LayoutControlItem layoutControlItem7;
         private LayoutControlItem layoutControlItem4;
         private LayoutControlItem layoutControlItem5;
         private EmptySpaceItem emptySpaceItem1;
-        private LayoutControlItem layoutControlItem6;
         private EmptySpaceItem emptySpaceItem2;
         private EmptySpaceItem emptySpaceItem3;
-        private EmptySpaceItem emptySpaceItem4;
         private CheckBox checkBoxOnlyPassport;
         private LayoutControlItem layoutControlItem8;
+        private SimpleButton buttonClosePopup;
+        private LayoutControlItem layoutControlItem6;
+        private SimpleButton buttonMenuFlyout;
+        private LayoutControlItem layoutControlItem9;
+        private SplitterItem splitterItem1;
+        private EmptySpaceItem emptySpaceItem4;
+        private DevExpress.Utils.FlyoutPanel flyoutPanelMenu;
+        private DevExpress.Utils.FlyoutPanelControl flyoutPanelControlMenu;
+        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanelActions;
 
 
     }

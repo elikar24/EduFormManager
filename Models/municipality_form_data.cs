@@ -7,8 +7,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using Models.Repo;
-
 namespace Models
 {
     using System;

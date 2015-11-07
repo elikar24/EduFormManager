@@ -98,9 +98,10 @@ namespace EduFormManager
             this.tileArchiveAdditionalForms = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.tileMunicipalityAdditonalForms = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.tileArchiveMunicipalityAdditonalForms = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
-            this.tileDocumentQueries = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
-            this.pageQueries = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
-            this.documentQueries = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.tileQueries = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.pageGroupQueries = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.PageGroup(this.components);
+            this.documentQueriesEdu = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentQueriesMunicipality = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.tileCreateQuery = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.pageCreateQuery = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
             this.documentCreateQuery = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
@@ -113,8 +114,6 @@ namespace EduFormManager
             this.pageEdu = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
             this.documentDictEdu = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.tileDictTemplate = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
-            this.pageTemplate = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
-            this.documentDictTemplate = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.tileDictForms = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.pageForms = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
             this.documentDictForms = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
@@ -151,7 +150,6 @@ namespace EduFormManager
             this.flyoutMessage = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Flyout(this.components);
             this.pageCheck = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
             this.documentDictCheck = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
-            this.pageSheet = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
             this.pageQuestionary = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
             this.documentDictQuestionary = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.flyoutExportReport = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Flyout(this.components);
@@ -161,6 +159,7 @@ namespace EduFormManager
             this.tabbedGroupQueryReports = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TabbedGroup(this.components);
             this.pageDetailedMunicipalityStatisticsReport = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
             this.documentMunicipalityFormDetailedStatisticsReport = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentDictTemplate = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.tileDictCheck = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.tileGroup1 = new DevExpress.XtraEditors.TileGroup();
             this.tileItem1 = new DevExpress.XtraEditors.TileItem();
@@ -186,6 +185,7 @@ namespace EduFormManager
             this.panel1 = new System.Windows.Forms.Panel();
             this.expireWarnBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.pageTemplate = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.documentManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.windowsUIViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileContainerMain)).BeginInit();
@@ -201,9 +201,10 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.tileArchiveAdditionalForms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileMunicipalityAdditonalForms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileArchiveMunicipalityAdditonalForms)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileDocumentQueries)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pageQueries)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentQueries)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileQueries)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageGroupQueries)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentQueriesEdu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentQueriesMunicipality)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileCreateQuery)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageCreateQuery)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentCreateQuery)).BeginInit();
@@ -216,8 +217,6 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.pageEdu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentDictEdu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileDictTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pageTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentDictTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileDictForms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageForms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentDictForms)).BeginInit();
@@ -254,7 +253,6 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.flyoutMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageCheck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentDictCheck)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pageSheet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageQuestionary)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentDictQuestionary)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.flyoutExportReport)).BeginInit();
@@ -264,6 +262,7 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.tabbedGroupQueryReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageDetailedMunicipalityStatisticsReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentMunicipalityFormDetailedStatisticsReport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentDictTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileDictCheck)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -275,6 +274,7 @@ namespace EduFormManager
             this.flyoutPanelControl1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.expireWarnBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageTemplate)).BeginInit();
             this.SuspendLayout();
             // 
             // documentManagerMain
@@ -306,17 +306,14 @@ namespace EduFormManager
             this.flyoutMessage,
             this.tileContainerMessage,
             this.pageEduPassport,
-            this.pageQueries,
             this.pageCheck,
             this.pageEdu,
             this.pageMunit,
-            this.pageTemplate,
             this.pageCreateQuery,
             this.pageRequestQuery,
             this.pageBugReport,
             this.pageMessageList,
             this.pageForms,
-            this.pageSheet,
             this.pageGroupUploadForm,
             this.pageMunicipalityFormula,
             this.pageQuestionary,
@@ -324,9 +321,11 @@ namespace EduFormManager
             this.pageDetailedStatisticsReport,
             this.tabbedGroupQueryReports,
             this.tabbedGroupStatistics,
-            this.pageDetailedMunicipalityStatisticsReport});
+            this.pageDetailedMunicipalityStatisticsReport,
+            this.pageGroupQueries,
+            this.pageTemplate});
             this.windowsUIViewMain.Documents.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseDocument[] {
-            this.documentQueries,
+            this.documentQueriesEdu,
             this.documentDictCheck,
             this.documentDictEdu,
             this.documentDictMunicipality,
@@ -351,7 +350,8 @@ namespace EduFormManager
             this.documentFormDetailedStatisticsReport,
             this.documentMunicipalityFormStatistics,
             this.documentMunicipalityFormDetailedStatistics,
-            this.documentMunicipalityFormDetailedStatisticsReport});
+            this.documentMunicipalityFormDetailedStatisticsReport,
+            this.documentQueriesMunicipality});
             this.windowsUIViewMain.FlyoutProperties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(83)))), ((int)(((byte)(142)))));
             this.windowsUIViewMain.FlyoutProperties.Appearance.ForeColor = System.Drawing.Color.White;
             this.windowsUIViewMain.FlyoutProperties.Appearance.Options.UseBackColor = true;
@@ -360,7 +360,7 @@ namespace EduFormManager
             this.windowsUIViewMain.SplashScreenProperties.LoadingDescription = "Загрузка";
             this.windowsUIViewMain.TileContainerProperties.ItemCheckMode = DevExpress.XtraEditors.TileItemCheckMode.None;
             this.windowsUIViewMain.Tiles.AddRange(new DevExpress.XtraBars.Docking2010.Views.WindowsUI.BaseTile[] {
-            this.tileDocumentQueries,
+            this.tileQueries,
             this.tileDictionaries,
             this.tileDictMunicipality,
             this.tileDictCheck,
@@ -407,7 +407,7 @@ namespace EduFormManager
             this.tileArchiveAdditionalForms,
             this.tileMunicipalityAdditonalForms,
             this.tileArchiveMunicipalityAdditonalForms,
-            this.tileDocumentQueries,
+            this.tileQueries,
             this.tileCreateQuery,
             this.tileDictionaries,
             this.tileFormStatistics,
@@ -677,15 +677,15 @@ namespace EduFormManager
             this.tileArchiveMunicipalityAdditonalForms.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
             this.tileArchiveMunicipalityAdditonalForms.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             // 
-            // tileDocumentQueries
+            // tileQueries
             // 
-            this.tileDocumentQueries.ActivationTarget = this.pageQueries;
-            this.tileDocumentQueries.Appearances.Normal.BackColor = System.Drawing.Color.SteelBlue;
-            this.tileDocumentQueries.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
-            this.tileDocumentQueries.Appearances.Normal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tileDocumentQueries.Appearances.Normal.Options.UseBackColor = true;
-            this.tileDocumentQueries.Appearances.Normal.Options.UseBorderColor = true;
-            this.tileDocumentQueries.Appearances.Normal.Options.UseFont = true;
+            this.tileQueries.ActivationTarget = this.pageGroupQueries;
+            this.tileQueries.Appearances.Normal.BackColor = System.Drawing.Color.SteelBlue;
+            this.tileQueries.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
+            this.tileQueries.Appearances.Normal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tileQueries.Appearances.Normal.Options.UseBackColor = true;
+            this.tileQueries.Appearances.Normal.Options.UseBorderColor = true;
+            this.tileQueries.Appearances.Normal.Options.UseFont = true;
             tileItemElement18.Image = global::EduFormManager.Properties.Resources.summary_icon;
             tileItemElement18.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
             tileItemElement18.ImageBorderColor = System.Drawing.Color.Empty;
@@ -693,27 +693,34 @@ namespace EduFormManager
             tileItemElement18.ImageSize = new System.Drawing.Size(80, 80);
             tileItemElement18.Text = "Запросы";
             tileItemElement18.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.tileDocumentQueries.Elements.Add(tileItemElement18);
-            this.tileDocumentQueries.Group = "TileGroup2";
-            this.tileContainerMain.SetID(this.tileDocumentQueries, 1);
-            this.tileDocumentQueries.Name = "tileDocumentQueries";
-            this.tileDocumentQueries.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
-            this.tileDocumentQueries.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.tileDocumentQueries.Properties.TextShowMode = DevExpress.XtraEditors.TileItemContentShowMode.Always;
-            this.tileDocumentQueries.Tag = "Queries";
+            this.tileQueries.Elements.Add(tileItemElement18);
+            this.tileQueries.Group = "TileGroup2";
+            this.tileContainerMain.SetID(this.tileQueries, 1);
+            this.tileQueries.Name = "tileQueries";
+            this.tileQueries.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
+            this.tileQueries.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.tileQueries.Properties.TextShowMode = DevExpress.XtraEditors.TileItemContentShowMode.Always;
+            this.tileQueries.Tag = "Queries";
             // 
-            // pageQueries
+            // pageGroupQueries
             // 
-            this.pageQueries.Caption = "Запросы";
-            this.pageQueries.Document = this.documentQueries;
-            this.pageQueries.Name = "pageQueries";
+            this.pageGroupQueries.Caption = "Запросы";
+            this.pageGroupQueries.Items.AddRange(new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document[] {
+            this.documentQueriesEdu,
+            this.documentQueriesMunicipality});
+            this.pageGroupQueries.Name = "pageGroupQueries";
+            this.pageGroupQueries.Parent = this.tileContainerMain;
             // 
-            // documentQueries
+            // documentQueriesEdu
             // 
-            this.documentQueries.Caption = "Запросы";
-            this.documentQueries.ControlName = "Queries";
-            this.documentQueries.Header = "Запросы";
-            this.documentQueries.Image = global::EduFormManager.Properties.Resources.summary_icon;
+            this.documentQueriesEdu.Caption = "К организациям";
+            this.documentQueriesEdu.ControlName = "QueriesEdu";
+            this.documentQueriesEdu.Header = "";
+            // 
+            // documentQueriesMunicipality
+            // 
+            this.documentQueriesMunicipality.Caption = "К муниципалитетам";
+            this.documentQueriesMunicipality.ControlName = "QueriesMunicipality";
             // 
             // tileCreateQuery
             // 
@@ -843,18 +850,6 @@ namespace EduFormManager
             this.tileContainerDictionaries.SetID(this.tileDictTemplate, 3);
             this.tileDictTemplate.Name = "tileDictTemplate";
             this.tileDictTemplate.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            // 
-            // pageTemplate
-            // 
-            this.pageTemplate.Caption = "Шаблоны форм";
-            this.pageTemplate.Document = this.documentDictTemplate;
-            this.pageTemplate.Name = "pageTemplate";
-            this.pageTemplate.Parent = this.tileContainerDictionaries;
-            // 
-            // documentDictTemplate
-            // 
-            this.documentDictTemplate.Caption = "Шаблоны форм";
-            this.documentDictTemplate.ControlName = "DictTemplate";
             // 
             // tileDictForms
             // 
@@ -1188,13 +1183,6 @@ namespace EduFormManager
             this.documentDictCheck.Caption = "Формулы";
             this.documentDictCheck.ControlName = "DictCheck";
             // 
-            // pageSheet
-            // 
-            this.pageSheet.Caption = "Загрузить форму";
-            this.pageSheet.Document = this.documentUploadSheetFromFile;
-            this.pageSheet.Name = "pageSheet";
-            this.pageSheet.Parent = this.tileContainerMain;
-            // 
             // pageQuestionary
             // 
             this.pageQuestionary.Caption = "Анкеты";
@@ -1247,7 +1235,6 @@ namespace EduFormManager
             this.tabbedGroupQueryReports.AppearanceHeaderButton.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.tabbedGroupQueryReports.Caption = "Результаты запросов";
             this.tabbedGroupQueryReports.Name = "tabbedGroupQueryReports";
-            this.tabbedGroupQueryReports.Parent = this.pageQueries;
             this.tabbedGroupQueryReports.Properties.AllowHtmlDrawHeaders = DevExpress.Utils.DefaultBoolean.True;
             this.tabbedGroupQueryReports.Properties.HeaderStyle = DevExpress.XtraBars.Docking2010.Views.WindowsUI.HeaderStyle.Tile;
             this.tabbedGroupQueryReports.Properties.TileSize = 150;
@@ -1263,6 +1250,11 @@ namespace EduFormManager
             // 
             this.documentMunicipalityFormDetailedStatisticsReport.Caption = "Статистика форм муниципалитетов (детально) отчет";
             this.documentMunicipalityFormDetailedStatisticsReport.ControlName = "MunicipalityFormDetailedStatisticsReport";
+            // 
+            // documentDictTemplate
+            // 
+            this.documentDictTemplate.Caption = "Шаблоны форм";
+            this.documentDictTemplate.ControlName = "DictTemplate";
             // 
             // tileDictCheck
             // 
@@ -1525,6 +1517,13 @@ namespace EduFormManager
             this.toolTip.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.toolTip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             // 
+            // pageTemplate
+            // 
+            this.pageTemplate.Caption = "Шаблоны форм";
+            this.pageTemplate.Document = this.documentDictTemplate;
+            this.pageTemplate.Name = "pageTemplate";
+            this.pageTemplate.Parent = this.tileContainerDictionaries;
+            // 
             // mainForm
             // 
             this.Appearance.BackColor = System.Drawing.SystemColors.Window;
@@ -1554,9 +1553,10 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.tileArchiveAdditionalForms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileMunicipalityAdditonalForms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileArchiveMunicipalityAdditonalForms)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileDocumentQueries)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pageQueries)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentQueries)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileQueries)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageGroupQueries)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentQueriesEdu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentQueriesMunicipality)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileCreateQuery)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageCreateQuery)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentCreateQuery)).EndInit();
@@ -1569,8 +1569,6 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.pageEdu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentDictEdu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileDictTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pageTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentDictTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileDictForms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageForms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentDictForms)).EndInit();
@@ -1607,7 +1605,6 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.flyoutMessage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageCheck)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentDictCheck)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pageSheet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageQuestionary)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentDictQuestionary)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.flyoutExportReport)).EndInit();
@@ -1617,6 +1614,7 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.tabbedGroupQueryReports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageDetailedMunicipalityStatisticsReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentMunicipalityFormDetailedStatisticsReport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentDictTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileDictCheck)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -1629,6 +1627,7 @@ namespace EduFormManager
             this.flyoutPanelControl1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.expireWarnBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageTemplate)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1638,7 +1637,7 @@ namespace EduFormManager
         
         private DocumentManager documentManagerMain;
         private WindowsUIView windowsUIViewMain;
-        private Document documentQueries;
+        private Document documentQueriesEdu;
         private Document documentDictMunicipality;
         private Document documentDictCheck;
         private Document documentDictEdu;
@@ -1669,7 +1668,7 @@ namespace EduFormManager
         private Document documentBugReport;
         private TileContainer tileContainerMain;
         private Tile tileForms;
-        private Tile tileDocumentQueries;
+        private Tile tileQueries;
         private Tile tileDictionaries;
         private TileContainer tileContainerDictionaries;
         private Tile tileDictMunicipality;
@@ -1696,17 +1695,14 @@ namespace EduFormManager
         private XtraLoggedUserControl loggedUserControl;
         private NavigationBar navigationBar1;
         private Page pageEduPassport;
-        private Page pageQueries;
         private Page pageMunit;
         private Page pageCheck;
         private Page pageEdu;
-        private Page pageTemplate;
         private Page pageCreateQuery;
         private Page pageForms;
         private Page pageRequestQuery;
         private Page pageBugReport;
         private Page pageMessageList;
-        private Page pageSheet;
         private Tile tileFormStatistics;
         private Document documentFormStatistics;
         private Document documentFormStatisticsSummary;
@@ -1743,6 +1739,9 @@ namespace EduFormManager
         private Document documentMunicipalityFormDetailedStatistics;
         private Page pageDetailedMunicipalityStatisticsReport;
         private Document documentMunicipalityFormDetailedStatisticsReport;
+        private PageGroup pageGroupQueries;
+        private Document documentQueriesMunicipality;
+        private Page pageTemplate;
     }
 }
 

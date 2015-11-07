@@ -45,6 +45,7 @@ namespace EduFormManager.Forms.UserControls
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
+            this.splitterItem2 = new DevExpress.XtraLayout.SplitterItem();
             ((System.ComponentModel.ISupportInitialize)(this.eduTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.queryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eduBindingSource)).BeginInit();
@@ -62,15 +63,16 @@ namespace EduFormManager.Forms.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitterItem2)).BeginInit();
             this.SuspendLayout();
             // 
             // spreadsheetTemplate
             // 
-            this.spreadsheetTemplate.Location = new System.Drawing.Point(167, 12);
+            this.spreadsheetTemplate.Location = new System.Drawing.Point(276, 12);
             this.spreadsheetTemplate.LookAndFeel.SkinName = "Seven Classic";
             this.spreadsheetTemplate.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.spreadsheetTemplate.Name = "spreadsheetTemplate";
-            this.spreadsheetTemplate.Size = new System.Drawing.Size(1004, 267);
+            this.spreadsheetTemplate.Size = new System.Drawing.Size(895, 260);
             this.spreadsheetTemplate.TabIndex = 18;
             this.spreadsheetTemplate.Text = "spreadsheetControl2";
             this.spreadsheetTemplate.Unit = DevExpress.Office.DocumentUnit.Point;
@@ -80,14 +82,16 @@ namespace EduFormManager.Forms.UserControls
             // 
             // listBoxTemplatedForm
             // 
+            this.listBoxTemplatedForm.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBoxTemplatedForm.DataSource = this.templatedFormDataBindingSource;
             this.listBoxTemplatedForm.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listBoxTemplatedForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.listBoxTemplatedForm.FormattingEnabled = true;
+            this.listBoxTemplatedForm.HorizontalScrollbar = true;
             this.listBoxTemplatedForm.ItemHeight = 17;
             this.listBoxTemplatedForm.Location = new System.Drawing.Point(12, 85);
             this.listBoxTemplatedForm.Name = "listBoxTemplatedForm";
-            this.listBoxTemplatedForm.Size = new System.Drawing.Size(151, 191);
+            this.listBoxTemplatedForm.Size = new System.Drawing.Size(248, 187);
             this.listBoxTemplatedForm.TabIndex = 17;
             this.listBoxTemplatedForm.SelectedIndexChanged += new System.EventHandler(this.listBoxTemplatedForm_SelectedIndexChanged);
             this.listBoxTemplatedForm.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.listBoxTemplatedForm_Format);
@@ -102,7 +106,7 @@ namespace EduFormManager.Forms.UserControls
             this.comboBoxRemainingTemplatedForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.comboBoxRemainingTemplatedForm.Location = new System.Drawing.Point(12, 36);
             this.comboBoxRemainingTemplatedForm.Name = "comboBoxRemainingTemplatedForm";
-            this.comboBoxRemainingTemplatedForm.Size = new System.Drawing.Size(151, 25);
+            this.comboBoxRemainingTemplatedForm.Size = new System.Drawing.Size(248, 25);
             this.comboBoxRemainingTemplatedForm.TabIndex = 16;
             this.comboBoxRemainingTemplatedForm.SelectedIndexChanged += new System.EventHandler(this.comboBoxRemainingTemplatedForm_SelectedIndexChanged);
             this.comboBoxRemainingTemplatedForm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxRemainingTemplatedForm_KeyPress);
@@ -116,7 +120,7 @@ namespace EduFormManager.Forms.UserControls
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1109, 295, 250, 350);
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(737, 295, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
             this.layoutControl1.Size = new System.Drawing.Size(1183, 512);
             this.layoutControl1.TabIndex = 22;
@@ -124,9 +128,9 @@ namespace EduFormManager.Forms.UserControls
             // 
             // formulaEditControl1
             // 
-            this.formulaEditControl1.Location = new System.Drawing.Point(12, 295);
+            this.formulaEditControl1.Location = new System.Drawing.Point(12, 288);
             this.formulaEditControl1.Name = "formulaEditControl1";
-            this.formulaEditControl1.Size = new System.Drawing.Size(1159, 205);
+            this.formulaEditControl1.Size = new System.Drawing.Size(1159, 212);
             this.formulaEditControl1.TabIndex = 19;
             this.formulaEditControl1.Leave += new System.EventHandler(this.formulaEditControl1_Leave);
             // 
@@ -142,7 +146,8 @@ namespace EduFormManager.Forms.UserControls
             this.layoutControlItemTemplate,
             this.layoutControlItem4,
             this.layoutControlItem3,
-            this.splitterItem1});
+            this.splitterItem1,
+            this.splitterItem2});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(1183, 512);
@@ -154,7 +159,7 @@ namespace EduFormManager.Forms.UserControls
             this.layoutControlItemForm.CustomizationFormText = "Формы без шаблона";
             this.layoutControlItemForm.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItemForm.Name = "layoutControlItemForm";
-            this.layoutControlItemForm.Size = new System.Drawing.Size(155, 49);
+            this.layoutControlItemForm.Size = new System.Drawing.Size(252, 49);
             this.layoutControlItemForm.Text = "Формы без шаблона";
             this.layoutControlItemForm.TextLocation = DevExpress.Utils.Locations.Top;
             this.layoutControlItemForm.TextSize = new System.Drawing.Size(145, 21);
@@ -165,7 +170,7 @@ namespace EduFormManager.Forms.UserControls
             this.layoutControlItemTemplate.CustomizationFormText = "Формы с шаблоном";
             this.layoutControlItemTemplate.Location = new System.Drawing.Point(0, 49);
             this.layoutControlItemTemplate.Name = "layoutControlItemTemplate";
-            this.layoutControlItemTemplate.Size = new System.Drawing.Size(155, 222);
+            this.layoutControlItemTemplate.Size = new System.Drawing.Size(252, 215);
             this.layoutControlItemTemplate.Text = "Формы с шаблоном";
             this.layoutControlItemTemplate.TextLocation = DevExpress.Utils.Locations.Top;
             this.layoutControlItemTemplate.TextSize = new System.Drawing.Size(145, 21);
@@ -174,27 +179,34 @@ namespace EduFormManager.Forms.UserControls
             // 
             this.layoutControlItem4.Control = this.spreadsheetTemplate;
             this.layoutControlItem4.CustomizationFormText = "layoutControlItem4";
-            this.layoutControlItem4.Location = new System.Drawing.Point(155, 0);
+            this.layoutControlItem4.Location = new System.Drawing.Point(264, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(1008, 271);
+            this.layoutControlItem4.Size = new System.Drawing.Size(899, 264);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.formulaEditControl1;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 283);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 276);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(1163, 209);
+            this.layoutControlItem3.Size = new System.Drawing.Size(1163, 216);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // splitterItem1
             // 
             this.splitterItem1.AllowHotTrack = true;
-            this.splitterItem1.Location = new System.Drawing.Point(0, 271);
+            this.splitterItem1.Location = new System.Drawing.Point(0, 264);
             this.splitterItem1.Name = "splitterItem1";
             this.splitterItem1.Size = new System.Drawing.Size(1163, 12);
+            // 
+            // splitterItem2
+            // 
+            this.splitterItem2.AllowHotTrack = true;
+            this.splitterItem2.Location = new System.Drawing.Point(252, 0);
+            this.splitterItem2.Name = "splitterItem2";
+            this.splitterItem2.Size = new System.Drawing.Size(12, 264);
             // 
             // XtraDictionaryTemplateControl
             // 
@@ -224,6 +236,7 @@ namespace EduFormManager.Forms.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitterItem2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -241,5 +254,6 @@ namespace EduFormManager.Forms.UserControls
         private FormulaEditControl formulaEditControl1;
         private LayoutControlItem layoutControlItem3;
         private SplitterItem splitterItem1;
+        private SplitterItem splitterItem2;
     }
 }

@@ -401,15 +401,24 @@ namespace Models.Repo
 
         #region query methods
 
-        public Task<List<query>> GetQueries(int credId, int formId)
+        public Task<List<query>> GetQueries(int formId)
         {
-            return _db.queries.Where(t => t.credentials_id == credId && t.form_id == formId)
+            return _db.queries.Where(t => t.form_id == formId)
                 .OrderBy(t => t.title)
                 .ToListAsync();
         }
 
-        public Task<List<form>> GetFormsHaveQueries()
+        public Task<List<form>> GetFormsHaveQueries(params FormType[] types)
         {
+            var typeIdArray = types.Cast<int>().ToArray();
+            if (typeIdArray.Length > 0)
+            {
+                return _db.queries.Select(t => t.form)
+                    .Where(t => typeIdArray.Contains(t.form_type_id))
+                    .Distinct()
+                    .OrderBy(t => t.name)
+                    .ToListAsync();
+            }
             return _db.queries.Select(t => t.form)
                 .Distinct()
                 .OrderBy(t => t.name)

@@ -26,6 +26,7 @@ namespace Models
         Unknown = -2
     };
 
+    [Flags]
     public enum FormType
     {
         None = 0,

@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using EduFormManager.Properties;
+using EduFormManager.Utils;
 using Models;
 using Models.Repo;
 
@@ -193,14 +195,70 @@ namespace EduFormManager.Forms.UserControls
         {
             Remove(null);
         }
-        protected override void Remove(Document doc)
+        protected override async void Remove(Document doc)
         {
             var edu = (edu) eduBindingSource.Current;
-            var dialogResult = this.ShowFlyoutMessageBox("", string.Format("Удалить ОУ '{0}'?", edu.name), FlyoutCommand.Yes, FlyoutCommand.No);
+            var messageBuilder = new StringBuilder(string.Format("Удалить ОУ <i>\"{0}\"</i>?", edu.name));
+            if (edu.edu_form_data != null && edu.edu_form_data.Count > 0)
+            {
+                messageBuilder.Append("\nБудут удалены загруженные формы");
+                messageBuilder.Append("<i>");
+                if (edu.edu_form_data.Count > 3)
+                {
+                    var formData = edu.edu_form_data.First();
+                    messageBuilder.AppendFormat(" {0} {1:dd MMMM yyyy},", formData.form.name.Truncate(15), formData.send_date);
+                    formData = edu.edu_form_data.ElementAt(1);
+                    messageBuilder.AppendFormat(" {0} {1:dd MMMM yyyy},", formData.form.name.Truncate(15), formData.send_date);
+                    formData = edu.edu_form_data.Last();
+                    messageBuilder.AppendFormat(" ..., {0} {1:dd MMMM yyyy}", formData.form.name.Truncate(15), formData.send_date);
+                }
+                else
+                {
+                    for (int i = 0; i < edu.edu_form_data.Count; i++)
+                    {
+                        var formData = edu.edu_form_data.ElementAt(i);
+                        messageBuilder.AppendFormat(
+                            " {0} {1:dd MMMM yyyy}" + (i == edu.edu_form_data.Count - 1 ? string.Empty : ","), 
+                            formData.form.name.Truncate(10), formData.send_date);                    
+                    }
+                }
+                messageBuilder.Append("</i>");
+            }
+            var credentials = await Repo.GetCredential(edu.edu_id, Credentials.Type.Edu);
+            if (credentials.queries != null && credentials.queries.Count > 0)
+            {
+                messageBuilder.Append("\nБудут удалены запросы");
+                messageBuilder.Append("<i>");
+                if (credentials.queries.Count > 3)
+                {
+                    var query = credentials.queries.First();
+                    messageBuilder.AppendFormat(" \"{0}\" {1},", query.title.Truncate(15), query.form.name.Truncate(15));
+                    query = credentials.queries.ElementAt(1);
+                    messageBuilder.AppendFormat(" \"{0}\" {1},", query.title.Truncate(15), query.form.name.Truncate(15));
+                    query = credentials.queries.Last();
+                    messageBuilder.AppendFormat("..., \"{0}\" {1},", query.title.Truncate(15), query.form.name.Truncate(15));
+                }
+                else
+                {
+                    for (int i = 0; i < credentials.queries.Count; i++)
+                    {
+                        var query = credentials.queries.ElementAt(i);
+                        messageBuilder.AppendFormat(
+                            " \"{0}\" {1}" + (i == credentials.queries.Count - 1 ? string.Empty : ","), query.title.Truncate(8), query.form.name.Truncate(8));
+                    }
+                }
+                messageBuilder.Append("</i>");
+            }
+
+            var dialogResult = this.ShowFlyoutMessageBox("", messageBuilder.ToString(), FlyoutCommand.Yes, FlyoutCommand.No);
             if (dialogResult == DialogResult.No) return;
             var eduSelected = (edu) this.treeViewEdu.SelectedNode.Tag;
-            if (edu.Equals(eduSelected))
+            if (edu.edu_id == eduSelected.edu_id)
             {
+                edu.activity_type.Clear();
+                edu.management_agency.Clear();
+                edu.management_agency_activity.Clear();
+                Repo.Remove(credentials);
                 Repo.Remove(edu);
                 eduBindingSource.Remove(edu);
                 eduBindingSource.EndEdit();

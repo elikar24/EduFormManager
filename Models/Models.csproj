@@ -142,6 +142,8 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Credentials.cs" />
+    <Compile Include="IForm.cs" />
     <Compile Include="query.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -157,8 +159,6 @@
     <Compile Include="questionary.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Credentials.cs" />
-    <Compile Include="IForm.cs" />
     <Compile Include="Repo\Repository.cs" />
     <Compile Include="templated_form_data.cs">
       <DependentUpon>Model.tt</DependentUpon>

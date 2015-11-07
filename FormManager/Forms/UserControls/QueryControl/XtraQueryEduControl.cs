@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using DevExpress.Utils.Menu;
+using DevExpress.XtraBars.Docking2010;
 using DevExpress.XtraBars.Docking2010.Views;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
+using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraReports.UI;
 using EduFormManager.Forms.Reports;
@@ -15,20 +17,22 @@ using PopupMenuShowingEventArgs = DevExpress.XtraGrid.Views.Grid.PopupMenuShowin
 
 namespace EduFormManager.Forms.UserControls.QueryControl
 {
-    public partial class XtraQueryControl : XtraBaseControl, ISupportDocumentActions
+    public partial class XtraQueryEduControl : XtraBaseControl, ISupportDocumentActions
     {
-        private QuerySummaryModelCollection _querySummaryModelCollection;
+        private QuerySummaryModelCollection<QueryEduSummaryModel> _querySummaryModelCollection;
         private form _selectedForm;
         private int _selectedYear;
         private bool _isOnlyPassport;
 
         private bool _isManualChecking = true;
-        public XtraQueryControl(WindowsUIView view, Repository repo) 
+        public XtraQueryEduControl(WindowsUIView view, Repository repo) 
             : base(view, repo)
         {
             InitializeComponent();
             Init();
             InitializeEventHandlers();
+
+            this.flyoutPanelMenu.OwnerControl = view.Manager.ContainerControl;
         }
 
         public IList<int> YearDataSource
@@ -51,7 +55,8 @@ namespace EduFormManager.Forms.UserControls.QueryControl
                 var forms = (ICollection<form>)formBindingSource.DataSource;
                 this.comboBoxForm.DataSource = forms;
                 this.comboBoxForm.DisplayMember = "name";
-                if (forms.Any()) _selectedForm = forms.FirstOrDefault();
+                if (forms.Any()) 
+                    _selectedForm = forms.FirstOrDefault();
             };
 
             this.checkBoxOnlyPassport.CheckStateChanged += (s, e) =>
@@ -68,11 +73,25 @@ namespace EduFormManager.Forms.UserControls.QueryControl
                 _selectedYear = _isOnlyPassport 
                     ? 0 
                     : (int) this.comboBoxYear.SelectedItem;
-                OnIndexChangedSetDataSourceFor(sender);
+                OnIndexChangedSetDataSourceFor();
                 args.Value = _querySummaryModelCollection.Current;
             };
 
             this.buttonClosePopup.Click += (sender, args) => this.popupQuerySummaryModel.ClosePopup();
+
+            this.buttonMenuFlyout.Click += (sender, eventArgs) =>
+            {
+                if (this.flyoutPanelMenu.IsPopupOpen)
+                {
+                    this.flyoutPanelMenu.HidePopup();
+                    (sender as SimpleButton).Text = "Меню";
+                }
+                else
+                {
+                    this.flyoutPanelMenu.ShowPopup();
+                    (sender as SimpleButton).Text = "Закрыть";
+                }
+            };
 
             this.gridViewEdu.SelectionChanged += (sender, args) =>
             {
@@ -94,7 +113,10 @@ namespace EduFormManager.Forms.UserControls.QueryControl
                     }
                     ResetGridViews();
                 }
-                catch (Exception) { }
+                catch
+                {
+                    // ignored
+                }
             };
 
             this.queryControl.SelectionChanged += (sender, args) =>
@@ -119,13 +141,13 @@ namespace EduFormManager.Forms.UserControls.QueryControl
         }
         private void Init()
         {
-            _querySummaryModelCollection = new QuerySummaryModelCollection();
+            _querySummaryModelCollection = new QuerySummaryModelCollection<QueryEduSummaryModel>();
             this.querySummaryModelBindingSource.DataSource = _querySummaryModelCollection;
         }
 
-        private async void OnIndexChangedSetDataSourceFor(object sender)
+        private async void OnIndexChangedSetDataSourceFor()
         {
-            int credId = Authentication.Credentials.CredId;
+            var credId = Authentication.Credentials.CredId;
             if (Authentication.Credentials.IsMinistry)
             {
                 credId = (await Repo.GetCredential("admin")).credentials_id;
@@ -165,8 +187,8 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             var model = _querySummaryModelCollection.Current;
             foreach (var edu in model.EduList)
             {
-                int idx = this.eduBindingSource.List.IndexOf(edu);
-                int row = this.gridViewEdu.GetRowHandle(idx);
+                var idx = this.eduBindingSource.List.IndexOf(edu);
+                var row = this.gridViewEdu.GetRowHandle(idx);
                 this.gridViewEdu.SelectRow(row);
             }
             this.queryControl.SelectRange(model.QueryList);
@@ -176,14 +198,14 @@ namespace EduFormManager.Forms.UserControls.QueryControl
         private void ChangeCurrentQuerySummaryModel()
         {
             if (!_querySummaryModelCollection.Contains(_selectedForm, _selectedYear))
-                _querySummaryModelCollection.Add(new QuerySummaryModel(_selectedForm, _selectedYear));
+                _querySummaryModelCollection.Add(new QueryEduSummaryModel(_selectedForm, _selectedYear));
             _querySummaryModelCollection.Current = _querySummaryModelCollection[_selectedForm, _selectedYear];
         }
 
         private void ResetGridViews()
         {
             var view = (GridView) gridControlQuerySummary.MainView;
-            int rowHandle = view.GetRowHandle(this.querySummaryModelBindingSource.IndexOf(_querySummaryModelCollection.Current));
+            var rowHandle = view.GetRowHandle(this.querySummaryModelBindingSource.IndexOf(_querySummaryModelCollection.Current));
             this.querySummaryModelBindingSource.ResetBindings(false);
             view.SetMasterRowExpanded(rowHandle, true);
         }
@@ -199,36 +221,36 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             {
                 ProgressDialog.ShowTop(this.ParentForm, description: "Формирую отчеты");
 
-                IList<QuerySummaryModel> nonQuerableModels =
+                IList<QueryEduSummaryModel> nonQuerableModels =
                     _querySummaryModelCollection.Where(t => !t.EduList.Any() || !t.QueryList.Any()).ToList();
                 if (nonQuerableModels.Any())
                 {
-                    string message = @"Отчеты по формам{0}{1}{2}не будут выполнены так как не выбрано либо ни одной ОО, либо ни одного запроса.";
-                    string stringForms = string.Join(", ", nonQuerableModels.Select(t => string.Format("{0} за {1} год", t.Form.name, t.Year)));
-                    string messageFormat = string.Format(message, Environment.NewLine, stringForms, Environment.NewLine);
+                    var message = @"Отчеты по формам{0}{1}{2}не будут выполнены так как не выбрано либо ни одной ОО, либо ни одного запроса.";
+                    var stringForms = string.Join(", ", nonQuerableModels.Select(t => string.Format("{0} за {1} год", t.Form.name, t.Year)));
+                    var messageFormat = string.Format(message, Environment.NewLine, stringForms, Environment.NewLine);
 
                     this.ShowFlyoutMessageBox("Информация", messageFormat, FlyoutCommand.OK);
                 }
 
-                IEnumerable<QuerySummaryModel> querableModels = _querySummaryModelCollection.Where(t => t.EduList.Any() && t.QueryList.Any());
-                TabbedGroup queryContainer = (TabbedGroup) this.View.ContentContainers.Single(t => t.Name == "tabbedGroupQueryReports");
+                var querableModels = _querySummaryModelCollection.Where(t => t.EduList.Any() && t.QueryList.Any());
+                var queryContainer = (TabbedGroup) this.View.ContentContainers.Single(t => t.Name == "tabbedGroupQueryReports");
                 queryContainer.Items.Clear();
-                BaseDocument[] oldReportDocuments = this.View.Documents.Find(t => t.ControlTypeName == typeof (XtraReportViewControl).Name).ToArray();
+                var oldReportDocuments = this.View.Documents.Find(t => t.ControlTypeName == typeof (XtraReportViewControl).Name).ToArray();
                 this.View.Documents.RemoveRange(oldReportDocuments);
                 
-                foreach (QuerySummaryModel queryModel in querableModels)
+                foreach (var queryModel in querableModels)
                 {
-                    XtraReport report = await ReportFactory.CreateQueryReportAsync(queryModel);
+                    var report = await ReportFactory.CreateQueryReportAsync(queryModel);
 
                     //XtraReportViewControl reportControl = new XtraReportViewControl(this.View) {Report = report};
                     //из-за такого создания документа с контролом при переходе "назад" дублируются кнопки в obquerydocumentactions.
                     //поэтому нужно создавать пустой документ и подгружать контрол в querycontrol эвенте
-                    Document reportDocument = (Document) this.View.AddDocument("Запрос", "Query");
+                    var reportDocument = (Document) this.View.AddDocument("Запрос", "Query");
                     reportDocument.ControlTypeName = typeof (XtraReportViewControl).Name;
                     reportDocument.Caption = string.Format("Запросы к форме<br>{0}", queryModel.Form.name) + (queryModel.Year > 0 ? "<br>за " + queryModel.Year + " год" : "");
                     queryContainer.Items.Add(reportDocument);
                 }
-
+                queryContainer.Parent = View.ActiveContentContainer;
                 this.View.ActivateContainer(queryContainer);
             }
             catch (Exception ex)
@@ -249,11 +271,11 @@ namespace EduFormManager.Forms.UserControls.QueryControl
                 var deleteItem = new DXMenuItem("Убрать", (o, args) =>
                 {
                     var view = (GridView)sender;
-                    int row = e.HitInfo.RowHandle;
+                    var row = e.HitInfo.RowHandle;
 
                     if (view.Name == this.gridViewSummary.Name)
                     {
-                        var model = (QuerySummaryModel) view.GetRow(row);
+                        var model = (QueryEduSummaryModel) view.GetRow(row);
                         if (model == _querySummaryModelCollection.Current)
                         {
                             this.gridViewEdu.ClearSelection();
@@ -262,15 +284,15 @@ namespace EduFormManager.Forms.UserControls.QueryControl
                     }
                     else
                     {
-                        var model = (QuerySummaryModel) view.SourceRow;
+                        var model = (QueryEduSummaryModel) view.SourceRow;
                         if (model == _querySummaryModelCollection.Current)
                         {
                             if (view.Name == this.gridViewSummaryEdu.Name)
                             {
                                 var edu = (edu) view.GetRow(row);
 
-                                int datasourceIndex = this.eduBindingSource.IndexOf(edu);
-                                int eduRow = this.gridViewEdu.GetRowHandle(datasourceIndex);
+                                var datasourceIndex = this.eduBindingSource.IndexOf(edu);
+                                var eduRow = this.gridViewEdu.GetRowHandle(datasourceIndex);
                                 this.gridViewEdu.UnselectRow(eduRow);
                             }
                             else if (view.Name == this.gridViewSummaryQuery.Name)
@@ -293,6 +315,20 @@ namespace EduFormManager.Forms.UserControls.QueryControl
         public void OnQueryDocumentActions(IDocumentActionsArgs args)
         {
             args.DocumentActions.Add(new DocumentAction(CanShowQueryReport, ShowQueryReport) { Caption = "Вывести отчет", Image = Resources.glyphicons_119_table });
+
+            this.windowsUIButtonPanelActions.Buttons.Clear();
+            var showReportButton = new WindowsUIButton()
+            {
+                Caption = "Вывести отчет",
+                Image = Resources.glyphicons_119_table
+            };
+            showReportButton.Click += (sender, eventArgs) =>
+            {
+                if (CanShowQueryReport(args.Document))
+                    ShowQueryReport(args.Document);
+            };
+            this.windowsUIButtonPanelActions.ButtonClick += (sender, eventArgs) => this.flyoutPanelMenu.HidePopup();
+            this.windowsUIButtonPanelActions.Buttons.Add(showReportButton);
         }
 
         private void gridViewSummary_MasterRowGetRelationDisplayCaption(object sender, MasterRowGetRelationNameEventArgs e)

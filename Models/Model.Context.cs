@@ -7,33 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.Configuration;
-using System.Data.Common;
-using System.Data.Entity.Core.EntityClient;
-
 namespace Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Configuration;
+    using System.Data.Common;
+    using System.Data.Entity.Core.EntityClient;
     
     public partial class Entities : DbContext
     {
         public Entities()
             : base("name=Entities")
         {
-            var originalConnectionString = ConfigurationManager.ConnectionStrings["Entities"].ConnectionString;
+    		var originalConnectionString = ConfigurationManager.ConnectionStrings["Entities"].ConnectionString;
             var entityBuilder = new EntityConnectionStringBuilder(originalConnectionString);
             var factory = DbProviderFactories.GetFactory(entityBuilder.Provider);
             var providerBuilder = factory.CreateConnectionStringBuilder();
-
-            providerBuilder.ConnectionString = entityBuilder.ProviderConnectionString;
-
-            providerBuilder.Add("Password", "qwer1234");
-
-            entityBuilder.ProviderConnectionString = providerBuilder.ToString();
-
-            this.Database.Connection.ConnectionString = entityBuilder.ProviderConnectionString;
+    		providerBuilder.ConnectionString = entityBuilder.ProviderConnectionString;
+    		providerBuilder.Add("Password", "qwer1234");
+    		entityBuilder.ProviderConnectionString = providerBuilder.ToString();
+    		this.Database.Connection.ConnectionString = entityBuilder.ProviderConnectionString;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

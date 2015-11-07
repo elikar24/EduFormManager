@@ -4,10 +4,11 @@ using Models;
 
 namespace EduFormManager.Forms.UserControls.QueryControl
 {
-    public class QuerySummaryModelCollection : List<QuerySummaryModel>
+    public class QuerySummaryModelCollection<TModel> : List<TModel> 
+        where TModel : QuerySummaryModel
     {
-        private QuerySummaryModel _current;
-        public QuerySummaryModel this[form form, int year]
+        private TModel _current;
+        public TModel this[form form, int year]
         {
             get
             {
@@ -26,7 +27,7 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             return this.Any(t => t.Form.form_id == form.form_id && t.Year == year);
         }
 
-        public QuerySummaryModel Current
+        public TModel Current
         {
             get
             {

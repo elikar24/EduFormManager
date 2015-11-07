@@ -24,7 +24,7 @@ foreach (var entity in typeMapper.GetItemsToGenerate<EntityType>(itemCollection)
     BeginNamespace(code);
 #>
 <#=codeStringGenerator.UsingDirectives(inHeader: false)#>
-<#=codeStringGenerator.EntityClassOpening(entity)#><#if (entity.Name.Contains("form_data")) {#> : IForm <#}#>
+<#=codeStringGenerator.EntityClassOpening(entity)#><#if (entity.Name.Contains("form_data") && !entity.Name.Contains("templated")) {#> : IForm <#}#>
 {
 <#
     var propertiesWithDefaultValues = typeMapper.GetPropertiesWithDefaultValues(entity);
