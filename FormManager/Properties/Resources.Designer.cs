@@ -93,6 +93,26 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Attention_26 {
+            get {
+                object obj = ResourceManager.GetObject("Attention_26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Attention_32 {
+            get {
+                object obj = ResourceManager.GetObject("Attention_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap broken_icon {
             get {
                 object obj = ResourceManager.GetObject("broken_icon", resourceCulture);
@@ -157,26 +177,6 @@ namespace EduFormManager.Properties {
             get {
                 object obj = ResourceManager.GetObject("close01_white1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon cmo {
-            get {
-                object obj = ResourceManager.GetObject("cmo", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon cmo1 {
-            get {
-                object obj = ResourceManager.GetObject("cmo1", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -246,6 +246,16 @@ namespace EduFormManager.Properties {
         internal static System.Drawing.Bitmap Exclamation_24_white {
             get {
                 object obj = ResourceManager.GetObject("Exclamation_24_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap glyph_print {
+            get {
+                object obj = ResourceManager.GetObject("glyph_print", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -373,9 +383,9 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap home {
+        internal static System.Drawing.Bitmap Home_26 {
             get {
-                object obj = ResourceManager.GetObject("home", resourceCulture);
+                object obj = ResourceManager.GetObject("Home_26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -383,19 +393,9 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap home_1 {
+        internal static System.Drawing.Bitmap Home_32 {
             get {
-                object obj = ResourceManager.GetObject("home_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap home_1_ {
-            get {
-                object obj = ResourceManager.GetObject("home_1_", resourceCulture);
+                object obj = ResourceManager.GetObject("Home_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

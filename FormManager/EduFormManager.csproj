@@ -32,7 +32,7 @@
     <WebPage>install.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <DisallowUrlActivation>true</DisallowUrlActivation>
-    <ApplicationRevision>101</ApplicationRevision>
+    <ApplicationRevision>102</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -293,6 +293,11 @@
     <Compile Include="Forms\UserControls\XtraFormDetailedStatisticControl.Designer.cs">
       <DependentUpon>XtraFormDetailedStatisticControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Utils\AttachedProperty.cs" />
     <Compile Include="Utils\FormulaUtility.cs" />
     <Compile Include="Forms\ClientAreaForm.cs">
@@ -547,6 +552,11 @@
     <Compile Include="Utils\TileContainerHelper.cs" />
     <Compile Include="Utils\TileHelper.cs" />
     <Compile Include="Utils\TagHelper.cs" />
+    <None Include="Resources\Home-32.png" />
+    <None Include="Resources\Home-26.png" />
+    <None Include="Resources\Attention-32.png" />
+    <None Include="Resources\Attention-26.png" />
+    <None Include="Resources\glyph_print.png" />
     <None Include="Properties\DataSources\EduFormManager.Models.t_detailed_municipality_form_statistics.datasource" />
     <None Include="Properties\DataSources\EduFormManager.Models.t_municipality_form_statistics.datasource" />
     <None Include="app.config">
@@ -725,7 +735,6 @@
     <None Include="ico\glyphs\glyphicons_207_remove_2.png" />
     <None Include="ico\glyphs\glyphicons_119_table.png" />
     <None Include="ico\cmo.ico" />
-    <None Include="ico\analytics-icon.ico" />
     <None Include="ico\glyphs\Exclamation-24-white.png" />
     <None Include="ico\glyphs\glyphicons_207_remove_2_white.png" />
     <Content Include="cmo.ico" />
@@ -734,18 +743,12 @@
     <Content Include="ico\glyphs\glyphicons_359_file_export.png" />
     <None Include="ico\glyphs\glyphicons_432_plus.png" />
     <None Include="ico\glyphs\mail.png" />
-    <None Include="ico\home_1.png" />
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="ico\chart-icon.png" />
     <None Include="ico\stat-icon.png" />
     <None Include="ico\summary-icon.png" />
@@ -764,7 +767,6 @@
     <Content Include="ico\contact-icon.png" />
     <Content Include="ico\file-folder-icon.png" />
     <Content Include="ico\glyphs\three_dots_24x24.png" />
-    <Content Include="ico\home%281%29.png" />
     <Content Include="ico\icon-user-default.png" />
     <Content Include="ico\warning-icon-24x24.png" />
     <Content Include="NLog.config">

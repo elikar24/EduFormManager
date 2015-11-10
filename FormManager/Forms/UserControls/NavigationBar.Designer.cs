@@ -42,7 +42,7 @@ namespace EduFormManager.Forms
             // 
             this.tileBarNavigation.AllowDrag = false;
             this.tileBarNavigation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tileBarNavigation.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(83)))), ((int)(((byte)(142)))));
+            this.tileBarNavigation.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(116)))), ((int)(((byte)(169)))));
             this.tileBarNavigation.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tileBarNavigation.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileBarNavigation.AppearanceItem.Normal.Options.UseFont = true;
@@ -78,7 +78,7 @@ namespace EduFormManager.Forms
             this.simpleButton1.Appearance.Options.UseBackColor = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.simpleButton1.Image = global::EduFormManager.Properties.Resources.home_1;
+            this.simpleButton1.Image = global::EduFormManager.Properties.Resources.Home_26;
             this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.simpleButton1.Location = new System.Drawing.Point(0, 0);
             this.simpleButton1.LookAndFeel.SkinName = "Office 2013";

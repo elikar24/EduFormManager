@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -65,6 +66,10 @@ namespace EduFormManager.Forms.UserControls
                     this.checkedListBoxEduKinds.Enabled = true;
                 }
             };
+            var isBlockedDictionarySource = new Dictionary<bool, string>() { { true, "Заблокирована" }, { false, "Разблокирована" } };
+            this.comboBoxIsBlocked.DataSource = new BindingSource(isBlockedDictionarySource, null);
+            this.comboBoxIsBlocked.DisplayMember = "Value";
+            this.comboBoxIsBlocked.ValueMember = "Key";
         }
 
         private void RebuildAllformTree(List<form> formList)
@@ -158,6 +163,7 @@ namespace EduFormManager.Forms.UserControls
                 this.formBindingSource.Position = idxForm;
                 CheckEdukindList(form.edu_kind);
                 SelectFormType(form.form_type);
+                this.comboBoxIsBlocked.SelectedValue = form.is_blocked;
             }
             else
             {
@@ -179,6 +185,19 @@ namespace EduFormManager.Forms.UserControls
                 var formList = (List<form>) this.formBindingSource.List;
                 RebuildAllformTree(formList);
             }
+        }
+
+        private void comboBoxIsBlocked_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var isblocked = (KeyValuePair<bool, string>) this.comboBoxIsBlocked.SelectedItem;
+            var form = (form)this.formBindingSource.Current;
+            if (form == null) return;
+            if (form.is_blocked == isblocked.Key) return;
+            form.is_blocked = isblocked.Key;
+            if (!_editedList.Contains(form))
+                _editedList.Add(form);
+            var formList = (List<form>)this.formBindingSource.List;
+            RebuildAllformTree(formList);
         }
 
         private void checkedListBoxEduKinds_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -351,9 +370,5 @@ namespace EduFormManager.Forms.UserControls
             }
             e.Cancel = false;
         }
-
-       
-
-
     }
 }

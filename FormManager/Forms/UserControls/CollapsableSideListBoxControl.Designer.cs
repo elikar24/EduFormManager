@@ -49,7 +49,7 @@ namespace EduFormManager.Forms
             this.listBoxControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBoxControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(83)))), ((int)(((byte)(142)))));
+            this.listBoxControl1.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.listBoxControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxControl1.Appearance.ForeColor = System.Drawing.Color.White;
             this.listBoxControl1.Appearance.Options.UseBackColor = true;

@@ -11,8 +11,6 @@ namespace EduFormManager.Forms
 {
     public partial class CollapsableSideListBoxControl : XtraBaseControl
     {
-
-        private readonly Color _backColor = Color.FromArgb(2, 83, 142);
         private Color _foreColor = Color.White;
         private int _hoveredIndex;
         private int _clickedIndex;
@@ -26,6 +24,7 @@ namespace EduFormManager.Forms
             InitializeComponent();
 
             this.listBoxControl1.DataSource = Notifications.List;
+            this.listBoxControl1.BackColor = this.BackColor;
         }
         
         public void lst_MeasureItem(object sender, MeasureItemEventArgs e)

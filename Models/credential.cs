@@ -20,8 +20,8 @@ namespace Models
     
         public string login { get; set; }
         public string passwd { get; set; }
-        public Nullable<int> ref_id { get; set; }
-        public Nullable<int> login_type { get; set; }
+        public int ref_id { get; set; }
+        public int login_type { get; set; }
         public int credentials_id { get; set; }
     
         public virtual ICollection<query> queries { get; set; }

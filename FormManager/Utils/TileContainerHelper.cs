@@ -52,16 +52,33 @@ namespace EduFormManager.Utils
         public static void InitFormContainerActions(TileContainer con)
         {
             con.Properties.ItemCheckMode = TileItemCheckMode.Single;
-            DelegateAction deleteAction = new DelegateAction(() => true, async () =>
+            var deleteAction = new DelegateAction(() => true, async () =>
             {
-                Tile checkedTile = (Tile)con.Items.FirstOrDefault(x => x.Checked.HasValue && x.Checked.Value);
+                var checkedTile = (Tile)con.Items.FirstOrDefault(x => x.Checked.HasValue && x.Checked.Value);
                 if (checkedTile == null) return;
                 if (checkedTile.Tag == null) return;
                 int? formId = TagHelper.GetFormDataId(checkedTile.Tag.ToString());
                 if (!formId.HasValue)
                     return;
                 var view = (WindowsUIView)con.Manager.View;
-                Flyout fly = view.ContentContainers.FindFirst(x => x is Flyout && x.Caption == "Сообщение") as Flyout;
+                var fly = view.ContentContainers.FindFirst(x => x is Flyout && x.Caption == "Сообщение") as Flyout;
+                try
+                {
+                    using (var repo = new Repository())
+                    {
+                        var data = await repo.GetEduFormDataById(formId.Value);
+                        if (data.form.DaysRemain() == -1 && data.form.is_blocked)
+                        {
+                            var mes = fly != null 
+                                ? GuiUtility.ShowFlyoutMessage(view, fly, "Информация", 
+                                    "Удаление формы отключено, так как срок сдачи истек. Чтобы иметь возможность удалить эту форму, обратитесь к администратору.") 
+                                : MessageBox.Show("Удалить форму?", "Информация", MessageBoxButtons.OKCancel);
+                            return;
+                        }
+                    }
+                }
+                catch { }
+
                 var res = fly != null ?
                     GuiUtility.ShowFlyoutMessage(view, fly, "Подтверждение", "Удалить форму?", FlyoutCommand.Yes, FlyoutCommand.No) :
                     MessageBox.Show("Удалить форму?", "Подтверждение", MessageBoxButtons.OKCancel);

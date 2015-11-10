@@ -449,8 +449,7 @@ namespace EduFormManager
                             break;
                         }
                     case "ArchiveFormData4":
-                    case "FormData4":
-                    case "ArchiveFormData3":
+                    case "FormData4": //допформаcase "ArchiveFormData3":
                     case "FormData3": //форма муниципалитета
                         {
                             int? dataId = TagHelper.GetFormDataId(e.Document.Tag.ToString());
@@ -464,7 +463,9 @@ namespace EduFormManager
                                     FormData = fd,
                                     FormStatus = (Status)fd.status,
                                     Source = XtraSpreadsheet.FormSource.File,
-                                    Mode = XtraSpreadsheet.ControlMode.Edit,
+                                    Mode = (fd.form.DaysRemain() == -1 && fd.form.is_blocked) 
+                                        ? XtraSpreadsheet.ControlMode.Disabled 
+                                        : XtraSpreadsheet.ControlMode.Edit,
                                     ActiveForm = fd.form
                                 };
                                 sheetControl.LoadDocument();
@@ -479,7 +480,7 @@ namespace EduFormManager
                         }
                     case "ArchiveFormData1":
                     case "ArchiveFormData2":
-                    case "FormData2":
+                    case "FormData2": //допформа
                     case "FormData1": //форма организации
                         {
                             int? dataId = TagHelper.GetFormDataId(e.Document.Tag.ToString());
@@ -492,12 +493,15 @@ namespace EduFormManager
                                     FormData = fd,
                                     FormStatus = (Status)fd.status,
                                     Source = XtraSpreadsheet.FormSource.File,
-                                    Mode = XtraSpreadsheet.ControlMode.Edit
+                                    Mode = (fd.form.DaysRemain() == -1 && fd.form.is_blocked) 
+                                        ? XtraSpreadsheet.ControlMode.Disabled 
+                                        : XtraSpreadsheet.ControlMode.Edit
                                 };
                                 if (Authentication.Credentials.IsEdu)
                                 {
                                     var edu = await repo.GetEdu(Authentication.Credentials.EduId);
-                                    sheetControl.FormDataSource = await repo.GetFormsByEduKind(edu.edu_kind.edu_kind_id);
+                                    if (edu.edu_kind_id != null)
+                                        sheetControl.FormDataSource = await repo.GetFormsByEduKind(edu.edu_kind_id.Value);
                                 }
                                 else
                                 {
@@ -921,10 +925,10 @@ namespace EduFormManager
         private void RebuildNavBar(IContentContainer container)
         {
             if (container == null) return;
-            this.navigationBar1.ClearItems();
+            this.navigationBar.ClearItems();
             while (container != null)
             {
-                this.navigationBar1.PushItem(container);
+                this.navigationBar.PushItem(container);
                 container = container.Parent;
             }
         }
@@ -954,18 +958,22 @@ namespace EduFormManager
                 || windowsUIViewMain.ActiveDocument.ControlName == "FormData")
             {
                 var spreadSheetContol = ((XtraSpreadsheet) windowsUIViewMain.ActiveDocument.Control);
-                DialogResult dialogResult = spreadSheetContol.WarnAboutSavingChanges();
-                switch (dialogResult)
+                if (!(spreadSheetContol.Mode == XtraSpreadsheet.ControlMode.Disabled &&
+                    windowsUIViewMain.ActiveDocument.ControlName == "FormData"))
                 {
-                    case DialogResult.Yes:
-                        spreadSheetContol.OnWarnWasAnsweredYes();
-                        windowsUIViewMain.Controller.Back();
-                        break;
-                    case DialogResult.No:
-                        windowsUIViewMain.Controller.Back();
-                        break;
+                    var dialogResult = spreadSheetContol.WarnAboutSavingChanges();
+                    switch (dialogResult)
+                    {
+                        case DialogResult.Yes:
+                            spreadSheetContol.OnWarnWasAnsweredYes();
+                            windowsUIViewMain.Controller.Back();
+                            break;
+                        case DialogResult.No:
+                            windowsUIViewMain.Controller.Back();
+                            break;
+                    }
+                    e.Handled = true;
                 }
-                e.Handled = true;
             }
             else
             {

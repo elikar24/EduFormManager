@@ -39,13 +39,13 @@ namespace EduFormManager.Forms.UserControls
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.eduTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.queryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eduBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.municipalityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.templatedFormDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eduKindBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.messageBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxForm.Properties)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -53,10 +53,9 @@ namespace EduFormManager.Forms.UserControls
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(82)))), ((int)(((byte)(148)))));
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.SetColumnSpan(this.label2, 2);
             this.label2.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(843, 21);
@@ -83,7 +82,7 @@ namespace EduFormManager.Forms.UserControls
             this.comboBoxForm.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxForm.Properties.Appearance.Options.UseFont = true;
             this.comboBoxForm.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-                new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxForm.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxForm.Size = new System.Drawing.Size(170, 28);
             this.comboBoxForm.TabIndex = 5;
@@ -137,13 +136,13 @@ namespace EduFormManager.Forms.UserControls
             this.Size = new System.Drawing.Size(855, 508);
             ((System.ComponentModel.ISupportInitialize)(this.eduTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.queryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eduBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.municipalityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.templatedFormDataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eduKindBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.messageBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.formTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxForm.Properties)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

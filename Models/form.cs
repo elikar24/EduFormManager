@@ -29,6 +29,7 @@ namespace Models
         public string check_file_md5 { get; set; }
         public int form_type_id { get; set; }
         public byte[] check_file_data { get; set; }
+        public bool is_blocked { get; set; }
     
     	public override string ToString() { return this.name; }
     

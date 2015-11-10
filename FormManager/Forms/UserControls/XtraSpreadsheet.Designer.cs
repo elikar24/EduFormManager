@@ -49,11 +49,13 @@ namespace EduFormManager.Forms.UserControls
             this.flyoutPanelActions = new DevExpress.Utils.FlyoutPanel();
             this.flyoutPanelControlActions = new DevExpress.Utils.FlyoutPanelControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.labelWarnEditDisabled = new DevExpress.XtraEditors.LabelControl();
             this.buttonMenuFlyout = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.eduTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.queryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eduBindingSource)).BeginInit();
@@ -80,6 +82,7 @@ namespace EduFormManager.Forms.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
             // 
             // spreadsheetControl
@@ -87,9 +90,9 @@ namespace EduFormManager.Forms.UserControls
             this.spreadsheetControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.spreadsheetControl.Location = new System.Drawing.Point(12, 44);
+            this.spreadsheetControl.Location = new System.Drawing.Point(12, 56);
             this.spreadsheetControl.Name = "spreadsheetControl";
-            this.spreadsheetControl.Size = new System.Drawing.Size(830, 449);
+            this.spreadsheetControl.Size = new System.Drawing.Size(830, 437);
             this.spreadsheetControl.TabIndex = 0;
             this.spreadsheetControl.Text = "spreadsheetControl1";
             this.spreadsheetControl.DocumentLoaded += new System.EventHandler(this.spreadsheetControl_DocumentLoaded);
@@ -106,7 +109,7 @@ namespace EduFormManager.Forms.UserControls
             this.toolStripForm.Location = new System.Drawing.Point(62, 12);
             this.toolStripForm.Name = "toolStripForm";
             this.toolStripForm.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStripForm.Size = new System.Drawing.Size(197, 32);
+            this.toolStripForm.Size = new System.Drawing.Size(197, 36);
             this.toolStripForm.TabIndex = 7;
             this.toolStripForm.Text = "toolStrip1";
             // 
@@ -117,13 +120,11 @@ namespace EduFormManager.Forms.UserControls
             this.toolStripDropDownButtonForms.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButtonForms.Image")));
             this.toolStripDropDownButtonForms.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButtonForms.Name = "toolStripDropDownButtonForms";
-            this.toolStripDropDownButtonForms.Size = new System.Drawing.Size(31, 29);
+            this.toolStripDropDownButtonForms.Size = new System.Drawing.Size(31, 33);
             this.toolStripDropDownButtonForms.Text = "...";
             // 
             // windowsUIButtonPanelActions
             // 
-            this.windowsUIButtonPanelActions.AppearanceButton.Normal.Options.UseTextOptions = true;
-            this.windowsUIButtonPanelActions.AppearanceButton.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
             this.windowsUIButtonPanelActions.BackColor = System.Drawing.Color.White;
             this.windowsUIButtonPanelActions.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraBars.Docking2010.WindowsUIButton(),
@@ -138,7 +139,6 @@ namespace EduFormManager.Forms.UserControls
             this.windowsUIButtonPanelActions.Padding = new System.Windows.Forms.Padding(6);
             this.windowsUIButtonPanelActions.Size = new System.Drawing.Size(432, 55);
             this.windowsUIButtonPanelActions.TabIndex = 8;
-            this.windowsUIButtonPanelActions.Text = "windowsUIButtonPanel1";
             // 
             // layoutControl1
             // 
@@ -146,11 +146,11 @@ namespace EduFormManager.Forms.UserControls
             this.layoutControl1.Controls.Add(this.windowsUIButtonPanelActions);
             this.layoutControl1.Controls.Add(this.comboBoxDate);
             this.layoutControl1.Controls.Add(this.toolStripForm);
-            this.layoutControl1.Location = new System.Drawing.Point(3, 15);
+            this.layoutControl1.Location = new System.Drawing.Point(3, 6);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1047, 287, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(707, 81);
+            this.layoutControl1.Size = new System.Drawing.Size(707, 87);
             this.layoutControl1.TabIndex = 9;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -162,7 +162,7 @@ namespace EduFormManager.Forms.UserControls
             this.comboBoxDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.comboBoxDate.FormattingEnabled = true;
             this.comboBoxDate.ItemHeight = 21;
-            this.comboBoxDate.Location = new System.Drawing.Point(62, 48);
+            this.comboBoxDate.Location = new System.Drawing.Point(62, 52);
             this.comboBoxDate.Name = "comboBoxDate";
             this.comboBoxDate.Size = new System.Drawing.Size(197, 29);
             this.comboBoxDate.TabIndex = 8;
@@ -179,7 +179,7 @@ namespace EduFormManager.Forms.UserControls
             this.layoutControlItem5});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(707, 81);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(707, 87);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -190,7 +190,7 @@ namespace EduFormManager.Forms.UserControls
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.MinSize = new System.Drawing.Size(74, 25);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(251, 36);
+            this.layoutControlItem1.Size = new System.Drawing.Size(251, 40);
             this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem1.Text = "Форма";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(47, 21);
@@ -200,10 +200,10 @@ namespace EduFormManager.Forms.UserControls
             this.layoutControlItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem2.Control = this.comboBoxDate;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 36);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 40);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(74, 25);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(251, 25);
+            this.layoutControlItem2.Size = new System.Drawing.Size(251, 27);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.Text = "Год";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(47, 21);
@@ -213,7 +213,7 @@ namespace EduFormManager.Forms.UserControls
             this.layoutControlItem5.Control = this.windowsUIButtonPanelActions;
             this.layoutControlItem5.Location = new System.Drawing.Point(251, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(436, 61);
+            this.layoutControlItem5.Size = new System.Drawing.Size(436, 67);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -243,6 +243,7 @@ namespace EduFormManager.Forms.UserControls
             // 
             // layoutControl2
             // 
+            this.layoutControl2.Controls.Add(this.labelWarnEditDisabled);
             this.layoutControl2.Controls.Add(this.buttonMenuFlyout);
             this.layoutControl2.Controls.Add(this.spreadsheetControl);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -253,6 +254,21 @@ namespace EduFormManager.Forms.UserControls
             this.layoutControl2.Size = new System.Drawing.Size(854, 505);
             this.layoutControl2.TabIndex = 11;
             this.layoutControl2.Text = "layoutControl2";
+            // 
+            // labelWarnEditDisabled
+            // 
+            this.labelWarnEditDisabled.Appearance.Font = new System.Drawing.Font("Segoe UI Light", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelWarnEditDisabled.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.labelWarnEditDisabled.Appearance.Image = global::EduFormManager.Properties.Resources.Attention_26;
+            this.labelWarnEditDisabled.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelWarnEditDisabled.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.labelWarnEditDisabled.Location = new System.Drawing.Point(12, 12);
+            this.labelWarnEditDisabled.Name = "labelWarnEditDisabled";
+            this.labelWarnEditDisabled.Size = new System.Drawing.Size(695, 40);
+            this.labelWarnEditDisabled.StyleController = this.layoutControl2;
+            this.labelWarnEditDisabled.TabIndex = 5;
+            this.labelWarnEditDisabled.Text = "Редактирование формы отключено, так как срок сдачи истек. Чтобы иметь возможность" +
+    " редактировать эту форму, обратитесь к администратору.";
             // 
             // buttonMenuFlyout
             // 
@@ -276,7 +292,8 @@ namespace EduFormManager.Forms.UserControls
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem3,
             this.emptySpaceItem2,
-            this.layoutControlItem4});
+            this.layoutControlItem4,
+            this.layoutControlItem6});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "Root";
             this.layoutControlGroup2.Size = new System.Drawing.Size(854, 505);
@@ -285,10 +302,10 @@ namespace EduFormManager.Forms.UserControls
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.spreadsheetControl;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 32);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 44);
             this.layoutControlItem3.MinSize = new System.Drawing.Size(104, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(834, 453);
+            this.layoutControlItem3.Size = new System.Drawing.Size(834, 441);
             this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
@@ -296,9 +313,9 @@ namespace EduFormManager.Forms.UserControls
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 0);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(699, 0);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(730, 32);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(31, 44);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem4
@@ -306,9 +323,19 @@ namespace EduFormManager.Forms.UserControls
             this.layoutControlItem4.Control = this.buttonMenuFlyout;
             this.layoutControlItem4.Location = new System.Drawing.Point(730, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(104, 32);
+            this.layoutControlItem4.Size = new System.Drawing.Size(104, 44);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.labelWarnEditDisabled;
+            this.layoutControlItem6.ControlAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(699, 44);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
             // 
             // XtraSpreadsheet
             // 
@@ -353,6 +380,7 @@ namespace EduFormManager.Forms.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -377,5 +405,7 @@ namespace EduFormManager.Forms.UserControls
         private LayoutControlItem layoutControlItem5;
         private DevExpress.XtraEditors.SimpleButton buttonMenuFlyout;
         private LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraEditors.LabelControl labelWarnEditDisabled;
+        private LayoutControlItem layoutControlItem6;
     }
 }

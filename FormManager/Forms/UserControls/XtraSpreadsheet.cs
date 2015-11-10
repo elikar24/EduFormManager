@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ using DevExpress.Spreadsheet;
 using DevExpress.XtraBars.Docking2010;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using DevExpress.XtraEditors;
+using DevExpress.XtraLayout.Utils;
 using DevExpress.XtraSpreadsheet;
 using EduFormManager.Forms.UserControls.MunicipalityFormulaPeek;
 using EduFormManager.Properties;
@@ -24,7 +26,7 @@ namespace EduFormManager.Forms.UserControls
     {
         public enum ControlMode
         {
-            New, Edit
+            New, Edit, Disabled
         }
 
         public enum FormSource
@@ -154,7 +156,14 @@ namespace EduFormManager.Forms.UserControls
             if (_selectedForm != null)
                 this.View.ActiveContentContainer.Subtitle = _selectedForm.name;
         }
-        
+
+        private void SetEditEnabled(bool enabled)
+        {
+            this.buttonMenuFlyout.Enabled = enabled;
+            this.spreadsheetControl.ReadOnly = !enabled;
+            this.layoutControlItem6.Visibility = enabled ? LayoutVisibility.Never : LayoutVisibility.Always;
+        }
+
         public void LoadDocument()
         {
             if (this.FormData == null)
@@ -573,7 +582,7 @@ namespace EduFormManager.Forms.UserControls
             return formData;
         }
 
-        async private void LoadTemplateAsync(form form)
+        private void LoadTemplateAsync(form form)
         {
             this.Enabled = false;
             try
@@ -631,6 +640,11 @@ namespace EduFormManager.Forms.UserControls
             return false;
         }
 
+        private void Print()
+        {
+            this.spreadsheetControl.ShowRibbonPrintPreview();
+        }
+
         private void spreadsheetControl_DocumentLoaded(object sender, EventArgs e)
         {
             var sheet = (SpreadsheetControl) sender;
@@ -672,6 +686,13 @@ namespace EduFormManager.Forms.UserControls
 
         public void OnQueryDocumentActions(IDocumentActionsArgs args)
         {
+            var btnPrint = new WindowsUIButton()
+            {
+                Caption = "Печать",
+                Image = Resources.glyph_print
+            };
+            btnPrint.Click += (s, e) => Print();
+
             var btnSave = new WindowsUIButton()
             {
                 Caption = "Отправить",
@@ -681,25 +702,25 @@ namespace EduFormManager.Forms.UserControls
 
             var btnCheck = new WindowsUIButton()
             {
-                Image = Resources.glyphicons_029_notes_2,
-                Caption = "Проверить"
+                Caption = "Проверить",
+                Image = Resources.glyphicons_029_notes_2
             };
             btnCheck.Click += (s, e) => Check(args.Document);
 
             var btnSaveToFile = new WindowsUIButton()
             {
-                Image = Resources.glyphicons_358_file_import,
-                Caption = "Сохранить в файл"
+                Caption = "Сохранить в файл",
+                Image = Resources.glyphicons_358_file_import
             };
             btnSaveToFile.Click += (s, e) => SaveLocal();
 
             var btnOpen = new WindowsUIButton()
             {
-                Image = Resources.glyphicons_144_folder_open,
-                Caption = "Открыть файл"
+                Caption = "Открыть файл",
+                Image = Resources.glyphicons_144_folder_open
             };
             btnOpen.Click += (s, e) => OpenFile(args.Document);
-
+            
             this.windowsUIButtonPanelActions.Buttons.Clear();
             
             if (!args.Document.ControlName.Contains("Archive"))
@@ -740,9 +761,16 @@ namespace EduFormManager.Forms.UserControls
                     }
                 }
             }
+            this.windowsUIButtonPanelActions.Buttons.Add(btnPrint);
             this.windowsUIButtonPanelActions.Buttons.Add(btnSaveToFile);
             this.comboBoxDate.Visible = (this.Mode == ControlMode.New);
-            
+            this.SetEditEnabled(this.Mode != ControlMode.Disabled);
+
+            this.windowsUIButtonPanelActions.AppearanceButton.Normal.Font = new Font("Segoe UI Light", 11, FontStyle.Regular);
+            this.windowsUIButtonPanelActions.AppearanceButton.Hovered.Font =
+                this.windowsUIButtonPanelActions.AppearanceButton.Normal.Font;
+            this.windowsUIButtonPanelActions.AppearanceButton.Pressed.Font =
+                this.windowsUIButtonPanelActions.AppearanceButton.Normal.Font;
         }
 
         async void formulaPeekControl_Completed(object sender, MunicipalityFormulaPeekArgs e)

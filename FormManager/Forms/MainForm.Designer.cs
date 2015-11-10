@@ -114,6 +114,8 @@ namespace EduFormManager
             this.pageEdu = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
             this.documentDictEdu = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.tileDictTemplate = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.pageTemplate = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
+            this.documentDictTemplate = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.tileDictForms = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.pageForms = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
             this.documentDictForms = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
@@ -159,7 +161,6 @@ namespace EduFormManager
             this.tabbedGroupQueryReports = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TabbedGroup(this.components);
             this.pageDetailedMunicipalityStatisticsReport = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
             this.documentMunicipalityFormDetailedStatisticsReport = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
-            this.documentDictTemplate = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.tileDictCheck = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.tileGroup1 = new DevExpress.XtraEditors.TileGroup();
             this.tileItem1 = new DevExpress.XtraEditors.TileItem();
@@ -177,7 +178,7 @@ namespace EduFormManager
             this.loggedUserControl = new EduFormManager.Forms.UserControls.XtraLoggedUserControl();
             this.buttonShowLogs = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.navigationBar1 = new EduFormManager.Forms.NavigationBar();
+            this.navigationBar = new EduFormManager.Forms.NavigationBar();
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
             this.flyoutPanel1 = new DevExpress.Utils.FlyoutPanel();
             this.flyoutPanelControl1 = new DevExpress.Utils.FlyoutPanelControl();
@@ -185,7 +186,6 @@ namespace EduFormManager
             this.panel1 = new System.Windows.Forms.Panel();
             this.expireWarnBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.pageTemplate = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.documentManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.windowsUIViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileContainerMain)).BeginInit();
@@ -217,6 +217,8 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.pageEdu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentDictEdu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileDictTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentDictTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileDictForms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageForms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentDictForms)).BeginInit();
@@ -262,7 +264,6 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.tabbedGroupQueryReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageDetailedMunicipalityStatisticsReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentMunicipalityFormDetailedStatisticsReport)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentDictTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileDictCheck)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -274,7 +275,6 @@ namespace EduFormManager
             this.flyoutPanelControl1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.expireWarnBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pageTemplate)).BeginInit();
             this.SuspendLayout();
             // 
             // documentManagerMain
@@ -352,7 +352,7 @@ namespace EduFormManager
             this.documentMunicipalityFormDetailedStatistics,
             this.documentMunicipalityFormDetailedStatisticsReport,
             this.documentQueriesMunicipality});
-            this.windowsUIViewMain.FlyoutProperties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(83)))), ((int)(((byte)(142)))));
+            this.windowsUIViewMain.FlyoutProperties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(116)))), ((int)(((byte)(169)))));
             this.windowsUIViewMain.FlyoutProperties.Appearance.ForeColor = System.Drawing.Color.White;
             this.windowsUIViewMain.FlyoutProperties.Appearance.Options.UseBackColor = true;
             this.windowsUIViewMain.FlyoutProperties.Appearance.Options.UseForeColor = true;
@@ -851,6 +851,18 @@ namespace EduFormManager
             this.tileDictTemplate.Name = "tileDictTemplate";
             this.tileDictTemplate.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             // 
+            // pageTemplate
+            // 
+            this.pageTemplate.Caption = "Шаблоны форм";
+            this.pageTemplate.Document = this.documentDictTemplate;
+            this.pageTemplate.Name = "pageTemplate";
+            this.pageTemplate.Parent = this.tileContainerDictionaries;
+            // 
+            // documentDictTemplate
+            // 
+            this.documentDictTemplate.Caption = "Шаблоны форм";
+            this.documentDictTemplate.ControlName = "DictTemplate";
+            // 
             // tileDictForms
             // 
             this.tileDictForms.ActivationTarget = this.pageForms;
@@ -1251,11 +1263,6 @@ namespace EduFormManager
             this.documentMunicipalityFormDetailedStatisticsReport.Caption = "Статистика форм муниципалитетов (детально) отчет";
             this.documentMunicipalityFormDetailedStatisticsReport.ControlName = "MunicipalityFormDetailedStatisticsReport";
             // 
-            // documentDictTemplate
-            // 
-            this.documentDictTemplate.Caption = "Шаблоны форм";
-            this.documentDictTemplate.ControlName = "DictTemplate";
-            // 
             // tileDictCheck
             // 
             this.tileDictCheck.ActivationTarget = this.pageCheck;
@@ -1302,7 +1309,7 @@ namespace EduFormManager
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(83)))), ((int)(((byte)(142)))));
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(116)))), ((int)(((byte)(169)))));
             this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -1413,14 +1420,14 @@ namespace EduFormManager
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // navigationBar1
+            // navigationBar
             // 
-            this.navigationBar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.navigationBar1.Home = this.tileContainerMain;
-            this.navigationBar1.Location = new System.Drawing.Point(0, 0);
-            this.navigationBar1.Name = "navigationBar1";
-            this.navigationBar1.Size = new System.Drawing.Size(1186, 32);
-            this.navigationBar1.TabIndex = 5;
+            this.navigationBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.navigationBar.Home = this.tileContainerMain;
+            this.navigationBar.Location = new System.Drawing.Point(0, 0);
+            this.navigationBar.Name = "navigationBar";
+            this.navigationBar.Size = new System.Drawing.Size(1186, 32);
+            this.navigationBar.TabIndex = 5;
             // 
             // splitContainerControl2
             // 
@@ -1437,7 +1444,7 @@ namespace EduFormManager
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.flyoutPanel1);
             this.splitContainerControl2.Panel2.Controls.Add(this.panel1);
-            this.splitContainerControl2.Panel2.Controls.Add(this.navigationBar1);
+            this.splitContainerControl2.Panel2.Controls.Add(this.navigationBar);
             this.splitContainerControl2.Panel2.Text = "Panel2";
             this.splitContainerControl2.Size = new System.Drawing.Size(1186, 706);
             this.splitContainerControl2.SplitterPosition = 88;
@@ -1446,14 +1453,14 @@ namespace EduFormManager
             // 
             // flyoutPanel1
             // 
-            this.flyoutPanel1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(82)))), ((int)(((byte)(148)))));
+            this.flyoutPanel1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(116)))), ((int)(((byte)(169)))));
             this.flyoutPanel1.Appearance.Options.UseBackColor = true;
             this.flyoutPanel1.Controls.Add(this.flyoutPanelControl1);
             this.flyoutPanel1.Location = new System.Drawing.Point(758, 32);
             this.flyoutPanel1.Name = "flyoutPanel1";
             this.flyoutPanel1.Options.AnchorType = DevExpress.Utils.Win.PopupToolWindowAnchor.Right;
             this.flyoutPanel1.Options.CloseOnOuterClick = true;
-            this.flyoutPanel1.OptionsBeakPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(82)))), ((int)(((byte)(148)))));
+            this.flyoutPanel1.OptionsBeakPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(116)))), ((int)(((byte)(169)))));
             this.flyoutPanel1.OptionsButtonPanel.AppearanceButton.Normal.BackColor = System.Drawing.Color.Transparent;
             this.flyoutPanel1.OptionsButtonPanel.AppearanceButton.Normal.Options.UseBackColor = true;
             this.flyoutPanel1.OptionsButtonPanel.ButtonPanelContentAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -1517,13 +1524,6 @@ namespace EduFormManager
             this.toolTip.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.toolTip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             // 
-            // pageTemplate
-            // 
-            this.pageTemplate.Caption = "Шаблоны форм";
-            this.pageTemplate.Document = this.documentDictTemplate;
-            this.pageTemplate.Name = "pageTemplate";
-            this.pageTemplate.Parent = this.tileContainerDictionaries;
-            // 
             // mainForm
             // 
             this.Appearance.BackColor = System.Drawing.SystemColors.Window;
@@ -1569,6 +1569,8 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.pageEdu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentDictEdu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileDictTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentDictTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileDictForms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageForms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentDictForms)).EndInit();
@@ -1614,7 +1616,6 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.tabbedGroupQueryReports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageDetailedMunicipalityStatisticsReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentMunicipalityFormDetailedStatisticsReport)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentDictTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileDictCheck)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -1627,7 +1628,6 @@ namespace EduFormManager
             this.flyoutPanelControl1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.expireWarnBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pageTemplate)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1693,7 +1693,7 @@ namespace EduFormManager
         private Tile tileDictForms;
         private Document documentDictForms;
         private XtraLoggedUserControl loggedUserControl;
-        private NavigationBar navigationBar1;
+        private NavigationBar navigationBar;
         private Page pageEduPassport;
         private Page pageMunit;
         private Page pageCheck;

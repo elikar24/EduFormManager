@@ -36,7 +36,7 @@ namespace EduFormManager.Forms
             // 
             // progressPanel1
             // 
-            this.progressPanel1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(83)))), ((int)(((byte)(142)))));
+            this.progressPanel1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(116)))), ((int)(((byte)(169)))));
             this.progressPanel1.Appearance.ForeColor = System.Drawing.Color.White;
             this.progressPanel1.Appearance.Options.UseBackColor = true;
             this.progressPanel1.Appearance.Options.UseForeColor = true;
@@ -64,7 +64,7 @@ namespace EduFormManager.Forms
             // 
             // MarqueeProgressDialog
             // 
-            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(83)))), ((int)(((byte)(142)))));
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(116)))), ((int)(((byte)(169)))));
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

@@ -147,12 +147,7 @@ namespace EduFormManager.Forms.UserControls.QueryControl
 
         private async void OnIndexChangedSetDataSourceFor()
         {
-            var credId = Authentication.Credentials.CredId;
-            if (Authentication.Credentials.IsMinistry)
-            {
-                credId = (await Repo.GetCredential("admin")).credentials_id;
-            }
-            this.queryControl.QueryDataSource = await Repo.GetQueries(credId, _selectedForm.form_id);
+            this.queryControl.QueryDataSource = await Repo.GetQueries(_selectedForm.form_id);
             IList<edu> eduList = null;
             if (Authentication.Credentials.IsAdmin || Authentication.Credentials.IsMinistry)
             {
@@ -240,11 +235,10 @@ namespace EduFormManager.Forms.UserControls.QueryControl
                 
                 foreach (var queryModel in querableModels)
                 {
-                    var report = await ReportFactory.CreateQueryReportAsync(queryModel);
-
                     //XtraReportViewControl reportControl = new XtraReportViewControl(this.View) {Report = report};
-                    //из-за такого создания документа с контролом при переходе "назад" дублируются кнопки в obquerydocumentactions.
+                    //из-за такого создания документа с контролом при переходе "назад" дублируются кнопки в onquerydocumentactions евенте.
                     //поэтому нужно создавать пустой документ и подгружать контрол в querycontrol эвенте
+                    await ReportFactory.CreateQueryReportAsync(queryModel);
                     var reportDocument = (Document) this.View.AddDocument("Запрос", "Query");
                     reportDocument.ControlTypeName = typeof (XtraReportViewControl).Name;
                     reportDocument.Caption = string.Format("Запросы к форме<br>{0}", queryModel.Form.name) + (queryModel.Year > 0 ? "<br>за " + queryModel.Year + " год" : "");

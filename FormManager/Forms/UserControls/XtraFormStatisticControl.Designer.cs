@@ -57,10 +57,6 @@ namespace EduFormManager.Forms.UserControls
             // 
             // gridView1
             // 
-            this.gridView1.Appearance.GroupRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(198)))));
-            this.gridView1.Appearance.GroupRow.ForeColor = System.Drawing.Color.White;
-            this.gridView1.Appearance.GroupRow.Options.UseBackColor = true;
-            this.gridView1.Appearance.GroupRow.Options.UseForeColor = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMunicipalityName,
             this.colEduShortname,

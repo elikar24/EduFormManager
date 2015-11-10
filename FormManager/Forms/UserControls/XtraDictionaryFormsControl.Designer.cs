@@ -35,6 +35,7 @@ namespace EduFormManager.Forms.UserControls
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.comboBoxIsBlocked = new System.Windows.Forms.ComboBox();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.comboBoxAllformType = new System.Windows.Forms.ComboBox();
             this.dateEditExpire = new System.Windows.Forms.DateTimePicker();
@@ -43,16 +44,15 @@ namespace EduFormManager.Forms.UserControls
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.eduTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.queryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eduBindingSource)).BeginInit();
@@ -68,16 +68,15 @@ namespace EduFormManager.Forms.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -85,6 +84,7 @@ namespace EduFormManager.Forms.UserControls
             this.layoutControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.layoutControl1.Controls.Add(this.comboBoxIsBlocked);
             this.layoutControl1.Controls.Add(this.textBoxName);
             this.layoutControl1.Controls.Add(this.comboBoxAllformType);
             this.layoutControl1.Controls.Add(this.dateEditExpire);
@@ -100,16 +100,28 @@ namespace EduFormManager.Forms.UserControls
             this.layoutControl1.TabIndex = 5;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // comboBoxIsBlocked
+            // 
+            this.comboBoxIsBlocked.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxIsBlocked.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBoxIsBlocked.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxIsBlocked.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.comboBoxIsBlocked.FormattingEnabled = true;
+            this.comboBoxIsBlocked.Location = new System.Drawing.Point(855, 179);
+            this.comboBoxIsBlocked.Name = "comboBoxIsBlocked";
+            this.comboBoxIsBlocked.Size = new System.Drawing.Size(224, 25);
+            this.comboBoxIsBlocked.TabIndex = 8;
+            this.comboBoxIsBlocked.SelectedIndexChanged += new System.EventHandler(this.comboBoxIsBlocked_SelectedIndexChanged);
+            // 
             // textBoxName
             // 
+            this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.formBindingSource, "name", true));
-            this.textBoxName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxName.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.textBoxName.Location = new System.Drawing.Point(543, 91);
-            this.textBoxName.MaximumSize = new System.Drawing.Size(4, 30);
-            this.textBoxName.MinimumSize = new System.Drawing.Size(200, 30);
+            this.textBoxName.Location = new System.Drawing.Point(617, 79);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(200, 30);
+            this.textBoxName.Size = new System.Drawing.Size(462, 20);
             this.textBoxName.TabIndex = 3;
             this.textBoxName.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxName_Validating);
             // 
@@ -119,52 +131,53 @@ namespace EduFormManager.Forms.UserControls
             this.comboBoxAllformType.DisplayMember = "name";
             this.comboBoxAllformType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAllformType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBoxAllformType.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxAllformType.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxAllformType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.comboBoxAllformType.FormattingEnabled = true;
-            this.comboBoxAllformType.Location = new System.Drawing.Point(531, 252);
+            this.comboBoxAllformType.Location = new System.Drawing.Point(855, 139);
             this.comboBoxAllformType.Name = "comboBoxAllformType";
-            this.comboBoxAllformType.Size = new System.Drawing.Size(372, 29);
+            this.comboBoxAllformType.Size = new System.Drawing.Size(224, 25);
             this.comboBoxAllformType.TabIndex = 6;
             this.comboBoxAllformType.ValueMember = "Id";
             this.comboBoxAllformType.SelectedIndexChanged += new System.EventHandler(this.comboBoxAllformType_SelectedIndexChanged);
             // 
             // dateEditExpire
             // 
+            this.dateEditExpire.CalendarFont = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateEditExpire.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.dateEditExpire.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.dateEditExpire.CustomFormat = "dd MMMM";
             this.dateEditExpire.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.formBindingSource, "submission_date", true));
-            this.dateEditExpire.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateEditExpire.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateEditExpire.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateEditExpire.Location = new System.Drawing.Point(543, 149);
-            this.dateEditExpire.MinimumSize = new System.Drawing.Size(200, 30);
+            this.dateEditExpire.Location = new System.Drawing.Point(855, 103);
             this.dateEditExpire.Name = "dateEditExpire";
-            this.dateEditExpire.Size = new System.Drawing.Size(200, 30);
+            this.dateEditExpire.Size = new System.Drawing.Size(224, 25);
             this.dateEditExpire.TabIndex = 7;
             // 
             // checkedListBoxEduKinds
             // 
-            this.checkedListBoxEduKinds.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkedListBoxEduKinds.Appearance.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkedListBoxEduKinds.Appearance.Options.UseFont = true;
+            this.checkedListBoxEduKinds.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.checkedListBoxEduKinds.CheckOnClick = true;
             this.checkedListBoxEduKinds.DataSource = this.eduKindBindingSource;
             this.checkedListBoxEduKinds.DisplayMember = "name";
-            this.checkedListBoxEduKinds.Location = new System.Drawing.Point(531, 318);
+            this.checkedListBoxEduKinds.Location = new System.Drawing.Point(617, 223);
             this.checkedListBoxEduKinds.Name = "checkedListBoxEduKinds";
-            this.checkedListBoxEduKinds.Size = new System.Drawing.Size(548, 217);
-            this.checkedListBoxEduKinds.StyleController = this.layoutControl1;
+            this.checkedListBoxEduKinds.Size = new System.Drawing.Size(462, 312);
             this.checkedListBoxEduKinds.TabIndex = 2;
             this.checkedListBoxEduKinds.ItemCheck += new DevExpress.XtraEditors.Controls.ItemCheckEventHandler(this.checkedListBoxEduKinds_ItemCheck);
             // 
             // treeViewForms
             // 
-            this.treeViewForms.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.treeViewForms.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeViewForms.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.treeViewForms.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.treeViewForms.LineColor = System.Drawing.Color.DimGray;
             this.treeViewForms.Location = new System.Drawing.Point(24, 55);
             this.treeViewForms.Name = "treeViewForms";
-            this.treeViewForms.Size = new System.Drawing.Size(479, 480);
+            this.treeViewForms.Size = new System.Drawing.Size(565, 480);
             this.treeViewForms.TabIndex = 5;
             this.treeViewForms.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewForms_AfterSelect);
             // 
@@ -189,48 +202,27 @@ namespace EduFormManager.Forms.UserControls
             this.layoutControlGroup2.CustomizationFormText = "Выбранная форма";
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
-            this.layoutControlGroup4,
             this.layoutControlItem5,
+            this.layoutControlItem6,
             this.emptySpaceItem2,
-            this.emptySpaceItem4});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(507, 0);
+            this.emptySpaceItem1,
+            this.layoutControlItem4,
+            this.layoutControlItem2,
+            this.emptySpaceItem3});
+            this.layoutControlGroup2.Location = new System.Drawing.Point(593, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(576, 539);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(490, 539);
             this.layoutControlGroup2.Text = "Выбранная форма";
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.checkedListBoxEduKinds;
             this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 263);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 168);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(552, 221);
+            this.layoutControlItem1.Size = new System.Drawing.Size(466, 316);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // layoutControlGroup4
-            // 
-            this.layoutControlGroup4.CustomizationFormText = "layoutControlGroup4";
-            this.layoutControlGroup4.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem4,
-            this.layoutControlItem2,
-            this.emptySpaceItem1,
-            this.emptySpaceItem3});
-            this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup4.Name = "layoutControlGroup4";
-            this.layoutControlGroup4.Size = new System.Drawing.Size(552, 173);
-            this.layoutControlGroup4.TextVisible = false;
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.dateEditExpire;
-            this.layoutControlItem4.CustomizationFormText = "Срок сдачи до";
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 58);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(204, 58);
-            this.layoutControlItem4.Text = "Срок сдачи до";
-            this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(121, 21);
             // 
             // layoutControlItem2
             // 
@@ -238,57 +230,55 @@ namespace EduFormManager.Forms.UserControls
             this.layoutControlItem2.CustomizationFormText = "Название формы";
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(204, 58);
+            this.layoutControlItem2.Size = new System.Drawing.Size(466, 48);
             this.layoutControlItem2.Text = "Название формы";
             this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(121, 21);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(235, 21);
             // 
-            // emptySpaceItem1
+            // layoutControlItem4
             // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 116);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(204, 33);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem3
-            // 
-            this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.CustomizationFormText = "emptySpaceItem3";
-            this.emptySpaceItem3.Location = new System.Drawing.Point(204, 0);
-            this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(324, 149);
-            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.Control = this.dateEditExpire;
+            this.layoutControlItem4.CustomizationFormText = "Срок сдачи до";
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(466, 25);
+            this.layoutControlItem4.Text = "Срок сдачи до";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(235, 21);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.comboBoxAllformType;
             this.layoutControlItem5.CustomizationFormText = "Тип формы";
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 173);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 84);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(376, 49);
+            this.layoutControlItem5.Size = new System.Drawing.Size(466, 25);
             this.layoutControlItem5.Text = "Тип формы";
-            this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(121, 21);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(235, 21);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.comboBoxIsBlocked;
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 124);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(466, 25);
+            this.layoutControlItem6.Text = "По истечении срока сдачи форма";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(235, 21);
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem2";
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 222);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 109);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(376, 41);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(466, 15);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // emptySpaceItem4
+            // emptySpaceItem1
             // 
-            this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.CustomizationFormText = "emptySpaceItem4";
-            this.emptySpaceItem4.Location = new System.Drawing.Point(376, 173);
-            this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(176, 90);
-            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 149);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(466, 19);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlGroup3
             // 
@@ -300,7 +290,7 @@ namespace EduFormManager.Forms.UserControls
             this.layoutControlItem3});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(507, 539);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(593, 539);
             this.layoutControlGroup3.Text = "Формы";
             // 
             // layoutControlItem3
@@ -309,11 +299,19 @@ namespace EduFormManager.Forms.UserControls
             this.layoutControlItem3.CustomizationFormText = "Формы";
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(483, 484);
+            this.layoutControlItem3.Size = new System.Drawing.Size(569, 484);
             this.layoutControlItem3.Text = "Формы";
             this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Top;
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
+            // 
+            // emptySpaceItem3
+            // 
+            this.emptySpaceItem3.AllowHotTrack = false;
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 73);
+            this.emptySpaceItem3.Name = "emptySpaceItem3";
+            this.emptySpaceItem3.Size = new System.Drawing.Size(466, 11);
+            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // XtraDictionaryFormsControl
             // 
@@ -343,16 +341,15 @@ namespace EduFormManager.Forms.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -369,14 +366,14 @@ namespace EduFormManager.Forms.UserControls
         private LayoutControlGroup layoutControlGroup3;
         private LayoutControlItem layoutControlItem1;
         private ComboBox comboBoxAllformType;
-        private LayoutControlGroup layoutControlGroup4;
-        private EmptySpaceItem emptySpaceItem2;
         private DateTimePicker dateEditExpire;
         private LayoutControlItem layoutControlItem4;
         private LayoutControlItem layoutControlItem2;
-        private EmptySpaceItem emptySpaceItem3;
         private LayoutControlItem layoutControlItem5;
+        private ComboBox comboBoxIsBlocked;
+        private LayoutControlItem layoutControlItem6;
+        private EmptySpaceItem emptySpaceItem2;
         private EmptySpaceItem emptySpaceItem1;
-        private EmptySpaceItem emptySpaceItem4;
+        private EmptySpaceItem emptySpaceItem3;
     }
 }
