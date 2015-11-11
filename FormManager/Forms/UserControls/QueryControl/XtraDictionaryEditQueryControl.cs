@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EduFormManager.Utils;
 using Models;
 
 namespace EduFormManager.Forms.UserControls.QueryControl
@@ -101,7 +102,7 @@ namespace EduFormManager.Forms.UserControls.QueryControl
                 this.dataGridViewQueryParts.Rows[_currentRowIndex].Cells[1].ValueType = addr.GetType();
             }
         }
-        private void buttonSave_Click(object sender, EventArgs e)
+        private async void buttonSave_Click(object sender, EventArgs e)
         {
             if (CheckFields())
             {
@@ -110,12 +111,15 @@ namespace EduFormManager.Forms.UserControls.QueryControl
                 {
                     var headPart = new query_head_part
                     {
-                        title = valueStr
+                        title = valueStr.Trim().CamelCaseFirstLetter()
                     };
                     try
                     {
-                        Repo.Add(headPart);
-                        Repo.SaveChangesAsync()
+                        if (!(await Repo.GetIsQueryHeadPartExist(headPart)))
+                        {
+                            Repo.Add(headPart);
+                        }
+                        await Repo.SaveChangesAsync()
                             .ContinueWith((t) => _queryHeadAutocompleteSource.Add(headPart.title),
                                 TaskScheduler.FromCurrentSynchronizationContext());
                     }
@@ -125,7 +129,7 @@ namespace EduFormManager.Forms.UserControls.QueryControl
                     }
                 }
 
-                List<query> queries = this.GetQueryList();
+                var queries = this.GetQueryList();
                 OnQueriesCreated(new QueriesCreatedEventArgs() { Canceled = false, QueryList = queries });
             }
         }
@@ -151,7 +155,7 @@ namespace EduFormManager.Forms.UserControls.QueryControl
                     {
                         form = _selectedForm,
                         content = queryCellAddress,
-                        title = queryTtitle
+                        title = queryTtitle.Trim()
                     };
                     if (!queryList.Contains(query))
                         queryList.Add(query);

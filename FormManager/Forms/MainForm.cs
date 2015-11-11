@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Security.Authentication;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 using DevExpress.LookAndFeel;
@@ -325,6 +326,21 @@ namespace EduFormManager
         {
             try
             {
+                var queryReportRegex = new Regex(@"QueryReport(?<idx>\d+)");
+                var queryReportMatch = queryReportRegex.Match(e.Document.ControlName);
+                if (queryReportMatch.Success)
+                {
+                    try
+                    {
+                        var idx = int.Parse(queryReportMatch.Groups["idx"].Value);
+                        e.Control = new XtraReportViewControl(windowsUIViewMain) {Report = ReportFactory.Reports[idx]};
+                        return;
+                    }
+                    catch
+                    {
+                        throw new KeyNotFoundException("Отчет не найден");
+                    }
+                }
                 switch (e.Document.ControlName)
                 {
                     case "Questionary":
@@ -336,12 +352,6 @@ namespace EduFormManager
                             //e.Control = questionaryControl;
                             break;
                         }
-                    case "Query":
-                    {
-                        var reportControl = new XtraReportViewControl(this.windowsUIViewMain) { Report = ReportFactory.LastReport };
-                        e.Control = reportControl;
-                        break;
-                    }
                     case "QueriesEdu":
                         {
                             var repo = new Repository();
@@ -449,7 +459,8 @@ namespace EduFormManager
                             break;
                         }
                     case "ArchiveFormData4":
-                    case "FormData4": //допформаcase "ArchiveFormData3":
+                    case "FormData4": //допформа
+                    case "ArchiveFormData3":
                     case "FormData3": //форма муниципалитета
                         {
                             int? dataId = TagHelper.GetFormDataId(e.Document.Tag.ToString());

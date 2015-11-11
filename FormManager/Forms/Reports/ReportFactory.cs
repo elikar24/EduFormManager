@@ -14,7 +14,12 @@ namespace EduFormManager.Forms.Reports
 {
     public static class ReportFactory
     {
-        public static XtraReport LastReport { get; set; }
+        public static IList<XtraReport> Reports { get; set; }
+
+        static ReportFactory()
+        {
+            Reports = new List<XtraReport>();
+        }
 
         public static Task<XtraReport> CreateQueryReportAsync(QueryEduSummaryModel model)
         {
@@ -69,7 +74,7 @@ namespace EduFormManager.Forms.Reports
             }
             var groupedList = (List<QueryReportDataGroup>)reportDataList.Group();
             var report = new QueryReport { ReportData = groupedList };
-            LastReport = report;
+            Reports.Add(report);
             return report;
         }
 
@@ -117,7 +122,7 @@ namespace EduFormManager.Forms.Reports
             }
             var groupedList = (List<QueryReportDataGroup>)reportDataList.Group();
             var report = new QueryReport { ReportData = groupedList };
-            LastReport = report;
+            Reports.Add(report);
             return report;
         }
 

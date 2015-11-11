@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 
 namespace EduFormManager.Utils
 {
@@ -27,6 +29,30 @@ namespace EduFormManager.Utils
             return value.Length <= maxChars 
                 ? value 
                 : value.Substring(0, maxChars) + "..";
+        }
+
+        public static string CamelCaseFirstLetter(this string value)
+        {
+            if (String.IsNullOrEmpty(value) || String.IsNullOrWhiteSpace(value))
+            {
+                return string.Empty;
+            }
+            if (value.Length > 1)
+                return value.Substring(0, 1).ToUpper() + value.Substring(1).ToLower();
+            return value.ToUpper();
+        }
+
+        public static string Join(this IEnumerable<string> value, string separator)
+        {
+            var result = "";
+            var count = value.Count();
+            if (count > 0)
+                result = value.ElementAt(0);
+            for (int i = 1; i < count; i++)
+            {
+                result += separator + value.ElementAt(i);
+            }
+            return result;
         }
     }
 }

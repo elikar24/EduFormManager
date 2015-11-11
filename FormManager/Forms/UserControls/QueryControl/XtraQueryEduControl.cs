@@ -227,19 +227,20 @@ namespace EduFormManager.Forms.UserControls.QueryControl
                     this.ShowFlyoutMessageBox("Информация", messageFormat, FlyoutCommand.OK);
                 }
 
-                var querableModels = _querySummaryModelCollection.Where(t => t.EduList.Any() && t.QueryList.Any());
+                var querableModels = _querySummaryModelCollection.Where(t => t.EduList.Any() && t.QueryList.Any()).ToList();
                 var queryContainer = (TabbedGroup) this.View.ContentContainers.Single(t => t.Name == "tabbedGroupQueryReports");
                 queryContainer.Items.Clear();
                 var oldReportDocuments = this.View.Documents.Find(t => t.ControlTypeName == typeof (XtraReportViewControl).Name).ToArray();
                 this.View.Documents.RemoveRange(oldReportDocuments);
                 
+                ReportFactory.Reports.Clear();
                 foreach (var queryModel in querableModels)
                 {
                     //XtraReportViewControl reportControl = new XtraReportViewControl(this.View) {Report = report};
                     //из-за такого создания документа с контролом при переходе "назад" дублируются кнопки в onquerydocumentactions евенте.
                     //поэтому нужно создавать пустой документ и подгружать контрол в querycontrol эвенте
                     await ReportFactory.CreateQueryReportAsync(queryModel);
-                    var reportDocument = (Document) this.View.AddDocument("Запрос", "Query");
+                    var reportDocument = (Document) this.View.AddDocument("Запрос", "QueryReport" + querableModels.IndexOf(queryModel));
                     reportDocument.ControlTypeName = typeof (XtraReportViewControl).Name;
                     reportDocument.Caption = string.Format("Запросы к форме<br>{0}", queryModel.Form.name) + (queryModel.Year > 0 ? "<br>за " + queryModel.Year + " год" : "");
                     queryContainer.Items.Add(reportDocument);
@@ -308,7 +309,7 @@ namespace EduFormManager.Forms.UserControls.QueryControl
 
         public void OnQueryDocumentActions(IDocumentActionsArgs args)
         {
-            args.DocumentActions.Add(new DocumentAction(CanShowQueryReport, ShowQueryReport) { Caption = "Вывести отчет", Image = Resources.glyphicons_119_table });
+            args.DocumentActions.Add(new DocumentAction(ShowQueryReport) { Caption = "Вывести отчет", Image = Resources.glyphicons_119_table });
 
             this.windowsUIButtonPanelActions.Buttons.Clear();
             var showReportButton = new WindowsUIButton()

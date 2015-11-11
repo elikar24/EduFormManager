@@ -435,6 +435,16 @@ namespace Models.Repo
             return _db.query_autocomplete_part.ToListAsync();
         }
 
+        public Task<bool> GetIsQueryExist(query query)
+        {
+            return _db.queries.AnyAsync(t => String.Equals(t.title.Trim(), query.title.Trim(), StringComparison.CurrentCultureIgnoreCase));
+        }
+
+        public Task<bool> GetIsQueryHeadPartExist(query_head_part part)
+        {
+            return _db.query_head_part.AnyAsync(t => String.Equals(t.title.Trim(), part.title.Trim(), StringComparison.CurrentCultureIgnoreCase));
+        }
+
         #endregion
 
         #region stats methods

@@ -62,7 +62,6 @@ namespace EduFormManager.Forms.Reports
                 headerRow.Cells.Add(cell);
             }
             headerTable.Rows.Add(headerRow);
-            headerTable.AdjustSize();
             
             this.PageHeader.Controls.Add(headerTable);
 
@@ -133,7 +132,6 @@ namespace EduFormManager.Forms.Reports
             }
 
             table.Rows.Add(summaryRow);
-            table.AdjustSize();
             table.EndInit();
             this.Detail.Controls.Add(table);
         }

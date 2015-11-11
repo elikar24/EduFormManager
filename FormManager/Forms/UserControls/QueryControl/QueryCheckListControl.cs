@@ -102,15 +102,21 @@ namespace EduFormManager.Forms.UserControls.QueryControl
                 if (groupItem.QueryDictionary.Count > 0)
                     groupItemList.Add(groupItem);
             }
-            if (Authentication.Credentials.IsEdu)
+            var passportGroupItem = new QueryGroupItem()
             {
-                var passportGroupItem = new QueryGroupItem()
-                {
-                    Head = "Паспорт",
-                    QueryDictionary = _queryListPassport.ToDictionary(t => t.title, t => t)
-                };
-                groupItemList.Add(passportGroupItem);
+                Head = "Паспорт",
+                QueryDictionary = _queryListPassport.ToDictionary(t => t.title, t => t)
+            };
+            var parent = this.Parent;
+            while (parent != null)
+            {
+                if (parent is XtraQueryEduControl)
+                    break;
+                parent = Parent.Parent;
             }
+            if (parent != null)
+                groupItemList.Add(passportGroupItem);
+
             _queryListOthers.AddRange(queryListToWorkWith.Where(t => !_queryListSplitted.Contains(t)));
             CreateControls(groupItemList);
         }

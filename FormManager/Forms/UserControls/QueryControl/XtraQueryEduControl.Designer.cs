@@ -546,8 +546,8 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             this.tabbedControlGroup1.AppearanceTabPage.HeaderHotTracked.Options.UseFont = true;
             this.tabbedControlGroup1.Location = new System.Drawing.Point(589, 34);
             this.tabbedControlGroup1.Name = "tabbedControlGroup1";
-            this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup3;
-            this.tabbedControlGroup1.SelectedTabPageIndex = 1;
+            this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup2;
+            this.tabbedControlGroup1.SelectedTabPageIndex = 0;
             this.tabbedControlGroup1.Size = new System.Drawing.Size(543, 733);
             this.tabbedControlGroup1.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup2,

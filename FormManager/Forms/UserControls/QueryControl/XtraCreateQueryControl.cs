@@ -118,19 +118,20 @@ namespace EduFormManager.Forms.UserControls.QueryControl
             }
         }
 
-        private Task SaveQueries(List<query> queryList, bool clearSourceList = false, bool addToBindingSource = false)
+        private Task SaveQueries(IList<query> queryList, bool clearSourceList = false, bool addToBindingSource = false)
         {
-            return Task.Run(() =>
+            return Task.Run(async () =>
             {
                 var queryListToSave = new List<query>();
                 foreach (var query in queryList)
                 {
                     if (query.form != null && !string.IsNullOrEmpty(query.title) &&
-                        !string.IsNullOrEmpty(query.content))
+                        !string.IsNullOrEmpty(query.content) && !(await Repo.GetIsQueryExist(query)))
                     {
                         query.credential = Repo.GetCredentialSync(Authentication.Credentials.CredId);
                         queryListToSave.Add(query);
-                        if (addToBindingSource) this.queryBindingSource.Add(query);
+                        if (addToBindingSource) 
+                            this.queryBindingSource.Add(query);
                     }
                 }
                 Repo.AddRange(queryListToSave);
@@ -226,7 +227,8 @@ namespace EduFormManager.Forms.UserControls.QueryControl
                 e.Menu.Items.Clear();
                 var i = new SpreadsheetMenuItem("Использовать в запросе", (o, args) =>
                 {
-                    string cellAddress = spreadsheetControlQueries.ActiveWorksheet.SelectedCell.GetReferenceA1(ReferenceElement.IncludeSheetName | ReferenceElement.RowAbsolute | ReferenceElement.ColumnAbsolute);
+                    string cellAddress = spreadsheetControlQueries.ActiveWorksheet.SelectedCell
+                        .GetReferenceA1(ReferenceElement.IncludeSheetName | ReferenceElement.RowAbsolute | ReferenceElement.ColumnAbsolute);
                     if (this.flyoutPanel1.IsPopupOpen)
                     {
                         _editQueryControl.SetCellAddressToCurrentQuery(cellAddress);
