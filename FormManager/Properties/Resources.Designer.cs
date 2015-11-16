@@ -63,9 +63,9 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap analytics_icon {
+        internal static System.Drawing.Bitmap AddList_26 {
             get {
-                object obj = ResourceManager.GetObject("analytics_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("AddList_26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,19 +73,9 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap archive_icon {
+        internal static System.Drawing.Bitmap AddList_32 {
             get {
-                object obj = ResourceManager.GetObject("archive_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Arrow_upload_2_icon {
-            get {
-                object obj = ResourceManager.GetObject("Arrow_upload_2_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("AddList_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +103,9 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap broken_icon {
+        internal static System.Drawing.Bitmap Box_26 {
             get {
-                object obj = ResourceManager.GetObject("broken_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Box_26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +113,9 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap chart_icon {
+        internal static System.Drawing.Bitmap Box_32 {
             get {
-                object obj = ResourceManager.GetObject("chart_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Box_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +123,9 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap check_icon {
+        internal static System.Drawing.Bitmap BoxFilled_26 {
             get {
-                object obj = ResourceManager.GetObject("check_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("BoxFilled_26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +133,9 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap clock_icon {
+        internal static System.Drawing.Bitmap BoxFilled_32 {
             get {
-                object obj = ResourceManager.GetObject("clock_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("BoxFilled_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +143,9 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap close01_black {
+        internal static System.Drawing.Bitmap BusinessContact_26 {
             get {
-                object obj = ResourceManager.GetObject("close01_black", resourceCulture);
+                object obj = ResourceManager.GetObject("BusinessContact_26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +153,9 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap close01_white {
+        internal static System.Drawing.Bitmap BusinessContact_32 {
             get {
-                object obj = ResourceManager.GetObject("close01_white", resourceCulture);
+                object obj = ResourceManager.GetObject("BusinessContact_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +163,9 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap close01_white1 {
+        internal static System.Drawing.Bitmap Cancel_26 {
             get {
-                object obj = ResourceManager.GetObject("close01_white1", resourceCulture);
+                object obj = ResourceManager.GetObject("Cancel_26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +173,9 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap contact_icon {
+        internal static System.Drawing.Bitmap Cancel_32 {
             get {
-                object obj = ResourceManager.GetObject("contact_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Cancel_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +183,9 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap document_add_icon {
+        internal static System.Drawing.Bitmap Checked_26 {
             get {
-                object obj = ResourceManager.GetObject("document_add_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Checked_26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +193,9 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap document_file_icon {
+        internal static System.Drawing.Bitmap Checked_32 {
             get {
-                object obj = ResourceManager.GetObject("document_file_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Checked_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +203,9 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap email_2_icon {
+        internal static System.Drawing.Bitmap Delete_26 {
             get {
-                object obj = ResourceManager.GetObject("email_2_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Delete_26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,9 +213,9 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap email_icon {
+        internal static System.Drawing.Bitmap Delete_32 {
             get {
-                object obj = ResourceManager.GetObject("email_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Delete_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,9 +223,9 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap email_upload_icon {
+        internal static System.Drawing.Bitmap Empty_26 {
             get {
-                object obj = ResourceManager.GetObject("email_upload_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Empty_26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,9 +233,69 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Exclamation_24_white {
+        internal static System.Drawing.Bitmap Empty_32 {
             get {
-                object obj = ResourceManager.GetObject("Exclamation_24_white", resourceCulture);
+                object obj = ResourceManager.GetObject("Empty_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Expired_26 {
+            get {
+                object obj = ResourceManager.GetObject("Expired_26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Expired_32 {
+            get {
+                object obj = ResourceManager.GetObject("Expired_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Feedback_26 {
+            get {
+                object obj = ResourceManager.GetObject("Feedback_26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Feedback_32 {
+            get {
+                object obj = ResourceManager.GetObject("Feedback_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Folder_26 {
+            get {
+                object obj = ResourceManager.GetObject("Folder_26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Folder_32 {
+            get {
+                object obj = ResourceManager.GetObject("Folder_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,26 +323,6 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap glyphicons_081_refresh {
-            get {
-                object obj = ResourceManager.GetObject("glyphicons_081_refresh", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap glyphicons_081_refresh_white {
-            get {
-                object obj = ResourceManager.GetObject("glyphicons_081_refresh_white", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap glyphicons_119_table {
             get {
                 object obj = ResourceManager.GetObject("glyphicons_119_table", resourceCulture);
@@ -313,16 +343,6 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap glyphicons_144_folder_open_white {
-            get {
-                object obj = ResourceManager.GetObject("glyphicons_144_folder_open_white", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap glyphicons_206_ok_2 {
             get {
                 object obj = ResourceManager.GetObject("glyphicons_206_ok_2", resourceCulture);
@@ -336,16 +356,6 @@ namespace EduFormManager.Properties {
         internal static System.Drawing.Bitmap glyphicons_207_remove_2 {
             get {
                 object obj = ResourceManager.GetObject("glyphicons_207_remove_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap glyphicons_207_remove_2_white {
-            get {
-                object obj = ResourceManager.GetObject("glyphicons_207_remove_2_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -403,9 +413,59 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_user_default {
+        internal static System.Drawing.Bitmap Info_26 {
             get {
-                object obj = ResourceManager.GetObject("icon_user_default", resourceCulture);
+                object obj = ResourceManager.GetObject("Info_26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Info_32 {
+            get {
+                object obj = ResourceManager.GetObject("Info_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Library_26 {
+            get {
+                object obj = ResourceManager.GetObject("Library_26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Library_32 {
+            get {
+                object obj = ResourceManager.GetObject("Library_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap List_26 {
+            get {
+                object obj = ResourceManager.GetObject("List_26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap List_32 {
+            get {
+                object obj = ResourceManager.GetObject("List_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -423,9 +483,9 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap mail {
+        internal static System.Drawing.Bitmap Logo_small {
             get {
-                object obj = ResourceManager.GetObject("mail", resourceCulture);
+                object obj = ResourceManager.GetObject("Logo_small", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -433,9 +493,9 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap note_icon {
+        internal static System.Drawing.Bitmap Message_26 {
             get {
-                object obj = ResourceManager.GetObject("note_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Message_26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -443,9 +503,9 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap reload_icon {
+        internal static System.Drawing.Bitmap Message_32 {
             get {
-                object obj = ResourceManager.GetObject("reload-icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Message_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -453,9 +513,9 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap stat_icon {
+        internal static System.Drawing.Bitmap Statistics_26 {
             get {
-                object obj = ResourceManager.GetObject("stat_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Statistics_26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -463,9 +523,9 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap summary_icon {
+        internal static System.Drawing.Bitmap Statistics_32 {
             get {
-                object obj = ResourceManager.GetObject("summary_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Statistics_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -483,9 +543,9 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap upload_icon {
+        internal static System.Drawing.Bitmap Upload_26 {
             get {
-                object obj = ResourceManager.GetObject("upload_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Upload_26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -493,9 +553,9 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap warning_icon {
+        internal static System.Drawing.Bitmap Upload_32 {
             get {
-                object obj = ResourceManager.GetObject("warning_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Upload_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -503,9 +563,19 @@ namespace EduFormManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap warning_icon_24x24 {
+        internal static System.Drawing.Bitmap User_26 {
             get {
-                object obj = ResourceManager.GetObject("warning_icon_24x24", resourceCulture);
+                object obj = ResourceManager.GetObject("User_26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap User_32 {
+            get {
+                object obj = ResourceManager.GetObject("User_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

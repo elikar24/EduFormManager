@@ -15,7 +15,7 @@ namespace EduFormManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(true);
-            Application.Run(new mainForm());
+            Application.Run(new MainForm());
             
             //SingleInstanceApplication.Run(new mainForm(), NewInstanceHandler);
         }

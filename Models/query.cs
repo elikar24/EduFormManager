@@ -21,5 +21,10 @@ namespace Models
     
         public virtual credential credential { get; set; }
         public virtual form form { get; set; }
+
+        public override string ToString()
+        {
+            return this.title;
+        }
     }
 }

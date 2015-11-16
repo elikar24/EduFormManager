@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using DevExpress.Utils;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
@@ -26,6 +27,7 @@ namespace EduFormManager.Utils
             container.Properties.ItemSize = 128;
             container.Properties.ShowGroupText = DefaultBoolean.True;
             container.AppearanceGroupText.Font = new Font("Segoe UI Light", 18);
+            container.Properties.AllowItemHover = DefaultBoolean.True;
             return container;
         }
 
@@ -62,29 +64,36 @@ namespace EduFormManager.Utils
                     return;
                 var view = (WindowsUIView)con.Manager.View;
                 var fly = view.ContentContainers.FindFirst(x => x is Flyout && x.Caption == "Сообщение") as Flyout;
-                try
+                var formType = ((Page)checkedTile.ActivationTarget).Document.ControlName;
+                if ((new Regex(@"(Archive)?FormData[1|2]")).IsMatch(formType))
                 {
-                    using (var repo = new Repository())
+                    try
                     {
-                        var data = await repo.GetEduFormDataById(formId.Value);
-                        if (data.form.DaysRemain() == -1 && data.form.is_blocked)
+                        using (var repo = new Repository())
                         {
-                            var mes = fly != null 
-                                ? GuiUtility.ShowFlyoutMessage(view, fly, "Информация", 
-                                    "Удаление формы отключено, так как срок сдачи истек. Чтобы иметь возможность удалить эту форму, обратитесь к администратору.") 
-                                : MessageBox.Show("Удалить форму?", "Информация", MessageBoxButtons.OKCancel);
-                            return;
+                            var data = await repo.GetEduFormDataById(formId.Value);
+                            if (data.form.DaysRemain() == -1 && data.form.is_blocked)
+                            {
+                                var mes = fly != null
+                                    ? GuiUtility.ShowFlyoutMessage(view, fly, "Информация",
+                                        "Удаление формы отключено, так как срок сдачи истек.\nЧтобы иметь возможность удалить эту форму, обратитесь к региональному оператору")
+                                    : MessageBox.Show("Удалить форму?", "Информация", MessageBoxButtons.OKCancel);
+                                return;
+                            }
                         }
                     }
+                    catch
+                    {
+                        return;
+                    }
                 }
-                catch { }
 
                 var res = fly != null ?
                     GuiUtility.ShowFlyoutMessage(view, fly, "Подтверждение", "Удалить форму?", FlyoutCommand.Yes, FlyoutCommand.No) :
                     MessageBox.Show("Удалить форму?", "Подтверждение", MessageBoxButtons.OKCancel);
                 if (res == DialogResult.No)
                     return;
-                switch (((Page)checkedTile.ActivationTarget).Document.ControlName)
+                switch (formType)
                 {
                     case "ArchiveFormData1":
                     case "ArchiveFormData2":

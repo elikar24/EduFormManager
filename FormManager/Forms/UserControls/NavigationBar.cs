@@ -32,77 +32,78 @@ namespace EduFormManager.Forms
             this.simpleButton1.Visible = false;
         }
 
-        private IContentContainer m_homeContainer;
+        private IContentContainer _homeContainer;
         
         public IContentContainer Home
         {
             get 
             {
-                return m_homeContainer;
+                return _homeContainer;
             }
             set
             {
-                m_homeContainer = value;
+                _homeContainer = value;
                 var view = value.Manager.View as WindowsUIView;
-                this.simpleButton1.Click += (s, e) => view.ActivateContainer(m_homeContainer);
-                this.tileBarGroupHome.Items.Clear();
+                this.simpleButton1.Click += (s, e) => view.ActivateContainer(_homeContainer);
             } 
         }
 
         private TileBarItem CreateBarItem(IContentContainer container)
         {
             var view = container.Manager.View as WindowsUIView;
-            var tileContainer = container as TileContainer;
-            var detailContainer = container as IDetailContainerInfo;
             if (view == null)
             {
                 return null;
-            }
-            string text = null;
-            if (tileContainer != null)
-            {
-                text = String.IsNullOrEmpty(container.Subtitle) ? container.Caption : container.Subtitle;
-            }
-            else if (detailContainer != null)
-            {
-                text = detailContainer.DocumentInfo.Document.Caption;
             }
             var tileBarItem = new TileBarItem()
             {
                 Text = String.IsNullOrEmpty(container.Caption) ? container.Subtitle : container.Caption,
                 TextAlignment = TileItemContentAlignment.MiddleLeft,
-                ItemSize = TileBarItemSize.Wide
+                ItemSize = TileBarItemSize.Wide,
+                SuperTip = new SuperToolTip()
             };
+            tileBarItem.SuperTip.Items.Add(tileBarItem.Text);
             tileBarItem.ItemClick += (s, e) => view.ActivateContainer(container);
             tileBarItem.DropDownOptions.AutoHeight = DefaultBoolean.True;
 
+            var tileContainer = container as TileContainer;
+
             if (tileContainer != null && tileContainer.Items.Count > 0)
             {
-                var ddContainer = new TileBarDropDownContainer();
-                ddContainer.Height = (int) (view.Manager.ContainerControl.Height*0.33f);
-                ddContainer.Appearance.BorderColor = Color.FromArgb(37, 116, 169);
-                ddContainer.BorderStyle = BorderStyles.Flat;
-                var ddTileBar = new TileBar() { ItemSize = 25, Dock = DockStyle.Fill };
-                ddTileBar.Orientation = Orientation.Vertical;
+                var ddContainer = new TileBarDropDownContainer
+                {
+                    Height = (int) (view.Manager.ContainerControl.Height*0.33f),
+                    BorderStyle = BorderStyles.Flat
+                };
+                ddContainer.Appearance.BorderColor = Color.FromArgb(160,160,160);
                 
-                ddTileBar.BackColor = this.tileBarNavigation.BackColor;
-                ddTileBar.AppearanceItem.Normal.BackColor = Color.FromArgb(37, 116, 169);
+                var ddTileBar = new TileBar
+                {
+                    ItemSize = 25,
+                    Dock = DockStyle.Fill,
+                    Orientation = Orientation.Horizontal,
+                    BackColor = this.tileBarNavigation.BackColor
+                };
+                //ddTileBar.AppearanceItem.Normal.BackColor = Color.FromArgb(37, 116, 169);
+                ddTileBar.AppearanceItem.Normal.BackColor = Color.Transparent;
+                ddTileBar.AppearanceItem.Normal.ForeColor = Color.FromArgb(59, 59, 59);
                 ddTileBar.AppearanceItem.Normal.TextOptions.HAlignment = HorzAlignment.Near;
                 ddTileBar.AppearanceItem.Normal.TextOptions.VAlignment = VertAlignment.Center;
                 ddTileBar.AppearanceItem.Normal.TextOptions.Trimming = Trimming.EllipsisCharacter;
                 ddTileBar.AppearanceItem.Normal.TextOptions.WordWrap = WordWrap.NoWrap;
-                ddTileBar.ScrollMode = TileControlScrollMode.ScrollBar;
+                ddTileBar.ScrollMode = TileControlScrollMode.ScrollButtons;
 
                 var ddTileGroup = new TileBarGroup();
                 ddTileBar.Groups.Add(ddTileGroup);
-                foreach (Tile tileItem in tileContainer.Items)
+                foreach (var item in tileContainer.Items)
                 {
-                    if (tileItem == null)
+                    if (item == null)
                     {
                         continue;
                     }
-                    var childContainer = tileItem.ActivationTarget;
-                    var childDocument = tileItem.Document;
+                    var tile = (Tile)item;
+                    var childContainer = tile.ActivationTarget;
+                    var childDocument = tile.Document;
                     var menuItem = new TileBarItem() { ItemSize = TileBarItemSize.Wide };
 
                     if (childContainer != null)

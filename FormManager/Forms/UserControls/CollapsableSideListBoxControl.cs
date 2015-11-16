@@ -14,7 +14,7 @@ namespace EduFormManager.Forms
         private Color _foreColor = Color.White;
         private int _hoveredIndex;
         private int _clickedIndex;
-        private readonly Image _image = new Bitmap(Resources.close01_white);
+        private readonly Image _image = Resources.Delete_26;
         private Rectangle _lastRectangle = new Rectangle(0,0,16,16);
 
         private readonly Font _font = new Font("Segoe UI Light", 12);

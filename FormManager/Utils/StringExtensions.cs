@@ -42,15 +42,15 @@ namespace EduFormManager.Utils
             return value.ToUpper();
         }
 
-        public static string Join(this IEnumerable<string> value, string separator)
+        public static string Join(this IEnumerable<object> value, string separator)
         {
             var result = "";
             var count = value.Count();
             if (count > 0)
-                result = value.ElementAt(0);
+                result = value.ElementAt(0).ToString();
             for (int i = 1; i < count; i++)
             {
-                result += separator + value.ElementAt(i);
+                result += separator + value.ElementAt(i).ToString();
             }
             return result;
         }

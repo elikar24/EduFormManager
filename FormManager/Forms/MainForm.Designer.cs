@@ -17,7 +17,7 @@ using TileGroup = DevExpress.XtraEditors.TileGroup;
 
 namespace EduFormManager
 {
-    partial class mainForm
+    partial class MainForm
     {
         /// <summary>
         /// Требуется переменная конструктора.
@@ -65,39 +65,38 @@ namespace EduFormManager
             DevExpress.XtraEditors.TileItemElement tileItemElement17 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement18 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement19 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement25 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement20 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement21 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement22 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement23 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement24 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement26 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement24 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement25 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement27 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement33 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement28 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement32 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement29 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement30 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement31 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement33 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement32 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement34 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement35 = new DevExpress.XtraEditors.TileItemElement();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.documentManagerMain = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.docContainer = new EduFormManager.Forms.DocumentManagerContainer();
             this.windowsUIViewMain = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.WindowsUIView(this.components);
             this.tileContainerMain = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileContainer(this.components);
             this.tileForms = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.tileMunicipalityForms = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
-            this.tileArchiveForms = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.tileArchiveMunicipalityAdditonalForms = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.tileMunicipalityAdditonalForms = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.tileAdditionalForms = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.tileArchiveAdditionalForms = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.tileArchiveMunicipalityForms = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.tileArchiveForms = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.tileSpreadsheet = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.pageGroupUploadForm = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.PageGroup(this.components);
             this.documentUploadSheetFromTemplate = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.documentUploadSheetFromFile = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
-            this.tileAdditionalForms = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
-            this.tileArchiveAdditionalForms = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
-            this.tileMunicipalityAdditonalForms = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
-            this.tileArchiveMunicipalityAdditonalForms = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.tileQueries = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.pageGroupQueries = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.PageGroup(this.components);
             this.documentQueriesEdu = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
@@ -105,6 +104,28 @@ namespace EduFormManager
             this.tileCreateQuery = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.pageCreateQuery = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
             this.documentCreateQuery = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.tileEduPasport = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.pageEduPassport = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
+            this.documentEduPasport = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.tileMessageList = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.pageMessageList = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
+            this.documentMessageList = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.tileMessage = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.tileContainerMessage = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileContainer(this.components);
+            this.tileRequestQuery = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.pageRequestQuery = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
+            this.documentRequestQuery = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.tileBugReport = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.pageBugReport = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
+            this.documentBugReport = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.tileFormStatistics = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.tabbedGroupStatistics = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TabbedGroup(this.components);
+            this.documentFormStatistics = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentFormStatisticsSummary = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentFormDetailedStatistics = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentSignInOutLog = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentMunicipalityFormStatistics = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentMunicipalityFormDetailedStatistics = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.tileDictionaries = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.tileContainerDictionaries = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileContainer(this.components);
             this.tileDictMunicipality = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
@@ -122,28 +143,6 @@ namespace EduFormManager
             this.tileDictMunicipalityFormula = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.pageMunicipalityFormula = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
             this.documentDictMunicipalityFormula = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
-            this.tileFormStatistics = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
-            this.tabbedGroupStatistics = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TabbedGroup(this.components);
-            this.documentFormStatistics = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
-            this.documentFormStatisticsSummary = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
-            this.documentFormDetailedStatistics = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
-            this.documentSignInOutLog = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
-            this.documentMunicipalityFormStatistics = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
-            this.documentMunicipalityFormDetailedStatistics = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
-            this.tileMessageList = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
-            this.pageMessageList = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
-            this.documentMessageList = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
-            this.tileMessage = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
-            this.tileContainerMessage = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileContainer(this.components);
-            this.tileRequestQuery = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
-            this.pageRequestQuery = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
-            this.documentRequestQuery = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
-            this.tileBugReport = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
-            this.pageBugReport = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
-            this.documentBugReport = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
-            this.tileEduPasport = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
-            this.pageEduPassport = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
-            this.documentEduPasport = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.flyoutInProgress = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Flyout(this.components);
             this.documentInProgress = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.flyoutQuit = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Flyout(this.components);
@@ -170,20 +169,22 @@ namespace EduFormManager
             this.tileItem4 = new DevExpress.XtraEditors.TileItem();
             this.tileItem5 = new DevExpress.XtraEditors.TileItem();
             this.tileGroup4 = new DevExpress.XtraEditors.TileGroup();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.loggedUserControl = new EduFormManager.Forms.UserControls.XtraLoggedUserControl();
-            this.buttonShowLogs = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.navigationBar = new EduFormManager.Forms.NavigationBar();
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.flyoutPanel1 = new DevExpress.Utils.FlyoutPanel();
-            this.flyoutPanelControl1 = new DevExpress.Utils.FlyoutPanelControl();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.buttonShowNotifications = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonShowLogs = new DevExpress.XtraEditors.SimpleButton();
+            this.labelLoggedUser = new DevExpress.XtraEditors.LabelControl();
+            this.labelHeader = new DevExpress.XtraEditors.LabelControl();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.flyoutPanelNotifications = new DevExpress.Utils.FlyoutPanel();
+            this.flyoutPanelNotificationsControl = new DevExpress.Utils.FlyoutPanelControl();
             this.collapsableSideListBoxControl1 = new EduFormManager.Forms.CollapsableSideListBoxControl();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.xtraNavPane = new EduFormManager.Forms.UserControls.XtraNavPane();
             this.expireWarnBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.documentManagerMain)).BeginInit();
@@ -191,16 +192,16 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.tileContainerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileForms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileMunicipalityForms)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileArchiveForms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileArchiveMunicipalityAdditonalForms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileMunicipalityAdditonalForms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileAdditionalForms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileArchiveAdditionalForms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileArchiveMunicipalityForms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileArchiveForms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileSpreadsheet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageGroupUploadForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentUploadSheetFromTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentUploadSheetFromFile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileAdditionalForms)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileArchiveAdditionalForms)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileMunicipalityAdditonalForms)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileArchiveMunicipalityAdditonalForms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileQueries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageGroupQueries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentQueriesEdu)).BeginInit();
@@ -208,6 +209,28 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.tileCreateQuery)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageCreateQuery)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentCreateQuery)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileEduPasport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageEduPassport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentEduPasport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileMessageList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageMessageList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentMessageList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileMessage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileContainerMessage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileRequestQuery)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageRequestQuery)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentRequestQuery)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileBugReport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageBugReport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentBugReport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileFormStatistics)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabbedGroupStatistics)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentFormStatistics)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentFormStatisticsSummary)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentFormDetailedStatistics)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentSignInOutLog)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentMunicipalityFormStatistics)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentMunicipalityFormDetailedStatistics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileDictionaries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileContainerDictionaries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileDictMunicipality)).BeginInit();
@@ -225,28 +248,6 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.tileDictMunicipalityFormula)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageMunicipalityFormula)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentDictMunicipalityFormula)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileFormStatistics)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabbedGroupStatistics)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentFormStatistics)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentFormStatisticsSummary)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentFormDetailedStatistics)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentSignInOutLog)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentMunicipalityFormStatistics)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentMunicipalityFormDetailedStatistics)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileMessageList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pageMessageList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentMessageList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileMessage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileContainerMessage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileRequestQuery)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pageRequestQuery)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentRequestQuery)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileBugReport)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pageBugReport)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentBugReport)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileEduPasport)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pageEduPassport)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentEduPasport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.flyoutInProgress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentInProgress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.flyoutQuit)).BeginInit();
@@ -265,14 +266,19 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.pageDetailedMunicipalityStatisticsReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentMunicipalityFormDetailedStatisticsReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileDictCheck)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
             this.splitContainerControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanel1)).BeginInit();
-            this.flyoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControl1)).BeginInit();
-            this.flyoutPanelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelNotifications)).BeginInit();
+            this.flyoutPanelNotifications.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelNotificationsControl)).BeginInit();
+            this.flyoutPanelNotificationsControl.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.expireWarnBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -290,7 +296,7 @@ namespace EduFormManager
             this.docContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.docContainer.Location = new System.Drawing.Point(0, 0);
             this.docContainer.Name = "docContainer";
-            this.docContainer.Size = new System.Drawing.Size(1186, 571);
+            this.docContainer.Size = new System.Drawing.Size(1186, 549);
             this.docContainer.TabIndex = 0;
             // 
             // windowsUIViewMain
@@ -389,169 +395,232 @@ namespace EduFormManager
             this.windowsUIViewMain.ContentContainerActivated += new DevExpress.XtraBars.Docking2010.Views.WindowsUI.ContentContainerEventHandler(this.windowsUIViewMain_ContentContainerActivated);
             this.windowsUIViewMain.BackButtonClick += new DevExpress.XtraBars.Docking2010.Views.WindowsUI.BackButtonClickEventHandler(this.windowsUIViewMain_BackButtonClick);
             this.windowsUIViewMain.FlyoutHiding += new DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutCancelEventHandler(this.windowsUIViewMain_FlyoutHiding);
-            this.windowsUIViewMain.QueryControl += new DevExpress.XtraBars.Docking2010.Views.QueryControlEventHandler(this.windowsUIView1_QueryControl);
+            this.windowsUIViewMain.QueryControl += new DevExpress.XtraBars.Docking2010.Views.QueryControlEventHandler(this.windowsUIViewMain_QueryControl);
             this.windowsUIViewMain.ControlReleasing += new DevExpress.XtraBars.Docking2010.Views.ControlReleasingEventHandler(this.windowsUIViewMain_ControlReleasing);
             // 
             // tileContainerMain
             // 
+            this.tileContainerMain.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(116)))), ((int)(((byte)(169)))));
             this.tileContainerMain.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Transparent;
+            this.tileContainerMain.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tileContainerMain.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileContainerMain.AppearanceItem.Normal.Options.UseBorderColor = true;
+            this.tileContainerMain.AppearanceItem.Normal.Options.UseFont = true;
             this.tileContainerMain.Caption = "\"Региональная образовательная статистика\"";
             this.tileContainerMain.Items.AddRange(new DevExpress.XtraBars.Docking2010.Views.WindowsUI.BaseTile[] {
             this.tileForms,
             this.tileMunicipalityForms,
-            this.tileArchiveForms,
-            this.tileArchiveMunicipalityForms,
-            this.tileSpreadsheet,
+            this.tileArchiveMunicipalityAdditonalForms,
+            this.tileMunicipalityAdditonalForms,
             this.tileAdditionalForms,
             this.tileArchiveAdditionalForms,
-            this.tileMunicipalityAdditonalForms,
-            this.tileArchiveMunicipalityAdditonalForms,
+            this.tileArchiveMunicipalityForms,
+            this.tileArchiveForms,
+            this.tileSpreadsheet,
             this.tileQueries,
             this.tileCreateQuery,
-            this.tileDictionaries,
-            this.tileFormStatistics,
+            this.tileEduPasport,
             this.tileMessageList,
             this.tileMessage,
-            this.tileEduPasport});
+            this.tileFormStatistics,
+            this.tileDictionaries});
             this.tileContainerMain.Name = "tileContainerMain";
             this.tileContainerMain.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
+            this.tileContainerMain.Properties.AllowItemHover = DevExpress.Utils.DefaultBoolean.True;
             this.tileContainerMain.Properties.IndentBetweenGroups = 24;
             this.tileContainerMain.Properties.IndentBetweenItems = 6;
-            this.tileContainerMain.Properties.ItemCheckMode = DevExpress.XtraEditors.TileItemCheckMode.Single;
+            this.tileContainerMain.Properties.ItemCheckMode = DevExpress.XtraEditors.TileItemCheckMode.None;
             this.tileContainerMain.Properties.ItemContentAnimation = DevExpress.XtraEditors.TileItemContentAnimationType.ScrollLeft;
-            this.tileContainerMain.Properties.ItemSize = 128;
+            this.tileContainerMain.Properties.ItemSize = 95;
             this.tileContainerMain.Properties.ItemTextShowMode = DevExpress.XtraEditors.TileItemContentShowMode.Default;
             this.tileContainerMain.Properties.Orientation = System.Windows.Forms.Orientation.Horizontal;
             this.tileContainerMain.Properties.RowCount = 3;
-            this.tileContainerMain.Properties.ShowGroupText = DevExpress.Utils.DefaultBoolean.False;
-            this.tileContainerMain.Properties.ShowText = DevExpress.Utils.DefaultBoolean.False;
             this.tileContainerMain.Subtitle = "Программный комплекс";
             // 
             // tileForms
             // 
-            this.tileForms.Appearances.Normal.BackColor = System.Drawing.Color.Brown;
             this.tileForms.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
-            this.tileForms.Appearances.Normal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tileForms.Appearances.Normal.Options.UseBackColor = true;
             this.tileForms.Appearances.Normal.Options.UseBorderColor = true;
-            this.tileForms.Appearances.Normal.Options.UseFont = true;
-            tileItemElement1.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement1.Text = "Формы Федерального статистического наблюдения";
+            tileItemElement1.Image = global::EduFormManager.Properties.Resources.Box_32;
+            tileItemElement1.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
+            tileItemElement1.Text = "Формы ФСН";
             tileItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
             tileItemElement2.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             tileItemElement2.Appearance.Normal.Options.UseFont = true;
-            tileItemElement2.ImageBorderColor = System.Drawing.Color.Empty;
             tileItemElement2.Text = "Образовательные организации";
             tileItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
             this.tileForms.Elements.Add(tileItemElement1);
             this.tileForms.Elements.Add(tileItemElement2);
-            this.tileForms.Group = "TileGroupForms";
+            this.tileForms.Group = "1Group";
             this.tileForms.Name = "tileForms";
+            this.tileForms.Properties.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.tileForms.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
+            this.tileForms.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileForms.Tag = "Forms";
             // 
             // tileMunicipalityForms
             // 
-            this.tileMunicipalityForms.Appearances.Normal.BackColor = System.Drawing.Color.RosyBrown;
             this.tileMunicipalityForms.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
-            this.tileMunicipalityForms.Appearances.Normal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tileMunicipalityForms.Appearances.Normal.Options.UseBackColor = true;
             this.tileMunicipalityForms.Appearances.Normal.Options.UseBorderColor = true;
-            this.tileMunicipalityForms.Appearances.Normal.Options.UseFont = true;
-            tileItemElement3.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement3.Text = "Формы Федерального статистического наблюдения";
+            tileItemElement3.Image = global::EduFormManager.Properties.Resources.Box_32;
+            tileItemElement3.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
+            tileItemElement3.Text = "Формы ФСН";
             tileItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
             tileItemElement4.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9F);
             tileItemElement4.Appearance.Normal.Options.UseFont = true;
-            tileItemElement4.ImageBorderColor = System.Drawing.Color.Empty;
             tileItemElement4.Text = "Муниципалитет";
             tileItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
             this.tileMunicipalityForms.Elements.Add(tileItemElement3);
             this.tileMunicipalityForms.Elements.Add(tileItemElement4);
-            this.tileMunicipalityForms.Group = "TileGroupForms";
+            this.tileMunicipalityForms.Group = "1Group";
             this.tileContainerMain.SetID(this.tileMunicipalityForms, 10);
             this.tileMunicipalityForms.Name = "tileMunicipalityForms";
+            this.tileMunicipalityForms.Properties.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.tileMunicipalityForms.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
             this.tileMunicipalityForms.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileMunicipalityForms.Tag = "MunitForms";
             // 
-            // tileArchiveForms
+            // tileArchiveMunicipalityAdditonalForms
             // 
-            this.tileArchiveForms.Appearances.Normal.BackColor = System.Drawing.Color.IndianRed;
-            this.tileArchiveForms.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
-            this.tileArchiveForms.Appearances.Normal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tileArchiveForms.Appearances.Normal.Options.UseBackColor = true;
-            this.tileArchiveForms.Appearances.Normal.Options.UseBorderColor = true;
-            this.tileArchiveForms.Appearances.Normal.Options.UseFont = true;
-            tileItemElement5.Appearance.Normal.ForeColor = System.Drawing.Color.White;
-            tileItemElement5.Appearance.Normal.Options.UseForeColor = true;
-            tileItemElement5.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            tileItemElement5.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement5.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement5.ImageSize = new System.Drawing.Size(32, 32);
-            tileItemElement5.Text = "Архив";
+            tileItemElement5.Text = "Архив доп. форм";
             tileItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileItemElement6.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            tileItemElement6.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             tileItemElement6.Appearance.Normal.Options.UseFont = true;
-            tileItemElement6.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement6.Text = "Образовательные организации";
+            tileItemElement6.Text = "Муниципалитет";
             tileItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.tileArchiveForms.Elements.Add(tileItemElement5);
-            this.tileArchiveForms.Elements.Add(tileItemElement6);
-            this.tileArchiveForms.Group = "TileGroupForms";
-            this.tileContainerMain.SetID(this.tileArchiveForms, 3);
-            this.tileArchiveForms.Name = "tileArchiveForms";
-            this.tileArchiveForms.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
-            this.tileArchiveForms.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.tileArchiveForms.Tag = "ArchiveForms";
+            this.tileArchiveMunicipalityAdditonalForms.Elements.Add(tileItemElement5);
+            this.tileArchiveMunicipalityAdditonalForms.Elements.Add(tileItemElement6);
+            this.tileArchiveMunicipalityAdditonalForms.Group = "1Group";
+            this.tileContainerMain.SetID(this.tileArchiveMunicipalityAdditonalForms, 15);
+            this.tileArchiveMunicipalityAdditonalForms.Name = "tileArchiveMunicipalityAdditonalForms";
+            this.tileArchiveMunicipalityAdditonalForms.Properties.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.tileArchiveMunicipalityAdditonalForms.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
+            this.tileArchiveMunicipalityAdditonalForms.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            // 
+            // tileMunicipalityAdditonalForms
+            // 
+            tileItemElement7.Text = "Доп. формы";
+            tileItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileItemElement8.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            tileItemElement8.Appearance.Normal.Options.UseFont = true;
+            tileItemElement8.Text = "Муниципалитет";
+            tileItemElement8.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            this.tileMunicipalityAdditonalForms.Elements.Add(tileItemElement7);
+            this.tileMunicipalityAdditonalForms.Elements.Add(tileItemElement8);
+            this.tileMunicipalityAdditonalForms.Group = "1Group";
+            this.tileContainerMain.SetID(this.tileMunicipalityAdditonalForms, 13);
+            this.tileMunicipalityAdditonalForms.Name = "tileMunicipalityAdditonalForms";
+            this.tileMunicipalityAdditonalForms.Properties.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.tileMunicipalityAdditonalForms.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
+            this.tileMunicipalityAdditonalForms.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            // 
+            // tileAdditionalForms
+            // 
+            this.tileAdditionalForms.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
+            this.tileAdditionalForms.Appearances.Normal.Options.UseBorderColor = true;
+            tileItemElement9.Appearance.Normal.BorderColor = System.Drawing.Color.Transparent;
+            tileItemElement9.Appearance.Normal.Options.UseBorderColor = true;
+            tileItemElement9.Appearance.Normal.Options.UseTextOptions = true;
+            tileItemElement9.Appearance.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
+            tileItemElement9.Text = "Доп. формы";
+            tileItemElement9.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileItemElement10.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            tileItemElement10.Appearance.Normal.Options.UseFont = true;
+            tileItemElement10.Text = "Образовательные организации";
+            tileItemElement10.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            this.tileAdditionalForms.Elements.Add(tileItemElement9);
+            this.tileAdditionalForms.Elements.Add(tileItemElement10);
+            this.tileAdditionalForms.Group = "1Group";
+            this.tileContainerMain.SetID(this.tileAdditionalForms, 4);
+            this.tileAdditionalForms.Name = "tileAdditionalForms";
+            this.tileAdditionalForms.Properties.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.tileAdditionalForms.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
+            this.tileAdditionalForms.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.tileAdditionalForms.Properties.TextShowMode = DevExpress.XtraEditors.TileItemContentShowMode.Default;
+            this.tileAdditionalForms.Tag = "Forms2";
+            // 
+            // tileArchiveAdditionalForms
+            // 
+            this.tileArchiveAdditionalForms.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
+            this.tileArchiveAdditionalForms.Appearances.Normal.Options.UseBorderColor = true;
+            tileItemElement11.Text = "Архив доп. форм ";
+            tileItemElement11.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileItemElement12.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            tileItemElement12.Appearance.Normal.Options.UseFont = true;
+            tileItemElement12.Text = "Образовательные организации";
+            tileItemElement12.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            this.tileArchiveAdditionalForms.Elements.Add(tileItemElement11);
+            this.tileArchiveAdditionalForms.Elements.Add(tileItemElement12);
+            this.tileArchiveAdditionalForms.Group = "1Group";
+            this.tileContainerMain.SetID(this.tileArchiveAdditionalForms, 12);
+            this.tileArchiveAdditionalForms.Name = "tileArchiveAdditionalForms";
+            this.tileArchiveAdditionalForms.Properties.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.tileArchiveAdditionalForms.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
+            this.tileArchiveAdditionalForms.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             // 
             // tileArchiveMunicipalityForms
             // 
-            this.tileArchiveMunicipalityForms.Appearances.Normal.BackColor = System.Drawing.Color.IndianRed;
             this.tileArchiveMunicipalityForms.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
-            this.tileArchiveMunicipalityForms.Appearances.Normal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tileArchiveMunicipalityForms.Appearances.Normal.Options.UseBackColor = true;
             this.tileArchiveMunicipalityForms.Appearances.Normal.Options.UseBorderColor = true;
-            this.tileArchiveMunicipalityForms.Appearances.Normal.Options.UseFont = true;
-            tileItemElement7.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement7.Text = "Архив";
-            tileItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileItemElement8.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9F);
-            tileItemElement8.Appearance.Normal.Options.UseFont = true;
-            tileItemElement8.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement8.Text = "Муниципалитет";
-            tileItemElement8.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.tileArchiveMunicipalityForms.Elements.Add(tileItemElement7);
-            this.tileArchiveMunicipalityForms.Elements.Add(tileItemElement8);
-            this.tileArchiveMunicipalityForms.Group = "TileGroupForms";
+            tileItemElement13.Image = global::EduFormManager.Properties.Resources.BoxFilled_32;
+            tileItemElement13.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
+            tileItemElement13.Text = "Архив";
+            tileItemElement13.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileItemElement14.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            tileItemElement14.Appearance.Normal.Options.UseFont = true;
+            tileItemElement14.Text = "Муниципалитет";
+            tileItemElement14.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            this.tileArchiveMunicipalityForms.Elements.Add(tileItemElement13);
+            this.tileArchiveMunicipalityForms.Elements.Add(tileItemElement14);
+            this.tileArchiveMunicipalityForms.Group = "1Group";
             this.tileContainerMain.SetID(this.tileArchiveMunicipalityForms, 11);
             this.tileArchiveMunicipalityForms.Name = "tileArchiveMunicipalityForms";
+            this.tileArchiveMunicipalityForms.Properties.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.tileArchiveMunicipalityForms.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
-            this.tileArchiveMunicipalityForms.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.tileArchiveMunicipalityForms.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            // 
+            // tileArchiveForms
+            // 
+            this.tileArchiveForms.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
+            this.tileArchiveForms.Appearances.Normal.Options.UseBorderColor = true;
+            tileItemElement15.Appearance.Normal.ForeColor = System.Drawing.Color.White;
+            tileItemElement15.Appearance.Normal.Options.UseForeColor = true;
+            tileItemElement15.Image = global::EduFormManager.Properties.Resources.BoxFilled_32;
+            tileItemElement15.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
+            tileItemElement15.Text = "Архив";
+            tileItemElement15.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileItemElement16.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            tileItemElement16.Appearance.Normal.Options.UseFont = true;
+            tileItemElement16.Text = "Образовательные организации";
+            tileItemElement16.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            this.tileArchiveForms.Elements.Add(tileItemElement15);
+            this.tileArchiveForms.Elements.Add(tileItemElement16);
+            this.tileArchiveForms.Group = "1Group";
+            this.tileContainerMain.SetID(this.tileArchiveForms, 3);
+            this.tileArchiveForms.Name = "tileArchiveForms";
+            this.tileArchiveForms.Properties.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.tileArchiveForms.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
+            this.tileArchiveForms.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.tileArchiveForms.Tag = "ArchiveForms";
             // 
             // tileSpreadsheet
             // 
             this.tileSpreadsheet.ActivationTarget = this.pageGroupUploadForm;
-            this.tileSpreadsheet.Appearances.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(148)))));
-            this.tileSpreadsheet.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
-            this.tileSpreadsheet.Appearances.Normal.Options.UseBackColor = true;
-            this.tileSpreadsheet.Appearances.Normal.Options.UseBorderColor = true;
-            tileItemElement9.AnimateTransition = DevExpress.Utils.DefaultBoolean.True;
-            tileItemElement9.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            tileItemElement9.Appearance.Normal.Options.UseFont = true;
-            tileItemElement9.Image = global::EduFormManager.Properties.Resources.Arrow_upload_2_icon;
-            tileItemElement9.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
-            tileItemElement9.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement9.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement9.ImageSize = new System.Drawing.Size(80, 80);
-            tileItemElement9.Text = "Отправить форму";
-            tileItemElement9.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.tileSpreadsheet.Elements.Add(tileItemElement9);
-            this.tileSpreadsheet.Group = "TileGroupForms";
+            tileItemElement17.AnimateTransition = DevExpress.Utils.DefaultBoolean.True;
+            tileItemElement17.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            tileItemElement17.Appearance.Normal.Options.UseFont = true;
+            tileItemElement17.Image = global::EduFormManager.Properties.Resources.Upload_32;
+            tileItemElement17.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
+            tileItemElement17.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileItemElement17.Text = "Отправить форму";
+            tileItemElement17.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            this.tileSpreadsheet.Elements.Add(tileItemElement17);
+            this.tileSpreadsheet.Group = "2Group";
             this.tileContainerMain.SetID(this.tileSpreadsheet, 4);
             this.tileSpreadsheet.Name = "tileSpreadsheet";
             this.tileSpreadsheet.Properties.AllowCheck = DevExpress.Utils.DefaultBoolean.True;
+            this.tileSpreadsheet.Properties.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.tileSpreadsheet.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileSpreadsheet.Tag = "Spreadsheet";
             // 
             // pageGroupUploadForm
@@ -579,126 +648,21 @@ namespace EduFormManager
             this.documentUploadSheetFromFile.Caption = "из файла";
             this.documentUploadSheetFromFile.ControlName = "UploadSheetFromFile";
             // 
-            // tileAdditionalForms
-            // 
-            this.tileAdditionalForms.Appearances.Normal.BackColor = System.Drawing.Color.SlateGray;
-            this.tileAdditionalForms.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
-            this.tileAdditionalForms.Appearances.Normal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tileAdditionalForms.Appearances.Normal.Options.UseBackColor = true;
-            this.tileAdditionalForms.Appearances.Normal.Options.UseBorderColor = true;
-            this.tileAdditionalForms.Appearances.Normal.Options.UseFont = true;
-            tileItemElement10.Appearance.Normal.BorderColor = System.Drawing.Color.Transparent;
-            tileItemElement10.Appearance.Normal.Options.UseBorderColor = true;
-            tileItemElement10.Appearance.Normal.Options.UseTextOptions = true;
-            tileItemElement10.Appearance.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            tileItemElement10.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement10.Text = "Доп. формы";
-            tileItemElement10.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileItemElement11.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9F);
-            tileItemElement11.Appearance.Normal.Options.UseFont = true;
-            tileItemElement11.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement11.Text = "Образовательные организации";
-            tileItemElement11.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.tileAdditionalForms.Elements.Add(tileItemElement10);
-            this.tileAdditionalForms.Elements.Add(tileItemElement11);
-            this.tileAdditionalForms.Group = "TileGroupForms";
-            this.tileContainerMain.SetID(this.tileAdditionalForms, 6);
-            this.tileAdditionalForms.Name = "tileAdditionalForms";
-            this.tileAdditionalForms.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
-            this.tileAdditionalForms.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.tileAdditionalForms.Properties.TextShowMode = DevExpress.XtraEditors.TileItemContentShowMode.Default;
-            this.tileAdditionalForms.Tag = "Forms2";
-            // 
-            // tileArchiveAdditionalForms
-            // 
-            this.tileArchiveAdditionalForms.Appearances.Normal.BackColor = System.Drawing.Color.Gray;
-            this.tileArchiveAdditionalForms.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
-            this.tileArchiveAdditionalForms.Appearances.Normal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tileArchiveAdditionalForms.Appearances.Normal.Options.UseBackColor = true;
-            this.tileArchiveAdditionalForms.Appearances.Normal.Options.UseBorderColor = true;
-            this.tileArchiveAdditionalForms.Appearances.Normal.Options.UseFont = true;
-            tileItemElement12.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement12.Text = "Архив<br>Доп. формы ";
-            tileItemElement12.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileItemElement13.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9F);
-            tileItemElement13.Appearance.Normal.Options.UseFont = true;
-            tileItemElement13.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement13.Text = "Образовательные организации";
-            tileItemElement13.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.tileArchiveAdditionalForms.Elements.Add(tileItemElement12);
-            this.tileArchiveAdditionalForms.Elements.Add(tileItemElement13);
-            this.tileArchiveAdditionalForms.Group = "TileGroupForms";
-            this.tileContainerMain.SetID(this.tileArchiveAdditionalForms, 12);
-            this.tileArchiveAdditionalForms.Name = "tileArchiveAdditionalForms";
-            this.tileArchiveAdditionalForms.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
-            this.tileArchiveAdditionalForms.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            // 
-            // tileMunicipalityAdditonalForms
-            // 
-            this.tileMunicipalityAdditonalForms.Appearances.Normal.BackColor = System.Drawing.Color.Sienna;
-            this.tileMunicipalityAdditonalForms.Appearances.Normal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tileMunicipalityAdditonalForms.Appearances.Normal.Options.UseBackColor = true;
-            this.tileMunicipalityAdditonalForms.Appearances.Normal.Options.UseFont = true;
-            tileItemElement14.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement14.Text = "Доп. формы";
-            tileItemElement14.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileItemElement15.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            tileItemElement15.Appearance.Normal.Options.UseFont = true;
-            tileItemElement15.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement15.Text = "Муниципалитет";
-            tileItemElement15.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.tileMunicipalityAdditonalForms.Elements.Add(tileItemElement14);
-            this.tileMunicipalityAdditonalForms.Elements.Add(tileItemElement15);
-            this.tileMunicipalityAdditonalForms.Group = "TileGroupForms";
-            this.tileContainerMain.SetID(this.tileMunicipalityAdditonalForms, 13);
-            this.tileMunicipalityAdditonalForms.Name = "tileMunicipalityAdditonalForms";
-            this.tileMunicipalityAdditonalForms.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
-            this.tileMunicipalityAdditonalForms.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            // 
-            // tileArchiveMunicipalityAdditonalForms
-            // 
-            this.tileArchiveMunicipalityAdditonalForms.Appearances.Normal.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.tileArchiveMunicipalityAdditonalForms.Appearances.Normal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tileArchiveMunicipalityAdditonalForms.Appearances.Normal.Options.UseBackColor = true;
-            this.tileArchiveMunicipalityAdditonalForms.Appearances.Normal.Options.UseFont = true;
-            tileItemElement16.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement16.Text = "Архив<br>Доп. формы";
-            tileItemElement16.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileItemElement17.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            tileItemElement17.Appearance.Normal.Options.UseFont = true;
-            tileItemElement17.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement17.Text = "Муниципалитет";
-            tileItemElement17.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.tileArchiveMunicipalityAdditonalForms.Elements.Add(tileItemElement16);
-            this.tileArchiveMunicipalityAdditonalForms.Elements.Add(tileItemElement17);
-            this.tileArchiveMunicipalityAdditonalForms.Group = "TileGroupForms";
-            this.tileContainerMain.SetID(this.tileArchiveMunicipalityAdditonalForms, 15);
-            this.tileArchiveMunicipalityAdditonalForms.Name = "tileArchiveMunicipalityAdditonalForms";
-            this.tileArchiveMunicipalityAdditonalForms.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
-            this.tileArchiveMunicipalityAdditonalForms.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            // 
             // tileQueries
             // 
             this.tileQueries.ActivationTarget = this.pageGroupQueries;
-            this.tileQueries.Appearances.Normal.BackColor = System.Drawing.Color.SteelBlue;
-            this.tileQueries.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
-            this.tileQueries.Appearances.Normal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tileQueries.Appearances.Normal.Options.UseBackColor = true;
-            this.tileQueries.Appearances.Normal.Options.UseBorderColor = true;
-            this.tileQueries.Appearances.Normal.Options.UseFont = true;
-            tileItemElement18.Image = global::EduFormManager.Properties.Resources.summary_icon;
-            tileItemElement18.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
-            tileItemElement18.ImageBorderColor = System.Drawing.Color.Empty;
+            tileItemElement18.Image = global::EduFormManager.Properties.Resources.List_32;
+            tileItemElement18.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
             tileItemElement18.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement18.ImageSize = new System.Drawing.Size(80, 80);
             tileItemElement18.Text = "Запросы";
-            tileItemElement18.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            tileItemElement18.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
             this.tileQueries.Elements.Add(tileItemElement18);
-            this.tileQueries.Group = "TileGroup2";
+            this.tileQueries.Group = "3Group";
             this.tileContainerMain.SetID(this.tileQueries, 1);
             this.tileQueries.Name = "tileQueries";
+            this.tileQueries.Properties.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.tileQueries.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
-            this.tileQueries.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.tileQueries.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileQueries.Properties.TextShowMode = DevExpress.XtraEditors.TileItemContentShowMode.Always;
             this.tileQueries.Tag = "Queries";
             // 
@@ -725,18 +689,16 @@ namespace EduFormManager
             // tileCreateQuery
             // 
             this.tileCreateQuery.ActivationTarget = this.pageCreateQuery;
-            this.tileCreateQuery.Appearances.Normal.BackColor = System.Drawing.Color.SteelBlue;
-            this.tileCreateQuery.Appearances.Normal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tileCreateQuery.Appearances.Normal.Options.UseBackColor = true;
-            this.tileCreateQuery.Appearances.Normal.Options.UseFont = true;
-            tileItemElement19.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement19.Text = "Создание запроса";
-            tileItemElement19.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            tileItemElement19.Image = global::EduFormManager.Properties.Resources.AddList_32;
+            tileItemElement19.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
+            tileItemElement19.Text = "Создать запрос";
+            tileItemElement19.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
             this.tileCreateQuery.Elements.Add(tileItemElement19);
-            this.tileCreateQuery.Group = "TileGroup2";
+            this.tileCreateQuery.Group = "3Group";
             this.tileContainerMain.SetID(this.tileCreateQuery, 14);
             this.tileCreateQuery.Name = "tileCreateQuery";
-            this.tileCreateQuery.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.tileCreateQuery.Properties.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.tileCreateQuery.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileCreateQuery.Tag = "CreateQuery";
             // 
             // pageCreateQuery
@@ -751,184 +713,167 @@ namespace EduFormManager
             this.documentCreateQuery.Caption = "Создание запроса";
             this.documentCreateQuery.ControlName = "DictCreateQuery";
             // 
-            // tileDictionaries
+            // tileEduPasport
             // 
-            this.tileDictionaries.ActivationTarget = this.tileContainerDictionaries;
-            this.tileDictionaries.Appearances.Normal.BackColor = System.Drawing.Color.DimGray;
-            this.tileDictionaries.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
-            this.tileDictionaries.Appearances.Normal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tileDictionaries.Appearances.Normal.Options.UseBackColor = true;
-            this.tileDictionaries.Appearances.Normal.Options.UseBorderColor = true;
-            this.tileDictionaries.Appearances.Normal.Options.UseFont = true;
-            tileItemElement25.Image = global::EduFormManager.Properties.Resources.stat_icon;
-            tileItemElement25.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
-            tileItemElement25.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement25.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement25.ImageSize = new System.Drawing.Size(80, 80);
-            tileItemElement25.Text = "Справочники";
-            tileItemElement25.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.tileDictionaries.Elements.Add(tileItemElement25);
-            this.tileDictionaries.Enabled = true;
-            this.tileDictionaries.Group = "TileGroup3";
-            this.tileContainerMain.SetID(this.tileDictionaries, 2);
-            this.tileDictionaries.Name = "tileDictionaries";
-            this.tileDictionaries.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.tileDictionaries.Tag = "Dictionaries";
+            this.tileEduPasport.ActivationTarget = this.pageEduPassport;
+            tileItemElement20.Image = global::EduFormManager.Properties.Resources.BusinessContact_32;
+            tileItemElement20.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
+            tileItemElement20.Text = "Паспорт";
+            tileItemElement20.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileItemElement21.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            tileItemElement21.Appearance.Normal.Options.UseFont = true;
+            tileItemElement21.Appearance.Normal.Options.UseTextOptions = true;
+            tileItemElement21.Appearance.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
+            tileItemElement21.Appearance.Normal.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
+            tileItemElement21.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            tileItemElement21.Text = "-";
+            tileItemElement21.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            this.tileEduPasport.Elements.Add(tileItemElement20);
+            this.tileEduPasport.Elements.Add(tileItemElement21);
+            this.tileEduPasport.Group = "4Group";
+            this.tileContainerMain.SetID(this.tileEduPasport, 5);
+            this.tileEduPasport.Name = "tileEduPasport";
+            this.tileEduPasport.Properties.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.tileEduPasport.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.tileEduPasport.Tag = "EduPassport";
             // 
-            // tileContainerDictionaries
+            // pageEduPassport
             // 
-            this.tileContainerDictionaries.AppearanceButton.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(198)))));
-            this.tileContainerDictionaries.AppearanceButton.Normal.Options.UseForeColor = true;
-            this.tileContainerDictionaries.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(198)))));
-            this.tileContainerDictionaries.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Transparent;
-            this.tileContainerDictionaries.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tileContainerDictionaries.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileContainerDictionaries.AppearanceItem.Normal.Options.UseBorderColor = true;
-            this.tileContainerDictionaries.AppearanceItem.Normal.Options.UseFont = true;
-            this.tileContainerDictionaries.Caption = "Справочники";
-            this.tileContainerDictionaries.Items.AddRange(new DevExpress.XtraBars.Docking2010.Views.WindowsUI.BaseTile[] {
-            this.tileDictMunicipality,
-            this.tileDictEdu,
-            this.tileDictTemplate,
-            this.tileDictForms,
-            this.tileDictMunicipalityFormula});
-            this.tileContainerDictionaries.Name = "tileContainerDictionaries";
-            this.tileContainerDictionaries.Parent = this.tileContainerMain;
-            this.tileContainerDictionaries.Properties.IndentBetweenGroups = 1;
-            this.tileContainerDictionaries.Properties.IndentBetweenItems = 1;
+            this.pageEduPassport.Caption = "Паспорт образовательной организации";
+            this.pageEduPassport.Document = this.documentEduPasport;
+            this.pageEduPassport.Name = "pageEduPassport";
+            this.pageEduPassport.Parent = this.tileContainerMain;
             // 
-            // tileDictMunicipality
+            // documentEduPasport
             // 
-            this.tileDictMunicipality.ActivationTarget = this.pageMunit;
-            tileItemElement20.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement20.Text = "Муниципалитеты";
-            this.tileDictMunicipality.Elements.Add(tileItemElement20);
-            this.tileDictMunicipality.Name = "tileDictMunicipality";
-            this.tileDictMunicipality.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.documentEduPasport.Caption = "Паспорт";
+            this.documentEduPasport.ControlName = "Pasport";
+            this.documentEduPasport.Header = "LOL";
             // 
-            // pageMunit
+            // tileMessageList
             // 
-            this.pageMunit.Caption = "Муниципалитеты";
-            this.pageMunit.Document = this.documentDictMunicipality;
-            this.pageMunit.Name = "pageMunit";
-            this.pageMunit.Parent = this.tileContainerDictionaries;
+            this.tileMessageList.ActivationTarget = this.pageMessageList;
+            tileItemElement22.Text = "0";
+            tileItemElement22.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            tileItemElement23.Image = global::EduFormManager.Properties.Resources.Message_32;
+            tileItemElement23.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
+            tileItemElement23.Text = "Входящие<br>сообщения";
+            tileItemElement23.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            this.tileMessageList.Elements.Add(tileItemElement22);
+            this.tileMessageList.Elements.Add(tileItemElement23);
+            this.tileMessageList.Group = "4Group";
+            this.tileContainerMain.SetID(this.tileMessageList, 8);
+            this.tileMessageList.Name = "tileMessageList";
+            this.tileMessageList.Properties.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.tileMessageList.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
+            this.tileMessageList.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.tileMessageList.Tag = "MessageList";
             // 
-            // documentDictMunicipality
+            // pageMessageList
             // 
-            this.documentDictMunicipality.Caption = "Муниципалитеты";
-            this.documentDictMunicipality.ControlName = "DictMunicipality";
+            this.pageMessageList.Caption = "Сообщения";
+            this.pageMessageList.Document = this.documentMessageList;
+            this.pageMessageList.Name = "pageMessageList";
+            this.pageMessageList.Parent = this.tileContainerMain;
             // 
-            // tileDictEdu
+            // documentMessageList
             // 
-            this.tileDictEdu.ActivationTarget = this.pageEdu;
-            tileItemElement21.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement21.Text = "Образовательные организации";
-            this.tileDictEdu.Elements.Add(tileItemElement21);
-            this.tileContainerDictionaries.SetID(this.tileDictEdu, 2);
-            this.tileDictEdu.Name = "tileDictEdu";
-            this.tileDictEdu.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.documentMessageList.Caption = "Сообщения";
+            this.documentMessageList.ControlName = "MessageList";
+            this.documentMessageList.Tag = "MessageList";
             // 
-            // pageEdu
+            // tileMessage
             // 
-            this.pageEdu.Caption = "Образовательные организации";
-            this.pageEdu.Document = this.documentDictEdu;
-            this.pageEdu.Name = "pageEdu";
-            this.pageEdu.Parent = this.tileContainerDictionaries;
+            this.tileMessage.ActivationTarget = this.tileContainerMessage;
+            tileItemElement26.Image = global::EduFormManager.Properties.Resources.Feedback_32;
+            tileItemElement26.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
+            tileItemElement26.Text = "Отправить<br>сообщение";
+            tileItemElement26.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            this.tileMessage.Elements.Add(tileItemElement26);
+            this.tileMessage.Group = "4Group";
+            this.tileContainerMain.SetID(this.tileMessage, 7);
+            this.tileMessage.Name = "tileMessage";
+            this.tileMessage.Properties.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.tileMessage.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
+            this.tileMessage.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.tileMessage.Tag = "Message";
             // 
-            // documentDictEdu
+            // tileContainerMessage
             // 
-            this.documentDictEdu.ActionCaption = "Назад";
-            this.documentDictEdu.Caption = "Образовательные организации";
-            this.documentDictEdu.ControlName = "DictEdu";
+            this.tileContainerMessage.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(116)))), ((int)(((byte)(169)))));
+            this.tileContainerMessage.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Transparent;
+            this.tileContainerMessage.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tileContainerMessage.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.tileContainerMessage.AppearanceItem.Normal.Options.UseBorderColor = true;
+            this.tileContainerMessage.AppearanceItem.Normal.Options.UseFont = true;
+            this.tileContainerMessage.Caption = "Отправить сообщение";
+            this.tileContainerMessage.Items.AddRange(new DevExpress.XtraBars.Docking2010.Views.WindowsUI.BaseTile[] {
+            this.tileRequestQuery,
+            this.tileBugReport});
+            this.tileContainerMessage.Name = "tileContainerMessage";
+            this.tileContainerMessage.Parent = this.tileContainerMain;
+            this.tileContainerMessage.Properties.ItemSize = 95;
             // 
-            // tileDictTemplate
+            // tileRequestQuery
             // 
-            this.tileDictTemplate.ActivationTarget = this.pageTemplate;
-            tileItemElement22.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement22.Text = "Шаблоны форм";
-            this.tileDictTemplate.Elements.Add(tileItemElement22);
-            this.tileContainerDictionaries.SetID(this.tileDictTemplate, 3);
-            this.tileDictTemplate.Name = "tileDictTemplate";
-            this.tileDictTemplate.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.tileRequestQuery.ActivationTarget = this.pageRequestQuery;
+            tileItemElement24.Text = "Новый запрос по требованию";
+            tileItemElement24.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            this.tileRequestQuery.Elements.Add(tileItemElement24);
+            this.tileRequestQuery.Name = "tileRequestQuery";
+            this.tileRequestQuery.Properties.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.tileRequestQuery.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.tileRequestQuery.Tag = "MessageRequestQuery";
             // 
-            // pageTemplate
+            // pageRequestQuery
             // 
-            this.pageTemplate.Caption = "Шаблоны форм";
-            this.pageTemplate.Document = this.documentDictTemplate;
-            this.pageTemplate.Name = "pageTemplate";
-            this.pageTemplate.Parent = this.tileContainerDictionaries;
+            this.pageRequestQuery.Caption = "Сообщение";
+            this.pageRequestQuery.Document = this.documentRequestQuery;
+            this.pageRequestQuery.Name = "pageRequestQuery";
+            this.pageRequestQuery.Parent = this.tileContainerMessage;
             // 
-            // documentDictTemplate
+            // documentRequestQuery
             // 
-            this.documentDictTemplate.Caption = "Шаблоны форм";
-            this.documentDictTemplate.ControlName = "DictTemplate";
+            this.documentRequestQuery.Caption = "Сообщение";
+            this.documentRequestQuery.ControlName = "RequestQuery";
             // 
-            // tileDictForms
+            // tileBugReport
             // 
-            this.tileDictForms.ActivationTarget = this.pageForms;
-            tileItemElement23.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement23.Text = "Формы";
-            this.tileDictForms.Elements.Add(tileItemElement23);
-            this.tileContainerDictionaries.SetID(this.tileDictForms, 5);
-            this.tileDictForms.Name = "tileDictForms";
-            this.tileDictForms.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.tileBugReport.ActivationTarget = this.pageBugReport;
+            tileItemElement25.Text = "Сообщить об ошибке";
+            tileItemElement25.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            this.tileBugReport.Elements.Add(tileItemElement25);
+            this.tileContainerMessage.SetID(this.tileBugReport, 1);
+            this.tileBugReport.Name = "tileBugReport";
+            this.tileBugReport.Properties.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.tileBugReport.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.tileBugReport.Tag = "MessageBugReport";
             // 
-            // pageForms
+            // pageBugReport
             // 
-            this.pageForms.Caption = "Формы";
-            this.pageForms.Document = this.documentDictForms;
-            this.pageForms.Name = "pageForms";
-            this.pageForms.Parent = this.tileContainerDictionaries;
+            this.pageBugReport.Caption = "Сообщить об ошибке";
+            this.pageBugReport.Document = this.documentBugReport;
+            this.pageBugReport.Name = "pageBugReport";
+            this.pageBugReport.Parent = this.tileContainerMessage;
             // 
-            // documentDictForms
+            // documentBugReport
             // 
-            this.documentDictForms.Caption = "Формы";
-            this.documentDictForms.ControlName = "DictForms";
-            // 
-            // tileDictMunicipalityFormula
-            // 
-            this.tileDictMunicipalityFormula.ActivationTarget = this.pageMunicipalityFormula;
-            tileItemElement24.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement24.Text = "Формулы для заполнения муниципалитетных форм";
-            tileItemElement24.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            this.tileDictMunicipalityFormula.Elements.Add(tileItemElement24);
-            this.tileContainerDictionaries.SetID(this.tileDictMunicipalityFormula, 1);
-            this.tileDictMunicipalityFormula.Name = "tileDictMunicipalityFormula";
-            this.tileDictMunicipalityFormula.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            // 
-            // pageMunicipalityFormula
-            // 
-            this.pageMunicipalityFormula.Caption = "Сводные формулы";
-            this.pageMunicipalityFormula.Document = this.documentDictMunicipalityFormula;
-            this.pageMunicipalityFormula.Name = "pageMunicipalityFormula";
-            this.pageMunicipalityFormula.Parent = this.tileContainerDictionaries;
-            // 
-            // documentDictMunicipalityFormula
-            // 
-            this.documentDictMunicipalityFormula.Caption = "Сводные формулы";
-            this.documentDictMunicipalityFormula.ControlName = "DictMunicipalityFormula";
+            this.documentBugReport.Caption = "Сообщение о найденной ошибке";
+            this.documentBugReport.ControlName = "BugReport";
             // 
             // tileFormStatistics
             // 
             this.tileFormStatistics.ActivationTarget = this.tabbedGroupStatistics;
-            this.tileFormStatistics.Appearances.Normal.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.tileFormStatistics.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
-            this.tileFormStatistics.Appearances.Normal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tileFormStatistics.Appearances.Normal.Options.UseBackColor = true;
-            this.tileFormStatistics.Appearances.Normal.Options.UseBorderColor = true;
-            this.tileFormStatistics.Appearances.Normal.Options.UseFont = true;
-            tileItemElement26.Image = global::EduFormManager.Properties.Resources.analytics_icon;
-            tileItemElement26.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
-            tileItemElement26.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement26.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement26.ImageSize = new System.Drawing.Size(80, 80);
-            tileItemElement26.Text = "Статистика";
-            tileItemElement26.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.tileFormStatistics.Elements.Add(tileItemElement26);
-            this.tileFormStatistics.Group = "TileGroup3";
+            tileItemElement27.Image = global::EduFormManager.Properties.Resources.Statistics_32;
+            tileItemElement27.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
+            tileItemElement27.Text = "Статистика";
+            tileItemElement27.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            this.tileFormStatistics.Elements.Add(tileItemElement27);
+            this.tileFormStatistics.Group = "4Group";
             this.tileContainerMain.SetID(this.tileFormStatistics, 9);
             this.tileFormStatistics.Name = "tileFormStatistics";
-            this.tileFormStatistics.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.tileFormStatistics.Properties.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.tileFormStatistics.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileFormStatistics.Tag = "Statistics";
             // 
             // tabbedGroupStatistics
@@ -974,182 +919,154 @@ namespace EduFormManager
             this.documentMunicipalityFormDetailedStatistics.Caption = "Статистика форм (детально) муниципалитетов";
             this.documentMunicipalityFormDetailedStatistics.ControlName = "MunicipalityFormDetailedStatistics";
             // 
-            // tileMessageList
+            // tileDictionaries
             // 
-            this.tileMessageList.ActivationTarget = this.pageMessageList;
-            this.tileMessageList.Appearances.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(141)))));
-            this.tileMessageList.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
-            this.tileMessageList.Appearances.Normal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tileMessageList.Appearances.Normal.Options.UseBackColor = true;
-            this.tileMessageList.Appearances.Normal.Options.UseBorderColor = true;
-            this.tileMessageList.Appearances.Normal.Options.UseFont = true;
-            tileItemElement27.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement27.Text = "0";
-            tileItemElement27.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
-            tileItemElement28.Image = global::EduFormManager.Properties.Resources.email_icon;
-            tileItemElement28.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
-            tileItemElement28.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement28.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement28.ImageSize = new System.Drawing.Size(80, 80);
-            tileItemElement28.Text = "Сообщения";
-            tileItemElement28.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.tileMessageList.Elements.Add(tileItemElement27);
-            this.tileMessageList.Elements.Add(tileItemElement28);
-            this.tileMessageList.Group = "TileGroup3";
-            this.tileContainerMain.SetID(this.tileMessageList, 8);
-            this.tileMessageList.Name = "tileMessageList";
-            this.tileMessageList.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.tileMessageList.Tag = "MessageList";
+            this.tileDictionaries.ActivationTarget = this.tileContainerDictionaries;
+            tileItemElement33.Image = global::EduFormManager.Properties.Resources.Library_32;
+            tileItemElement33.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
+            tileItemElement33.Text = "Справочники";
+            tileItemElement33.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            this.tileDictionaries.Elements.Add(tileItemElement33);
+            this.tileDictionaries.Enabled = true;
+            this.tileDictionaries.Group = "4Group";
+            this.tileContainerMain.SetID(this.tileDictionaries, 2);
+            this.tileDictionaries.Name = "tileDictionaries";
+            this.tileDictionaries.Properties.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.tileDictionaries.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.tileDictionaries.Tag = "Dictionaries";
             // 
-            // pageMessageList
+            // tileContainerDictionaries
             // 
-            this.pageMessageList.Caption = "Сообщения";
-            this.pageMessageList.Document = this.documentMessageList;
-            this.pageMessageList.Name = "pageMessageList";
-            this.pageMessageList.Parent = this.tileContainerMain;
+            this.tileContainerDictionaries.AppearanceButton.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(198)))));
+            this.tileContainerDictionaries.AppearanceButton.Normal.Options.UseForeColor = true;
+            this.tileContainerDictionaries.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(116)))), ((int)(((byte)(169)))));
+            this.tileContainerDictionaries.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Transparent;
+            this.tileContainerDictionaries.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tileContainerDictionaries.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.tileContainerDictionaries.AppearanceItem.Normal.Options.UseBorderColor = true;
+            this.tileContainerDictionaries.AppearanceItem.Normal.Options.UseFont = true;
+            this.tileContainerDictionaries.Caption = "Справочники";
+            this.tileContainerDictionaries.Items.AddRange(new DevExpress.XtraBars.Docking2010.Views.WindowsUI.BaseTile[] {
+            this.tileDictMunicipality,
+            this.tileDictEdu,
+            this.tileDictTemplate,
+            this.tileDictForms,
+            this.tileDictMunicipalityFormula});
+            this.tileContainerDictionaries.Name = "tileContainerDictionaries";
+            this.tileContainerDictionaries.Parent = this.tileContainerMain;
+            this.tileContainerDictionaries.Properties.IndentBetweenGroups = 1;
+            this.tileContainerDictionaries.Properties.IndentBetweenItems = 6;
+            this.tileContainerDictionaries.Properties.ItemSize = 95;
             // 
-            // documentMessageList
+            // tileDictMunicipality
             // 
-            this.documentMessageList.Caption = "Сообщения";
-            this.documentMessageList.ControlName = "MessageList";
-            this.documentMessageList.Tag = "MessageList";
+            this.tileDictMunicipality.ActivationTarget = this.pageMunit;
+            tileItemElement28.Text = "Муниципалитеты";
+            tileItemElement28.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            this.tileDictMunicipality.Elements.Add(tileItemElement28);
+            this.tileDictMunicipality.Name = "tileDictMunicipality";
+            this.tileDictMunicipality.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             // 
-            // tileMessage
+            // pageMunit
             // 
-            this.tileMessage.ActivationTarget = this.tileContainerMessage;
-            this.tileMessage.Appearances.Normal.BackColor = System.Drawing.Color.SteelBlue;
-            this.tileMessage.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
-            this.tileMessage.Appearances.Normal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tileMessage.Appearances.Normal.Options.UseBackColor = true;
-            this.tileMessage.Appearances.Normal.Options.UseBorderColor = true;
-            this.tileMessage.Appearances.Normal.Options.UseFont = true;
-            tileItemElement32.Image = global::EduFormManager.Properties.Resources.email_2_icon;
-            tileItemElement32.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
-            tileItemElement32.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement32.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement32.ImageSize = new System.Drawing.Size(80, 80);
-            tileItemElement32.Text = "Отправить сообщение";
-            tileItemElement32.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.tileMessage.Elements.Add(tileItemElement32);
-            this.tileMessage.Group = "TileGroup3";
-            this.tileContainerMain.SetID(this.tileMessage, 7);
-            this.tileMessage.Name = "tileMessage";
-            this.tileMessage.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.tileMessage.Tag = "Message";
+            this.pageMunit.Caption = "Муниципалитеты";
+            this.pageMunit.Document = this.documentDictMunicipality;
+            this.pageMunit.Name = "pageMunit";
+            this.pageMunit.Parent = this.tileContainerDictionaries;
             // 
-            // tileContainerMessage
+            // documentDictMunicipality
             // 
-            this.tileContainerMessage.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(198)))));
-            this.tileContainerMessage.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileContainerMessage.Caption = "Отправить сообщение";
-            this.tileContainerMessage.Items.AddRange(new DevExpress.XtraBars.Docking2010.Views.WindowsUI.BaseTile[] {
-            this.tileRequestQuery,
-            this.tileBugReport});
-            this.tileContainerMessage.Name = "tileContainerMessage";
-            this.tileContainerMessage.Parent = this.tileContainerMain;
+            this.documentDictMunicipality.Caption = "Муниципалитеты";
+            this.documentDictMunicipality.ControlName = "DictMunicipality";
             // 
-            // tileRequestQuery
+            // tileDictEdu
             // 
-            this.tileRequestQuery.ActivationTarget = this.pageRequestQuery;
-            this.tileRequestQuery.Appearances.Normal.BackColor = System.Drawing.Color.DarkKhaki;
-            this.tileRequestQuery.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
-            this.tileRequestQuery.Appearances.Normal.Options.UseBackColor = true;
-            this.tileRequestQuery.Appearances.Normal.Options.UseBorderColor = true;
-            tileItemElement29.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileItemElement29.Appearance.Normal.Options.UseFont = true;
-            tileItemElement29.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement29.Text = "Новый запрос по требованию";
-            tileItemElement30.Image = global::EduFormManager.Properties.Resources.document_add_icon;
-            tileItemElement30.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
-            tileItemElement30.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement30.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement30.ImageSize = new System.Drawing.Size(128, 128);
-            tileItemElement30.Text = "";
-            this.tileRequestQuery.Elements.Add(tileItemElement29);
-            this.tileRequestQuery.Elements.Add(tileItemElement30);
-            this.tileRequestQuery.Name = "tileRequestQuery";
-            this.tileRequestQuery.Tag = "MessageRequestQuery";
+            this.tileDictEdu.ActivationTarget = this.pageEdu;
+            tileItemElement29.Text = "Образовательные организации";
+            tileItemElement29.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            this.tileDictEdu.Elements.Add(tileItemElement29);
+            this.tileContainerDictionaries.SetID(this.tileDictEdu, 2);
+            this.tileDictEdu.Name = "tileDictEdu";
+            this.tileDictEdu.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             // 
-            // pageRequestQuery
+            // pageEdu
             // 
-            this.pageRequestQuery.Document = this.documentRequestQuery;
-            this.pageRequestQuery.Name = "pageRequestQuery";
-            this.pageRequestQuery.Parent = this.tileContainerMessage;
+            this.pageEdu.Caption = "Образовательные организации";
+            this.pageEdu.Document = this.documentDictEdu;
+            this.pageEdu.Name = "pageEdu";
+            this.pageEdu.Parent = this.tileContainerDictionaries;
             // 
-            // documentRequestQuery
+            // documentDictEdu
             // 
-            this.documentRequestQuery.Caption = "Запрос по требованию";
-            this.documentRequestQuery.ControlName = "RequestQuery";
+            this.documentDictEdu.ActionCaption = "Назад";
+            this.documentDictEdu.Caption = "Образовательные организации";
+            this.documentDictEdu.ControlName = "DictEdu";
             // 
-            // tileBugReport
+            // tileDictTemplate
             // 
-            this.tileBugReport.ActivationTarget = this.pageBugReport;
-            this.tileBugReport.Appearances.Normal.BackColor = System.Drawing.Color.DarkKhaki;
-            this.tileBugReport.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
-            this.tileBugReport.Appearances.Normal.Options.UseBackColor = true;
-            this.tileBugReport.Appearances.Normal.Options.UseBorderColor = true;
-            tileItemElement31.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileItemElement31.Appearance.Normal.Options.UseFont = true;
-            tileItemElement31.Image = global::EduFormManager.Properties.Resources.document_file_icon;
-            tileItemElement31.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
-            tileItemElement31.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement31.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement31.ImageSize = new System.Drawing.Size(128, 128);
-            tileItemElement31.Text = "Сообщить об ошибке";
-            this.tileBugReport.Elements.Add(tileItemElement31);
-            this.tileContainerMessage.SetID(this.tileBugReport, 1);
-            this.tileBugReport.Name = "tileBugReport";
-            this.tileBugReport.Tag = "MessageBugReport";
+            this.tileDictTemplate.ActivationTarget = this.pageTemplate;
+            tileItemElement30.Text = "Шаблоны форм";
+            tileItemElement30.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            this.tileDictTemplate.Elements.Add(tileItemElement30);
+            this.tileContainerDictionaries.SetID(this.tileDictTemplate, 3);
+            this.tileDictTemplate.Name = "tileDictTemplate";
+            this.tileDictTemplate.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             // 
-            // pageBugReport
+            // pageTemplate
             // 
-            this.pageBugReport.Caption = "Сообщить об ошибке";
-            this.pageBugReport.Document = this.documentBugReport;
-            this.pageBugReport.Name = "pageBugReport";
-            this.pageBugReport.Parent = this.tileContainerMessage;
+            this.pageTemplate.Caption = "Шаблоны форм";
+            this.pageTemplate.Document = this.documentDictTemplate;
+            this.pageTemplate.Name = "pageTemplate";
+            this.pageTemplate.Parent = this.tileContainerDictionaries;
             // 
-            // documentBugReport
+            // documentDictTemplate
             // 
-            this.documentBugReport.Caption = "Сообщение о найденной ошибке";
-            this.documentBugReport.ControlName = "BugReport";
+            this.documentDictTemplate.Caption = "Шаблоны форм";
+            this.documentDictTemplate.ControlName = "DictTemplate";
             // 
-            // tileEduPasport
+            // tileDictForms
             // 
-            this.tileEduPasport.ActivationTarget = this.pageEduPassport;
-            this.tileEduPasport.Appearances.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tileEduPasport.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
-            this.tileEduPasport.Appearances.Normal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tileEduPasport.Appearances.Normal.Options.UseBackColor = true;
-            this.tileEduPasport.Appearances.Normal.Options.UseBorderColor = true;
-            this.tileEduPasport.Appearances.Normal.Options.UseFont = true;
-            tileItemElement33.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement33.Text = "Паспорт";
-            tileItemElement33.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            tileItemElement34.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            tileItemElement34.Appearance.Normal.Options.UseFont = true;
-            tileItemElement34.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement34.Text = "-";
-            tileItemElement34.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            this.tileEduPasport.Elements.Add(tileItemElement33);
-            this.tileEduPasport.Elements.Add(tileItemElement34);
-            this.tileEduPasport.Group = "TileGroup3";
-            this.tileContainerMain.SetID(this.tileEduPasport, 5);
-            this.tileEduPasport.Name = "tileEduPasport";
-            this.tileEduPasport.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.tileEduPasport.Tag = "EduPassport";
+            this.tileDictForms.ActivationTarget = this.pageForms;
+            tileItemElement31.Text = "Формы";
+            tileItemElement31.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            this.tileDictForms.Elements.Add(tileItemElement31);
+            this.tileContainerDictionaries.SetID(this.tileDictForms, 5);
+            this.tileDictForms.Name = "tileDictForms";
+            this.tileDictForms.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             // 
-            // pageEduPassport
+            // pageForms
             // 
-            this.pageEduPassport.Caption = "Паспорт образовательной организации";
-            this.pageEduPassport.Document = this.documentEduPasport;
-            this.pageEduPassport.Name = "pageEduPassport";
-            this.pageEduPassport.Parent = this.tileContainerMain;
+            this.pageForms.Caption = "Формы";
+            this.pageForms.Document = this.documentDictForms;
+            this.pageForms.Name = "pageForms";
+            this.pageForms.Parent = this.tileContainerDictionaries;
             // 
-            // documentEduPasport
+            // documentDictForms
             // 
-            this.documentEduPasport.Caption = "Паспорт";
-            this.documentEduPasport.ControlName = "Pasport";
-            this.documentEduPasport.Header = "LOL";
+            this.documentDictForms.Caption = "Формы";
+            this.documentDictForms.ControlName = "DictForms";
+            // 
+            // tileDictMunicipalityFormula
+            // 
+            this.tileDictMunicipalityFormula.ActivationTarget = this.pageMunicipalityFormula;
+            tileItemElement32.Text = "Формулы для заполнения муниципалитетных форм";
+            tileItemElement32.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            this.tileDictMunicipalityFormula.Elements.Add(tileItemElement32);
+            this.tileContainerDictionaries.SetID(this.tileDictMunicipalityFormula, 1);
+            this.tileDictMunicipalityFormula.Name = "tileDictMunicipalityFormula";
+            this.tileDictMunicipalityFormula.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            // 
+            // pageMunicipalityFormula
+            // 
+            this.pageMunicipalityFormula.Caption = "Сводные формулы";
+            this.pageMunicipalityFormula.Document = this.documentDictMunicipalityFormula;
+            this.pageMunicipalityFormula.Name = "pageMunicipalityFormula";
+            this.pageMunicipalityFormula.Parent = this.tileContainerDictionaries;
+            // 
+            // documentDictMunicipalityFormula
+            // 
+            this.documentDictMunicipalityFormula.Caption = "Сводные формулы";
+            this.documentDictMunicipalityFormula.ControlName = "DictMunicipalityFormula";
             // 
             // flyoutInProgress
             // 
@@ -1266,11 +1183,11 @@ namespace EduFormManager
             // tileDictCheck
             // 
             this.tileDictCheck.ActivationTarget = this.pageCheck;
-            tileItemElement35.ImageBorderColor = System.Drawing.Color.Empty;
-            tileItemElement35.Text = "Формулы";
-            this.tileDictCheck.Elements.Add(tileItemElement35);
+            tileItemElement34.Text = "Формулы";
+            tileItemElement34.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            this.tileDictCheck.Elements.Add(tileItemElement34);
             this.tileDictCheck.Name = "tileDictCheck";
-            this.tileDictCheck.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.tileDictCheck.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             // 
             // tileGroup1
             // 
@@ -1307,128 +1224,6 @@ namespace EduFormManager
             this.tileGroup4.Name = "tileGroup4";
             this.tileGroup4.Text = null;
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(116)))), ((int)(((byte)(169)))));
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.loggedUserControl, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.buttonShowLogs, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 3, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.54545F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.22727F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.09091F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1186, 88);
-            this.tableLayoutPanel1.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(206, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(423, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Министерство образования и науки Астраханской области";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(206, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(578, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Государственное бюджетное учреждение Астраханской области";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(206, 60);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(335, 25);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "\"Центр мониторинга в образовании\"";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::EduFormManager.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.tableLayoutPanel1.SetRowSpan(this.pictureBox1, 3);
-            this.pictureBox1.Size = new System.Drawing.Size(197, 82);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // loggedUserControl
-            // 
-            this.loggedUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.loggedUserControl.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.loggedUserControl.Appearance.Options.UseBackColor = true;
-            this.loggedUserControl.Location = new System.Drawing.Point(790, 10);
-            this.loggedUserControl.Name = "loggedUserControl";
-            this.tableLayoutPanel1.SetRowSpan(this.loggedUserControl, 3);
-            this.loggedUserControl.Size = new System.Drawing.Size(360, 68);
-            this.loggedUserControl.TabIndex = 4;
-            // 
-            // buttonShowLogs
-            // 
-            this.buttonShowLogs.FlatAppearance.BorderSize = 0;
-            this.buttonShowLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonShowLogs.Image = global::EduFormManager.Properties.Resources.glyphicons_144_folder_open_white;
-            this.buttonShowLogs.Location = new System.Drawing.Point(1156, 3);
-            this.buttonShowLogs.Name = "buttonShowLogs";
-            this.buttonShowLogs.Size = new System.Drawing.Size(24, 20);
-            this.buttonShowLogs.TabIndex = 7;
-            this.toolTip.SetToolTip(this.buttonShowLogs, "Открыть каталог с логами");
-            this.buttonShowLogs.UseVisualStyleBackColor = true;
-            this.buttonShowLogs.Click += new System.EventHandler(this.buttonShowLogs_Click);
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::EduFormManager.Properties.Resources.Exclamation_24_white;
-            this.button1.Location = new System.Drawing.Point(1156, 29);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(25, 25);
-            this.button1.TabIndex = 6;
-            this.toolTip.SetToolTip(this.button1, "Показать уведомления");
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // navigationBar
-            // 
-            this.navigationBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.navigationBar.Home = this.tileContainerMain;
-            this.navigationBar.Location = new System.Drawing.Point(0, 0);
-            this.navigationBar.Name = "navigationBar";
-            this.navigationBar.Size = new System.Drawing.Size(1186, 32);
-            this.navigationBar.TabIndex = 5;
-            // 
             // splitContainerControl2
             // 
             this.splitContainerControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1436,56 +1231,178 @@ namespace EduFormManager
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainerControl2.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel1;
             this.splitContainerControl2.Horizontal = false;
+            this.splitContainerControl2.IsSplitterFixed = true;
             this.splitContainerControl2.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl2.LookAndFeel.SkinName = "Office 2013";
             this.splitContainerControl2.LookAndFeel.UseDefaultLookAndFeel = false;
             this.splitContainerControl2.Name = "splitContainerControl2";
-            this.splitContainerControl2.Panel1.Controls.Add(this.tableLayoutPanel1);
+            this.splitContainerControl2.Panel1.Controls.Add(this.layoutControl1);
             this.splitContainerControl2.Panel1.Text = "Panel1";
-            this.splitContainerControl2.Panel2.Controls.Add(this.flyoutPanel1);
+            this.splitContainerControl2.Panel2.Controls.Add(this.flyoutPanelNotifications);
             this.splitContainerControl2.Panel2.Controls.Add(this.panel1);
-            this.splitContainerControl2.Panel2.Controls.Add(this.navigationBar);
+            this.splitContainerControl2.Panel2.Controls.Add(this.xtraNavPane);
             this.splitContainerControl2.Panel2.Text = "Panel2";
             this.splitContainerControl2.Size = new System.Drawing.Size(1186, 706);
-            this.splitContainerControl2.SplitterPosition = 88;
+            this.splitContainerControl2.SplitterPosition = 110;
             this.splitContainerControl2.TabIndex = 6;
             this.splitContainerControl2.Text = "splitContainerControl2";
             // 
-            // flyoutPanel1
+            // layoutControl1
             // 
-            this.flyoutPanel1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(116)))), ((int)(((byte)(169)))));
-            this.flyoutPanel1.Appearance.Options.UseBackColor = true;
-            this.flyoutPanel1.Controls.Add(this.flyoutPanelControl1);
-            this.flyoutPanel1.Location = new System.Drawing.Point(758, 32);
-            this.flyoutPanel1.Name = "flyoutPanel1";
-            this.flyoutPanel1.Options.AnchorType = DevExpress.Utils.Win.PopupToolWindowAnchor.Right;
-            this.flyoutPanel1.Options.CloseOnOuterClick = true;
-            this.flyoutPanel1.OptionsBeakPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(116)))), ((int)(((byte)(169)))));
-            this.flyoutPanel1.OptionsButtonPanel.AppearanceButton.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.flyoutPanel1.OptionsButtonPanel.AppearanceButton.Normal.Options.UseBackColor = true;
-            this.flyoutPanel1.OptionsButtonPanel.ButtonPanelContentAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.flyoutPanel1.OptionsButtonPanel.ButtonPanelHeight = 35;
-            this.flyoutPanel1.OptionsButtonPanel.ButtonPanelLocation = DevExpress.Utils.FlyoutPanelButtonPanelLocation.Top;
-            this.flyoutPanel1.OptionsButtonPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.Utils.PeekFormButton("Close", global::EduFormManager.Properties.Resources.close01_white1, false, true, "Закрыть панель")});
-            this.flyoutPanel1.OptionsButtonPanel.ShowButtonPanel = true;
-            this.flyoutPanel1.OwnerControl = this.splitContainerControl2;
-            this.flyoutPanel1.Padding = new System.Windows.Forms.Padding(0, 35, 0, 0);
-            this.flyoutPanel1.ParentForm = this;
-            this.flyoutPanel1.Size = new System.Drawing.Size(361, 124);
-            this.flyoutPanel1.TabIndex = 7;
-            this.flyoutPanel1.ButtonClick += new DevExpress.Utils.FlyoutPanelButtonClickEventHandler(this.flyoutPanel1_ButtonClick);
+            this.layoutControl1.Controls.Add(this.buttonShowNotifications);
+            this.layoutControl1.Controls.Add(this.buttonShowLogs);
+            this.layoutControl1.Controls.Add(this.labelLoggedUser);
+            this.layoutControl1.Controls.Add(this.labelHeader);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1195, 159, 250, 350);
+            this.layoutControl1.Root = this.layoutControlGroup1;
+            this.layoutControl1.Size = new System.Drawing.Size(1186, 110);
+            this.layoutControl1.TabIndex = 3;
+            this.layoutControl1.Text = "layoutControl1";
             // 
-            // flyoutPanelControl1
+            // buttonShowNotifications
             // 
-            this.flyoutPanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.flyoutPanelControl1.Controls.Add(this.collapsableSideListBoxControl1);
-            this.flyoutPanelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flyoutPanelControl1.FlyoutPanel = this.flyoutPanel1;
-            this.flyoutPanelControl1.Location = new System.Drawing.Point(0, 35);
-            this.flyoutPanelControl1.Name = "flyoutPanelControl1";
-            this.flyoutPanelControl1.Size = new System.Drawing.Size(361, 89);
-            this.flyoutPanelControl1.TabIndex = 0;
+            this.buttonShowNotifications.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.buttonShowNotifications.Image = global::EduFormManager.Properties.Resources.Info_26;
+            this.buttonShowNotifications.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.buttonShowNotifications.Location = new System.Drawing.Point(1129, 48);
+            this.buttonShowNotifications.Name = "buttonShowNotifications";
+            this.buttonShowNotifications.Size = new System.Drawing.Size(45, 32);
+            this.buttonShowNotifications.TabIndex = 4;
+            this.buttonShowNotifications.Click += new System.EventHandler(this.buttonShowNotifications_Click);
+            // 
+            // buttonShowLogs
+            // 
+            this.buttonShowLogs.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.buttonShowLogs.Image = global::EduFormManager.Properties.Resources.Folder_26;
+            this.buttonShowLogs.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.buttonShowLogs.Location = new System.Drawing.Point(1129, 12);
+            this.buttonShowLogs.Name = "buttonShowLogs";
+            this.buttonShowLogs.Size = new System.Drawing.Size(45, 32);
+            this.buttonShowLogs.TabIndex = 8;
+            this.buttonShowLogs.Click += new System.EventHandler(this.buttonShowLogs_Click);
+            // 
+            // labelLoggedUser
+            // 
+            this.labelLoggedUser.Appearance.Font = new System.Drawing.Font("Segoe UI Light", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelLoggedUser.Appearance.Image = global::EduFormManager.Properties.Resources.User_32;
+            this.labelLoggedUser.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelLoggedUser.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelLoggedUser.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelLoggedUser.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.RightTop;
+            this.labelLoggedUser.Location = new System.Drawing.Point(668, 12);
+            this.labelLoggedUser.Name = "labelLoggedUser";
+            this.labelLoggedUser.Size = new System.Drawing.Size(457, 36);
+            this.labelLoggedUser.StyleController = this.layoutControl1;
+            this.labelLoggedUser.TabIndex = 6;
+            this.labelLoggedUser.Text = "user";
+            // 
+            // labelHeader
+            // 
+            this.labelHeader.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.labelHeader.Appearance.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelHeader.Appearance.Image = global::EduFormManager.Properties.Resources.Logo_small;
+            this.labelHeader.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelHeader.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.labelHeader.Location = new System.Drawing.Point(12, 12);
+            this.labelHeader.Name = "labelHeader";
+            this.labelHeader.Size = new System.Drawing.Size(652, 84);
+            this.labelHeader.StyleController = this.layoutControl1;
+            this.labelHeader.TabIndex = 5;
+            this.labelHeader.Text = "Министерство образования и науки Астраханской области\r\nГосударственное бюджетное " +
+    "учреждение Астраханской области\r\nЦентр мониторинга в образовании";
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem2,
+            this.layoutControlItem1,
+            this.layoutControlItem3,
+            this.layoutControlItem4});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "Root";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1186, 110);
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.labelHeader;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(656, 90);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.labelLoggedUser;
+            this.layoutControlItem1.ControlAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.layoutControlItem1.Location = new System.Drawing.Point(656, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(461, 90);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.buttonShowLogs;
+            this.layoutControlItem3.Location = new System.Drawing.Point(1117, 0);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(49, 36);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.buttonShowNotifications;
+            this.layoutControlItem4.Location = new System.Drawing.Point(1117, 36);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(49, 54);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
+            // 
+            // flyoutPanelNotifications
+            // 
+            this.flyoutPanelNotifications.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(116)))), ((int)(((byte)(169)))));
+            this.flyoutPanelNotifications.Appearance.ForeColor = System.Drawing.Color.White;
+            this.flyoutPanelNotifications.Appearance.Options.UseBackColor = true;
+            this.flyoutPanelNotifications.Appearance.Options.UseForeColor = true;
+            this.flyoutPanelNotifications.Controls.Add(this.flyoutPanelNotificationsControl);
+            this.flyoutPanelNotifications.Location = new System.Drawing.Point(758, 32);
+            this.flyoutPanelNotifications.Name = "flyoutPanelNotifications";
+            this.flyoutPanelNotifications.Options.AnchorType = DevExpress.Utils.Win.PopupToolWindowAnchor.Right;
+            this.flyoutPanelNotifications.Options.CloseOnOuterClick = true;
+            this.flyoutPanelNotifications.OptionsBeakPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(116)))), ((int)(((byte)(169)))));
+            this.flyoutPanelNotifications.OptionsButtonPanel.AllowGlyphSkinning = true;
+            this.flyoutPanelNotifications.OptionsButtonPanel.AppearanceButton.Normal.BackColor = System.Drawing.Color.Transparent;
+            this.flyoutPanelNotifications.OptionsButtonPanel.AppearanceButton.Normal.Options.UseBackColor = true;
+            this.flyoutPanelNotifications.OptionsButtonPanel.ButtonPanelContentAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.flyoutPanelNotifications.OptionsButtonPanel.ButtonPanelHeight = 35;
+            this.flyoutPanelNotifications.OptionsButtonPanel.ButtonPanelLocation = DevExpress.Utils.FlyoutPanelButtonPanelLocation.Top;
+            this.flyoutPanelNotifications.OptionsButtonPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
+            new DevExpress.Utils.PeekFormButton("Close", global::EduFormManager.Properties.Resources.Cancel_26, false, true, "Закрыть панель")});
+            this.flyoutPanelNotifications.OptionsButtonPanel.ShowButtonPanel = true;
+            this.flyoutPanelNotifications.OwnerControl = this.splitContainerControl2;
+            this.flyoutPanelNotifications.Padding = new System.Windows.Forms.Padding(0, 35, 0, 0);
+            this.flyoutPanelNotifications.ParentForm = this;
+            this.flyoutPanelNotifications.Size = new System.Drawing.Size(361, 124);
+            this.flyoutPanelNotifications.TabIndex = 7;
+            this.flyoutPanelNotifications.ButtonClick += new DevExpress.Utils.FlyoutPanelButtonClickEventHandler(this.flyoutPanel1_ButtonClick);
+            // 
+            // flyoutPanelNotificationsControl
+            // 
+            this.flyoutPanelNotificationsControl.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.flyoutPanelNotificationsControl.Controls.Add(this.collapsableSideListBoxControl1);
+            this.flyoutPanelNotificationsControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flyoutPanelNotificationsControl.FlyoutPanel = this.flyoutPanelNotifications;
+            this.flyoutPanelNotificationsControl.Location = new System.Drawing.Point(0, 35);
+            this.flyoutPanelNotificationsControl.Name = "flyoutPanelNotificationsControl";
+            this.flyoutPanelNotificationsControl.Size = new System.Drawing.Size(361, 89);
+            this.flyoutPanelNotificationsControl.TabIndex = 0;
             // 
             // collapsableSideListBoxControl1
             // 
@@ -1512,8 +1429,18 @@ namespace EduFormManager
             this.panel1.Controls.Add(this.docContainer);
             this.panel1.Location = new System.Drawing.Point(0, 32);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1186, 571);
+            this.panel1.Size = new System.Drawing.Size(1186, 549);
             this.panel1.TabIndex = 8;
+            // 
+            // xtraNavPane
+            // 
+            this.xtraNavPane.Dock = System.Windows.Forms.DockStyle.Top;
+            this.xtraNavPane.Home = null;
+            this.xtraNavPane.Location = new System.Drawing.Point(0, 0);
+            this.xtraNavPane.MaximumSize = new System.Drawing.Size(0, 26);
+            this.xtraNavPane.Name = "xtraNavPane";
+            this.xtraNavPane.Size = new System.Drawing.Size(1186, 26);
+            this.xtraNavPane.TabIndex = 9;
             // 
             // expireWarnBindingSource
             // 
@@ -1524,7 +1451,7 @@ namespace EduFormManager
             this.toolTip.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.toolTip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             // 
-            // mainForm
+            // MainForm
             // 
             this.Appearance.BackColor = System.Drawing.SystemColors.Window;
             this.Appearance.Options.UseBackColor = true;
@@ -1533,7 +1460,9 @@ namespace EduFormManager
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "mainForm";
+            this.LookAndFeel.SkinName = "Office 2013";
+            this.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Статистика";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_FormClosing);
@@ -1543,16 +1472,16 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.tileContainerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileForms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileMunicipalityForms)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileArchiveForms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileArchiveMunicipalityAdditonalForms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileMunicipalityAdditonalForms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileAdditionalForms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileArchiveAdditionalForms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileArchiveMunicipalityForms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileArchiveForms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileSpreadsheet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageGroupUploadForm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentUploadSheetFromTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentUploadSheetFromFile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileAdditionalForms)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileArchiveAdditionalForms)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileMunicipalityAdditonalForms)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileArchiveMunicipalityAdditonalForms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileQueries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageGroupQueries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentQueriesEdu)).EndInit();
@@ -1560,6 +1489,28 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.tileCreateQuery)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageCreateQuery)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentCreateQuery)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileEduPasport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageEduPassport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentEduPasport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileMessageList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageMessageList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentMessageList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileMessage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileContainerMessage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileRequestQuery)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageRequestQuery)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentRequestQuery)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileBugReport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageBugReport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentBugReport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileFormStatistics)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabbedGroupStatistics)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentFormStatistics)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentFormStatisticsSummary)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentFormDetailedStatistics)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentSignInOutLog)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentMunicipalityFormStatistics)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentMunicipalityFormDetailedStatistics)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileDictionaries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileContainerDictionaries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileDictMunicipality)).EndInit();
@@ -1577,28 +1528,6 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.tileDictMunicipalityFormula)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageMunicipalityFormula)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentDictMunicipalityFormula)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileFormStatistics)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabbedGroupStatistics)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentFormStatistics)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentFormStatisticsSummary)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentFormDetailedStatistics)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentSignInOutLog)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentMunicipalityFormStatistics)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentMunicipalityFormDetailedStatistics)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileMessageList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pageMessageList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentMessageList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileMessage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileContainerMessage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileRequestQuery)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pageRequestQuery)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentRequestQuery)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileBugReport)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pageBugReport)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentBugReport)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileEduPasport)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pageEduPassport)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentEduPasport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.flyoutInProgress)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentInProgress)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.flyoutQuit)).EndInit();
@@ -1617,15 +1546,19 @@ namespace EduFormManager
             ((System.ComponentModel.ISupportInitialize)(this.pageDetailedMunicipalityStatisticsReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentMunicipalityFormDetailedStatisticsReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileDictCheck)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
             this.splitContainerControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanel1)).EndInit();
-            this.flyoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControl1)).EndInit();
-            this.flyoutPanelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelNotifications)).EndInit();
+            this.flyoutPanelNotifications.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelNotificationsControl)).EndInit();
+            this.flyoutPanelNotificationsControl.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.expireWarnBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -1656,12 +1589,7 @@ namespace EduFormManager
         private Document documentCreateQuery;
 
         private DocumentManagerContainer docContainer;
-        private TableLayoutPanel tableLayoutPanel1;
-        private Label label1;
-        private Label label2;
-        private Label label3;
         private Document documentEduPasport;
-        private PictureBox pictureBox1;
 
 
         private Document documentRequestQuery;
@@ -1692,8 +1620,6 @@ namespace EduFormManager
         private Flyout flyoutMessage;
         private Tile tileDictForms;
         private Document documentDictForms;
-        private XtraLoggedUserControl loggedUserControl;
-        private NavigationBar navigationBar;
         private Page pageEduPassport;
         private Page pageMunit;
         private Page pageCheck;
@@ -1709,13 +1635,11 @@ namespace EduFormManager
         private PageGroup pageGroupUploadForm;
         private Document documentUploadSheetFromTemplate;
         private SplitContainerControl splitContainerControl2;
-        private FlyoutPanel flyoutPanel1;
-        private FlyoutPanelControl flyoutPanelControl1;
+        private FlyoutPanel flyoutPanelNotifications;
+        private FlyoutPanelControl flyoutPanelNotificationsControl;
         private BindingSource expireWarnBindingSource;
         private CollapsableSideListBoxControl collapsableSideListBoxControl1;
-        private Button button1;
         private Panel panel1;
-        private Button buttonShowLogs;
         private Document documentSignInOutLog;
         private Tile tileMunicipalityForms;
         private Tile tileArchiveAdditionalForms;
@@ -1742,6 +1666,17 @@ namespace EduFormManager
         private PageGroup pageGroupQueries;
         private Document documentQueriesMunicipality;
         private Page pageTemplate;
+        private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private LabelControl labelHeader;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private LabelControl labelLoggedUser;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private SimpleButton buttonShowLogs;
+        private SimpleButton buttonShowNotifications;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private XtraNavPane xtraNavPane;
     }
 }
 

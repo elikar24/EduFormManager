@@ -118,80 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="warning_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\warning-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="contact_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\contact-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="analytics_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\analytics-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="clock_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\clock-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="broken_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\close-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document_file_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\document-file-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="summary_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\summary-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="email_2_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\email-2-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="email_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\email-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="stat_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\stat-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="note_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\note-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="chart_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\chart-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="check_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\check-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_user_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\icon-user-default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document_add_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\document-add-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="close01_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close01_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="archive_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\file-folder-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="email_upload_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\email-upload-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="reload-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\reload-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Arrow_upload_2_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\Arrow-upload-2-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="upload_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\upload-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="glyphicons_029_notes_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\glyphs\glyphicons_029_notes_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="glyphicons_081_refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\glyphicons_081_refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="glyphicons_081_refresh_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\glyphs\glyphicons_081_refresh_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="glyphicons_144_folder_open" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\glyphs\glyphicons_144_folder_open.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,29 +145,8 @@
   <data name="glyphicons_432_plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\glyphs\glyphicons_432_plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\glyphs\mail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Exclamation_24_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\glyphs\Exclamation-24-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="glyphicons_207_remove_2_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\glyphs\glyphicons_207_remove_2_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="close01_white1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close01_white1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="glyphicons_144_folder_open_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\glyphs\glyphicons_144_folder_open_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="warning_icon_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\warning-icon-24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="three_dots_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\glyphs\three_dots_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="close01_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\glyphs\close01_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="glyph_print" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\glyph_print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -252,5 +162,116 @@
   </data>
   <data name="Home_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Home-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Checked_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Checked-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Checked_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Checked-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Empty_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Empty-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Empty_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Empty-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cancel_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cancel-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cancel_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cancel-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delete_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delete_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Expired_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Expired-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Expired_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Expired-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddList_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddList-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddList_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddList-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BoxFilled_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BoxFilled-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BoxFilled_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BoxFilled-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Box_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Box-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Box_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Box-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BusinessContact_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BusinessContact-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BusinessContact_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BusinessContact-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Feedback_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Feedback-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Feedback_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Feedback-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Folder_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Folder-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Folder_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Folder-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Info_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Info-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Info_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Info-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Library_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Library-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Library_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Library-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="List_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\List-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="List_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\List-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Message_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Message-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Message_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Message-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Statistics_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Statistics-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Statistics_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Statistics-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Upload_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Upload-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Upload_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Upload-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="User_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\User-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="User_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\User-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

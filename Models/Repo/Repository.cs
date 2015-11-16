@@ -437,12 +437,12 @@ namespace Models.Repo
 
         public Task<bool> GetIsQueryExist(query query)
         {
-            return _db.queries.AnyAsync(t => String.Equals(t.title.Trim(), query.title.Trim(), StringComparison.CurrentCultureIgnoreCase));
+            return _db.queries.AnyAsync(t => t.title.Trim().ToLower() == query.title.Trim().ToLower());
         }
 
         public Task<bool> GetIsQueryHeadPartExist(query_head_part part)
         {
-            return _db.query_head_part.AnyAsync(t => String.Equals(t.title.Trim(), part.title.Trim(), StringComparison.CurrentCultureIgnoreCase));
+            return _db.query_head_part.AnyAsync(t => t.title.Trim().ToLower() == part.title.Trim().ToLower());
         }
 
         #endregion

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -56,7 +57,21 @@ namespace EduFormManager.Forms.Reports
                             {
                                 var propName = content.Substring(1);
                                 var propInfo = typeof (edu).GetProperty(propName);
-                                stringValue = propInfo.GetValue(edu).ToString();
+                                var value = propInfo.GetValue(edu);
+                                var valueType = value.GetType();
+                                if (valueType.GetInterface("System.Collections.IEnumerable") != null)
+                                {
+                                    var collection = (IEnumerable<object>) value;
+                                    stringValue = collection.Join(", ");
+                                }
+                                else if (valueType == typeof (bool))
+                                {
+                                    stringValue = (bool) value ? "Да" : "Нет";
+                                }
+                                else
+                                {
+                                    stringValue = value.ToString();
+                                }
                             }
                             else
                             {

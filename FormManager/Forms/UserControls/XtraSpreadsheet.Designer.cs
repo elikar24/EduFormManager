@@ -65,7 +65,6 @@ namespace EduFormManager.Forms.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.messageBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formBindingSource)).BeginInit();
-            this.toolStripForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -104,8 +103,6 @@ namespace EduFormManager.Forms.UserControls
             this.toolStripForm.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStripForm.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.toolStripForm.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStripForm.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButtonForms});
             this.toolStripForm.Location = new System.Drawing.Point(62, 12);
             this.toolStripForm.Name = "toolStripForm";
             this.toolStripForm.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -225,8 +222,6 @@ namespace EduFormManager.Forms.UserControls
             this.flyoutPanelActions.OptionsButtonPanel.AllowGlyphSkinning = true;
             this.flyoutPanelActions.OptionsButtonPanel.ButtonPanelContentAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.flyoutPanelActions.OptionsButtonPanel.ButtonPanelLocation = DevExpress.Utils.FlyoutPanelButtonPanelLocation.Bottom;
-            this.flyoutPanelActions.OptionsButtonPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.Utils.PeekFormButton("Закрыть", global::EduFormManager.Properties.Resources.close01_black, -1, DevExpress.XtraEditors.ButtonPanel.ImageLocation.Default, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Закрыть", false, -1, true, null, true, false, true, null, "Close", -1, false)});
             this.flyoutPanelActions.OwnerControl = this;
             this.flyoutPanelActions.Size = new System.Drawing.Size(711, 115);
             this.flyoutPanelActions.TabIndex = 10;
@@ -257,9 +252,9 @@ namespace EduFormManager.Forms.UserControls
             // 
             // labelWarnEditDisabled
             // 
+            this.labelWarnEditDisabled.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.labelWarnEditDisabled.Appearance.Font = new System.Drawing.Font("Segoe UI Light", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelWarnEditDisabled.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.labelWarnEditDisabled.Appearance.Image = global::EduFormManager.Properties.Resources.Attention_26;
+            this.labelWarnEditDisabled.Appearance.Image = global::EduFormManager.Properties.Resources.Attention_32;
             this.labelWarnEditDisabled.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
             this.labelWarnEditDisabled.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.labelWarnEditDisabled.Location = new System.Drawing.Point(12, 12);
@@ -268,7 +263,7 @@ namespace EduFormManager.Forms.UserControls
             this.labelWarnEditDisabled.StyleController = this.layoutControl2;
             this.labelWarnEditDisabled.TabIndex = 5;
             this.labelWarnEditDisabled.Text = "Редактирование формы отключено, так как срок сдачи истек. Чтобы иметь возможность" +
-    " редактировать эту форму, обратитесь к администратору.";
+    " редактировать эту форму, обратитесь к региональному оператору";
             // 
             // buttonMenuFlyout
             // 
@@ -362,8 +357,6 @@ namespace EduFormManager.Forms.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.messageBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.formTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.formBindingSource)).EndInit();
-            this.toolStripForm.ResumeLayout(false);
-            this.toolStripForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();

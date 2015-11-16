@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -26,7 +27,7 @@ using NLog;
 
 namespace EduFormManager
 {
-    public partial class mainForm : XtraForm
+    public partial class MainForm : XtraForm
     {
         private static readonly Logger Logger = LogManager.GetLogger("app");
 
@@ -36,7 +37,7 @@ namespace EduFormManager
 
         XtraDictionaryEduPassportControl passportControl;
 
-        public mainForm()
+        public MainForm()
         {
             InitializeComponent();
             var version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
@@ -77,52 +78,52 @@ namespace EduFormManager
             else if (cred.IsMunicipality) this.tileForms.Tag = TagHelper.MUNICIPALITY + "-" + cred.MunitId;
             else this.tileForms.Tag = TagHelper.FEDERAL_EDU_FORMS_TAG;
             var eduFormsContainer = TileContainerHelper.CreateTileContainer(this.windowsUIViewMain, this.tileForms,
-                "Формы федерального статистического наблюдения", "", this.tileContainerMain);
+                "Формы федерального статистического наблюдения", "Формы ФСН", this.tileContainerMain);
             windowsUIViewMain.ContentContainers.Add(eduFormsContainer);
 
             if (cred.IsEdu) this.tileAdditionalForms.Tag = TagHelper.EDU + "-" + cred.EduId;
             else if (cred.IsMunicipality) this.tileAdditionalForms.Tag = TagHelper.MUNICIPALITY + "-" + cred.MunitId;
             else this.tileAdditionalForms.Tag = TagHelper.ADDON_EDU_FORMS_TAG;
             var eduAddonFormsContainer = TileContainerHelper.CreateTileContainer(this.windowsUIViewMain, this.tileAdditionalForms,
-                "Дополнительные формы", "", this.tileContainerMain);
+                "Дополнительные формы", " Доп. формы ФСН", this.tileContainerMain);
             windowsUIViewMain.ContentContainers.Add(eduAddonFormsContainer);
 
             if (cred.IsEdu) this.tileArchiveForms.Tag = TagHelper.EDU + "-" + cred.EduId;
             else if (cred.IsMunicipality) this.tileArchiveForms.Tag = TagHelper.MUNICIPALITY + "-" + cred.MunitId;
             else this.tileArchiveForms.Tag = TagHelper.ARCHIVE_FEDERAL_EDU_FORMS_TAG;
             var eduArchiveFormsContainer = TileContainerHelper.CreateTileContainer(this.windowsUIViewMain, this.tileArchiveForms,
-                "Архивные формы федерального статистического наблюдения", "", this.tileContainerMain);
+                "Архивные формы федерального статистического наблюдения", " Архивные формы ФСН", this.tileContainerMain);
             windowsUIViewMain.ContentContainers.Add(eduArchiveFormsContainer);
 
             if (cred.IsEdu) this.tileArchiveAdditionalForms.Tag = TagHelper.EDU + "-" + cred.EduId;
             else if (cred.IsMunicipality) this.tileArchiveAdditionalForms.Tag = TagHelper.MUNICIPALITY + "-" + cred.MunitId;
             else this.tileArchiveAdditionalForms.Tag = TagHelper.ARCHIVE_ADDON_EDU_FORMS_TAG;
             var eduArchiveAddonFormsContainer = TileContainerHelper.CreateTileContainer(this.windowsUIViewMain, this.tileArchiveAdditionalForms,
-                "Архивные дополнительные формы", "", this.tileContainerMain);
+                "Архивные дополнительные формы", "Архивные доп. формы ФСН", this.tileContainerMain);
             windowsUIViewMain.ContentContainers.Add(eduArchiveAddonFormsContainer);
 
             if (cred.IsMunicipality) this.tileMunicipalityForms.Tag = TagHelper.MUNICIPALITY + "-" + cred.MunitId;
             else this.tileMunicipalityForms.Tag = TagHelper.FEDERAL_MUNIT_FORMS_TAG;
             var munitFormsContainer = TileContainerHelper.CreateTileContainer(this.windowsUIViewMain, this.tileMunicipalityForms,
-                "Формы муниципалитетов", "", this.tileContainerMain);
+                "Формы муниципалитетов", "Формы муниципалитетов", this.tileContainerMain);
             windowsUIViewMain.ContentContainers.Add(munitFormsContainer);
 
             if (cred.IsMunicipality) this.tileMunicipalityAdditonalForms.Tag = TagHelper.MUNICIPALITY + "-" + cred.MunitId;
             else this.tileMunicipalityAdditonalForms.Tag = TagHelper.FEDERAL_MUNIT_FORMS_TAG;
             var munitAdditionalFormsContainer = TileContainerHelper.CreateTileContainer(this.windowsUIViewMain, this.tileMunicipalityAdditonalForms,
-                "Дополнительные формы муниципалитетов", "", this.tileContainerMain);
+                "Дополнительные формы муниципалитетов", "Доп. формы муниципалитетов", this.tileContainerMain);
             windowsUIViewMain.ContentContainers.Add(munitAdditionalFormsContainer);
 
             if (cred.IsMunicipality) this.tileArchiveMunicipalityForms.Tag = TagHelper.MUNICIPALITY + "-" + cred.MunitId;
             else this.tileArchiveMunicipalityForms.Tag = TagHelper.ARCHIVE_FEDERAL_MUNIT_FORMS_TAG;
             var munitArchiveFormsContainer = TileContainerHelper.CreateTileContainer(this.windowsUIViewMain, this.tileArchiveMunicipalityForms,
-                "Архивные формы муниципалитетов", "", this.tileContainerMain);
+                "Архивные формы муниципалитетов", "Архивные доп. формы муниципалитетов", this.tileContainerMain);
             windowsUIViewMain.ContentContainers.Add(munitArchiveFormsContainer);
 
             if (cred.IsMunicipality) this.tileArchiveMunicipalityAdditonalForms.Tag = TagHelper.MUNICIPALITY + "-" + cred.MunitId;
             else this.tileArchiveMunicipalityAdditonalForms.Tag = TagHelper.ARCHIVE_FEDERAL_MUNIT_FORMS_TAG;
             var munitArchiveAdditionalFormsContainer = TileContainerHelper.CreateTileContainer(this.windowsUIViewMain, this.tileArchiveMunicipalityAdditonalForms,
-                "Архивные дополнительные формы муниципалитетов", "", this.tileContainerMain);
+                "Архивные дополнительные формы муниципалитетов", "Архивные доп. формы муниципалитетов", this.tileContainerMain);
             windowsUIViewMain.ContentContainers.Add(munitArchiveAdditionalFormsContainer);
 
             tileEduPasport.Elements[1].Text = Authentication.Credentials.Name;
@@ -135,20 +136,20 @@ namespace EduFormManager
             if (!Authentication.Credentials.IsAdmin)
             {
                 await DbLogger.LogLoginAsync(Authentication.Credentials);
-                this.flyoutPanel1.ShowPopup();
+                this.flyoutPanelNotifications.ShowPopup();
             }
 
-            //foreach (var container in this.windowsUIViewMain.ContentContainers)
-            //{
-            //    if (container is Page)
-            //    {
-            //        Page page = container as Page;
+            foreach (var container in this.windowsUIViewMain.ContentContainers)
+            {
+                if (container is Page)
+                {
+                    Page page = container as Page;
 
-            //        page.AppearanceButton.Normal.ForeColor = System.Drawing.Color.FromArgb(0x02, 0x53, 0x8E);
-            //        page.AppearanceButton.Hovered.ForeColor = System.Drawing.Color.FromArgb(0, 114, 198);
-            //        page.AppearanceButton.Pressed.ForeColor = System.Drawing.Color.FromArgb(0x49, 0x92, 0xC8);
-            //    }
-            //}
+                    page.AppearanceButton.Normal.ForeColor = TileResources.FontColor;
+                    page.AppearanceButton.Hovered.ForeColor = Color.FromArgb(39,39,39);
+                    page.AppearanceButton.Pressed.ForeColor = Color.FromArgb(19, 19, 19);
+                }
+            }
 
             _progressDialog.HideTop();
         }
@@ -281,6 +282,7 @@ namespace EduFormManager
                 {
                     tileContainerMain.Items.Add(tileDictionaries);
                     tileContainerMain.Items.Add(tileMessageList);
+                    tileContainerMain.Items.Add(tileCreateQuery);
                 }
 
                 if (user.IsAdmin || user.IsMunicipality || user.IsMinistry)
@@ -290,8 +292,7 @@ namespace EduFormManager
                     tileContainerMain.Items.Add(tileMunicipalityAdditonalForms);
                     tileContainerMain.Items.Add(tileArchiveMunicipalityAdditonalForms);
                     tileContainerMain.Items.Add(tileQueries);
-                    if (!user.IsMinistry)
-                        tileContainerMain.Items.Add(tileCreateQuery);
+                    
 
                     tileContainerMain.Items.Add(tileFormStatistics);
                     if (user.IsMunicipality)
@@ -308,21 +309,21 @@ namespace EduFormManager
                     tileAdditionalForms.Tag = string.Format("Forms{0}", (int) FormType.OtherEdu);
                 }
 
-                this.loggedUserControl.Text = user.Name;
-                this.loggedUserControl.Cursor = Cursors.Hand;
+                this.labelLoggedUser.Text = user.Name;
+                this.labelLoggedUser.Cursor = Cursors.Hand;
                 if (user.IsEdu)
                 {
-                    this.loggedUserControl.Click += (s, e) =>
+                    this.labelLoggedUser.Click += (s, e) =>
                     {
                         this.windowsUIViewMain.ActivateContainer(pageEduPassport);
                     };
                 }
                 GuiUtility.NotifyAboutForms(user);
-                this.loggedUserControl.Text = Authentication.Credentials.Name;
+                this.labelLoggedUser.Text = Authentication.Credentials.Name;
             }
         }
 
-        async private void windowsUIView1_QueryControl(object sender, QueryControlEventArgs e)
+        async private void windowsUIViewMain_QueryControl(object sender, QueryControlEventArgs e)
         {
             try
             {
@@ -439,14 +440,14 @@ namespace EduFormManager
                             break;
                         }
                     case "DictForms":
-                    {
-                        var repo = new Repository();
+                        {
+                            var repo = new Repository();
                             var dictionaryFormControl = new XtraDictionaryFormsControl(this.windowsUIViewMain, repo);
-                        dictionaryFormControl.FormDataSource = await repo.GetForms();
-                        dictionaryFormControl.DataSourceEduKind = await repo.GetEduKinds();
-                        dictionaryFormControl.FormTypeDataSource = await repo.GetFormTypes();
+                            dictionaryFormControl.FormDataSource = await repo.GetForms();
+                            dictionaryFormControl.DataSourceEduKind = await repo.GetEduKinds();
+                            dictionaryFormControl.FormTypeDataSource = await repo.GetFormTypes();
 
-                        e.Control = dictionaryFormControl;
+                            e.Control = dictionaryFormControl;
                             break;
                         }
                     case "DictMunicipalityFormula":
@@ -640,61 +641,70 @@ namespace EduFormManager
                             break;
                         }
                     case "FormDetailedStatisticsReport":
-                    {
-                        var doc = this.windowsUIViewMain.Documents.FindFirst(t => t.ControlName == "FormDetailedStatistics");
-                        var formStatData = new List<t_detailed_form_statistics>();
-                        if (doc != null)
                         {
-                            formStatData = (List<t_detailed_form_statistics>)doc.Tag;
+                            var doc = this.windowsUIViewMain.Documents.FindFirst(t => t.ControlName == "FormDetailedStatistics");
+                            var formStatData = new List<t_detailed_form_statistics>();
+                            if (doc != null)
+                            {
+                                formStatData = (List<t_detailed_form_statistics>)doc.Tag;
+                            }
+                            var formStatisticReport = new XtraDetailedFormStatisticReport();
+                            var formStatisticReportControl = new XtraReportViewControl(this.windowsUIViewMain);
+                            formStatisticReport.FormStatisticDataSource = formStatData;
+                            formStatisticReportControl.Report = formStatisticReport;
+                            formStatisticReport.CreateDocument();
+
+                            e.Control = formStatisticReportControl;
+                            break;
                         }
-                        var formStatisticReport = new XtraDetailedFormStatisticReport();
-                        var formStatisticReportControl = new XtraReportViewControl(this.windowsUIViewMain);
-                        e.Control = formStatisticReportControl;
-                        
-                        formStatisticReport.FormStatisticDataSource = formStatData;
-                        formStatisticReportControl.Report = formStatisticReport;
-                        formStatisticReport.CreateDocument(true);
-                        break;
-                    }
                     case "FormDetailedStatistics":
                         {
                             var repo = new Repository();
-                            var control = new XtraFormDetailedStatisticControl(this.windowsUIViewMain, repo);
-                            e.Control = control;
-                            control.FormStatisticDataSource = Authentication.Credentials.IsMunicipality ?
-                                await repo.GetDetailedFormStatistics(Authentication.Credentials.MunitId, DateTime.Now.Year) :
-                                await repo.GetDetailedFormStatistics(DateTime.Now.Year);
-                            control.YearsDataSource = await repo.GetAvailableYears();
+                            var detailedFormStatisticsReport = new XtraFormDetailedStatisticControl(this.windowsUIViewMain, repo)
+                            {
+                                FormStatisticDataSource = Authentication.Credentials.IsMunicipality
+                                    ? repo.GetDetailedFormStatistics(Authentication.Credentials.MunitId, DateTime.Now.Year).Result
+                                    : repo.GetDetailedFormStatistics(DateTime.Now.Year).Result,
+                                YearsDataSource = await repo.GetAvailableYears()
+                            };
+                            
+                            e.Control = detailedFormStatisticsReport;
                             break;
                         }
                     case "FormStatistics":
                         using (var repo = new Repository())
                         {
-                            var formStatisticReport = new XtraFormStatisticReport();
-                            var formStatisticReportControl = new XtraReportViewControl(this.windowsUIViewMain);
-
+                            var formStatisticReport = new XtraFormStatisticReport
+                            {
+                                FormStatisticDataSource = Authentication.Credentials.IsMunicipality
+                                    ? repo.GetFormStatistics(Authentication.Credentials.MunitId).Result
+                                    : repo.GetFormStatistics().Result
+                            };
+                            var formStatisticReportControl = new XtraReportViewControl(this.windowsUIViewMain) 
+                            {
+                                Report = formStatisticReport
+                            };
+                            formStatisticReport.CreateDocument();
+                            
                             e.Control = formStatisticReportControl;
-
-                            formStatisticReport.FormStatisticDataSource = Authentication.Credentials.IsMunicipality ?
-                                await repo.GetFormStatistics(Authentication.Credentials.MunitId) :
-                                await repo.GetFormStatistics();
-                            formStatisticReportControl.Report = formStatisticReport;
-                            formStatisticReport.CreateDocument(false);
                             break;
                         }
                     case "MunicipalityFormStatistics":
                         using (var repo = new Repository())
                         {
-                            var formStatisticReport = new XtraMunicipalityFormStatisticReport();
-                            var formStatisticReportControl = new XtraReportViewControl(this.windowsUIViewMain);
+                            var formStatisticReport = new XtraMunicipalityFormStatisticReport //не ясно почему вылетает deferredloadexception, если использовать await
+                            {
+                                FormStatisticDataSource = Authentication.Credentials.IsMunicipality
+                                    ? repo.GetMunicipalityFormStatistics(Authentication.Credentials.MunitId).Result
+                                    : repo.GetMunicipalityFormStatistics().Result
+                            };
+                            var formStatisticReportControl = new XtraReportViewControl(this.windowsUIViewMain)
+                            {
+                                Report = formStatisticReport
+                            };
+                            formStatisticReport.CreateDocument();
 
                             e.Control = formStatisticReportControl;
-
-                            formStatisticReport.FormStatisticDataSource = Authentication.Credentials.IsMunicipality ?
-                                await repo.GetMunicipalityFormStatistics(Authentication.Credentials.MunitId) :
-                                await repo.GetMunicipalityFormStatistics();
-                            formStatisticReportControl.Report = formStatisticReport;
-                            formStatisticReport.CreateDocument(false);
                             break;
                         }
                     case "MunicipalityFormDetailedStatisticsReport":
@@ -707,38 +717,44 @@ namespace EduFormManager
                             }
                             var formStatisticReport = new XtraDetailedMunicipalityFormStatisticReport();
                             var formStatisticReportControl = new XtraReportViewControl(this.windowsUIViewMain);
-                            e.Control = formStatisticReportControl;
-
+                            
                             formStatisticReport.FormStatisticDataSource = formStatData;
                             formStatisticReportControl.Report = formStatisticReport;
-                            formStatisticReport.CreateDocument(true);
+                            formStatisticReport.CreateDocument();
+
+                            e.Control = formStatisticReportControl;
                             break;
                         }
                     case "MunicipalityFormDetailedStatistics":
                         {
                             var repo = new Repository();
-                            var control = new XtraMunicipalityFormDetailedStatisticControl(this.windowsUIViewMain, repo);
-                            e.Control = control;
-                            control.FormStatisticDataSource = Authentication.Credentials.IsMunicipality ?
-                                await repo.GetDetailedMunicipalityFormStatistics(Authentication.Credentials.MunitId, DateTime.Now.Year) :
-                                await repo.GetDetailedMunicipalityFormStatistics(DateTime.Now.Year);
-                            control.YearsDataSource = await repo.GetAvailableYears();
+                            var detailedFormStatisticsReport = new XtraMunicipalityFormDetailedStatisticControl(this.windowsUIViewMain, repo)
+                            {
+                                FormStatisticDataSource = Authentication.Credentials.IsMunicipality 
+                                    ? repo.GetDetailedMunicipalityFormStatistics(Authentication.Credentials.MunitId, DateTime.Now.Year).Result
+                                    : repo.GetDetailedMunicipalityFormStatistics(DateTime.Now.Year).Result, 
+                                YearsDataSource = await repo.GetAvailableYears()
+                            };
+
+                            e.Control = detailedFormStatisticsReport;
                             break;
                         }
                     case "FormStatisticsSummary":
                         using (var repo = new Repository())
                         {
-                            var formStatisticReport = new XtraFormStatisticSummaryReport();
-                            var formStatisticReportControl = new XtraReportViewControl(this.windowsUIViewMain);
+                            var formStatisticReport = new XtraFormStatisticSummaryReport
+                            {
+                                FormStatisticSummaryDataSource = Authentication.Credentials.IsMunicipality
+                                    ? repo.GetSummaryFormStatistics(Authentication.Credentials.MunitId).Result
+                                    : repo.GetSummaryFormStatistics().Result
+                            };
+                            var formStatisticReportControl = new XtraReportViewControl(this.windowsUIViewMain)
+                            {
+                                Report = formStatisticReport
+                            };
+                            formStatisticReport.CreateDocument();
 
                             e.Control = formStatisticReportControl;
-
-                            var formStatData = Authentication.Credentials.IsMunicipality ?
-                                await repo.GetSummaryFormStatistics(Authentication.Credentials.MunitId) :
-                                await repo.GetSummaryFormStatistics();
-                            formStatisticReport.FormStatisticSummaryDataSource = formStatData;
-                            formStatisticReportControl.Report = formStatisticReport;
-                            formStatisticReport.CreateDocument(false);
                             break;
                         }
                     case "SignInOutLog":
@@ -749,16 +765,15 @@ namespace EduFormManager
                                 var signInOutReport = new XtraSignInOutReport();
                                 var signInOutReportControl = new XtraReportViewControl(this.windowsUIViewMain);
 
-                                e.Control = signInOutReportControl;
-
                                 var startDate = DateTime.Now;
                                 var endDate = DateTime.Now.AddDays(-30);
 
                                 var logs = await repo.GetSignInOutLogs(startDate, endDate);
                                 signInOutReport.SignInOutLogDataSource = logs;
                                 signInOutReportControl.Report = signInOutReport;
-                                signInOutReport.CreateDocument(false);
+                                signInOutReport.CreateDocument();
 
+                                e.Control = signInOutReportControl;
                                 break;
                             }
 
@@ -908,6 +923,8 @@ namespace EduFormManager
         }
         private void mainForm_Shown(object sender, EventArgs e)
         {
+            this.xtraNavPane.Home = this.tileContainerMain;
+
             FlyoutAction loginAction = new FlyoutAction()
             {
                 Caption = "Вход",
@@ -935,11 +952,14 @@ namespace EduFormManager
 
         private void RebuildNavBar(IContentContainer container)
         {
-            if (container == null) return;
-            this.navigationBar.ClearItems();
-            while (container != null)
+            if (container == null) 
+                return;
+            this.xtraNavPane.ClearItems();
+            if (container == this.tileContainerMain) 
+                return;
+            while (container != null && container != this.tileContainerMain)
             {
-                this.navigationBar.PushItem(container);
+                this.xtraNavPane.PushItem(container);
                 container = container.Parent;
             }
         }
@@ -992,16 +1012,16 @@ namespace EduFormManager
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void buttonShowNotifications_Click(object sender, EventArgs e)
         {
-            this.flyoutPanel1.ShowPopup();
+            this.flyoutPanelNotifications.ShowPopup();
         }
 
         private void flyoutPanel1_ButtonClick(object sender, FlyoutPanelButtonClickEventArgs e)
         {
             if (e.Button.Caption == "Close")
             {
-                this.flyoutPanel1.HidePopup();
+                this.flyoutPanelNotifications.HidePopup();
             }
         }
 

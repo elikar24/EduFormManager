@@ -35,6 +35,7 @@ namespace EduFormManager.Forms.Reports
         {
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
+            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
@@ -51,23 +52,40 @@ namespace EduFormManager.Forms.Reports
             // TopMargin
             // 
             this.TopMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel2,
             this.xrLabel1});
             this.TopMargin.HeightF = 75F;
             this.TopMargin.Name = "TopMargin";
             this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
+            // xrLabel2
+            // 
+            this.xrLabel2.Font = new System.Drawing.Font("Segoe UI Light", 12F);
+            this.xrLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(1.589457E-05F, 39.99999F);
+            this.xrLabel2.Name = "xrLabel2";
+            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(640F, 35.00001F);
+            this.xrLabel2.StylePriority.UseFont = false;
+            this.xrLabel2.StylePriority.UseForeColor = false;
+            this.xrLabel2.StylePriority.UseTextAlignment = false;
+            this.xrLabel2.Text = "_";
+            this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
             // xrLabel1
             // 
-            this.xrLabel1.Font = new System.Drawing.Font("Segoe UI Light", 28F);
-            this.xrLabel1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 1.041651F);
+            this.xrLabel1.Font = new System.Drawing.Font("Segoe UI Light", 18F);
+            this.xrLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(640F, 73.33334F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(640F, 39.99999F);
             this.xrLabel1.StylePriority.UseFont = false;
             this.xrLabel1.StylePriority.UseForeColor = false;
-            this.xrLabel1.Text = "Результат выполнения запросов";
+            this.xrLabel1.StylePriority.UseTextAlignment = false;
+            this.xrLabel1.Text = "Результат выполнения запросов к форме";
+            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // BottomMargin
             // 
@@ -98,7 +116,7 @@ namespace EduFormManager.Forms.Reports
             this.BottomMargin,
             this.PageHeader});
             this.Margins = new System.Drawing.Printing.Margins(100, 100, 75, 37);
-            this.Version = "14.2";
+            this.Version = "15.1";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -111,5 +129,6 @@ namespace EduFormManager.Forms.Reports
         private XRLabel xrLabel1;
         private XRPageInfo xrPageInfo1;
         private PageHeaderBand PageHeader;
+        private XRLabel xrLabel2;
     }
 }

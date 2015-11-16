@@ -50,14 +50,14 @@ namespace EduFormManager.Utils
             tile.Properties.ItemSize = TileItemSize.Wide;
             var element = new TileItemElement();
             element.TextAlignment = TileItemContentAlignment.TopCenter;
-            element.Appearance.Normal.ForeColor = Color.FromArgb(59, 59, 59);
+            element.Appearance.Normal.ForeColor = TileResources.FontColor;
             element.Appearance.Normal.Font = new Font("Segoe UI Light", 42);
             element.Text = "Загрузка";
             tile.Elements.Add(element);
 
             var element2 = new TileItemElement();
             element.TextAlignment = TileItemContentAlignment.MiddleCenter;
-            element.Appearance.Normal.ForeColor = Color.FromArgb(59, 59, 59);
+            element.Appearance.Normal.ForeColor = TileResources.FontColor;
             element.Appearance.Normal.Font = new Font("Segoe UI Light", 20);
             tile.Elements.Add(element2);
             return tile;
@@ -66,8 +66,10 @@ namespace EduFormManager.Utils
         public static Tile CreateTile(TileItemSize size = TileItemSize.Medium, int elementsCount = 0)
         {
             var tile = new Tile();
-            tile.Appearances.Normal.BackColor = Color.FromArgb(0, 114, 198);
+            
+            tile.Appearances.Normal.BackColor = TileResources.AccentColor;
             tile.Appearances.Normal.BorderColor = Color.Transparent;
+            tile.Properties.AllowGlyphSkinning = DefaultBoolean.True;
             tile.Properties.ItemSize = size;
             for (var i = 0; i < elementsCount; i++)
             {
@@ -151,13 +153,12 @@ namespace EduFormManager.Utils
             dTile.Elements[0].Appearance.Normal.TextOptions.WordWrap = WordWrap.NoWrap;
             dTile.Elements[0].Appearance.Normal.TextOptions.Trimming = Trimming.EllipsisCharacter;
             dTile.Elements[0].ImageAlignment = TileItemContentAlignment.BottomRight;
-            dTile.Elements[0].ImageScaleMode = TileItemImageScaleMode.Squeeze;
-            dTile.Elements[0].ImageSize = new Size(48, 48);
             dTile.Elements[0].ImageIndex = (int)fd.status;
 
             dTile.Elements[1].Appearance.Assign(AppearanceText);
             dTile.Elements[1].TextAlignment = TileItemContentAlignment.BottomLeft;
 
+            dTile.Elements[2].Appearance.Assign(AppearanceMid);
             dTile.Elements[2].TextAlignment = TileItemContentAlignment.MiddleRight;
             dTile.Elements[2].Text = fd.send_date.ToString("yyyy");
 
@@ -175,8 +176,8 @@ namespace EduFormManager.Utils
             var page = new Page
             {
                 Document = doc,
-                Subtitle = doc.Caption,
-                Caption = String.Format("{0:d MMMM yyyy}", fd.send_date),
+                Subtitle = String.Format("{0} {1:d MMMM yyyy}", doc.Caption, fd.send_date),
+                Caption = doc.Caption,
                 Tag = TagHelper.GetFormDataTag(TagHelper.TagType.Container, fd),
                 Parent = parent
             };
@@ -224,39 +225,19 @@ namespace EduFormManager.Utils
         }
 
         #region helper methods
-        public static TileFormDataStatusContent GetDataTileStatus(IForm fd, ref FormStatusCount sc)
+        
+        public static void SetFormTileStatus(Tile dTile, Tile eoTile, Tile eotTile, Tile mTile, IForm fd)
         {
-            switch ((Status)fd.status)
-            {
-                case Status.OK:
-                    sc.FormsOkCount++;
-                    return new TileFormDataStatusContent("OK", Resources.check_icon, Color.MediumPurple);
-                case Status.Expired:
-                    sc.FormsWithExpiredDateCount++;
-                    return new TileFormDataStatusContent("С опозданием", Resources.clock_icon, Color.PaleVioletRed);
-                case Status.WithErrors:
-                    sc.FormsWithErrorsCount++;
-                    return new TileFormDataStatusContent("С ошибками", Resources.warning_icon, Color.BurlyWood);
-                case (Status.WithErrors | Status.Expired):
-                    sc.FormsWithBothCount++;
-                    return new TileFormDataStatusContent("С ошибками и опозданием", Resources.broken_icon, Color.SlateGray);
-                default:
-                    return new TileFormDataStatusContent("Неверный статус", Resources.close01_white, Color.Black);
-            }
-        }
-
-        public static void SetFormTileStatus(Tile dTile, Tile eoTile, Tile eotTile, Tile mTile, IForm fd, ref FormStatusCount sc)
-        {
-            var tileStatus = GetDataTileStatus(fd, ref sc);
-
+            var status = (Status) fd.status;
             dTile.Elements[0].Text = fd.form.name;
-            dTile.Elements[0].Image = tileStatus.Icon;
-            dTile.Elements[1].Text = tileStatus.Text;
+            dTile.Elements[0].Image = TileResources.FormDataIcons[status];
+            //dTile.Elements[1].Text = TileResources.FormDataText[status];
             dTile.Elements[3].Text = String.Format("Срок подачи {0:dd.MM}\nЗагружена {1:dd.MM}", fd.form.submission_date, fd.send_date);
-            dTile.Appearances.Normal.BackColor = tileStatus.Color;
+            dTile.Appearances.Normal.BackColor = TileResources.FormDataColors[status];
             dTile.Appearances.Normal.BorderColor = Color.Transparent;
-            dTile.Group = tileStatus.Text;
+            dTile.Group = TileResources.FormDataText[status];
         }
+
         #endregion
     }
 }

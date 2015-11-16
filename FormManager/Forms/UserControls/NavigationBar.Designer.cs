@@ -33,7 +33,6 @@ namespace EduFormManager.Forms
         private void InitializeComponent()
         {
             this.tileBarNavigation = new DevExpress.XtraBars.Navigation.TileBar();
-            this.tileBarGroupHome = new DevExpress.XtraBars.Navigation.TileBarGroup();
             this.tileBarGroupNav = new DevExpress.XtraBars.Navigation.TileBarGroup();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
@@ -42,21 +41,22 @@ namespace EduFormManager.Forms
             // 
             this.tileBarNavigation.AllowDrag = false;
             this.tileBarNavigation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tileBarNavigation.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(116)))), ((int)(((byte)(169)))));
+            this.tileBarNavigation.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
             this.tileBarNavigation.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tileBarNavigation.AppearanceItem.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.tileBarNavigation.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileBarNavigation.AppearanceItem.Normal.Options.UseFont = true;
+            this.tileBarNavigation.AppearanceItem.Normal.Options.UseForeColor = true;
             this.tileBarNavigation.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.tileBarNavigation.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.tileBarNavigation.AppearanceItem.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
             this.tileBarNavigation.AppearanceItem.Normal.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.tileBarNavigation.AppearanceItem.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.tileBarNavigation.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            this.tileBarNavigation.Groups.Add(this.tileBarGroupHome);
             this.tileBarNavigation.Groups.Add(this.tileBarGroupNav);
             this.tileBarNavigation.ItemSize = 25;
             this.tileBarNavigation.Location = new System.Drawing.Point(44, 0);
-            this.tileBarNavigation.MaxId = 6;
+            this.tileBarNavigation.MaxId = 7;
             this.tileBarNavigation.Name = "tileBarNavigation";
             this.tileBarNavigation.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollBar;
             this.tileBarNavigation.ShowGroupText = false;
@@ -64,16 +64,13 @@ namespace EduFormManager.Forms
             this.tileBarNavigation.TabIndex = 0;
             this.tileBarNavigation.Text = "tileBar1";
             // 
-            // tileBarGroupHome
-            // 
-            this.tileBarGroupHome.Name = "tileBarGroupHome";
-            // 
             // tileBarGroupNav
             // 
             this.tileBarGroupNav.Name = "tileBarGroupNav";
             // 
             // simpleButton1
             // 
+            this.simpleButton1.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.simpleButton1.Appearance.Options.UseBackColor = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
@@ -102,7 +99,6 @@ namespace EduFormManager.Forms
         #endregion
 
         private TileBar tileBarNavigation;
-        private TileBarGroup tileBarGroupHome;
         private SimpleButton simpleButton1;
         private TileBarGroup tileBarGroupNav;
     }

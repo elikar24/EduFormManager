@@ -38,13 +38,13 @@ namespace EduFormManager.Utils
                                 var statusDict = repo.GetStatusForMunicipalities(isArchive);
                                 if (statusDict.ContainsKey(m.municipality_id))
                                 {
-                                    mTile.Appearances.Normal.BackColor = Colors.FormDataColors[statusDict[m.municipality_id]];
-                                    mTile.Group = Colors.FormDataGroupText[statusDict[m.municipality_id]];
+                                    mTile.Appearances.Normal.BackColor = TileResources.FormDataColors[statusDict[m.municipality_id]];
+                                    mTile.Group = TileResources.FormDataText[statusDict[m.municipality_id]];
                                 }
                                 else
                                 {
-                                    mTile.Appearances.Normal.BackColor = Colors.FormDataColors[Status.Default];
-                                    mTile.Group = Colors.FormDataGroupText[Status.Default];
+                                    mTile.Appearances.Normal.BackColor = TileResources.FormDataColors[Status.Default];
+                                    mTile.Group = TileResources.FormDataText[Status.Default];
                                 }
                                 mTile.Click += (s, e) => LoadEduKindLayerAction.Invoke(s, e, view, isArchive, formType, guiCtx);
 
@@ -95,13 +95,13 @@ namespace EduFormManager.Utils
                                 if (statusDict.ContainsKey(eok.edu_kind_id))
                                 {
                                     eotTile.Appearances.Normal.BackColor =
-                                        Colors.FormDataColors[statusDict[eok.edu_kind_id]];
-                                    eotTile.Group = Colors.FormDataGroupText[statusDict[eok.edu_kind_id]];
+                                        TileResources.FormDataColors[statusDict[eok.edu_kind_id]];
+                                    eotTile.Group = TileResources.FormDataText[statusDict[eok.edu_kind_id]];
                                 }
                                 else
                                 {
-                                    eotTile.Appearances.Normal.BackColor = Colors.FormDataColors[Status.Default];
-                                    eotTile.Group = Colors.FormDataGroupText[Status.Default];
+                                    eotTile.Appearances.Normal.BackColor = TileResources.FormDataColors[Status.Default];
+                                    eotTile.Group = TileResources.FormDataText[Status.Default];
                                 }
                                 eotTile.Click += (s, e) => LoadEduLayerAction.Invoke(s, e, view, isArchive, formType, guiCtx);
                                 tiles.Add(eotTile);
@@ -159,13 +159,13 @@ namespace EduFormManager.Utils
                                     status = Status.Default;
                                 else if (statusCountArray[1] != 0 || statusCountArray[2] != 0 || statusCountArray[3] != 0)
                                     status = Status.Unknown;
-                                eoTile.Appearances.Normal.BackColor = Colors.FormDataColors[status];
-                                eoTile.Group = Colors.FormDataGroupText[status];
+                                eoTile.Appearances.Normal.BackColor = TileResources.FormDataColors[status];
+                                eoTile.Group = TileResources.FormDataText[status];
 
                                 eoTile.Click += (s, e) => LoadEduFormsLayerAction.Invoke(s, e, view, isArchive, formType, guiCtx);
-                                var formCaption = eo.name;
-                                var formSubCaption = isArchive ? "Архивные " : "";
-                                formSubCaption += (formType == FormType.Edu) ? "Формы федерального статистического наблюдения" : "Доп. формы";
+                                var formSubCaption = eo.name;
+                                var formCaption = isArchive ? "Архивные " : "";
+                                formCaption += (formType == FormType.Edu) ? "Формы федерального статистического наблюдения" : "Доп. формы";
                                 var formContainer = TileContainerHelper.CreateTileContainer(view, eoTile, formCaption, formSubCaption, container);
                                 
                                 tiles.Add(eoTile);
@@ -200,7 +200,7 @@ namespace EduFormManager.Utils
                     {
                         var sw = new Stopwatch();
                         sw.Start();
-                        var statusCount = new FormStatusCount();
+                        
                         using (var repo = new Repository())
                         {
                             var formTypeId = (int) formType;
@@ -208,7 +208,7 @@ namespace EduFormManager.Utils
                             foreach (var fd in forms)
                             {
                                 dynamic dTileObj = TileHelper.CreateFormTile(fd, container, isArchive);
-                                TileHelper.SetFormTileStatus(dTileObj.Tile, null, null, null, fd, ref statusCount);
+                                TileHelper.SetFormTileStatus(dTileObj.Tile, null, null, null, fd);
                                 tiles.Add(dTileObj.Tile);
                                 pages.Add(dTileObj.Page);
                                 docs.Add(dTileObj.Document);
@@ -279,8 +279,8 @@ namespace EduFormManager.Utils
                                 else if (statusCountArray[1] != 0 || statusCountArray[2] != 0 || statusCountArray[3] != 0)
                                     status = Status.Unknown;
 
-                                mTile.Appearances.Normal.BackColor = Colors.FormDataColors[status];
-                                mTile.Group = Colors.FormDataGroupText[status];
+                                mTile.Appearances.Normal.BackColor = TileResources.FormDataColors[status];
+                                mTile.Group = TileResources.FormDataText[status];
 
                                 tiles.Add(mTile);
                                 containers.Add(formsContainer);
@@ -314,14 +314,13 @@ namespace EduFormManager.Utils
                     {
                         var sw = new Stopwatch();
                         sw.Start();
-                        var statusCount = new FormStatusCount();
                         using (var repo = new Repository())
                         {
                             var forms = repo.GetMunicipalityFormDataNotLazy(mId, (int) formType, isArchive, "form");
                             foreach (var fd in forms)
                             {
                                 dynamic dTileObj = TileHelper.CreateFormTile(fd, container, isArchive);
-                                TileHelper.SetFormTileStatus(dTileObj.Tile, tile, null, null, fd, ref statusCount);
+                                TileHelper.SetFormTileStatus(dTileObj.Tile, tile, null, null, fd);
                                 tiles.Add(dTileObj.Tile);
                                 pages.Add(dTileObj.Page);
                                 docs.Add(dTileObj.Document);

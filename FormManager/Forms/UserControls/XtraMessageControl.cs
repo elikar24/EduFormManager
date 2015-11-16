@@ -127,7 +127,7 @@ namespace EduFormManager.Forms.UserControls
 
         public void OnQueryDocumentActions(IDocumentActionsArgs args)
         {
-            args.DocumentActions.Add(new DocumentAction(Send) { Caption = "Отправить", Image = Resources.mail });
+            args.DocumentActions.Add(new DocumentAction(Send) { Caption = "Отправить", Image = Resources.Feedback_26 });
         }
     }
 }

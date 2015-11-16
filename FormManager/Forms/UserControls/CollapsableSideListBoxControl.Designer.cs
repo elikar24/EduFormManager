@@ -49,7 +49,7 @@ namespace EduFormManager.Forms
             this.listBoxControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBoxControl1.Appearance.BackColor = System.Drawing.SystemColors.Control;
+            this.listBoxControl1.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.listBoxControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxControl1.Appearance.ForeColor = System.Drawing.Color.White;
             this.listBoxControl1.Appearance.Options.UseBackColor = true;
@@ -69,7 +69,9 @@ namespace EduFormManager.Forms
             // 
             // CollapsableSideListBoxControl
             // 
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(116)))), ((int)(((byte)(169)))));
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseForeColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

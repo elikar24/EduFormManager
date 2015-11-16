@@ -16,9 +16,7 @@ namespace EduFormManager.Forms.UserControls
         {
             InitializeComponent();
 
-            this.labelSavedStatus.Text = string.Empty;
-            this.pictureBoxSavedStatusIcon.Visible = false;
-
+            this.labelSavedStatus.Visible = false;
             this.munitEditControl.Repo = repo;
         }
 
@@ -33,13 +31,14 @@ namespace EduFormManager.Forms.UserControls
 
             this.munitEditControl.Municipality = munit;
 
-            this.labelSavedStatus.Text = string.Empty;
-            this.pictureBoxSavedStatusIcon.Visible = false;
+            this.labelSavedStatus.Visible = false;
         }
+
         public void New()
         {
             New(null);
         }
+
         protected override void New(Document doc)
         {
             var munit = this.Repo.Create<municipality>();
@@ -47,8 +46,9 @@ namespace EduFormManager.Forms.UserControls
             var editForm = new XtraDictionaryEditMunitForm(this, munit);
             editForm.Show(this.ParentForm);
             this.labelSavedStatus.Text = "В справочнике Образовательных Организаций муниципалитет появится после добавления к нему организации";
-            this.pictureBoxSavedStatusIcon.Visible = true;
+            this.labelSavedStatus.Visible = true;
         }
+
         public bool CanNew()
         {
             return CanNew(null);
@@ -104,7 +104,7 @@ namespace EduFormManager.Forms.UserControls
             if (munit.edus.Count > 0)
             {
                 this.ShowFlyoutMessageBox("Уведомление",
-                    string.Format("нельзя удалить муниципалитет \"{0}\", пока ему принадлежат следующие организации: {1}.", 
+                    String.Format("нельзя удалить муниципалитет \"{0}\", пока ему принадлежат следующие организации: {1}.", 
                     munit, munit.edus.Select(t => t.name))
                     );
                 return;

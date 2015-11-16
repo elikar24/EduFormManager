@@ -85,12 +85,12 @@ namespace EduFormManager.Forms.UserControls
                 if (this.flyoutPanelActions.IsPopupOpen)
                 {
                     this.flyoutPanelActions.HidePopup();
-                    (sender as SimpleButton).Text = "Меню";
+                    ((SimpleButton) sender).Text = "Меню";
                 }
                 else
                 {
                     this.flyoutPanelActions.ShowPopup();
-                    (sender as SimpleButton).Text = "Закрыть";
+                    ((SimpleButton) sender).Text = "Закрыть";
                 }
             };
 
@@ -142,7 +142,7 @@ namespace EduFormManager.Forms.UserControls
                             this.toolStripDropDownButtonForms.Text = this.ActiveForm.name;
                             if (this.Mode == ControlMode.New && this.Source == FormSource.Template)
                                 LoadTemplateAsync(_selectedForm);
-                            this.View.ActiveContentContainer.Subtitle = _selectedForm.ToString();
+                            this.View.ActiveContentContainer.Caption = _selectedForm.ToString();
                         }
                         catch (Exception ex)
                         {
@@ -154,14 +154,18 @@ namespace EduFormManager.Forms.UserControls
             }
             _selectedForm = formList.FirstOrDefault();
             if (_selectedForm != null)
-                this.View.ActiveContentContainer.Subtitle = _selectedForm.name;
+                this.View.ActiveContentContainer.Caption = _selectedForm.name;
         }
 
         private void SetEditEnabled(bool enabled)
         {
-            this.buttonMenuFlyout.Enabled = enabled;
-            this.spreadsheetControl.ReadOnly = !enabled;
+            //this.spreadsheetControl.ReadOnly = !enabled;
             this.layoutControlItem6.Visibility = enabled ? LayoutVisibility.Never : LayoutVisibility.Always;
+            var saveButton = this.windowsUIButtonPanelActions.Buttons.SingleOrDefault(t => ((WindowsUIButton)t).Tag.ToString() == "Save") as WindowsUIButton;
+            if (saveButton != null)
+            {
+                saveButton.Enabled = enabled;
+            }
         }
 
         public void LoadDocument()
@@ -345,7 +349,7 @@ namespace EduFormManager.Forms.UserControls
                     FlyoutCommand.OK);
                 return;
             }
-            var encoding = Encoding.UTF8;  //System.Text.Encoding.GetEncoding(form.Checkfile.CodePage);
+            var encoding = Encoding.UTF8;
             var crc = FileUtility.GetCRC32AsHexString(checkdata);
             if (!crc.Equals(ActiveForm.check_file_md5))
             {
@@ -689,35 +693,40 @@ namespace EduFormManager.Forms.UserControls
             var btnPrint = new WindowsUIButton()
             {
                 Caption = "Печать",
-                Image = Resources.glyph_print
+                Image = Resources.glyph_print,
+                Tag = "Print"
             };
             btnPrint.Click += (s, e) => Print();
 
             var btnSave = new WindowsUIButton()
             {
                 Caption = "Отправить",
-                Image = Resources.glyphicons_359_file_export
+                Image = Resources.glyphicons_359_file_export,
+                Tag = "Save"
             };
             btnSave.Click += (s, e) => Save(args.Document);
 
             var btnCheck = new WindowsUIButton()
             {
                 Caption = "Проверить",
-                Image = Resources.glyphicons_029_notes_2
+                Image = Resources.glyphicons_029_notes_2,
+                Tag = "Check"
             };
             btnCheck.Click += (s, e) => Check(args.Document);
 
             var btnSaveToFile = new WindowsUIButton()
             {
                 Caption = "Сохранить в файл",
-                Image = Resources.glyphicons_358_file_import
+                Image = Resources.glyphicons_358_file_import,
+                Tag = "SaveLocal"
             };
             btnSaveToFile.Click += (s, e) => SaveLocal();
 
             var btnOpen = new WindowsUIButton()
             {
                 Caption = "Открыть файл",
-                Image = Resources.glyphicons_144_folder_open
+                Image = Resources.glyphicons_144_folder_open,
+                Tag = "Open"
             };
             btnOpen.Click += (s, e) => OpenFile(args.Document);
             
@@ -747,7 +756,8 @@ namespace EduFormManager.Forms.UserControls
                         {
                             Caption = "Автозаполнение",
                             Image = Resources.three_dots_24x24,
-                            ToolTip = "Выбрать организации, из форм которых будет заполнена таблица"
+                            ToolTip = "Выбрать организации, из форм которых будет заполнена таблица",
+                            Tag = "AutoLoad"
                         };
                         btnPeekFormTest.Click += (s, e) => this.windowsUIButtonPanelActions.ShowPeekForm(btnPeekFormTest);
                         this.windowsUIButtonPanelActions.Buttons.Add(btnPeekFormTest);

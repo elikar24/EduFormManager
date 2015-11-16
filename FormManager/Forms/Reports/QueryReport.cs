@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using DevExpress.Utils;
-using DevExpress.Xpo.DB.Helpers;
 using DevExpress.XtraPrinting;
 using DevExpress.XtraReports.UI;
 
@@ -33,12 +32,17 @@ namespace EduFormManager.Forms.Reports
 
         private void Build()
         {
+            try
+            {
+                xrLabel2.Text = _reportData[0].Values.Keys.First().form.name;
+            }
+            catch { }
             var headerTable = new XRTable
             {
                 Borders = BorderSide.Left | BorderSide.Right,
                 BorderColor = Color.FromArgb(245, 245, 245),
-                Font = new Font("Segoe UI", 11),
-                BackColor = Color.SteelBlue,
+                Font = new Font("Segoe UI", 9),
+                BackColor = Color.FromArgb(37, 116, 169),
                 ForeColor = Color.FromArgb(245, 245, 245),
                 LocationF = new PointFloat(0F, 0F),
                 WidthF = this.PageWidth - this.Margins.Left - this.Margins.Right
@@ -69,7 +73,7 @@ namespace EduFormManager.Forms.Reports
             {
                 Borders = BorderSide.All,
                 ForeColor = Color.FromArgb(59, 59, 59),
-                BorderColor = Color.SteelBlue,
+                BorderColor = Color.FromArgb(37, 116, 169),
                 LocationF = new PointFloat(0F, 0F),
                 WidthF = this.PageWidth - this.Margins.Left - this.Margins.Right
             };
@@ -77,9 +81,9 @@ namespace EduFormManager.Forms.Reports
 
             var summaryRow = new XRTableRow
             {
-                BackColor = Color.SteelBlue,
+                BackColor = Color.FromArgb(37, 116, 169),
                 ForeColor = Color.FromArgb(245, 245, 245),
-                Font = new Font("Segoe UI", 11)
+                Font = new Font("Segoe UI", 9)
             };
             var sumFstCell = new XRTableCell
             {
