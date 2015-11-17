@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.Spreadsheet;
+using DevExpress.XtraBars;
 using DevExpress.XtraBars.Docking2010;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using DevExpress.XtraEditors;
@@ -62,6 +64,7 @@ namespace EduFormManager.Forms.UserControls
             InitializeComponent();
             InitializeProps();
             this.flyoutPanelActions.OwnerControl = view.Manager.ContainerControl;
+            
         }
 
         private void InitializeProps()
@@ -100,17 +103,24 @@ namespace EduFormManager.Forms.UserControls
                     this.flyoutPanelActions.HidePopup();
             };
 
-            var dateList = new List<DateTime> {  DateTime.Now, DateTime.Now.AddYears(-1), DateTime.Now.AddYears(-2)};
-            this.comboBoxDate.DataSource = dateList;
-            this.comboBoxDate.DisplayMember = "Year";
-            this.comboBoxDate.ValueMember = "Date";
+            var dateList = new List<DateTime> { DateTime.Now, DateTime.Now.AddYears(-1), DateTime.Now.AddYears(-2) };
 
-            this.comboBoxDate.SelectedIndexChanged += (sender, args) =>
+            foreach (var date in dateList)
             {
-                _selectedDate = (DateTime) this.comboBoxDate.SelectedItem;
-            };
-
+                var item = new BarButtonItem
+                {
+                    Caption = date.Year.ToString(),
+                    Tag = date
+                };
+                item.ItemClick += (s, e) =>
+                {
+                    _selectedDate = (DateTime)e.Item.Tag;
+                    this.dropDownYear.Text = _selectedDate.Year.ToString();
+                };
+                this.popupMenuYear.ItemLinks.Add(item);
+            } 
             _selectedDate = DateTime.Now;
+            this.dropDownYear.Text = _selectedDate.Year.ToString();
         }
 
         private void CreateFormMenuStrip(ICollection<form> formList)
@@ -120,26 +130,23 @@ namespace EduFormManager.Forms.UserControls
             {
                 if (groupItem.Key == null)
                     continue;
-                var typeToolItem = new ToolStripMenuItem()
+                var subItem = new BarSubItem(barManager, groupItem.Key.name)
                 {
-                    Text = groupItem.Key.name,
                     Tag = groupItem.Key
                 };
-                toolStripDropDownButtonForms.DropDownItems.Add(typeToolItem);
+                this.popupMenuForm.AddItem(subItem);
                 foreach (var item in groupItem)
                 {
-                    var formToolItem = new ToolStripMenuItem()
+                    var linkItem = new BarButtonItem(barManager, item.name)
                     {
-                        Text = item.name,
                         Tag = item
                     };
-                    formToolItem.Click += (ts, te) =>
+                    linkItem.ItemClick += (s, e) =>
                     {
                         try
                         {
-                            var menuItem = (ToolStripMenuItem)ts;
-                            _selectedForm = (form)menuItem.Tag;
-                            this.toolStripDropDownButtonForms.Text = this.ActiveForm.name;
+                            _selectedForm = (form)e.Item.Tag;
+                            this.dropDownForm.Text = _selectedForm.name;
                             if (this.Mode == ControlMode.New && this.Source == FormSource.Template)
                                 LoadTemplateAsync(_selectedForm);
                             this.View.ActiveContentContainer.Caption = _selectedForm.ToString();
@@ -149,7 +156,7 @@ namespace EduFormManager.Forms.UserControls
                             this.ShowFlyoutMessageBox("Ошибка", ex.Message, FlyoutCommand.OK);
                         }
                     };
-                    typeToolItem.DropDownItems.Add(formToolItem);
+                    subItem.LinksPersistInfo.Add(new LinkPersistInfo(linkItem));
                 }
             }
             _selectedForm = formList.FirstOrDefault();
@@ -198,8 +205,8 @@ namespace EduFormManager.Forms.UserControls
                 if (value != null && this.formBindingSource.List.Contains(value))
                 {
                     this._selectedForm = value;
-                    this.toolStripDropDownButtonForms.Text = value.name;
-                    this.View.ActiveContentContainer.Subtitle = value.ToString();
+                    //this.toolStripDropDownButton1.Text = value.name;
+                    this.View.ActiveContentContainer.Caption = value.ToString();
                     if (this.Mode == ControlMode.New && this.Source == FormSource.Template)
                         LoadTemplateAsync(value);
                 }
@@ -773,7 +780,7 @@ namespace EduFormManager.Forms.UserControls
             }
             this.windowsUIButtonPanelActions.Buttons.Add(btnPrint);
             this.windowsUIButtonPanelActions.Buttons.Add(btnSaveToFile);
-            this.comboBoxDate.Visible = (this.Mode == ControlMode.New);
+            //this.comboBoxDate.Visible = (this.Mode == ControlMode.New);
             this.SetEditEnabled(this.Mode != ControlMode.Disabled);
 
             this.windowsUIButtonPanelActions.AppearanceButton.Normal.Font = new Font("Segoe UI Light", 11, FontStyle.Regular);

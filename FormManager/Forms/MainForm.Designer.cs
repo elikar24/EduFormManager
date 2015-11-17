@@ -302,6 +302,8 @@ namespace EduFormManager
             // windowsUIViewMain
             // 
             this.windowsUIViewMain.AddTileWhenCreatingDocument = DevExpress.Utils.DefaultBoolean.False;
+            this.windowsUIViewMain.AppearanceCaption.Options.UseTextOptions = true;
+            this.windowsUIViewMain.AppearanceCaption.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
             this.windowsUIViewMain.Caption = "";
             this.windowsUIViewMain.ContentContainers.AddRange(new DevExpress.XtraBars.Docking2010.Views.WindowsUI.IContentContainer[] {
             this.tileContainerMain,
@@ -636,7 +638,7 @@ namespace EduFormManager
             this.documentUploadSheetFromFile});
             this.pageGroupUploadForm.Name = "pageGroupUploadForm";
             this.pageGroupUploadForm.Parent = this.tileContainerMain;
-            this.pageGroupUploadForm.Subtitle = "Не выбрана форма";
+            this.pageGroupUploadForm.Subtitle = "Загрузка формы";
             // 
             // documentUploadSheetFromTemplate
             // 
@@ -1231,7 +1233,6 @@ namespace EduFormManager
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainerControl2.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel1;
             this.splitContainerControl2.Horizontal = false;
-            this.splitContainerControl2.IsSplitterFixed = true;
             this.splitContainerControl2.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl2.LookAndFeel.SkinName = "Office 2013";
             this.splitContainerControl2.LookAndFeel.UseDefaultLookAndFeel = false;
